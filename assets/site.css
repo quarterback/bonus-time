@@ -43,6 +43,16 @@
 @font-face { font-family: "Author"; src: url("fonts/author-bold.woff")              format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
 @font-face { font-family: "Author"; src: url("fonts/author-bold-italic.woff")       format("woff"); font-weight: 700; font-style: italic; font-display: swap; }
 
+/* ── RX100 (mono face) — self-hosted; carries labels, specs, the
+   document-control register and small mono text. ─ */
+@font-face {
+  font-family: "RX100";
+  src: url("fonts/rx100-regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ── Switzer (deck face) — free Fontshare/ITF grotesque, self-hosted.
    SemiBold (600) carries the masthead deck; italic is here if needed. ─ */
 @font-face {
@@ -79,7 +89,7 @@
   --display: "RB Display", "Author", "Times New Roman", Georgia, serif;
   --text:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --sans:    "RB Sans", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono:    "RB Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --mono:    "RX100", "RB Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
 * { box-sizing: border-box; }
