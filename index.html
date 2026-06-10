@@ -105,6 +105,18 @@
   @media (max-width: 680px) {
     .doors { grid-template-columns: 1fr; }
   }
+
+  /* ── Colophon digression ──────────────── */
+  .colophon__digression { color: #9c2a00; }                                  /* accessible rust on the pollen ground (5.31:1) */
+  :root[data-palette="violet"] .colophon__digression { color: var(--accent); } /* coral on the violet ground (4.79:1) */
+  .digression__label {
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+  .colophon__digression a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  .colophon__digression a:hover { color: var(--ink); }
 </style>
 </head>
 <body>
@@ -165,15 +177,32 @@
   <footer class="foot">
     <p class="foot__contact">Reach me at <a href="mailto:contact@ronbronson.com">contact@ronbronson.com</a>.</p>
     <section class="colophon" aria-label="Colophon">
-      <h2>Colophon</h2>
+      <h2>Colophon, with Digressions</h2>
+      <p class="colophon__digression"><span class="digression__label">Digression</span> <span id="digression">Inexplicably, a Green Bay Packers shareholder.</span></p>
       <p>A front door, built by hand as a static site: HTML, CSS, and vanilla JavaScript &mdash; no framework, no build step. Colour is set by a small client-side palette engine that audits its own WCAG contrast; the masthead deck rotates on every load.</p>
       <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
     </section>
-    <section class="colophon" aria-label="Digressions">
-      <h2>Digressions</h2>
-      <p>Two doors are the point of this page, but not the whole of it. The asides &mdash; the sports I&rsquo;ve invented, the talks, the things built for their own sake &mdash; live one click deeper, at <a href="https://ronbronson.design">ronbronson.design</a> and <a href="https://ronbronson.dev">ronbronson.dev</a>.</p>
-    </section>
   </footer>
+  <script>
+    /* Rotate the digression on every load — pick a random entry,
+       never repeating the one shown last refresh. Entries may carry
+       inline HTML. The static line in the markup is the no-JS
+       fallback. */
+    (function () {
+      var DIGRESSIONS = [
+        "Inexplicably, a Green Bay Packers shareholder."
+        /* TODO: lift the full list verbatim from quarterback/2026-site. */
+      ];
+      var el = document.getElementById("digression");
+      if (!el || DIGRESSIONS.length < 2) return;
+      var last = -1;
+      try { last = parseInt(sessionStorage.getItem("rb-digression"), 10); } catch (e) {}
+      var i = Math.floor(Math.random() * DIGRESSIONS.length);
+      while (i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
+      try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
+      el.innerHTML = DIGRESSIONS[i];
+    })();
+  </script>
 
 </div>
 </body>
