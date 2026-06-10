@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ron Bronson</title>
+<meta name="description" content="Ron Bronson — front door. Work and a working catalog of projects." />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Ron Bronson" />
+<meta name="twitter:description" content="Ron Bronson — front door. Work and a working catalog of projects." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="assets/palette.js"></script>
+<style>
+  /* ─────────────────────────────────────────────────────────────────
+     Front door — the whole site is one screen. A masthead, a rotating
+     deck, one short paragraph, and two doors out. Nothing else.
+     ───────────────────────────────────────────────────────────────── */
+
+  /* ── Deck / rotating tagline ──────────── */
+  .tagline {
+    margin: clamp(14px, 2vw, 22px) 0 0;
+    font-family: "Switzer", var(--sans);
+    font-weight: 600;
+    font-size: clamp(19px, 2.5vw, 30px);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+  }
+  .tagline span { display: block; text-wrap: balance; }
+
+  /* ── Intro ────────────────────────────── */
+  .intro {
+    padding: 0 0 clamp(28px, 5vw, 52px);
+    max-width: 62ch;
+  }
+  .intro p {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(18px, 1.6vw, 22px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .intro p + p { margin-top: 1em; }
+  .intro cite {
+    display: block;
+    margin-top: 0.9em;
+    font-style: normal;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+
+  /* ── The two doors ────────────────────── */
+  .doors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-top: var(--frame) solid var(--ink);
+    border-left: var(--frame) solid var(--ink);
+  }
+  .door {
+    border-right: var(--frame) solid var(--ink);
+    border-bottom: var(--frame) solid var(--ink);
+    padding: clamp(20px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1vw, 12px);
+    transition: background-color .14s ease;
+  }
+  .door:hover { background: var(--bg-deeper); }
+  .door__head {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: var(--ink-soft);
+  }
+  .door__title {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 48px);
+    line-height: 1.02;
+    letter-spacing: -0.025em;
+  }
+  .door__title a { color: var(--ink); }
+  .door:hover .door__title a { color: var(--accent); }
+  .door__url {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+  .door:hover .door__url { color: var(--accent); }
+
+  @media (max-width: 680px) {
+    .doors { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="./index.html">Ron Bronson</a>
+    <h2 class="tagline" id="tagline">
+      <span>Finds messy systems.</span>
+      <span>Makes them legible.</span>
+      <span>Builds what&rsquo;s missing.</span>
+      <span>Keeps them moving.</span>
+    </h2>
+  </header>
+  <script>
+    /* Rotate the deck on every load — pick a random variant, never
+       repeating the one shown last refresh. No-JS render shows the
+       static V1 above. */
+    (function () {
+      var DECKS = [
+        ["Finds messy problems.", "Makes them legible.", "Builds things.", "Puts them into the world."],
+        ["Finds messy systems.", "Makes them legible.", "Builds what’s missing.", "Keeps them moving."],
+        ["Untangles complexity.", "Makes it understandable.", "Builds the missing pieces.", "Leaves behind working systems."],
+        ["Finds the bottleneck.", "Makes it visible.", "Builds the fix.", "Leaves others better equipped."],
+        ["Studies how things work.", "Explains why they don’t.", "Builds what they need.", "Helps them do the job."],
+        ["Makes the invisible visible.", "Makes the confusing clear.", "Builds what’s needed.", "Puts it to work."]
+      ];
+      var el = document.getElementById("tagline");
+      if (!el) return;
+      var last = -1;
+      try { last = parseInt(sessionStorage.getItem("rb-deck"), 10); } catch (e) {}
+      var i = Math.floor(Math.random() * DECKS.length);
+      while (i === last) i = Math.floor(Math.random() * DECKS.length);
+      try { sessionStorage.setItem("rb-deck", i); } catch (e) {}
+      el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
+    })();
+  </script>
+
+  <!-- PLACEHOLDER COPY — Marshall McLuhan, to be replaced. -->
+  <section class="intro">
+    <p>&ldquo;We shape our tools and thereafter our tools shape us. There is absolutely no inevitability as long as there is a willingness to contemplate what is happening.&rdquo;</p>
+    <cite>&mdash; Marshall McLuhan (placeholder)</cite>
+  </section>
+
+  <section class="doors" aria-label="Where to go">
+    <article class="door">
+      <div class="door__head">Work</div>
+      <h2 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h2>
+      <span class="door__url">Design practice &amp; selected work</span>
+    </article>
+    <article class="door">
+      <div class="door__head">Catalog</div>
+      <h2 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h2>
+      <span class="door__url">A working catalog of projects</span>
+    </article>
+  </section>
+
+</div>
+</body>
+</html>
