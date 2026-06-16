@@ -9,7 +9,7 @@
      Midnight Violet #3a3042   ink ground / dark ink
      Coral Glow      #ff784f   signal — fills, borders, large display
      Golden Pollen   #ffd166   paper ground / light ink
-     Cerulean        #0081a7   mid surface / decorative rule
+     Knicks Blue     #006BB6   mid surface / decorative rule (NY Knicks primary)
      Tropical Teal   #00afb9   surface — media grounds
 
    Role rules (enforced by the values, verified by audit):
@@ -46,7 +46,7 @@
     violet: '#3a3042',
     coral:  '#ff784f',
     pollen: '#ffd166',
-    ceru:   '#0081a7',
+    ceru:   '#006BB6', /* New York Knicks blue (PMS 286) */
     teal:   '#00afb9',
   };
 
