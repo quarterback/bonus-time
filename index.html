@@ -35,32 +35,44 @@
   }
   .tagline span { display: block; text-wrap: balance; }
 
-  /* ── Intro ────────────────────────────── */
+  /* ── Intro / grounding credentials ────── */
   .intro {
     padding: 0 0 clamp(28px, 5vw, 52px);
-    max-width: 62ch;
+    max-width: 72ch;
     margin: 0 auto;
-    text-align: center;
   }
-  .intro p {
+  .intro__lead {
+    margin: 0 0 clamp(18px, 2.6vw, 28px);
+    font-family: var(--text);
+    font-weight: 600;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.32;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .creds {
+    list-style: none;
     margin: 0;
+    padding: clamp(16px, 2vw, 22px) 0 0;
+    border-top: var(--frame) solid var(--ink);
+    display: grid;
+    gap: clamp(9px, 1.3vw, 13px);
+  }
+  .creds li {
     font-family: var(--text);
     font-weight: 500;
-    font-size: clamp(23px, 2.2vw, 32px);
+    font-size: clamp(15px, 1.4vw, 18px);
     line-height: 1.45;
     color: var(--ink);
     text-wrap: pretty;
   }
-  .intro p + p { margin-top: 1em; }
-  .intro cite {
-    display: block;
-    margin-top: 1.1em;
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: clamp(16px, 1.5vw, 21px);
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
-  }
+  .creds a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); padding-bottom: 1px; }
+  .creds a:hover { color: var(--accent); }
+
+  /* ── Footer quote (relegated Paik line) ── */
+  .foot__quote { margin: 0; font-family: var(--text); font-size: 14px; color: var(--ink-soft); text-wrap: pretty; }
+  .foot__quote cite { font-style: normal; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; }
 
   /* ── The two doors ────────────────────── */
   .doors {
@@ -147,8 +159,13 @@
   </script>
 
   <section class="intro">
-    <p>&ldquo;I use technology in order to hate it properly.&rdquo;</p>
-    <cite>&mdash; Nam June Paik</cite>
+    <p class="intro__lead">Over twenty years of experience in public tech deployment and delivery from small counties with more cows than people, to leading and improving services for millions of Americans.</p>
+    <ul class="creds">
+      <li>Currently working on civil trust infra.</li>
+      <li>Assistant Professor of Practice in Urban Technology at University of Michigan, <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/" target="_blank" rel="noopener">Taubman College of Architecture &amp; Urban Planning</a>.</li>
+      <li>Advisor to State Capacity AI.</li>
+      <li>Previously, I led a 40+ person design unit at <a href="https://www.npr.org/2025/03/04/nx-s1-5317569/a-federal-efficiency-team-was-axed-they-were-working-on-one-of-trumps-goals" target="_blank" rel="noopener">18F.gov</a>.</li>
+    </ul>
   </section>
 
   <section class="doors" aria-label="Where to go">
@@ -161,6 +178,10 @@
       <span class="door__url">Realized I needed somewhere for things I&rsquo;m building.</span>
     </article>
   </section>
+
+  <footer class="foot">
+    <p class="foot__quote">&ldquo;I use technology in order to hate it properly.&rdquo; <cite>&mdash; Nam June Paik</cite></p>
+  </footer>
 
 </div>
 </body>
