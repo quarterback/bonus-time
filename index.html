@@ -35,32 +35,41 @@
   }
   .tagline span { display: block; text-wrap: balance; }
 
-  /* ── Intro ────────────────────────────── */
+  /* ── Intro / grounding credentials ────── */
   .intro {
     padding: 0 0 clamp(28px, 5vw, 52px);
-    max-width: 62ch;
+    max-width: 72ch;
     margin: 0 auto;
-    text-align: center;
   }
-  .intro p {
-    margin: 0;
+  .intro__lead {
+    margin: 0 0 clamp(18px, 2.6vw, 28px);
     font-family: var(--text);
-    font-weight: 500;
-    font-size: clamp(23px, 2.2vw, 32px);
-    line-height: 1.45;
+    font-weight: 600;
+    font-size: clamp(20px, 2vw, 28px);
+    line-height: 1.32;
+    letter-spacing: -0.01em;
     color: var(--ink);
     text-wrap: pretty;
   }
-  .intro p + p { margin-top: 1em; }
-  .intro cite {
-    display: block;
-    margin-top: 1.1em;
-    font-style: normal;
-    font-family: var(--mono);
-    font-size: clamp(16px, 1.5vw, 21px);
-    letter-spacing: 0.04em;
-    color: var(--ink-soft);
+  .intro__creds {
+    margin: 0;
+    font-family: var(--text);
+    font-weight: 500;
+    font-size: clamp(15px, 1.4vw, 18px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
   }
+  .intro__creds a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); padding-bottom: 1px; }
+  .intro__creds a:hover { color: var(--accent); }
+
+  /* ── Footer quote (relegated Paik line) ── */
+  .foot__quote { margin: 0; font-family: var(--text); font-size: 14px; color: var(--ink-soft); text-wrap: pretty; }
+  .foot__quote cite { font-style: normal; font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; }
+
+  /* ── Colophon digression (cloned from .dev) ── */
+  .colophon .digression { color: var(--ink); }
+  .colophon .digression::before { content: "\21B3  "; color: var(--accent); }
 
   /* ── The two doors ────────────────────── */
   .doors {
@@ -147,8 +156,8 @@
   </script>
 
   <section class="intro">
-    <p>&ldquo;I use technology in order to hate it properly.&rdquo;</p>
-    <cite>&mdash; Nam June Paik</cite>
+    <p class="intro__lead">Over twenty years of experience in public tech deployment and delivery from small counties with more cows than people, to leading and improving services for millions of Americans.</p>
+    <p class="intro__creds">Currently working on civil trust infra. Assistant Professor of Practice in Urban Technology at University of Michigan, <a href="https://taubmancollege.umich.edu/faculty/directory/ron-bronson/" target="_blank" rel="noopener">Taubman College of Architecture &amp; Urban Planning</a>. Advisor to State Capacity AI. Previously, I led a 40+ person design unit at <a href="https://www.npr.org/2025/03/04/nx-s1-5317569/a-federal-efficiency-team-was-axed-they-were-working-on-one-of-trumps-goals" target="_blank" rel="noopener">18F.gov</a>.</p>
   </section>
 
   <section class="doors" aria-label="Where to go">
@@ -161,6 +170,44 @@
       <span class="door__url">Realized I needed somewhere for things I&rsquo;m building.</span>
     </article>
   </section>
+
+  <footer class="foot">
+    <p class="foot__quote">&ldquo;I use technology in order to hate it properly.&rdquo; <cite>&mdash; Nam June Paik</cite></p>
+    <section class="colophon" aria-label="Colophon, with digressions">
+      <h2>Colophon, with Digressions</h2>
+      <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
+      <p>Built hastily with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast.</p>
+      <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
+    </section>
+  </footer>
+  <script>
+    /* Digressions — one aside, picked at random per load (never the same
+       one twice in a row). Add or edit entries in DIGRESSIONS; the footer
+       shows one at a time so the list never has to be spelled out. */
+    (function () {
+      var DIGRESSIONS = [
+        "Inexplicably, a Green Bay Packers shareholder.",
+        "Favorite sports teams: Toronto Blue Jays, Vimpelin Veto, New Jersey Devils, Lapuan Virkiä, <s>New York Jets</s>, Portland Timbers, New York Knicks, Portland Thorns, Brighton &amp; Hove Albion, Sassuolo, Toluca, Toronto Tempo, Montreal Expos (RIP)",
+        "<em>Have you seen my fragrance collection?</em> <a href='https://www.oksmelly.xyz/' target='_blank' rel='noopener'>it’s here</a>.",
+        "I’m a longtime tea sommelier. Ask me for loose-leaf recs!",
+        "Favorite wine regions: Slovenia, Georgia or anything that aged in amphorae or an old boot. I’m not picky.",
+        "Last.fm til they shut it down. Check out my scrobbles: <a href='https://www.last.fm/user/statechampion' target='_blank' rel='noopener'>last.fm/user/statechampion</a>",
+        "I’ve coached high school tennis for ten years across 3 states. My career varsity record apparently is 91-33-4. 1 team state championship, 4 District/Regional titles, 5 Conference titles. 4 individual state champions. So far…",
+        "Yes, I have a <a href='https://www.discogs.com/user/quarterback/collection?header=1' target='_blank' rel='noopener'>Discogs</a> 🙄",
+        "I actually grew up watching golf, because my grandfather played. I still like a Par 3 because of him.",
+        "Last time I went fishing? 1994.",
+        "Unsurprisingly, I was once a bar trivia host in Bloomington. One step closer to my true calling: game show host."
+      ];
+      var el = document.getElementById("digression");
+      if (!el) return;
+      var last = -1;
+      try { last = parseInt(sessionStorage.getItem("rb-digression"), 10); } catch (e) {}
+      var i = Math.floor(Math.random() * DIGRESSIONS.length);
+      while (DIGRESSIONS.length > 1 && i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
+      try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
+      el.innerHTML = DIGRESSIONS[i];
+    })();
+  </script>
 
 </div>
 </body>
