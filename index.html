@@ -19,21 +19,9 @@
 <script src="assets/palette.js"></script>
 <style>
   /* ─────────────────────────────────────────────────────────────────
-     Front door — the whole site is one screen. A masthead, a rotating
-     deck, one short paragraph, and two doors out. Nothing else.
+     Front door — the whole site is one screen. A masthead, a short
+     bio with grounding credentials, and two doors out. Nothing else.
      ───────────────────────────────────────────────────────────────── */
-
-  /* ── Deck / rotating tagline ──────────── */
-  .tagline {
-    margin: clamp(14px, 2vw, 22px) 0 0;
-    font-family: "Switzer", var(--sans);
-    font-weight: 600;
-    font-size: clamp(19px, 2.5vw, 30px);
-    line-height: 1.12;
-    letter-spacing: -0.015em;
-    color: var(--ink);
-  }
-  .tagline span { display: block; text-wrap: balance; }
 
   /* ── Intro / grounding credentials ────── */
   .intro {
@@ -121,39 +109,7 @@
 
   <header class="masthead">
     <a class="name" href="./index.html">Ron Bronson</a>
-    <h2 class="tagline" id="tagline">
-      <span>Finds messy systems.</span>
-      <span>Makes them legible.</span>
-      <span>Builds what&rsquo;s missing.</span>
-      <span>Keeps them moving.</span>
-    </h2>
   </header>
-  <script>
-    /* Rotate the deck on every load — pick a random variant, never
-       repeating the one shown last refresh. No-JS render shows the
-       static V1 above. */
-    (function () {
-      var DECKS = [
-        ["Finds messy problems.", "Makes them legible.", "Builds things.", "Puts them into the world."],
-        ["Finds messy systems.", "Makes them legible.", "Builds what’s missing.", "Keeps them moving."],
-        ["Untangles complexity.", "Makes it understandable.", "Builds the missing pieces.", "Leaves behind working systems."],
-        ["Finds the bottleneck.", "Makes it visible.", "Builds the fix.", "Leaves others better equipped."],
-        ["Studies how things work.", "Explains why they don’t.", "Builds what they need.", "Helps them do the job."],
-        ["Makes the invisible visible.", "Makes the confusing clear.", "Builds what’s needed.", "Puts it to work."],
-        ["Excavates the rules.", "Maps the machinery.", "Makes the invisible work visible."],
-        ["Notices what broke.", "Figures out why.", "Stays until it runs."],
-        ["Draws the map.", "Labels the doors.", "Hands you the keys."]
-      ];
-      var el = document.getElementById("tagline");
-      if (!el) return;
-      var last = -1;
-      try { last = parseInt(sessionStorage.getItem("rb-deck"), 10); } catch (e) {}
-      var i = Math.floor(Math.random() * DECKS.length);
-      while (i === last) i = Math.floor(Math.random() * DECKS.length);
-      try { sessionStorage.setItem("rb-deck", i); } catch (e) {}
-      el.innerHTML = DECKS[i].map(function (line) { return "<span>" + line + "</span>"; }).join("");
-    })();
-  </script>
 
   <section class="intro">
     <p class="intro__lead">Over twenty years of experience in public tech deployment and delivery from small counties with more cows than people, to leading and improving services for millions of Americans.</p>
