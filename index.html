@@ -65,14 +65,6 @@
     letter-spacing: -.015em;
     text-wrap: pretty;
   }
-  .hero__aside {
-    max-width: 60ch;
-    margin: 22px 0 0;
-    font-family: var(--text);
-    font-size: clamp(16px, 1.4vw, 20px);
-    line-height: 1.58;
-    color: var(--ink-soft);
-  }
   .actions {
     display: flex;
     flex-wrap: wrap;
@@ -92,7 +84,6 @@
     cursor: pointer;
   }
   .button:hover { background: var(--ink); color: var(--bg); }
-  .button--quiet { border-color: var(--ink-soft); }
 
   .scene {
     margin: 0 0 clamp(56px, 8vw, 108px);
@@ -197,10 +188,8 @@
     <section class="hero">
       <h1>I go where the hard problems are.</h1>
       <p class="hero__deck">People usually reach out because they want a straight answer from someone who can see the shape of a problem, ask the right questions, and stay close enough to delivery to know what will actually work.</p>
-      <p class="hero__aside">Sometimes the answer is a plan. Sometimes it is start smaller, not yet, or talk to someone else.</p>
       <div class="actions">
         <button class="button" type="button" data-contact>Email me</button>
-        <a class="button button--quiet" href="#straight-answers">Keep reading</a>
       </div>
     </section>
 
