@@ -65,6 +65,12 @@
     letter-spacing: -.015em;
     text-wrap: pretty;
   }
+  .hero__deck a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .hero__deck a:hover { color: var(--accent); }
   .actions {
     display: flex;
     flex-wrap: wrap;
@@ -128,14 +134,6 @@
     padding-bottom: 1px;
   }
   .prose a:hover { color: var(--accent); }
-  .evidence {
-    margin-top: clamp(22px, 3vw, 34px) !important;
-    font-family: var(--mono);
-    font-size: 13px;
-    line-height: 1.5;
-    color: var(--ink-soft);
-  }
-  .evidence a { color: var(--accent); border-bottom: 0; }
   .embed {
     margin-top: clamp(26px, 4vw, 42px);
   }
@@ -194,8 +192,7 @@
   <main id="top">
     <section class="hero">
       <h1>Design belongs where the problem is.</h1>
-      <p class="hero__deck">I am a design leader, builder, and teacher with two decades across the web, institutional delivery, and technical implementation. I built and led one of the first large-scale forward-deployed design practices, with 40 people working inside consequential delivery problems.</p>
-      <p class="evidence"><a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">What Forward-Deployed Design Actually Looks Like ↗</a></p>
+      <p class="hero__deck">I am a design leader, builder, and teacher with two decades across the web, institutional delivery, and technical implementation. I built and led one of the first large-scale <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">forward-deployed design practices</a>, with 40 people working inside consequential delivery problems.</p>
       <div class="actions">
         <button class="button" type="button" data-contact>Email me</button>
       </div>
@@ -208,16 +205,14 @@
     <section class="section">
       <h2>I came up through the web.</h2>
       <div class="prose">
-        <p>For a decade I rescued and ran institutional websites. I moved organizations from hand-coded pages to content management systems, then through the social media era. I owned marketing and strategic communications because the web person often owned everything. I wrote code, trained staff, managed vendors, and kept public systems working.</p>
-        <p class="evidence"><a href="https://ronbronson.dev">Selected builds and technical work ↗</a></p>
+        <p>For a decade I rescued and ran institutional websites. I moved organizations from hand-coded pages to content management systems, then through the social media era. I owned marketing and strategic communications because the web person often owned everything. I <a href="https://ronbronson.dev">wrote code</a>, trained staff, managed vendors, and kept public systems working.</p>
       </div>
     </section>
 
     <section class="section">
       <h2>I lead without leaving the work.</h2>
       <div class="prose">
-        <p>That foundation lets me move across research, service design, content, product, communications, organizational design, and executive advisory. I have managed managers, built and grown multidisciplinary teams, rescued consequential projects, shipped mission-critical resources for local communities, and helped institutions avoid spending millions on the wrong approach. I speak globally and teach urban technology. I still write, prototype, facilitate, debug, and build.</p>
-        <p class="evidence"><a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics, University of Michigan ↗</a></p>
+        <p>That foundation lets me move across research, service design, content, product, communications, organizational design, and executive advisory. I have managed managers, built and grown multidisciplinary teams, rescued consequential projects, shipped mission-critical resources for local communities, and helped institutions avoid spending millions on the wrong approach. I <a href="https://ronbronson.design">speak globally</a> and <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">teach urban technology</a>. I still write, prototype, facilitate, debug, and build.</p>
       </div>
     </section>
 
@@ -232,9 +227,9 @@
     </section>
 
     <section class="section">
-      <h2>Side quests.</h2>
+      <h2>Offline.</h2>
       <div class="prose">
-        <p>I host a radio show, coach a state-championship high school tennis team, run <a href="https://oregontennis.org">OregonTennis.org</a>, build pesäpallo sabermetrics at <a href="https://mallo.fi">mallo.fi</a>, and invented <a href="https://en.wikipedia.org/wiki/Tennis_polo">Tennis Polo</a>. The pattern is the same everywhere: learn the system, find the gap, build what is missing.</p>
+        <p>I am a longtime high school tennis coach who has won state titles and coach-of-the-year awards. I have served on several community nonprofit boards, worked as a <a href="https://www.mixcloud.com/908RB/">radio DJ</a> and news anchor, created <a href="https://mallo.fi">sabermetrics for the Finnish sport of pesäpallo</a>, and invented a sport called <a href="https://en.wikipedia.org/wiki/Tennis_polo">Tennis Polo</a> 22 years ago.</p>
       </div>
     </section>
   </main>
