@@ -3,12 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ron Bronson | Institutional Delivery and Technology</title>
-<meta name="description" content="Ron Bronson helps complex institutions turn mandates into working services by leading implementation, building delivery capability, modernizing services, and advising leaders." />
-<meta name="keywords" content="institutional delivery, programme delivery, digital transformation, service modernization, organizational design, technology strategy, product strategy, executive advisory, workforce planning, user research, information architecture, accessibility, technical delivery, AI governance, forward deployed design" />
-<meta name="twitter:card" content="summary" />
+<title>Ron Bronson | Service Delivery and Institutional Transformation</title>
+<meta name="description" content="Ron Bronson leads end-to-end service delivery, digital transformation, institutional capacity building, multidisciplinary teams, and complex implementation." />
+<meta name="keywords" content="service owner, end-to-end service delivery, programme delivery, digital transformation, service modernization, institutional capacity, organizational design, operating models, programme recovery, digital public infrastructure, product strategy, service design, user research, information architecture, accessibility, technical delivery, AI governance, executive advisory" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ron Bronson" />
+<meta property="og:description" content="Helping complex institutions turn mandates into working services." />
+<meta property="og:image" content="https://taubmancollege.umich.edu/wp-content/uploads/2026/04/bronson-civic-tech-panel.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
 <meta name="twitter:description" content="Helping complex institutions turn mandates into working services." />
+<meta name="twitter:image" content="https://taubmancollege.umich.edu/wp-content/uploads/2026/04/bronson-civic-tech-panel.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -19,7 +24,7 @@
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
 <style>
-  :root { --measure: 76ch; }
+  :root { --measure: 74ch; }
 
   .masthead {
     display: flex;
@@ -39,7 +44,7 @@
   .nav a:hover { color: var(--accent); }
 
   .hero {
-    max-width: 1050px;
+    max-width: 1080px;
     padding: clamp(54px, 9vw, 128px) 0 clamp(42px, 6vw, 76px);
   }
   .hero h1 {
@@ -52,7 +57,7 @@
     text-wrap: balance;
   }
   .hero__deck {
-    max-width: 56ch;
+    max-width: 58ch;
     margin: clamp(30px, 4vw, 50px) 0 0;
     font-family: var(--text);
     font-size: clamp(22px, 2.35vw, 33px);
@@ -62,24 +67,12 @@
     text-wrap: pretty;
   }
   .hero__proof {
-    max-width: 70ch;
+    max-width: 68ch;
     margin: 24px 0 0;
     font-family: var(--text);
     font-size: clamp(16px, 1.35vw, 19px);
     line-height: 1.58;
     color: var(--ink-soft);
-  }
-  .hero__photo {
-    margin: 0 0 clamp(56px, 8vw, 108px);
-    border: var(--frame) solid var(--ink);
-    overflow: hidden;
-  }
-  .hero__photo img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: cover;
-    object-position: center 42%;
   }
   .actions {
     display: flex;
@@ -93,32 +86,45 @@
     min-height: 46px;
     padding: 11px 16px;
     border: var(--frame) solid var(--ink);
+    background: transparent;
     font-family: var(--mono);
     font-size: 13px;
     color: var(--ink);
-    background: transparent;
     cursor: pointer;
   }
   .button:hover { background: var(--ink); color: var(--bg); }
   .button--quiet { border-color: var(--ink-soft); }
 
+  .hero__photo {
+    margin: 0 0 clamp(58px, 9vw, 118px);
+    border: var(--frame) solid var(--ink);
+    overflow: hidden;
+  }
+  .hero__photo img {
+    display: block;
+    width: 100%;
+    height: clamp(310px, 58vw, 740px);
+    object-fit: cover;
+    object-position: center;
+  }
+
   .section {
-    padding: clamp(56px, 8vw, 108px) 0;
+    padding: clamp(58px, 8vw, 110px) 0;
     border-top: var(--frame) solid var(--ink);
   }
   .section__head {
     display: grid;
-    grid-template-columns: minmax(0, .8fr) minmax(0, 1.45fr);
+    grid-template-columns: minmax(0, .82fr) minmax(0, 1.42fr);
     gap: clamp(28px, 6vw, 90px);
     align-items: start;
-    margin-bottom: clamp(32px, 5vw, 64px);
+    margin-bottom: clamp(34px, 5vw, 66px);
   }
   .section__head--solo { grid-template-columns: 1fr; }
-  .section h2, .foot h2 {
-    max-width: 15ch;
+  .section h2 {
+    max-width: 16ch;
     margin: 0;
     font-family: var(--display);
-    font-size: clamp(37px, 5.2vw, 74px);
+    font-size: clamp(38px, 5.2vw, 75px);
     line-height: .98;
     letter-spacing: -.035em;
   }
@@ -127,7 +133,7 @@
     margin: 0;
     font-family: var(--text);
     font-size: clamp(18px, 1.7vw, 24px);
-    line-height: 1.48;
+    line-height: 1.5;
     text-wrap: pretty;
   }
 
@@ -158,7 +164,7 @@
 
   .range {
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
+    grid-template-columns: 1.04fr .96fr;
     gap: clamp(36px, 7vw, 98px);
     align-items: start;
   }
@@ -174,17 +180,17 @@
     margin: 0;
     font-family: var(--text);
     font-size: clamp(17px, 1.5vw, 21px);
-    line-height: 1.62;
+    line-height: 1.64;
   }
 
   .capability-groups {
     display: grid;
     gap: 22px;
-    margin-top: 34px;
+    margin-top: clamp(38px, 6vw, 76px);
   }
   .capability-group {
     display: grid;
-    grid-template-columns: 72px 1fr;
+    grid-template-columns: 110px 1fr;
     gap: 18px;
     align-items: start;
   }
@@ -208,124 +214,49 @@
     font-size: 12px;
   }
 
-  .ideas-grid {
+  .fit {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 18px;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(36px, 7vw, 98px);
+    align-items: start;
   }
-  .idea {
-    min-height: 230px;
-    padding: clamp(24px, 3vw, 36px);
-    border: var(--frame) solid var(--ink);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform .14s ease, background-color .14s ease;
-  }
-  .idea:hover { transform: translateY(-3px); background: var(--bg-deeper); }
-  .idea h3 {
+  .fit__roles {
     margin: 0;
     font-family: var(--display);
-    font-size: clamp(28px, 3vw, 45px);
-    line-height: 1.02;
-    letter-spacing: -.025em;
+    font-size: clamp(30px, 4vw, 60px);
+    line-height: 1.05;
+    letter-spacing: -.03em;
+    text-wrap: balance;
   }
-  .idea p {
-    margin: 18px 0 0;
+  .fit__copy {
+    display: grid;
+    gap: 20px;
     font-family: var(--text);
-    font-size: 16px;
-    line-height: 1.52;
-    color: var(--ink-soft);
+    font-size: clamp(17px, 1.5vw, 21px);
+    line-height: 1.62;
   }
-  .idea__link {
-    margin-top: 30px;
-    font-family: var(--mono);
-    font-size: 13px;
-    color: var(--accent);
-  }
-
-  .appearances {
-    display: grid;
-    grid-template-columns: 1.25fr .75fr;
-    gap: 18px;
-    margin-top: 18px;
-  }
-  .appearance-photo, .podcast {
-    margin: 0;
-    padding: clamp(22px, 3vw, 34px);
-    border: var(--frame) solid var(--ink);
-  }
-  .appearance-photo img {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-  }
-  .appearance-photo figcaption, .podcast__label {
-    margin: 14px 0 0;
-    font-family: var(--mono);
-    font-size: 12px;
-    line-height: 1.45;
-    color: var(--ink-soft);
-  }
-  .podcast {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 28px;
-  }
-  .podcast h3 {
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(27px, 3vw, 43px);
-    line-height: 1.02;
-    letter-spacing: -.025em;
-  }
-  .podcast iframe {
-    display: block;
-    width: 100%;
-    height: 102px;
-    border: 0;
-  }
-
-  .current-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    border-top: var(--frame) solid var(--ink);
-    border-left: var(--frame) solid var(--ink);
-  }
-  .current {
-    padding: clamp(24px, 3vw, 38px);
-    border-right: var(--frame) solid var(--ink);
-    border-bottom: var(--frame) solid var(--ink);
-  }
-  .current h3 {
-    margin: 0 0 13px;
-    font-family: var(--display);
-    font-size: clamp(27px, 2.6vw, 40px);
-    line-height: 1;
-  }
-  .current p {
-    margin: 0;
-    font-family: var(--text);
-    font-size: 16px;
-    line-height: 1.58;
-  }
-  .current a { color: var(--accent); }
+  .fit__copy p { margin: 0; }
 
   footer.foot {
     margin-top: 0;
-    padding: clamp(56px, 8vw, 108px) 0;
+    padding: clamp(58px, 8vw, 100px) 0;
     border-top: var(--frame) solid var(--ink);
   }
   .foot__grid {
     display: grid;
-    grid-template-columns: minmax(0, .8fr) minmax(0, 1.45fr);
-    gap: clamp(28px, 6vw, 90px);
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(36px, 7vw, 98px);
     align-items: start;
   }
+  .foot h2 {
+    max-width: 12ch;
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(40px, 6vw, 88px);
+    line-height: .96;
+    letter-spacing: -.04em;
+  }
   .foot__copy {
-    max-width: 62ch;
     font-family: var(--text);
     font-size: clamp(18px, 1.7vw, 24px);
     line-height: 1.5;
@@ -333,8 +264,8 @@
   .foot__copy p { margin: 0; }
 
   @media (max-width: 820px) {
-    .section__head, .range, .appearances, .foot__grid { grid-template-columns: 1fr; }
-    .practice-grid, .ideas-grid, .current-grid { grid-template-columns: 1fr; }
+    .section__head, .range, .fit, .foot__grid { grid-template-columns: 1fr; }
+    .practice-grid { grid-template-columns: 1fr; }
     .masthead { align-items: flex-start; flex-direction: column; }
   }
   @media (max-width: 560px) {
@@ -348,51 +279,59 @@
   <header class="masthead">
     <a class="name" href="#top">Ron Bronson</a>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#practice">Practice</a>
-      <a href="#range">Experience</a>
-      <a href="#ideas">Writing &amp; talks</a>
-      <a href="#current">Current work</a>
-      <a href="https://ronbronson.design">Writing archive ↗</a>
+      <a href="#responsibility">Capabilities</a>
+      <a href="#range">Range</a>
+      <a href="#fit">Where I fit</a>
+      <a href="https://ronbronson.design">Writing &amp; talks ↗</a>
       <a href="https://ronbronson.dev">Things I build ↗</a>
+      <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
       <h1>I help complex institutions deliver what they promise.</h1>
-      <p class="hero__deck">I build the teams and operating models that turn a mandate into working services.</p>
-      <p class="hero__proof">My work spans technology, service delivery, organizational change, and executive leadership. I am most useful when the problem crosses functions and someone has to make the whole thing move.</p>
+      <p class="hero__deck">I lead end-to-end service delivery, from shaping the mandate and assembling the team through launch, operation, and continuous improvement.</p>
+      <p class="hero__proof">I work where policy, technology, operations, and organizational change meet. I can set direction, make hard tradeoffs, and get close enough to the work to know whether it functions.</p>
       <div class="actions">
-        <a class="button" href="#practice">What I do</a>
-        <a class="button button--quiet" href="#" data-contact>Contact</a>
+        <a class="button" href="#responsibility">Capabilities</a>
+        <button class="button button--quiet" type="button" data-contact>Contact</button>
       </div>
     </section>
 
     <figure class="hero__photo">
-      <img src="https://taubmancollege.umich.edu/wp-content/uploads/2023/12/ron-bronson-1024x683.jpg" alt="Ron Bronson" />
+      <img src="https://taubmancollege.umich.edu/wp-content/uploads/2026/04/bronson-civic-tech-panel.jpg" alt="Ron Bronson leading a civic technology discussion with a group" />
     </figure>
 
-    <section class="section" id="practice">
+    <section class="section" id="responsibility">
       <div class="section__head section__head--solo">
-        <h2>What I am brought in to do.</h2>
+        <h2>What I can take responsibility for.</h2>
       </div>
 
       <div class="practice-grid">
         <article class="practice">
-          <h3>Lead complex implementation</h3>
-          <p>Bring product, technology, research, communications, policy, and operations into one delivery effort. Set direction, make the tradeoffs visible, and keep the work moving.</p>
+          <h3>End-to-end services</h3>
+          <p>Set direction for a service across digital and non-digital channels. Define outcomes, priorities, governance, live performance, and the route from discovery to continuous improvement.</p>
         </article>
         <article class="practice">
-          <h3>Build delivery capability</h3>
-          <p>Shape teams, management structures, hiring, standards, and working practices so an organization can keep delivering after the initial push.</p>
+          <h3>Transformation programmes</h3>
+          <p>Lead work that cuts across policy, operations, technology, communications, suppliers, and frontline teams. Turn a broad mandate into an accountable delivery system.</p>
         </article>
         <article class="practice">
-          <h3>Modernize services</h3>
-          <p>Improve services, platforms, workflows, and internal systems from discovery through implementation, adoption, and sustainment.</p>
+          <h3>Delivery capability</h3>
+          <p>Build multidisciplinary teams, management structures, hiring, standards, coaching, and decision practices that make delivery repeatable and leave the institution stronger.</p>
         </article>
         <article class="practice">
-          <h3>Step into difficult work</h3>
-          <p>Take on initiatives that are stalled, politically difficult, technically uncertain, or spread across too many owners. Clarify what matters and create a path people can act on.</p>
+          <h3>Service recovery</h3>
+          <p>Step into stalled, high-risk, or politically sensitive programmes. Find the real constraint, reset scope and ownership, and establish a credible path forward.</p>
+        </article>
+        <article class="practice">
+          <h3>Service and technology modernization</h3>
+          <p>Improve platforms, workflows, shared systems, and public-facing services around user needs, operational reality, accessibility, interoperability, and long-term maintainability.</p>
+        </article>
+        <article class="practice">
+          <h3>Field practice</h3>
+          <p>Use research, service design, product strategy, content, information architecture, prototyping, and technical judgment to understand what is happening and ship the right thing.</p>
         </article>
       </div>
     </section>
@@ -400,34 +339,38 @@
     <section class="section" id="range">
       <div class="section__head">
         <h2>Strategy through field delivery.</h2>
-        <p class="section__intro">My career has crossed several disciplines because the work required it. The throughline is responsibility for how institutions use technology, organize delivery, and make consequential decisions.</p>
+        <p class="section__intro">My work has crossed disciplines because delivery does. The throughline is responsibility for how institutions use technology, organize delivery, build teams, and make consequential decisions.</p>
       </div>
 
       <div class="range">
-        <p class="range__statement">I have led statewide digital operations, city service modernization, cross-agency initiatives, public platforms, and multidisciplinary organizations of more than 40 people.</p>
-        <p class="range__detail">At 18F, I advanced from hands-on delivery to leading its 40-plus-person multidisciplinary design organization, serving on the leadership team and taking executive assignments across Technology Transformation Services, the Federal Trade Commission, and GSA headquarters.</p>
+        <p class="range__statement">Across more than two decades, I have led statewide digital operations, city service modernization, cross-agency programmes, public platforms, and multidisciplinary organizations of more than 40 people.</p>
+        <p class="range__detail">That range lets me move between service direction, staffing, governance, portfolio decisions, executive advice, user research, technical prototypes, communications, and live delivery without losing the thread.</p>
       </div>
 
       <div class="capability-groups" aria-label="Core capabilities">
         <div class="capability-group">
-          <h3>Lead</h3>
+          <h3>Direction</h3>
           <div class="capabilities">
-            <span>Institutional capacity</span>
+            <span>Service ownership</span>
             <span>Programme delivery</span>
             <span>Digital transformation</span>
-            <span>Organizational design</span>
+            <span>Institutional capacity</span>
+            <span>Operating models</span>
+            <span>Governance</span>
+            <span>Workforce strategy</span>
             <span>Executive advisory</span>
-            <span>Workforce planning</span>
           </div>
         </div>
         <div class="capability-group">
-          <h3>Build</h3>
+          <h3>Delivery</h3>
           <div class="capabilities">
             <span>Product strategy</span>
-            <span>Service modernization</span>
+            <span>Service design</span>
             <span>User research</span>
+            <span>Content strategy</span>
             <span>Information architecture</span>
             <span>Accessibility</span>
+            <span>Front-end systems</span>
             <span>Technical delivery</span>
             <span>Strategic communications</span>
             <span>AI &amp; agent workflows</span>
@@ -436,77 +379,17 @@
       </div>
     </section>
 
-    <section class="section" id="ideas">
+    <section class="section" id="fit">
       <div class="section__head section__head--solo">
-        <h2>Writing and talks.</h2>
+        <h2>Where I fit.</h2>
       </div>
 
-      <div class="ideas-grid">
-        <a class="idea" href="https://www.ixda.no/talks/design-as-repair" target="_blank" rel="noopener">
-          <div>
-            <h3>Design as Repair</h3>
-            <p>A case for treating design as maintenance, remediation, and responsibility.</p>
-          </div>
-          <span class="idea__link">Watch / read ↗</span>
-        </a>
-        <a class="idea" href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like" target="_blank" rel="noopener">
-          <div>
-            <h3>What Forward-Deployed Design Actually Looks Like</h3>
-            <p>A field guide to embedded delivery work and the conditions that make it useful.</p>
-          </div>
-          <span class="idea__link">Read ↗</span>
-        </a>
-        <a class="idea" href="https://digital.gov/resources/deceptive-design-how-to-identify-and-combat-consequence-design" target="_blank" rel="noopener">
-          <div>
-            <h3>Consequence Design</h3>
-            <p>A framework for finding harm, coercion, and failure before they harden into ordinary service behavior.</p>
-          </div>
-          <span class="idea__link">Explore ↗</span>
-        </a>
-        <a class="idea" href="https://blog.ronbronson.com/better-technology-for-cruelty-or-administrative-burden-as-a-service" target="_blank" rel="noopener">
-          <div>
-            <h3>Better Technology for Cruelty</h3>
-            <p>Better delivery can make bad policy more efficient. Implementation carries its own responsibility.</p>
-          </div>
-          <span class="idea__link">Read ↗</span>
-        </a>
-      </div>
-
-      <div class="appearances">
-        <figure class="appearance-photo">
-          <a href="https://vimeo.com/651801535" target="_blank" rel="noopener">
-            <img src="https://i.vimeocdn.com/video/1315124853-7d4a188db0d7741012eb4895705ce79b3b26c915dae12e75489763e376387ba1-d_2400?region=us" alt="Ron Bronson speaking at IxDA Oslo" loading="lazy" />
-          </a>
-          <figcaption>The Designer’s Share of the Problem, IxDA Oslo</figcaption>
-        </figure>
-        <div class="podcast">
-          <div>
-            <h3>Repairing Service Design for the Age of AI</h3>
-            <p class="podcast__label">The Service Design Show, episode 236</p>
-          </div>
-          <iframe src="https://creators.spotify.com/pod/profile/servicedesignshow/embed/episodes/Repairing-Service-Design-for-the-Age-of-AI--Ron-Bronson--Ep--236-e37fnv4/a-ac4jvtp" frameborder="0" scrolling="no" title="Repairing Service Design for the Age of AI, Service Design Show episode 236" loading="lazy"></iframe>
+      <div class="fit">
+        <p class="fit__roles">Service Owner. Programme Director. Head of Delivery. Transformation Lead. Institutional Capacity Lead. Strategic advisor with execution responsibility.</p>
+        <div class="fit__copy">
+          <p>The fit is a senior role or mandate with responsibility for an end-to-end service, a transformation programme, or the capability around it.</p>
+          <p>This work shows up in governments, multilateral organizations, healthcare systems, universities, nonprofits, infrastructure providers, and regulated services. The strongest mandate includes responsibility for the service, the team, and the conditions required to deliver.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="current">
-      <div class="section__head section__head--solo">
-        <h2>What I am building now.</h2>
-      </div>
-
-      <div class="current-grid">
-        <article class="current">
-          <h3>0000th</h3>
-          <p>Infrastructure and field practice for organizations deploying agents and delegated decision systems. <a href="https://0000th.ai" target="_blank" rel="noopener">Visit 0000th ↗</a></p>
-        </article>
-        <article class="current">
-          <h3>Forward-Deployed Design</h3>
-          <p>A practical guide and workshop series for leaders building embedded delivery practices and practitioners already doing the work.</p>
-        </article>
-        <article class="current">
-          <h3>Public Mechanics</h3>
-          <p>A University of Michigan course about how services work, how institutions make them, and what technology changes. <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/" target="_blank" rel="noopener">View the course ↗</a></p>
-        </article>
       </div>
     </section>
   </main>
@@ -515,9 +398,9 @@
     <div class="foot__grid">
       <h2>Phone a friend.</h2>
       <div class="foot__copy">
-        <p>Sometimes you need advice, not an upsell. If you have a delivery problem to tackle and want another view from someone who has been in the trenches, send me a note.</p>
+        <p>Maybe you need advice, not an upsell. Maybe you have a delivery problem to tackle and want a view from someone who has been there. Send me a note.</p>
         <div class="actions">
-          <a class="button" href="#" data-contact>Email me</a>
+          <button class="button" type="button" data-contact>Email Ron</button>
         </div>
       </div>
     </div>
@@ -528,10 +411,9 @@
       var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
         return String.fromCharCode(n);
       }).join('');
-      var subject = encodeURIComponent('A problem worth talking through');
-      document.querySelectorAll('[data-contact]').forEach(function (link) {
-        link.addEventListener('click', function (event) {
-          event.preventDefault();
+      var subject = encodeURIComponent('A delivery problem to talk through');
+      document.querySelectorAll('[data-contact]').forEach(function (button) {
+        button.addEventListener('click', function () {
           window.location.href = 'mailto:' + address + '?subject=' + subject;
         });
       });
