@@ -3,16 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ron Bronson | Forward-Deployed Design</title>
-<meta name="description" content="Ron Bronson is a design leader who builds forward-deployed practices, rescues consequential digital work, and works across strategy, technology, services, and teams." />
+<title>Ron Bronson | Design, delivery, and consequential technology</title>
+<meta name="description" content="Ron Bronson is a design leader, builder, and teacher whose work spans the web, institutional delivery, forward-deployed design, and consequential technology." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ron Bronson" />
 <meta property="og:description" content="Design belongs where the problem is." />
-<meta property="og:image" content="https://ronbronson.com/assets/workshop.svg" />
-<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="Ron Bronson" />
 <meta name="twitter:description" content="Design belongs where the problem is." />
-<meta name="twitter:image" content="https://ronbronson.com/assets/workshop.svg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -23,7 +21,7 @@
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
 <style>
-  :root { --measure: 70ch; }
+  :root { --measure: 68ch; }
 
   .masthead {
     display: flex;
@@ -44,20 +42,20 @@
 
   .hero {
     max-width: 1120px;
-    padding: clamp(58px, 9vw, 136px) 0 clamp(58px, 8vw, 108px);
+    padding: clamp(58px, 9vw, 136px) 0 clamp(60px, 8vw, 112px);
   }
   .hero h1 {
-    max-width: 13ch;
+    max-width: 14ch;
     margin: 0;
     font-family: var(--display);
-    font-size: clamp(54px, 9.6vw, 138px);
+    font-size: clamp(54px, 9.4vw, 136px);
     line-height: .9;
     letter-spacing: -.05em;
     text-wrap: balance;
   }
   .hero__deck {
     max-width: 58ch;
-    margin: clamp(34px, 4.5vw, 54px) 0 0;
+    margin: clamp(34px, 4.5vw, 56px) 0 0;
     font-family: var(--text);
     font-size: clamp(22px, 2.35vw, 33px);
     font-weight: 500;
@@ -86,12 +84,12 @@
   .button:hover { background: var(--ink); color: var(--bg); }
 
   .scene {
-    margin: 0 0 clamp(56px, 8vw, 108px);
+    margin: 0 0 clamp(58px, 8vw, 112px);
   }
   .scene img {
     display: block;
     width: 100%;
-    max-height: min(78vh, 900px);
+    max-height: min(76vh, 860px);
     object-fit: cover;
     object-position: center;
     border: var(--frame) solid var(--ink);
@@ -99,9 +97,9 @@
 
   .section {
     display: grid;
-    grid-template-columns: minmax(190px, .72fr) minmax(0, 1.55fr);
-    gap: clamp(32px, 7vw, 104px);
-    padding: clamp(58px, 8vw, 110px) 0;
+    grid-template-columns: minmax(190px, .68fr) minmax(0, 1.55fr);
+    gap: clamp(34px, 7vw, 108px);
+    padding: clamp(58px, 8vw, 112px) 0;
     border-top: var(--frame) solid var(--ink);
     align-items: start;
   }
@@ -109,39 +107,32 @@
     max-width: 12ch;
     margin: 0;
     font-family: var(--display);
-    font-size: clamp(38px, 5.4vw, 78px);
-    line-height: .96;
+    font-size: clamp(38px, 5.2vw, 76px);
+    line-height: .97;
     letter-spacing: -.04em;
     text-wrap: balance;
   }
   .prose {
     max-width: var(--measure);
     font-family: var(--text);
-    font-size: clamp(18px, 1.65vw, 23px);
+    font-size: clamp(19px, 1.7vw, 24px);
     line-height: 1.58;
     text-wrap: pretty;
   }
-  .prose p { margin: 0 0 1.2em; }
-  .prose p:last-child { margin-bottom: 0; }
-  .prose .big {
-    font-family: var(--display);
-    font-size: clamp(30px, 3.7vw, 56px);
-    line-height: 1.08;
-    letter-spacing: -.03em;
-  }
+  .prose p { margin: 0; }
 
   .foot {
-    padding: clamp(62px, 9vw, 124px) 0 clamp(36px, 5vw, 58px);
+    padding: clamp(62px, 9vw, 124px) 0 clamp(40px, 5vw, 60px);
     border-top: var(--frame) solid var(--ink);
   }
   .foot__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: clamp(34px, 7vw, 104px);
+    grid-template-columns: .7fr 1.3fr;
+    gap: clamp(36px, 7vw, 108px);
     align-items: end;
   }
   .foot h2 {
-    max-width: 11ch;
+    max-width: 10ch;
     margin: 0;
     font-family: var(--display);
     font-size: clamp(46px, 7vw, 100px);
@@ -150,7 +141,7 @@
   }
   .foot__copy {
     font-family: var(--text);
-    font-size: clamp(18px, 1.7vw, 24px);
+    font-size: clamp(19px, 1.7vw, 24px);
     line-height: 1.55;
   }
   .foot__copy p { margin: 0; }
@@ -168,10 +159,6 @@
   <header class="masthead">
     <a class="name" href="#top">Ron Bronson</a>
     <nav class="nav" aria-label="Primary navigation">
-      <a href="#forward-deployed">Forward-deployed design</a>
-      <a href="#web">Web</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#now">Now</a>
       <a href="https://ronbronson.design">Writing &amp; talks ↗</a>
       <a href="https://ronbronson.dev">Things I build ↗</a>
       <a href="#contact">Contact</a>
@@ -181,7 +168,7 @@
   <main id="top">
     <section class="hero">
       <h1>Design belongs where the problem is.</h1>
-      <p class="hero__deck">I am a design leader who built and led one of the first large-scale forward-deployed design practices anywhere. I work from strategy through delivery, inside the systems and institutions where decisions become real.</p>
+      <p class="hero__deck">I am a design leader, builder, and teacher with two decades across the web, institutional delivery, and technical implementation. I built and led one of the first large-scale forward-deployed design practices, with 40 people working inside consequential delivery problems.</p>
       <div class="actions">
         <button class="button" type="button" data-contact>Email me</button>
       </div>
@@ -191,56 +178,40 @@
       <img src="assets/workshop.svg" alt="Ron Bronson leading a workshop while participants listen and take notes" />
     </figure>
 
-    <section class="section" id="forward-deployed">
-      <h2>Forward-deployed design.</h2>
-      <div class="prose">
-        <p class="big">Forward-deployed design puts designers inside the problem.</p>
-        <p>They run discovery, facilitate decisions, manage stakeholders, scope work, lead delivery, and make things. They move between research, content, service design, product, and code because the work does not arrive neatly sorted.</p>
-        <p>For eight years I worked inside this model. For four, I led a 40-person practice built around it. We shipped working products, procurement packages, and capability handoffs. We also developed designers who moved into product, engineering, and senior leadership.</p>
-      </div>
-    </section>
-
-    <section class="section" id="web">
+    <section class="section">
       <h2>I came up through the web.</h2>
       <div class="prose">
-        <p class="big">I spent a decade rescuing websites and keeping institutions online.</p>
-        <p>I managed migrations, moved organizations from hand-coded pages to content management systems, then through the social media era. I ran marketing and strategic communications as the web person, wrote code, trained staff, and kept the systems running.</p>
-        <p>That history is why I do not treat design as a layer added near the end. A service is content, technology, policy, operations, people, maintenance, and the decisions that hold it together.</p>
+        <p>For a decade I rescued and ran institutional websites. I moved organizations from hand-coded pages to content management systems, then through the social media era. I owned marketing and strategic communications because the web person often owned everything. I wrote code, trained staff, managed vendors, and kept public systems working.</p>
       </div>
     </section>
 
-    <section class="section" id="leadership">
-      <h2>Leadership without leaving the work.</h2>
+    <section class="section">
+      <h2>I lead without leaving the work.</h2>
       <div class="prose">
-        <p class="big">My dad always told me that if you are going to be in charge, you need to know how to mop the floors too.</p>
-        <p>That is a metaphor. You cannot afford my floor-mopping rate.</p>
-        <p>I have led teams, big and small, for a long time. I have managed managers, built practices, rescued consequential projects, and helped people grow into their next jobs. I teach urban technology and speak globally. I still write, research, prototype, facilitate, debug, and build.</p>
-        <p>I have shipped mission-critical resources for local communities, rescued national-scale projects, helped institutions avoid spending millions on the wrong approach, and built teams whose members went on to lead elsewhere.</p>
+        <p>That foundation lets me move across research, service design, content, product, communications, organizational design, and executive advisory. I have managed managers, built and grown multidisciplinary teams, rescued consequential projects, shipped mission-critical resources for local communities, and helped institutions avoid spending millions on the wrong approach. I speak globally and teach urban technology. I still write, prototype, facilitate, debug, and build.</p>
       </div>
     </section>
 
-    <section class="section" id="now">
-      <h2>The work after launch.</h2>
+    <section class="section">
+      <h2>I care what happens after launch.</h2>
       <div class="prose">
-        <p class="big">The cheaper generating solutions gets, the scarcer understanding the problem becomes.</p>
-        <p>I care about who holds authority, where judgment lives, which handoffs fail, and who absorbs the friction. My current work connects forward-deployed design to service mechanics, trajectory management, agent experience, and institutional capacity.</p>
-        <p>The point is not to make broken systems more efficient. It is to improve what they become and protect public trust while doing it.</p>
+        <p>The cheaper generating solutions gets, the scarcer understanding the problem becomes. I study how services actually work: who holds authority, where judgment lives, how paperwork moves, which handoffs fail, and who absorbs the friction. My work on forward-deployed design, trajectory management, agent experience, and public trust follows the same line. Better technology should improve what a system becomes.</p>
       </div>
     </section>
 
-    <section class="section" id="side-quests">
+    <section class="section">
       <h2>Side quests.</h2>
       <div class="prose">
-        <p>I host a radio show, coach a state-championship high school tennis team, run OregonTennis.org, build sabermetrics for pesäpallo at mallo.fi, and invented Tennis Polo. The pattern is consistent: learn the system, find the gap, build what is missing.</p>
+        <p>I host a radio show, coach a state-championship high school tennis team, run OregonTennis.org, build pesäpallo sabermetrics at mallo.fi, and invented Tennis Polo. The pattern is the same everywhere: learn the system, find the gap, build what is missing.</p>
       </div>
     </section>
   </main>
 
   <footer class="foot" id="contact">
     <div class="foot__grid">
-      <h2>Phone a friend.</h2>
+      <h2>Contact.</h2>
       <div class="foot__copy">
-        <p>Email me about a role, a delivery problem, or a forward-deployed design practice.</p>
+        <p>Email me about a role, a hard delivery problem, or a forward-deployed design practice.</p>
         <div class="actions">
           <button class="button" type="button" data-contact>Email Ron</button>
         </div>
@@ -253,7 +224,7 @@
       var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
         return String.fromCharCode(n);
       }).join('');
-      var subject = encodeURIComponent('Forward-deployed design or a hard delivery problem');
+      var subject = encodeURIComponent('A role or a hard delivery problem');
       document.querySelectorAll('[data-contact]').forEach(function (button) {
         button.addEventListener('click', function () {
           window.location.href = 'mailto:' + address + '?subject=' + subject;
