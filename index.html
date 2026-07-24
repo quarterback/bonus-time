@@ -8,9 +8,11 @@
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ron Bronson" />
 <meta property="og:description" content="Design belongs where the problem is." />
-<meta name="twitter:card" content="summary" />
+<meta property="og:image" content="https://ronbronson.com/assets/53436471670_063c296b1d_k.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
 <meta name="twitter:description" content="Design belongs where the problem is." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/53436471670_063c296b1d_k.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -120,6 +122,30 @@
     text-wrap: pretty;
   }
   .prose p { margin: 0; }
+  .prose a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .prose a:hover { color: var(--accent); }
+  .evidence {
+    margin-top: clamp(22px, 3vw, 34px) !important;
+    font-family: var(--mono);
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+  }
+  .evidence a { color: var(--accent); border-bottom: 0; }
+  .embed {
+    margin-top: clamp(26px, 4vw, 42px);
+  }
+  .embed iframe {
+    display: block;
+    width: 100%;
+    height: 352px;
+    border: 0;
+    border-radius: 12px;
+  }
 
   .foot {
     padding: clamp(62px, 9vw, 124px) 0 clamp(40px, 5vw, 60px);
@@ -169,19 +195,21 @@
     <section class="hero">
       <h1>Design belongs where the problem is.</h1>
       <p class="hero__deck">I am a design leader, builder, and teacher with two decades across the web, institutional delivery, and technical implementation. I built and led one of the first large-scale forward-deployed design practices, with 40 people working inside consequential delivery problems.</p>
+      <p class="evidence"><a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">What Forward-Deployed Design Actually Looks Like ↗</a></p>
       <div class="actions">
         <button class="button" type="button" data-contact>Email me</button>
       </div>
     </section>
 
     <figure class="scene">
-      <img src="assets/workshop.svg" alt="Ron Bronson leading a workshop while participants listen and take notes" />
+      <img src="assets/53436471670_063c296b1d_k.jpg" alt="Ron Bronson leading a workshop while participants listen and take notes" />
     </figure>
 
     <section class="section">
       <h2>I came up through the web.</h2>
       <div class="prose">
         <p>For a decade I rescued and ran institutional websites. I moved organizations from hand-coded pages to content management systems, then through the social media era. I owned marketing and strategic communications because the web person often owned everything. I wrote code, trained staff, managed vendors, and kept public systems working.</p>
+        <p class="evidence"><a href="https://ronbronson.dev">Selected builds and technical work ↗</a></p>
       </div>
     </section>
 
@@ -189,6 +217,7 @@
       <h2>I lead without leaving the work.</h2>
       <div class="prose">
         <p>That foundation lets me move across research, service design, content, product, communications, organizational design, and executive advisory. I have managed managers, built and grown multidisciplinary teams, rescued consequential projects, shipped mission-critical resources for local communities, and helped institutions avoid spending millions on the wrong approach. I speak globally and teach urban technology. I still write, prototype, facilitate, debug, and build.</p>
+        <p class="evidence"><a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics, University of Michigan ↗</a></p>
       </div>
     </section>
 
@@ -196,13 +225,16 @@
       <h2>I care what happens after launch.</h2>
       <div class="prose">
         <p>The cheaper generating solutions gets, the scarcer understanding the problem becomes. I study how services actually work: who holds authority, where judgment lives, how paperwork moves, which handoffs fail, and who absorbs the friction. My work on forward-deployed design, trajectory management, agent experience, and public trust follows the same line. Better technology should improve what a system becomes.</p>
+        <div class="embed">
+          <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Podcast episode featuring Ron Bronson"></iframe>
+        </div>
       </div>
     </section>
 
     <section class="section">
       <h2>Side quests.</h2>
       <div class="prose">
-        <p>I host a radio show, coach a state-championship high school tennis team, run OregonTennis.org, build pesäpallo sabermetrics at mallo.fi, and invented Tennis Polo. The pattern is the same everywhere: learn the system, find the gap, build what is missing.</p>
+        <p>I host a radio show, coach a state-championship high school tennis team, run <a href="https://oregontennis.org">OregonTennis.org</a>, build pesäpallo sabermetrics at <a href="https://mallo.fi">mallo.fi</a>, and invented <a href="https://en.wikipedia.org/wiki/Tennis_polo">Tennis Polo</a>. The pattern is the same everywhere: learn the system, find the gap, build what is missing.</p>
       </div>
     </section>
   </main>
