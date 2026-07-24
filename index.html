@@ -255,34 +255,22 @@
   }
   .current a { color: var(--accent); }
 
-  .contact {
-    display: grid;
-    grid-template-columns: 1.2fr .8fr;
-    gap: clamp(32px, 7vw, 90px);
-    align-items: end;
+  footer.foot {
+    margin-top: 0;
+    padding: clamp(28px, 4vw, 44px) 0;
+    border-top: var(--frame) solid var(--ink);
   }
-  .contact__statement {
+  .foot__contact {
     margin: 0;
-    font-family: var(--display);
-    font-size: clamp(37px, 6vw, 88px);
-    line-height: .96;
-    letter-spacing: -.04em;
+    font-family: var(--mono);
+    font-size: clamp(14px, 1.25vw, 17px);
+    line-height: 1.5;
   }
-  .contact__aside {
-    font-family: var(--text);
-    font-size: 18px;
-    line-height: 1.58;
-  }
-  .contact__aside p { margin: 0 0 18px; }
-
-  footer.foot { margin-top: 0; padding-top: 34px; border-top: var(--frame) solid var(--ink); }
-  .foot__quote { margin: 0; font-family: var(--text); font-size: clamp(15px, 1.2vw, 17px); color: var(--ink-soft); }
-  .foot__quote cite { font-style: normal; font-family: var(--mono); font-size: 13px; letter-spacing: .04em; }
-  .colophon .digression { color: var(--ink); }
-  .colophon .digression::before { content: "\21B3  "; color: var(--accent); }
+  .foot__contact a { color: var(--ink); }
+  .foot__contact a:hover { color: var(--accent); }
 
   @media (max-width: 820px) {
-    .section__head, .range, .contact { grid-template-columns: 1fr; }
+    .section__head, .range { grid-template-columns: 1fr; }
     .practice-grid, .ideas-grid, .current-grid { grid-template-columns: 1fr; }
     .masthead { align-items: flex-start; flex-direction: column; }
   }
@@ -350,10 +338,10 @@
       </div>
 
       <div class="range">
-        <p class="range__statement">I have led statewide digital operations, city service modernization, cross-agency initiatives, and multidisciplinary organizations of more than 40 people.</p>
+        <p class="range__statement">I have led statewide digital operations, city service modernization, cross-agency initiatives, public platforms, and multidisciplinary organizations of more than 40 people.</p>
         <div>
-          <p class="range__detail">At 18F, I advanced from hands-on delivery to leading its 40-plus-person multidisciplinary design organization, serving on the leadership team and taking executive assignments across Technology Transformation Services, the Federal Trade Commission, and GSA headquarters.</p>
-          <p class="range__detail">My experience ranges from research, information architecture, content strategy, accessibility, front-end systems, and product delivery to managing managers, allocating people across portfolios, shaping organizational strategy, and advising executive teams.</p>
+          <p class="range__detail">The work has included institutional websites and platform migrations, statewide digital and social media, municipal services, large-scale technology delivery, organizational design, public communication, teaching, and new ventures.</p>
+          <p class="range__detail">I remain fluent in research, information architecture, content, accessibility, front-end systems, product delivery, staffing, management, portfolio decisions, executive advising, and public communication.</p>
         </div>
       </div>
 
@@ -439,61 +427,16 @@
           <p>A practical guide and workshop series for leaders building embedded delivery practices and practitioners already doing the work.</p>
         </article>
         <article class="current">
-          <h3>Teaching and public mechanics</h3>
-          <p>I teach urban technology at the University of Michigan and develop practical ways to understand how institutions, technology, and public life meet.</p>
+          <h3>Public Mechanics</h3>
+          <p>A University of Michigan course about how services work, how institutions make them, and what technology changes. <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/" target="_blank" rel="noopener">View the course ↗</a></p>
         </article>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="contact">
-        <p class="contact__statement">Bring me the problem that does not fit inside one function.</p>
-        <div class="contact__aside">
-          <p>I am looking for senior institutional roles, international delivery work, transformation programmes, strategic advisory engagements, and selected workshops or collaborations.</p>
-          <div class="actions">
-            <a class="button" href="https://www.linkedin.com/in/ronbronson" target="_blank" rel="noopener">Get in touch ↗</a>
-            <a class="button button--quiet" href="https://ronbronson.design">Writing &amp; talks ↗</a>
-          </div>
-        </div>
       </div>
     </section>
   </main>
 
-  <footer class="foot">
-    <p class="foot__quote">“I use technology in order to hate it properly.” <cite>— Nam June Paik</cite></p>
-    <section class="colophon" aria-label="Colophon, with digressions">
-      <h2>Colophon, with Digressions</h2>
-      <p class="digression" id="digression">Inexplicably, a Green Bay Packers shareholder.</p>
-      <p>Built with HTML, responsive CSS, JS, GitHub, and Vercel. Colour is set by a small client-side palette engine that audits its own WCAG contrast.</p>
-      <p>Type currently in use: <b>Author</b> (display), <b>Switzer</b> SemiBold (deck), <b>Hanken Grotesk</b> (running text), and <b>RX100</b> (labels).</p>
-    </section>
+  <footer class="foot" id="contact">
+    <p class="foot__contact"><a href="mailto:bronsonr@umich.edu">bronsonr@umich.edu</a> · <a href="tel:+19713508381">971-350-8381</a></p>
   </footer>
-
-  <script>
-    (function () {
-      var DIGRESSIONS = [
-        "Inexplicably, a Green Bay Packers shareholder.",
-        "Favorite sports teams: Toronto Blue Jays, Vimpelin Veto, New Jersey Devils, Lapuan Virkiä, <s>New York Jets</s>, Portland Timbers, New York Knicks, Portland Thorns, Brighton &amp; Hove Albion, Sassuolo, Toluca, Toronto Tempo, Montreal Expos (RIP)",
-        "<em>Have you seen my fragrance collection?</em> <a href='https://www.oksmelly.xyz/' target='_blank' rel='noopener'>it’s here</a>.",
-        "I’m a longtime tea sommelier. Ask me for loose-leaf recs!",
-        "Favorite wine regions: Slovenia, Georgia or anything that aged in amphorae or an old boot. I’m not picky.",
-        "Last.fm til they shut it down. Check out my scrobbles: <a href='https://www.last.fm/user/statechampion' target='_blank' rel='noopener'>last.fm/user/statechampion</a>",
-        "I’ve coached high school tennis for ten years across 3 states. My career varsity record apparently is 91-33-4. 1 team state championship, 4 District/Regional titles, 5 Conference titles. 4 individual state champions. So far…",
-        "Yes, I have a <a href='https://www.discogs.com/user/quarterback/collection?header=1' target='_blank' rel='noopener'>Discogs</a> 🙄",
-        "I actually grew up watching golf, because my grandfather played. I still like a Par 3 because of him.",
-        "Last time I went fishing? 1994.",
-        "Unsurprisingly, I was once a bar trivia host in Bloomington. One step closer to my true calling: game show host."
-      ];
-      var el = document.getElementById("digression");
-      if (!el) return;
-      var last = -1;
-      try { last = parseInt(sessionStorage.getItem("rb-digression"), 10); } catch (e) {}
-      var i = Math.floor(Math.random() * DIGRESSIONS.length);
-      while (DIGRESSIONS.length > 1 && i === last) i = Math.floor(Math.random() * DIGRESSIONS.length);
-      try { sessionStorage.setItem("rb-digression", i); } catch (e) {}
-      el.innerHTML = DIGRESSIONS[i];
-    })();
-  </script>
 
 </div>
 </body>
