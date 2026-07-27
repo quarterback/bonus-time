@@ -5,10 +5,20 @@ Source for **ronbronson.com** — the front door for the four sites.
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **Photos** — evidence, not decoration. Each one shows a room being run.
-2. **A few orientation grafs** — name things, don't explain them. The point is the
-   pattern (convening, governing, coaching across sectors for two decades), not an
-   inventory of every event, and not a career timeline.
+1. **Photos** — evidence, not decoration. **Each one names an institution**: Design For
+   The Public, 18F at GSA, Taubman College, AIGA Portland, the Oregon Athletic Coaches
+   Association, coaching. Pick images that show a room, a cohort, a banner, or a
+   governing body — never a screenshot of software, and never a solo speaker shot. A
+   photo of Ron presenting proves practitioner; a photo of the room proves institution.
+2. **A few orientation grafs** — written in the grammar of appointment: *hired me,
+   asked me, made me president, appointed me*. The career is a sequence of people
+   trusting Ron to build capability that didn't exist yet, in unrelated domains. That
+   is the signal, and it is the thing every previous version of this page buried.
+   Not an inventory of events, not a career timeline, not proof he still does the work.
+
+   The test: **if someone spends two minutes here, do they realize this person has
+   repeatedly been entrusted to build organizations, professions, communities, and
+   public institutions?** If a change doesn't help that, it doesn't belong.
 3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
 4. **Contact.**
 
