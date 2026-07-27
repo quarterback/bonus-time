@@ -62,11 +62,23 @@
     font-weight: 700; font-style: italic; font-display: swap;
   }
 
-  /* Body copy only. --display (Author) and --mono (RX100) are untouched, and
-     both are self-hosted, so the page now loads no fonts from a third party. */
+  /* ── PP Pangram Sans — the small-text/UI face: photo captions, card
+     subtitles, footer. Replaces the mono register (RX100) in those three
+     places. The upload ships no Regular in the standard width (upright goes
+     Thin / Medium / Semibold / Bold; "Regular" exists only as an italic), so
+     Medium at 500 is the text weight — which is the right pick at 11–13px
+     anyway. No woff2 in the set either, so .woff is all there is. ─────── */
+  @font-face {
+    font-family: "PP Pangram Sans";
+    src: url("assets/fonts/PPPangramSans-Medium.woff") format("woff");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+
+  /* --display (Author) stays. --mono (RX100) is now unused on this page. */
   :root {
     --text: "PP Neue Montreal Text", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --sans: var(--text);
+    --ui: "PP Pangram Sans", "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   }
   body { font-family: var(--text); }
 
@@ -101,7 +113,8 @@
     padding: 5px 8px;
     background: var(--ink);
     color: var(--bg);
-    font-family: var(--mono);
+    font-family: var(--ui);
+    font-weight: 500;
     font-size: 11px;
     letter-spacing: .04em;
     text-transform: uppercase;
@@ -158,7 +171,8 @@
      (RBPalette.audit()), which fails AA for text this size. Hierarchy comes
      from the size and typeface gap against the display-serif title instead. */
   .door__note {
-    font-family: var(--mono);
+    font-family: var(--ui);
+    font-weight: 500;
     font-size: 13px;
     line-height: 1.45;
     color: var(--ink);
@@ -175,22 +189,57 @@
     margin-top: clamp(44px, 6vw, 76px);
     padding: clamp(24px, 3vw, 36px) 0 clamp(36px, 4vw, 52px);
     border-top: var(--frame) solid var(--ink);
-    font-family: var(--mono);
+    font-family: var(--ui);
+    font-weight: 500;
     font-size: 14px;
   }
   .foot__label { color: var(--ink); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
-  .foot__mail {
-    width: auto;
-    background: none;
-    border: 0;
-    padding: 0;
-    font: inherit;
-    text-align: left;
+  .foot__pitch {
+    flex: 1 1 22ch;
+    margin: 0;
+    font-family: var(--text);
+    font-size: clamp(19px, 1.6vw, 23px);
+    line-height: 1.45;
+    color: var(--ink);   /* site.css sets .foot to --ink-soft (3.85:1) — override */
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 11px 18px;
+    border: var(--frame) solid var(--ink);
+    background: transparent;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 14px;
     color: var(--ink);
-    border-bottom: var(--frame) solid var(--accent);
     cursor: pointer;
   }
-  .foot__mail:hover { color: var(--accent); }
+  .button:hover { background: var(--ink); color: var(--bg); }
+
+  /* Listen — the episode does what the grafs deliberately don't: let someone
+     hear how Ron actually talks about the work. */
+  .listen {
+    margin: clamp(46px, 6vw, 76px) 0 0;
+    max-width: 720px;
+  }
+  .listen__label {
+    display: block;
+    margin-bottom: 12px;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .listen iframe {
+    display: block;
+    width: 100%;
+    height: 152px;
+    border: 0;
+    border-radius: 12px;
+  }
 
   /* Photos stay 2-up even on phones — four stacked plates push the text
      a full screen down and bury the thing people came to read. */
@@ -237,6 +286,11 @@
       <p>The boards work the same way &mdash; AIGA chapters in two cities, community radio in Bloomington, a mayoral appointment to Portland&rsquo;s Historic Landmarks Commission. So does the tennis. I coach it, and as a state co-chair in Oregon I wrote the proposal that moved the whole state to a team dual-match championship.</p>
     </section>
 
+    <section class="listen" aria-label="Listen">
+      <span class="listen__label">Or listen</span>
+      <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Podcast episode featuring Ron Bronson"></iframe>
+    </section>
+
     <section class="doors" aria-label="Where to go next">
       <article class="door">
         <h2 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h2>
@@ -259,16 +313,18 @@
 
   <footer class="foot" id="contact">
     <span class="foot__label">Contact</span>
-    <button class="foot__mail" type="button" data-contact>Email me</button>
+    <p class="foot__pitch">If you&rsquo;re building something that has to work in public, tell me about it.</p>
+    <button class="button" type="button" data-contact>Email me</button>
   </footer>
 
   <script>
+    /* The address is assembled at click time and never written into the DOM,
+       so it stays off the page for scrapers and for anyone reading source. */
     (function () {
       var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
         return String.fromCharCode(n);
       }).join('');
       document.querySelectorAll('[data-contact]').forEach(function (button) {
-        button.textContent = address;
         button.addEventListener('click', function () {
           window.location.href = 'mailto:' + address;
         });

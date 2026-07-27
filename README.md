@@ -24,9 +24,16 @@ Single hand-authored `index.html`. No framework, no build step, no dependencies.
 - `assets/site.css` and `assets/palette.js` are **copied verbatim across all four
   repos** — do not edit them here, it silently desyncs the other three sites. Anything
   site-specific goes in the `<style>` block in `index.html`.
-- Body copy is **PP Neue Montreal Text**, self-hosted from `assets/fonts/MTL/` and
-  declared in `index.html`. Display is Author, mono is RX100, both from `site.css`.
-  No fonts load from a third party.
+- Body copy is **PP Neue Montreal Text** (`assets/fonts/MTL/`); captions, card
+  subtitles, and the footer are **PP Pangram Sans Medium** (`assets/fonts/`). Both are
+  self-hosted and declared in `index.html`. Display is Author from `site.css`. Nothing
+  monospace is left on the page, and no fonts load from a third party.
+  Note: the Pangram Sans upload has no Regular in the standard width — upright runs
+  Thin / Medium / Semibold / Bold, and "Regular" exists only as an italic — and ships
+  no woff2. Medium at 500 is the text weight.
+- The email address is **never written into the DOM**. It's assembled from char codes
+  at click time behind an "Email me" button, so there's no raw address or `mailto:`
+  href in the source. Any new contact control just needs `data-contact`.
 - Colour comes from `palette.js`, which writes the `:root` tokens before first paint.
   Run `RBPalette.audit()` in the console after any colour change — `--ink-soft` measures
   3.85:1 on the Pollen ground and **fails AA for small text**, so label and note text
