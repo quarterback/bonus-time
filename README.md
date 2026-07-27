@@ -5,11 +5,13 @@ Source for **ronbronson.com** — the front door for the four sites.
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **Photos** — evidence, not decoration. **Each one names an institution**: Design For
-   The Public, 18F at GSA, Taubman College, AIGA Portland, the Oregon Athletic Coaches
-   Association, coaching. Pick images that show a room, a cohort, a banner, or a
-   governing body — never a screenshot of software, and never a solo speaker shot. A
-   photo of Ron presenting proves practitioner; a photo of the room proves institution.
+1. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
+   institution on its face: Design For The Public, 18F at GSA, Taubman College, AIGA
+   Portland, the Oregon Athletic Coaches Association, a championship team. Pick images
+   that show a room, a cohort, a banner, or a governing body — never a screenshot of
+   software, and never a solo speaker shot. A photo of Ron presenting proves
+   practitioner; a photo of the room proves institution. The image does the work, so
+   don't label it; `alt` text carries the description for screen readers.
 2. **A few orientation grafs** — written in the grammar of appointment: *hired me,
    asked me, made me president, appointed me*. The career is a sequence of people
    trusting Ron to build capability that didn't exist yet, in unrelated domains. That
