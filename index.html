@@ -3,19 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ron Bronson | Design, delivery, and consequential technology</title>
-<meta name="description" content="Ron Bronson is a design leader and builder whose work spans the web, institutional delivery, forward-deployed design, and consequential technology." />
+<title>Ron Bronson</title>
+<meta name="description" content="Ron Bronson teaches at the University of Michigan, advises State Capacity AI, and coaches high school tennis. Previously Head of Design at 18F. Founder of Indianapolis Design Week and Portland Design Month." />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Design belongs where the problem is." />
-<meta property="og:image" content="https://ronbronson.com/assets/53436471670_063c296b1d_k.jpg" />
+<meta property="og:description" content="Teaching, advising, coaching, and building. Start here." />
+<meta property="og:image" content="https://ronbronson.com/assets/pdx-design-month.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Design belongs where the problem is." />
-<meta name="twitter:image" content="https://ronbronson.com/assets/53436471670_063c296b1d_k.jpg" />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<meta name="twitter:description" content="Teaching, advising, coaching, and building. Start here." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/pdx-design-month.jpg" />
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-192.png" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
@@ -23,159 +21,185 @@
 <link rel="stylesheet" href="assets/site.css" />
 <script src="assets/palette.js"></script>
 <style>
-  :root { --measure: 68ch; }
-
-  .masthead {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 24px;
+  /* ── PP Neue Montreal Text — the text-optimised cut of the family, used
+     for running copy only. Declared here rather than in assets/site.css:
+     that file is copied verbatim across .com / .dev / .design / thinking
+     weapons, so editing it would desync the other three sites. ───────── */
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Light.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Light.woff")  format("woff");
+    font-weight: 300; font-style: normal; font-display: swap;
   }
-  .nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 18px;
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff")  format("woff");
+    font-weight: 300; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Book.woff")  format("woff");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff")  format("woff");
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff")  format("woff");
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff")  format("woff");
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+
+  /* Body copy only. --display (Author) and --mono (RX100) are untouched, and
+     both are self-hosted, so the page now loads no fonts from a third party. */
+  :root {
+    --text: "PP Neue Montreal Text", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --sans: var(--text);
+  }
+  body { font-family: var(--text); }
+
+  .masthead { display: block; }
+
+  /* 1 — Photos */
+  .plates {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--hair);
+    margin: clamp(32px, 5vw, 56px) 0 0;
+    background: var(--ink);
+    border: var(--frame) solid var(--ink);
+  }
+  .plate { position: relative; margin: 0; }
+  .plate img {
+    display: block;
+    width: 100%;
+    height: auto;           /* clears the HTML height attribute so aspect-ratio wins */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--bg-deeper);
+  }
+  /* 3:2 source into a 4:3 box — bias right so the projected slide
+     (the thing that makes this photo worth using) survives the crop. */
+  .plate__img--slide { object-position: 72% center; }
+  .plate figcaption {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    max-width: 100%;
+    padding: 5px 8px;
+    background: var(--ink);
+    color: var(--bg);
     font-family: var(--mono);
-    font-size: 12px;
-    letter-spacing: .03em;
+    font-size: 11px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
   }
-  .nav a { color: var(--ink-soft); }
-  .nav a:hover { color: var(--accent); }
 
-  .hero {
-    max-width: 1120px;
-    padding: clamp(58px, 9vw, 136px) 0 clamp(60px, 8vw, 112px);
-  }
-  .hero h1 {
-    max-width: 14ch;
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(54px, 9.4vw, 136px);
-    line-height: .9;
-    letter-spacing: -.05em;
-    text-wrap: balance;
-  }
-  .hero__deck {
-    max-width: 58ch;
-    margin: clamp(34px, 4.5vw, 56px) 0 0;
+  /* 2 — Orientation */
+  .orient {
+    max-width: 64ch;
+    margin: clamp(46px, 7vw, 84px) 0 0;
     font-family: var(--text);
-    font-size: clamp(22px, 2.35vw, 33px);
-    font-weight: 500;
-    line-height: 1.38;
-    letter-spacing: -.015em;
+    font-size: clamp(20px, 1.85vw, 26px);
+    line-height: 1.5;
     text-wrap: pretty;
   }
-  .hero__deck + .hero__deck { margin-top: .75em; }
-  .hero__deck a {
+  .orient p { margin: 0; }
+  .orient p + p { margin-top: 1.05em; }
+  .orient a {
     color: var(--ink);
     border-bottom: var(--frame) solid var(--accent);
     padding-bottom: 1px;
   }
-  .hero__deck a:hover { color: var(--accent); }
-  .actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 30px;
-  }
-  .button {
-    display: inline-flex;
-    align-items: center;
-    min-height: 46px;
-    padding: 11px 16px;
+  .orient a:hover { color: var(--accent); }
+
+  /* 3 — Doors */
+  .doors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--hair);
+    margin: clamp(58px, 8vw, 104px) 0 0;
+    background: var(--ink);
     border: var(--frame) solid var(--ink);
-    background: transparent;
+  }
+  .door {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(22px, 3vw, 34px);
+    background: var(--bg);
+  }
+  .door:hover { background: var(--bg-deeper); }
+  .door__title {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.02;
+    letter-spacing: -.03em;
+    overflow-wrap: anywhere;
+  }
+  .door__title a { color: var(--ink); }
+  .door__title a:hover { color: var(--accent); }
+  .door__title a::after { content: ""; position: absolute; inset: 0; }
+  .door { position: relative; }
+  /* --ink, not --ink-soft: soft/bg measures 3.85:1 on the Pollen ground
+     (RBPalette.audit()), which fails AA for text this size. Hierarchy comes
+     from the size and typeface gap against the display-serif title instead. */
+  .door__note {
     font-family: var(--mono);
     font-size: 13px;
+    line-height: 1.45;
     color: var(--ink);
-    cursor: pointer;
-  }
-  .button:hover { background: var(--ink); color: var(--bg); }
-
-  .scene {
-    margin: 0 0 clamp(58px, 8vw, 112px);
-  }
-  .scene img {
-    display: block;
-    width: 100%;
-    max-height: min(76vh, 860px);
-    object-fit: cover;
-    object-position: center;
-    border: var(--frame) solid var(--ink);
   }
 
-  .section {
-    display: grid;
-    grid-template-columns: minmax(190px, .68fr) minmax(0, 1.55fr);
-    gap: clamp(34px, 7vw, 108px);
-    padding: clamp(58px, 8vw, 112px) 0;
+  /* 4 — Contact */
+  /* footer.foot in site.css is an element+class selector — match it or the
+     shared grid wins and the mail button stretches full width. */
+  footer.foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 18px;
+    margin-top: clamp(44px, 6vw, 76px);
+    padding: clamp(24px, 3vw, 36px) 0 clamp(36px, 4vw, 52px);
     border-top: var(--frame) solid var(--ink);
-    align-items: start;
+    font-family: var(--mono);
+    font-size: 14px;
   }
-  .section h2 {
-    max-width: 12ch;
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(38px, 5.2vw, 76px);
-    line-height: .97;
-    letter-spacing: -.04em;
-    text-wrap: balance;
-  }
-  .prose {
-    max-width: var(--measure);
-    font-family: var(--text);
-    font-size: clamp(19px, 1.7vw, 24px);
-    line-height: 1.58;
-    text-wrap: pretty;
-  }
-  .prose p { margin: 0; }
-  .prose p + p { margin-top: 1.15em; }
-  .prose a {
+  .foot__label { color: var(--ink); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+  .foot__mail {
+    width: auto;
+    background: none;
+    border: 0;
+    padding: 0;
+    font: inherit;
+    text-align: left;
     color: var(--ink);
     border-bottom: var(--frame) solid var(--accent);
-    padding-bottom: 1px;
+    cursor: pointer;
   }
-  .prose a:hover { color: var(--accent); }
-  .embed {
-    margin-top: clamp(26px, 4vw, 42px);
-  }
-  .embed iframe {
-    display: block;
-    width: 100%;
-    height: 352px;
-    border: 0;
-    border-radius: 12px;
-  }
+  .foot__mail:hover { color: var(--accent); }
 
-  .foot {
-    padding: clamp(62px, 9vw, 124px) 0 clamp(40px, 5vw, 60px);
-    border-top: var(--frame) solid var(--ink);
+  /* Photos stay 2-up even on phones — four stacked plates push the text
+     a full screen down and bury the thing people came to read. */
+  @media (max-width: 900px) {
+    .plates { grid-template-columns: repeat(2, 1fr); }
   }
-  .foot__grid {
-    display: grid;
-    grid-template-columns: .7fr 1.3fr;
-    gap: clamp(36px, 7vw, 108px);
-    align-items: end;
-  }
-  .foot h2 {
-    max-width: 10ch;
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(46px, 7vw, 100px);
-    line-height: .92;
-    letter-spacing: -.045em;
-  }
-  .foot__copy {
-    font-family: var(--text);
-    font-size: clamp(19px, 1.7vw, 24px);
-    line-height: 1.55;
-  }
-  .foot__copy p { margin: 0; }
-
-  @media (max-width: 820px) {
-    .section, .foot__grid { grid-template-columns: 1fr; }
-    .masthead { align-items: flex-start; flex-direction: column; }
-    .scene img { max-height: none; }
+  @media (max-width: 560px) {
+    .doors { grid-template-columns: 1fr; }
+    .plate figcaption { font-size: 10px; padding: 4px 6px; }
   }
 </style>
 </head>
@@ -183,76 +207,59 @@
 <div class="wrap">
 
   <header class="masthead">
-    <a class="name" href="#top">Ron Bronson</a>
-    <nav class="nav" aria-label="Primary navigation">
-      <a href="https://ronbronson.design">Writing &amp; talks ↗</a>
-      <a href="https://ronbronson.dev">Things I build ↗</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <a class="name" href="/">Ron Bronson</a>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <h1>Design belongs where the problem is.</h1>
-      <p class="hero__deck">I am a design leader and builder with two decades across the web, institutional delivery, and technical implementation.</p>
-      <p class="hero__deck">I built and led one of the first large-scale <a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like">forward-deployed design practices</a>. I have led departments and advised the executives I reported to.</p>
-      <div class="actions">
-        <button class="button" type="button" data-contact>Email me</button>
-      </div>
+  <main>
+    <section class="plates" aria-label="Photographs">
+      <figure class="plate">
+        <img class="plate__img--slide" src="assets/pdx-design-month.jpg" width="799" height="533" alt="Ron Bronson speaking into a microphone at Portland Design Month, beside a projected slide reading &quot;Ron Bronson, President of AIGA Portland&quot;" />
+        <figcaption>Portland Design Month</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="assets/unconference.jpg" width="1400" height="1050" loading="lazy" alt="Overhead view of a design unconference in session, attendees in lanyards gathered around standing tables covered in butcher paper" />
+        <figcaption>Design For The Public</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="assets/workshop.jpg" width="1400" height="1000" loading="lazy" alt="Ron Bronson facilitating a workshop between two flip charts, one reading &quot;Can we design ourselves out of this?&quot;" />
+        <figcaption>Facilitating</figcaption>
+      </figure>
+      <figure class="plate">
+        <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school girls tennis team holding a district championship plaque" />
+        <figcaption>District champions</figcaption>
+      </figure>
     </section>
 
-    <figure class="scene">
-      <img src="assets/53436471670_063c296b1d_k.jpg" alt="Ron Bronson leading a workshop while participants listen and take notes" />
-    </figure>
-
-    <section class="section">
-      <h2>Web, delivery, and code.</h2>
-      <div class="prose">
-        <p>For a decade I rescued and ran institutional websites. I moved organizations from hand-coded pages to content management systems, then through the social media era.</p>
-        <p>As the web lead, I also ran marketing and strategic communications. I <a href="https://ronbronson.dev">wrote code</a>, trained staff, managed vendors, and kept public systems working.</p>
-      </div>
+    <section class="orient" aria-label="About Ron Bronson">
+      <p>I teach at the University of Michigan&rsquo;s Taubman College, where my graduate course, <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics</a>, covers how public services actually work. I advise State Capacity AI.</p>
+      <p>For eight years I was at <a href="https://www.npr.org/2025/03/04/nx-s1-5317569/a-federal-efficiency-team-was-axed-they-were-working-on-one-of-trumps-goals">18F</a>, running one of the largest design organizations in the federal government &mdash; forty-plus designers and the managers who ran them &mdash; and later strategic operations across Technology Transformation Services.</p>
+      <p>I&rsquo;ve been convening people for two decades. Design weeks, city-wide design months, unconferences, civic programs, in Indianapolis and Portland and nationally. Different cities, different sectors, same work: get the right people in a room and give them something worth arguing about. I build them to run without me.</p>
+      <p>The boards work the same way &mdash; AIGA chapters in two cities, community radio in Bloomington, a mayoral appointment to Portland&rsquo;s Historic Landmarks Commission. So does the tennis. I coach it, and as a state co-chair in Oregon I wrote the proposal that moved the whole state to a team dual-match championship.</p>
     </section>
 
-    <section class="section">
-      <h2>Design leadership.</h2>
-      <div class="prose">
-        <p>My design practice grew out of the web and expanded into research, service design, content, product, and communications. I later took responsibility for organizational design and executive advisory.</p>
-        <p>I wrote hiring standards, rebuilt job descriptions, ran performance reviews, and decided who staffed each engagement. I managed managers and developed designers into their next roles.</p>
-        <p>I <a href="https://ronbronson.design">speak globally</a> and teach <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics</a>. I still prototype services, write software, facilitate working sessions, and debug the systems around the work.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>How services work.</h2>
-      <div class="prose">
-        <p>The cheaper generating solutions gets, the scarcer understanding the problem becomes.</p>
-        <p>I study how services actually work. I trace where authority and judgment sit, how paperwork moves, where handoffs fail, and who absorbs the friction.</p>
-        <p>I apply that lens to forward-deployed design, trajectory management, agent experience, and public trust.</p>
-        <div class="embed">
-          <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy" title="Podcast episode featuring Ron Bronson"></iframe>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Side quests.</h2>
-      <div class="prose">
-        <p>Offline, I am a longtime high school tennis coach who has won state titles and coach-of-the-year awards. I have served on several community nonprofit boards.</p>
-        <p>I have worked as a <a href="https://www.mixcloud.com/908RB/">radio DJ</a> and news anchor. I created <a href="https://mallo.fi">sabermetrics for the Finnish sport of pesäpallo</a> and invented a sport called <a href="https://en.wikipedia.org/wiki/Tennis_polo">Tennis Polo</a> 22 years ago.</p>
-      </div>
+    <section class="doors" aria-label="Where to go next">
+      <article class="door">
+        <h2 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h2>
+        <span class="door__note">Writing, talks, teaching, and how I work.</span>
+      </article>
+      <article class="door">
+        <h2 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h2>
+        <span class="door__note">Projects, experiments, and invented sports.</span>
+      </article>
+      <article class="door">
+        <h2 class="door__title"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h2>
+        <span class="door__note">Design for the speculative present. A studio.</span>
+      </article>
+      <article class="door">
+        <h2 class="door__title"><a href="https://blog.ronbronson.com">blog.ronbronson.com &rarr;</a></h2>
+        <span class="door__note">Essays, in progress and otherwise.</span>
+      </article>
     </section>
   </main>
 
   <footer class="foot" id="contact">
-    <div class="foot__grid">
-      <h2>Contact.</h2>
-      <div class="foot__copy">
-        <p>Email me about a role or a hard delivery problem.</p>
-        <div class="actions">
-          <button class="button" type="button" data-contact>Email Ron</button>
-        </div>
-      </div>
-    </div>
+    <span class="foot__label">Contact</span>
+    <button class="foot__mail" type="button" data-contact>Email me</button>
   </footer>
 
   <script>
@@ -260,10 +267,10 @@
       var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
         return String.fromCharCode(n);
       }).join('');
-      var subject = encodeURIComponent('A role or a hard delivery problem');
       document.querySelectorAll('[data-contact]').forEach(function (button) {
+        button.textContent = address;
         button.addEventListener('click', function () {
-          window.location.href = 'mailto:' + address + '?subject=' + subject;
+          window.location.href = 'mailto:' + address;
         });
       });
     })();
