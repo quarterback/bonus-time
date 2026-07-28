@@ -181,16 +181,6 @@
   }
   .books .book__title { display: none; }
 
-  /* ── label/detail grid ──────────────────────────────────────────────
-     Currently unused: the Board Service module it was built for is gone.
-     Kept because it's the house pattern for any "term + dates" list and
-     the content is mid-rewrite. Delete if nothing claims it.
-     ──────────────────────────────────────────────────────────────── */
-  .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
-  .board { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
-  .board b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.15; }
-  .board span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
-
   /* ── site cards, back in the 4-up grid ── */
   .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
   .door { position: relative; background: var(--panel); padding: clamp(14px, 2vw, 22px); }
@@ -231,7 +221,6 @@
      phones, which is why the grids never got denser down there. ────── */
   @media (max-width: 900px) {
     .top8   { grid-template-columns: repeat(3, 1fr); }
-    .boards { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 780px) {
@@ -246,7 +235,6 @@
     .rail--b { border-top: 3px solid var(--ink); }
     /* Dense grids so the phone view stays a page, not an endless scroll. */
     .top8   { grid-template-columns: repeat(4, 1fr); }
-    .boards { grid-template-columns: repeat(2, 1fr); }
     .books  { grid-template-columns: repeat(6, 1fr); }
     .doors  { grid-template-columns: repeat(2, 1fr); }
   }

@@ -55,12 +55,8 @@ Module order in `.main`, and the reasoning behind it:
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 | Now Playing | Podcasts. |
 
-**Board service is deliberately gone.** A grid of org names and date ranges is a résumé
-section, and it earned its space by looking like credentials rather than by telling anyone
-what Ron does. The appointments that carry signal — AIGA Portland's presidency, the City
-of Portland's Historic Landmarks Commission — are stated in the opening grafs instead,
-in the grammar of appointment, which is where the README always said they belonged. Don't
-reintroduce the grid.
+Board service is gone on purpose — it's a résumé grid. The appointments worth keeping are
+in the opening grafs. Don't bring it back.
 
 Rail B holds `Listening` and `Reading` only. The radio line used to live down there, where
 it read as a hobby; it's in `Currently` now, which is the whole point of that module.
