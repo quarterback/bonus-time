@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Archived front door, superseded by the profile page at /. Kept for reference only.
+     Note: the leading underscore is a naming convention, not access control — Vercel
+     serves this path like any other file. noindex keeps it out of search results. -->
+<meta name="robots" content="noindex, nofollow" />
+<title>Ron Bronson — archived front door</title>
+<meta name="description" content="Ron Bronson has repeatedly been trusted to build capability that did not exist: a design profession inside the federal government at 18F, Urban Technology at Michigan, AIGA Portland, Portland Design Month, and statewide high school tennis in Oregon." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Ron Bronson" />
+<meta property="og:description" content="Repeatedly asked to build the capability that isn’t there yet. Start here." />
+<meta property="og:image" content="https://ronbronson.com/assets/dfp-room.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ron Bronson" />
+<meta name="twitter:description" content="Repeatedly asked to build the capability that isn’t there yet. Start here." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/dfp-room.jpg" />
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-192.png" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="assets/palette.js"></script>
+<style>
+  /* ── PP Neue Montreal Text — the text-optimised cut of the family, used
+     for running copy only. Declared here rather than in assets/site.css:
+     that file is copied verbatim across .com / .dev / .design / thinking
+     weapons, so editing it would desync the other three sites. ───────── */
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Light.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Light.woff")  format("woff");
+    font-weight: 300; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff")  format("woff");
+    font-weight: 300; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Book.woff")  format("woff");
+    font-weight: 400; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff")  format("woff");
+    font-weight: 400; font-style: italic; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff")  format("woff");
+    font-weight: 700; font-style: normal; font-display: swap;
+  }
+  @font-face {
+    font-family: "PP Neue Montreal Text";
+    src: url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff2") format("woff2"),
+         url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff")  format("woff");
+    font-weight: 700; font-style: italic; font-display: swap;
+  }
+
+  /* ── PP Pangram Sans — the small-text/UI face: card subtitles and the
+     footer. Replaces the mono register (RX100) in both places.
+     The upload ships no Regular in the standard width (upright goes
+     Thin / Medium / Semibold / Bold; "Regular" exists only as an italic), so
+     Medium at 500 is the text weight — which is the right pick at 11–13px
+     anyway. No woff2 in the set either, so .woff is all there is. ─────── */
+  @font-face {
+    font-family: "PP Pangram Sans";
+    src: url("assets/fonts/PPPangramSans-Medium.woff") format("woff");
+    font-weight: 500; font-style: normal; font-display: swap;
+  }
+
+  /* --display (Author) stays. --mono (RX100) is now unused on this page. */
+  :root {
+    --text: "PP Neue Montreal Text", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --sans: var(--text);
+    --ui: "PP Pangram Sans", "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  }
+  body { font-family: var(--text); }
+
+  .masthead { display: block; }
+
+  /* 1 — Photos */
+  .plates {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--hair);
+    margin: clamp(26px, 3.5vw, 40px) 0 0;
+    background: var(--ink);
+    border: var(--frame) solid var(--ink);
+  }
+  .plate { position: relative; margin: 0; }
+  .plate img {
+    display: block;
+    width: 100%;
+    height: auto;           /* clears the HTML height attribute so aspect-ratio wins */
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--bg-deeper);
+  }
+
+  /* 2 — Intro: H2 + short blurb */
+  .intro { margin: clamp(30px, 4vw, 48px) 0 0; }
+  .intro__h {
+    max-width: 22ch;
+    margin: clamp(40px, 6vw, 76px) 0 0;
+    font-family: var(--display);
+    font-size: clamp(32px, 4.2vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
+  .orient {
+    max-width: 58ch;
+    font-family: var(--text);
+    font-size: clamp(20px, 1.85vw, 26px);
+    line-height: 1.5;
+    text-wrap: pretty;
+  }
+  .orient p { margin: 0; }
+  .orient p + p { margin-top: 1.05em; }
+  .orient a {
+    color: var(--ink);
+    border-bottom: var(--frame) solid var(--accent);
+    padding-bottom: 1px;
+  }
+  .orient a:hover { color: var(--accent); }
+
+  /* 3 — Card grids. Podcasts and site links share one system so the two
+     bands read as a pair rather than two unrelated components. */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--hair);
+    margin: clamp(48px, 7vw, 88px) 0 0;
+    background: var(--ink);
+    border: var(--frame) solid var(--ink);
+  }
+  .cards__label {
+    display: block;
+    margin: clamp(48px, 7vw, 88px) 0 -14px;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .cards__label + .cards { margin-top: 14px; }
+
+  .pod { display: flex; flex-direction: column; background: var(--bg); }
+  .pod__head { padding: clamp(18px, 2.4vw, 26px) clamp(18px, 2.4vw, 26px) 14px; }
+  .pod__title {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(21px, 2.1vw, 28px);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+  }
+  .pod__title a { color: var(--ink); }
+  .pod__title a:hover { color: var(--accent); }
+  .pod iframe {
+    display: block;
+    width: 100%;
+    height: 152px;
+    border: 0;
+    margin-top: auto;
+    background: var(--bg-deeper);
+  }
+
+  .doors {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--hair);
+    margin: 14px 0 0;
+    background: var(--ink);
+    border: var(--frame) solid var(--ink);
+  }
+  .door {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(22px, 3vw, 34px);
+    background: var(--bg);
+  }
+  .door:hover { background: var(--bg-deeper); }
+  .door__title {
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(26px, 3vw, 40px);
+    line-height: 1.02;
+    letter-spacing: -.03em;
+    overflow-wrap: anywhere;
+  }
+  .door__title a { color: var(--ink); }
+  .door__title a:hover { color: var(--accent); }
+  .door__title a::after { content: ""; position: absolute; inset: 0; }
+  .door { position: relative; }
+  /* --ink, not --ink-soft: soft/bg measures 3.85:1 on the Pollen ground
+     (RBPalette.audit()), which fails AA for text this size. Hierarchy comes
+     from the size and typeface gap against the display-serif title instead. */
+  .door__note {
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  /* 4 — Contact */
+  /* footer.foot in site.css is an element+class selector — match it or the
+     shared grid wins and the mail button stretches full width. */
+  footer.foot {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px 18px;
+    margin-top: clamp(44px, 6vw, 76px);
+    padding: clamp(24px, 3vw, 36px) 0 clamp(36px, 4vw, 52px);
+    border-top: var(--frame) solid var(--ink);
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 14px;
+  }
+  .foot__label { color: var(--ink); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
+  .foot__pitch {
+    flex: 1 1 22ch;
+    margin: 0;
+    font-family: var(--text);
+    font-size: clamp(19px, 1.6vw, 23px);
+    line-height: 1.45;
+    color: var(--ink);   /* site.css sets .foot to --ink-soft (3.85:1) — override */
+  }
+  .button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 11px 18px;
+    border: var(--frame) solid var(--ink);
+    background: transparent;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .button:hover { background: var(--ink); color: var(--bg); }
+
+
+  /* Photos stay 2-up even on phones — four stacked plates push the text
+     a full screen down and bury the thing people came to read. */
+  @media (max-width: 900px) {
+    .plates { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .plates { grid-template-columns: repeat(2, 1fr); }
+    .doors { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <a class="name" href="/">Ron Bronson</a>
+  </header>
+
+  <main>
+    <h2 class="intro__h">People keep asking me to build the thing that isn&rsquo;t there yet.</h2>
+
+    <section class="plates" aria-label="Photographs">
+      <figure class="plate">
+        <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public, many with hands raised" />
+      </figure>
+      <figure class="plate">
+        <img src="assets/gsa-18f.jpg" width="1400" height="1050" alt="Ron Bronson and colleagues on a GSA stage in front of a screen reading &quot;18F knows how to work within government &mdash; because we&rsquo;re already here&quot;" />
+      </figure>
+      <figure class="plate">
+        <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A large student cohort posed beneath a Taubman College, University of Michigan banner" />
+      </figure>
+      <figure class="plate">
+        <img src="assets/design-month.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson speaking at Portland Design Month beside a slide reading &quot;Ron Bronson, President of AIGA Portland&quot;" />
+      </figure>
+      <figure class="plate">
+        <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque in front of an Oregon Athletic Coaches Association backdrop" />
+      </figure>
+      <figure class="plate">
+        <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
+      </figure>
+    </section>
+
+    <section class="intro" aria-label="About Ron Bronson">
+      <!-- ══ BLURB — Ron's copy goes here. Keep it to two or three sentences;
+           the photos above already carry the institutions. ══════════════ -->
+      <div class="orient">
+        <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
+          spent eight years building design capability inside the federal government.</p>
+      </div>
+      <!-- ══ /BLURB ═══════════════════════════════════════════════════════ -->
+    </section>
+
+    <span class="cards__label">Listen</span>
+    <section class="cards" aria-label="Podcasts">
+      <article class="pod">
+        <div class="pod__head">
+          <h3 class="pod__title"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></h3>
+        </div>
+        <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+      </article>
+      <article class="pod">
+        <div class="pod__head">
+          <h3 class="pod__title"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></h3>
+        </div>
+        <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+      </article>
+    </section>
+
+    <span class="cards__label">Elsewhere</span>
+    <section class="doors" aria-label="Where to go next">
+      <article class="door">
+        <h3 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3>
+        <span class="door__note">Writing, talks &amp; how I work</span>
+      </article>
+      <article class="door">
+        <h3 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3>
+        <span class="door__note">How I think</span>
+      </article>
+      <article class="door">
+        <h3 class="door__title"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3>
+        <span class="door__note">Speculative civics + public exhibitions</span>
+      </article>
+      <article class="door">
+        <h3 class="door__title"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3>
+      </article>
+    </section>
+  </main>
+
+  <footer class="foot" id="contact">
+    <span class="foot__label">Contact</span>
+    <p class="foot__pitch">If you&rsquo;re building something that has to work in public, tell me about it.</p>
+    <button class="button" type="button" data-contact>Email me</button>
+  </footer>
+
+  <script>
+    /* The address is assembled at click time and never written into the DOM,
+       so it stays off the page for scrapers and for anyone reading source. */
+    (function () {
+      var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
+        return String.fromCharCode(n);
+      }).join('');
+      document.querySelectorAll('[data-contact]').forEach(function (button) {
+        button.addEventListener('click', function () {
+          window.location.href = 'mailto:' + address;
+        });
+      });
+    })();
+  </script>
+
+</div>
+</body>
+</html>
