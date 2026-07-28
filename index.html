@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson is an Assistant Professor of Practice in Urban Technology at the University of Michigan Taubman College. He spent more than a decade in federal service, including eight years at 18F leading one of the federal government's largest design organizations." />
+<meta name="description" content="Ron Bronson builds capability that institutions don't have yet — a design practice inside the federal government, a statewide digital operation, a professional community. He teaches urban technology at the University of Michigan Taubman College, anchors news on community radio, and coaches high school tennis." />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Teaching, building, coaching, convening. Start here." />
+<meta property="og:description" content="Teaching, coaching, convening, broadcasting. Start here." />
 <meta property="og:image" content="https://ronbronson.com/assets/profile.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Teaching, building, coaching, convening. Start here." />
+<meta name="twitter:description" content="Teaching, coaching, convening, broadcasting. Start here." />
 <meta name="twitter:image" content="https://ronbronson.com/assets/profile.jpg" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -163,8 +163,6 @@
   .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
 
 
-  .radio { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.5; }
-
   /* ── scrobble ── */
   .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
   .np__label { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
@@ -196,6 +194,8 @@
      ink-black gap colour instead of the card's white and went nearly black.
      ink-black on fresh-sky is 6.67:1; navy on it is 4.66:1 — both clear AA. */
   .door:hover { background: var(--fresh-sky); }
+  /* Cards with no link must not offer a hover affordance they can't honour. */
+  .door--static:hover { background: var(--panel); }
   .door:hover .door__t a,
   .door:hover .door__n { color: var(--ink-black); }
   .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
@@ -283,26 +283,48 @@
       <div class="mod">
         <h2 class="mod__t">About Me</h2>
         <div class="mod__b blurb">
-          <p>I&rsquo;m an Assistant Professor of Practice in Urban Technology at the University of
-            Michigan Taubman College of Architecture and Urban Planning. I spent more than a decade in
-            the federal government, including eight years at 18F, where I served as a Senior Advisor to
-            the FAS Deputy Commissioner and led one of the federal government&rsquo;s largest design
-            organizations. My teams partnered with the White House, Congress, FTC, CMS, VA, DOD, USFS,
-            and dozens of other agencies to improve digital services relied on by millions of Americans.</p>
-          <p>Before federal service, I led digital strategy and communications in higher education and
-            local government, overseeing enterprise web operations, organizational transformation, and
-            multidisciplinary teams serving statewide and municipal institutions. I&rsquo;m also a
-            veteran of the US Air Force.</p>
+          <p>Institutions keep asking me to build capability they don&rsquo;t have yet. GSA asked me to
+            lead one of the federal government&rsquo;s largest design organizations. AIGA Portland&rsquo;s
+            members made me their board president. The City of Portland appointed me to its Historic
+            Landmarks Commission. The University of Michigan hired me to teach urban technology at
+            Taubman College of Architecture and Urban Planning, where I&rsquo;m an Assistant Professor of
+            Practice. The domains don&rsquo;t connect. The work does.</p>
+          <p>I spent more than a decade in federal service, including eight years at 18F, where I was a
+            Senior Advisor to the FAS Deputy Commissioner. My teams partnered with the White House,
+            Congress, FTC, CMS, VA, DOD, USFS, and dozens of other agencies on digital services relied on
+            by millions of Americans. Before that I led digital strategy and communications in higher
+            education and local government, overseeing enterprise web operations, organizational
+            transformation, and multidisciplinary teams serving statewide and municipal institutions.
+            I&rsquo;m also a veteran of the US Air Force.</p>
+          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
+            interested less in artifacts than in the systems, incentives, processes, and institutions
+            that shape outcomes. Across two decades of writing, software, teaching, exhibitions, and
+            public-sector leadership, the throughline has remained the same: understanding how things
+            work, why they fail, and how they can work better.</p>
+        </div>
+      </div>
+
+      <!-- Present tense, and every fact here already appears elsewhere on the page.
+           This module exists so the page states what Ron does now before it states
+           what he has been trusted with. Static cards carry no link and must not
+           imply one — hence .door--static. -->
+      <div class="mod">
+        <h2 class="mod__t">Currently</h2>
+        <div class="doors">
+          <article class="door door--static"><h3 class="door__t">Teaching</h3><span class="door__n">Urban technology at Taubman College, University of Michigan</span></article>
+          <article class="door door--static"><h3 class="door__t">Coaching</h3><span class="door__n">High school tennis &middot; Oregon Athletic Coaches Association Coach of the Year</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">Community radio &rarr;</a></h3><span class="door__n">News anchor at KBOO 90.7 FM &middot; The Sound Bulletin on KFFP 90.3 FM</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">Writing &rarr;</a></h3><span class="door__n">Essays on public institutions, design and consequence</span></article>
         </div>
       </div>
 
       <div class="mod">
         <h2 class="mod__t">Elsewhere</h2>
         <div class="doors">
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Writing, talks &amp; how I work</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">How I think</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics + public exhibitions</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Talks, how I work, and what I&rsquo;m reading</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">Things I build to think with</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics and public exhibitions</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3><span class="door__n">Two decades of writing, still going</span></article>
         </div>
       </div>
 
@@ -337,19 +359,7 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Interests</h2>
-        <div class="mod__b blurb">
-          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
-            interested less in artifacts than in the systems, incentives, processes, and institutions
-            that shape outcomes.</p>
-          <p>Across two decades of writing, software, teaching, exhibitions, and public-sector
-            leadership, the throughline has remained the same: understanding how things work, why they
-            fail, and how they can work better.</p>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Board Service</h2>
+        <h2 class="mod__t">Service &amp; Convening</h2>
         <div class="boards">
           <article class="board"><b>AIGA Portland</b><span>Board President, 2023&ndash;25</span></article>
           <article class="board"><b>PDX Design Month</b><span>2024&ndash;present</span></article>
@@ -397,12 +407,6 @@
         </div>
       </div>
 
-      <div class="mod">
-        <h2 class="mod__t">Community Radio</h2>
-        <div class="mod__b">
-          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
-        </div>
-      </div>
     </div>
 
   </div>

@@ -21,17 +21,46 @@ Four things, in this order, and nothing else:
    The test: **if someone spends two minutes here, do they realize this person has
    repeatedly been entrusted to build organizations, professions, communities, and
    public institutions?** If a change doesn't help that, it doesn't belong.
-3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-4. **Contact.**
+3. **What he does now** — the `Currently` module. The orientation grafs establish what
+   Ron has been trusted with; this establishes that none of it is finished. It carries
+   **no facts that aren't already on the page** — teaching, coaching, radio, and writing
+   are each evidenced in the photos, the prose, or the site links. It exists purely so a
+   stranger reads the career in present tense. Adding a fact here that appears nowhere
+   else means it belongs in the grafs instead.
+4. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+5. **Contact.**
 
-Deliberately *not* here: talks (`.design`), projects (`.dev`), event write-ups
-(`thinkingweapons.com`), a résumé, a timeline, or a "side quests" section. Coaching,
-boards, and the commission belong in the same prose as 18F — splitting them out is what
-buried them last time.
+Deliberately *not* here: talks (`.design`), **projects, case studies, prototypes and
+indices** (`.dev`, `.design`), event write-ups (`thinkingweapons.com`), a résumé, a
+timeline, or a "side quests" section. The portfolio is not a front-door asset — routing to
+it doesn't add anything a stranger needs in the first two minutes, and it turns the page
+into an inventory. Send people onward to it instead.
+
+Coaching, boards, and the commission belong in the same prose as 18F — splitting them out
+into their own narrative sections is what buried them last time. `Currently` is not an
+exception to this: it's a four-card index of things stated in full elsewhere, not a
+replacement for stating them.
 
 ## Structure
 
 Single hand-authored `index.html`. No framework, no build step, no dependencies.
+
+Module order in `.main`, and the reasoning behind it:
+
+| Module | Why it sits there |
+| --- | --- |
+| About Me | Range and the grammar of appointment. Closes with the practice graf — what the work is *for*. Formerly a separate `Interests` module that restated the same thesis in a second box. |
+| Currently | Present tense, immediately after the grafs, so "has been trusted with" is followed by "still doing it". |
+| Elsewhere | The four site links. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
+| Ron's Top 8 | Photographic evidence, uncaptioned. |
+| Service & Convening | Was `Board Service`; the entries include founding a design week and running Design Month, which is convening, not governance. |
+| Now Playing | Podcasts. |
+
+Rail B holds `Listening` and `Reading` only. The radio line used to live down there, where
+it read as a hobby; it's in `Currently` now, which is the whole point of that module.
+
+`.door--static` is a card with no link — used in `Currently` for Teaching and Coaching. It
+suppresses the sky hover so the card doesn't imply a click it can't honour.
 
 - `assets/site.css` and `assets/palette.js` are **copied verbatim across all four
   repos** — do not edit them here, it silently desyncs the other three sites. Anything
