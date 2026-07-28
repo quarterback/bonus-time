@@ -87,9 +87,9 @@
   /* 1 — Photos */
   .plates {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--hair);
-    margin: clamp(32px, 5vw, 56px) 0 0;
+    margin: clamp(26px, 3.5vw, 40px) 0 0;
     background: var(--ink);
     border: var(--frame) solid var(--ink);
   }
@@ -104,10 +104,10 @@
   }
 
   /* 2 — Intro: H2 + short blurb */
-  .intro { margin: clamp(46px, 7vw, 84px) 0 0; }
+  .intro { margin: clamp(30px, 4vw, 48px) 0 0; }
   .intro__h {
     max-width: 22ch;
-    margin: 0 0 clamp(18px, 2.4vw, 30px);
+    margin: clamp(40px, 6vw, 76px) 0 0;
     font-family: var(--display);
     font-size: clamp(32px, 4.2vw, 62px);
     line-height: 1.02;
@@ -254,9 +254,10 @@
   /* Photos stay 2-up even on phones — four stacked plates push the text
      a full screen down and bury the thing people came to read. */
   @media (max-width: 900px) {
-    .plates { grid-template-columns: repeat(2, 1fr); }
+    .plates { grid-template-columns: repeat(3, 1fr); }
   }
   @media (max-width: 560px) {
+    .plates { grid-template-columns: repeat(2, 1fr); }
     .doors { grid-template-columns: 1fr; }
   }
 </style>
@@ -269,6 +270,8 @@
   </header>
 
   <main>
+    <h2 class="intro__h">People keep asking me to build the thing that isn&rsquo;t there yet.</h2>
+
     <section class="plates" aria-label="Photographs">
       <figure class="plate">
         <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public, many with hands raised" />
@@ -291,8 +294,6 @@
     </section>
 
     <section class="intro" aria-label="About Ron Bronson">
-      <h2 class="intro__h">People keep asking me to build the thing that isn&rsquo;t there yet.</h2>
-
       <!-- ══ BLURB — Ron's copy goes here. Keep it to two or three sentences;
            the photos above already carry the institutions. ══════════════ -->
       <div class="orient">
