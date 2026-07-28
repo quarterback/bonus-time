@@ -103,10 +103,19 @@
     background: var(--bg-deeper);
   }
 
-  /* 2 — Orientation */
+  /* 2 — Intro: H2 + short blurb */
+  .intro { margin: clamp(46px, 7vw, 84px) 0 0; }
+  .intro__h {
+    max-width: 22ch;
+    margin: 0 0 clamp(18px, 2.4vw, 30px);
+    font-family: var(--display);
+    font-size: clamp(32px, 4.2vw, 62px);
+    line-height: 1.02;
+    letter-spacing: -.035em;
+    text-wrap: balance;
+  }
   .orient {
-    max-width: 64ch;
-    margin: clamp(46px, 7vw, 84px) 0 0;
+    max-width: 58ch;
     font-family: var(--text);
     font-size: clamp(20px, 1.85vw, 26px);
     line-height: 1.5;
@@ -121,12 +130,60 @@
   }
   .orient a:hover { color: var(--accent); }
 
-  /* 3 — Doors */
+  /* 3 — Card grids. Podcasts and site links share one system so the two
+     bands read as a pair rather than two unrelated components. */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--hair);
+    margin: clamp(48px, 7vw, 88px) 0 0;
+    background: var(--ink);
+    border: var(--frame) solid var(--ink);
+  }
+  .cards__label {
+    display: block;
+    margin: clamp(48px, 7vw, 88px) 0 -14px;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink);
+  }
+  .cards__label + .cards { margin-top: 14px; }
+
+  .pod { display: flex; flex-direction: column; background: var(--bg); }
+  .pod__head { padding: clamp(18px, 2.4vw, 26px) clamp(18px, 2.4vw, 26px) 14px; }
+  .pod__title {
+    margin: 0 0 5px;
+    font-family: var(--display);
+    font-size: clamp(21px, 2.1vw, 28px);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+  }
+  .pod__title a { color: var(--ink); }
+  .pod__title a:hover { color: var(--accent); }
+  .pod__note {
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+  .pod iframe {
+    display: block;
+    width: 100%;
+    height: 152px;
+    border: 0;
+    margin-top: auto;
+    background: var(--bg-deeper);
+  }
+
   .doors {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--hair);
-    margin: clamp(58px, 8vw, 104px) 0 0;
+    margin: 14px 0 0;
     background: var(--ink);
     border: var(--frame) solid var(--ink);
   }
@@ -200,29 +257,6 @@
   }
   .button:hover { background: var(--ink); color: var(--bg); }
 
-  /* Listen — the episode does what the grafs deliberately don't: let someone
-     hear how Ron actually talks about the work. */
-  .listen {
-    margin: clamp(46px, 6vw, 76px) 0 0;
-    max-width: 720px;
-  }
-  .listen__label {
-    display: block;
-    margin-bottom: 12px;
-    font-family: var(--ui);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    color: var(--ink);
-  }
-  .listen iframe {
-    display: block;
-    width: 100%;
-    height: 152px;
-    border: 0;
-    border-radius: 12px;
-  }
 
   /* Photos stay 2-up even on phones — four stacked plates push the text
      a full screen down and bury the thing people came to read. */
@@ -263,33 +297,52 @@
       </figure>
     </section>
 
-    <section class="orient" aria-label="About Ron Bronson">
-      <p>Michigan hired me to help define what Urban Technology becomes as a field. I teach <a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics</a>, a graduate course on how public services actually work, and I advise State Capacity AI.</p>
-      <p>At <a href="https://www.npr.org/2025/03/04/nx-s1-5317569/a-federal-efficiency-team-was-axed-they-were-working-on-one-of-trumps-goals">18F</a> I was asked to build the infrastructure for a profession that didn&rsquo;t have any yet: hiring standards, career paths, Delivery School, and one of the largest design organizations in the federal government. I kept getting pulled outside my lane, too &mdash; the FTC Chair&rsquo;s office, chief of staff for TTS, the Office of Customer Experience.</p>
-      <p>I&rsquo;ve been asked to start or run convenings for twenty years. Indianapolis Design Week. Design For The Public. AIGA Portland made me president during a period of organizational change, and Portland Design Month grew to fifteen hundred people.</p>
-      <p>Portland&rsquo;s mayor appointed me to the Historic Landmarks Commission. Oregon&rsquo;s coaches association asked me to help redesign how high school team tennis works statewide, and I wrote the proposal that did it. Different institutions, same request: build the capability that isn&rsquo;t there yet, and build it to outlast you.</p>
+    <section class="intro" aria-label="About Ron Bronson">
+      <h2 class="intro__h">People keep asking me to build the thing that isn&rsquo;t there yet.</h2>
+
+      <!-- ══ BLURB — Ron's copy goes here. Keep it to two or three sentences;
+           the photos above already carry the institutions. ══════════════ -->
+      <div class="orient">
+        <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
+          spent eight years building design capability inside the federal government.</p>
+      </div>
+      <!-- ══ /BLURB ═══════════════════════════════════════════════════════ -->
     </section>
 
-    <section class="listen" aria-label="Listen">
-      <span class="listen__label">Or listen</span>
-      <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Podcast episode featuring Ron Bronson"></iframe>
+    <span class="cards__label">Listen</span>
+    <section class="cards" aria-label="Podcasts">
+      <article class="pod">
+        <div class="pod__head">
+          <h3 class="pod__title"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></h3>
+          <span class="pod__note">Episode 236 &mdash; Repairing Service Design for the Age of AI.</span>
+        </div>
+        <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+      </article>
+      <article class="pod">
+        <div class="pod__head">
+          <h3 class="pod__title"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></h3>
+          <span class="pod__note">I co-host with Joel Goodman. Books about technology, and what they get wrong.</span>
+        </div>
+        <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+      </article>
     </section>
 
+    <span class="cards__label">Elsewhere</span>
     <section class="doors" aria-label="Where to go next">
       <article class="door">
-        <h2 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h2>
+        <h3 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3>
         <span class="door__note">Writing, talks, teaching, and how I work.</span>
       </article>
       <article class="door">
-        <h2 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h2>
+        <h3 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3>
         <span class="door__note">Projects, experiments, and invented sports.</span>
       </article>
       <article class="door">
-        <h2 class="door__title"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h2>
+        <h3 class="door__title"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3>
         <span class="door__note">Design for the speculative present. A studio.</span>
       </article>
       <article class="door">
-        <h2 class="door__title"><a href="https://blog.ronbronson.com">blog.ronbronson.com &rarr;</a></h2>
+        <h3 class="door__title"><a href="https://blog.ronbronson.com">blog.ronbronson.com &rarr;</a></h3>
         <span class="door__note">Essays, in progress and otherwise.</span>
       </article>
     </section>
