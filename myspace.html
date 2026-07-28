@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ron Bronson</title>
+<meta name="description" content="Ron Bronson — teaching at Michigan, advising State Capacity AI, coaching high school tennis, and formerly building design capability inside the federal government." />
+<meta property="og:type" content="profile" />
+<meta property="og:title" content="Ron Bronson" />
+<meta property="og:description" content="Ron is in your extended network." />
+<meta property="og:image" content="https://ronbronson.com/assets/profile.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Ron Bronson" />
+<meta name="twitter:description" content="Ron is in your extended network." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/profile.jpg" />
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-192.png" />
+<link rel="icon" href="assets/favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="assets/site.css" />
+<script src="assets/palette.js"></script>
+<style>
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Light.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Light.woff") format("woff"); font-weight:300; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Book.woff") format("woff"); font-weight:400; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff") format("woff"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Medium.woff") format("woff"); font-weight:500; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight:600; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Bold.woff") format("woff"); font-weight:700; font-display:swap; }
+
+  :root {
+    --text: "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --sans: var(--text);
+    --ui: "PP Pangram Sans", "PP Neue Montreal Text", Helvetica, Arial, sans-serif;
+  }
+  body { font-family: var(--text); }
+
+  /* ── Masthead: name + the status line that used to say "Ron is online now!" ── */
+  .ms-head { padding-bottom: clamp(14px, 2vw, 22px); }
+  .ms-name {
+    display: block;
+    margin: 0;
+    font-family: var(--display);
+    font-size: clamp(44px, 9vw, 116px);
+    line-height: .9;
+    letter-spacing: -.05em;
+  }
+  .ms-status {
+    margin: 10px 0 0;
+    font-family: var(--ui);
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--ink);
+  }
+  .ms-status b { font-weight: 700; }
+
+  /* ── Two columns, MySpace proportions: narrow rail, wide content ── */
+  .ms-cols {
+    display: grid;
+    grid-template-columns: minmax(230px, 300px) minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 40px);
+    margin-top: clamp(20px, 3vw, 34px);
+    align-items: start;
+  }
+  /* grid items default to min-width:auto, so a wide child (the contact
+     buttons, the label columns) pushes the track past the viewport. */
+  .ms-cols > * { min-width: 0; }
+
+  /* ── The module: every MySpace box is a titled bordered card ── */
+  .mod {
+    border: var(--frame) solid var(--ink);
+    background: var(--bg);
+    margin-bottom: clamp(18px, 2.4vw, 28px);
+  }
+  .mod__t {
+    margin: 0;
+    padding: 8px 12px;
+    background: var(--ink);
+    color: var(--bg);
+    font-family: var(--ui);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .mod__b { padding: clamp(14px, 1.8vw, 20px); }
+  .mod__b > :first-child { margin-top: 0; }
+  .mod__b > :last-child { margin-bottom: 0; }
+  .mod__b p {
+    margin: 0 0 .85em;
+    font-size: clamp(17px, 1.35vw, 20px);
+    line-height: 1.5;
+  }
+  .mod__b a { color: var(--ink); border-bottom: var(--frame) solid var(--accent); }
+  .mod__b a:hover { color: var(--accent); }
+
+  /* ── Profile picture ── */
+  .pic { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; }
+  .pic-wrap { border: var(--frame) solid var(--ink); margin-bottom: clamp(18px, 2.4vw, 28px); line-height: 0; }
+
+  /* ── "Contacting Ron Bronson" — the icon table, as buttons ── */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--hair); background: var(--ink); }
+  .contact-grid > * {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    min-height: 46px; padding: 9px 8px;
+    background: var(--bg); border: 0; cursor: pointer;
+    font-family: var(--ui); font-weight: 500; font-size: 12px;
+    color: var(--ink); text-align: center;
+  }
+  .contact-grid > *:hover { background: var(--ink); color: var(--bg); }
+  .contact-grid span[aria-hidden] { font-size: 14px; }
+
+  /* ── Details / stats table ── */
+  .dl { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; }
+  .dl div { display: grid; grid-template-columns: 8.5em 1fr; gap: 10px; padding: 7px 0; border-top: var(--hair) solid var(--rule); }
+  .dl div:first-child { border-top: 0; padding-top: 0; }
+  .dl dt { color: var(--ink); }
+  .dl dd { margin: 0; color: var(--ink); }
+
+  /* ── Top 8: the friends grid ── */
+  .top8 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--hair); background: var(--ink); }
+  .friend { display: flex; flex-direction: column; background: var(--bg); padding: 0; }
+  .friend img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+  .friend__n {
+    padding: 9px 10px 11px;
+    font-family: var(--ui); font-weight: 600; font-size: 12px; line-height: 1.3;
+    color: var(--ink);
+  }
+  .friend__n small { display: block; font-weight: 500; font-size: 11px; opacity: .8; margin-top: 2px; }
+  .friend:hover { background: var(--bg-deeper); }
+  .friend { position: relative; }
+  .friend a::after { content: ""; position: absolute; inset: 0; }
+  .friend a { color: var(--ink); }
+
+  /* ── Interests table ── */
+  .interests { margin: 0; font-family: var(--text); font-size: clamp(16px, 1.3vw, 19px); }
+  .interests div { display: grid; grid-template-columns: 9em 1fr; gap: 12px; padding: 9px 0; border-top: var(--hair) solid var(--rule); }
+  .interests div:first-child { border-top: 0; padding-top: 0; }
+  .interests dt { font-family: var(--ui); font-weight: 600; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; padding-top: 3px; }
+  .interests dd { margin: 0; line-height: 1.45; }
+
+  /* ── Player module ── */
+  .players { display: grid; gap: var(--hair); background: var(--ink); }
+  .player { background: var(--bg); }
+  .player__n { padding: 9px 12px 0; font-family: var(--display); font-size: clamp(18px, 1.7vw, 23px); letter-spacing: -.02em; }
+  .player__n a { color: var(--ink); }
+  .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--bg-deeper); }
+
+  /* ── Photo strip ── */
+  .snaps { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--hair); background: var(--ink); }
+  .snaps img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--bg-deeper); }
+
+  .ms-foot {
+    margin-top: clamp(26px, 4vw, 44px);
+    padding: 16px 0 clamp(30px, 4vw, 46px);
+    border-top: var(--frame) solid var(--ink);
+    font-family: var(--ui); font-weight: 500; font-size: 12px;
+    color: var(--ink);
+  }
+
+  @media (max-width: 780px) {
+    .ms-cols { grid-template-columns: minmax(0, 1fr); }
+    .pic-wrap { max-width: 320px; }
+  }
+  @media (max-width: 520px) {
+    .contact-grid { grid-template-columns: 1fr; }
+    .top8 { grid-template-columns: repeat(2, 1fr); }
+    .dl div, .interests div { grid-template-columns: 1fr; gap: 3px; padding: 9px 0; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="ms-head">
+    <h1 class="ms-name">Ron Bronson</h1>
+    <p class="ms-status"><b>Ron is in your extended network.</b> &nbsp;·&nbsp; Portland, Oregon &nbsp;·&nbsp; Mood: building something</p>
+  </header>
+
+  <div class="ms-cols">
+
+    <!-- ═══════════════ LEFT RAIL ═══════════════ -->
+    <div class="ms-rail">
+
+      <div class="pic-wrap">
+        <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Black and white portrait of Ron Bronson smiling in front of a brick wall" />
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Contacting Ron Bronson</h2>
+        <div class="contact-grid">
+          <button type="button" data-contact><span aria-hidden="true">✉</span> Send Message</button>
+          <a href="https://ronbronson.design"><span aria-hidden="true">★</span> Add to Friends</a>
+          <a href="https://blog.ronbronson.com"><span aria-hidden="true">✎</span> Read the Blog</a>
+          <a href="https://ronbronson.dev"><span aria-hidden="true">⚙</span> See What I Build</a>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Details</h2>
+        <div class="mod__b">
+          <dl class="dl">
+            <div><dt>Status</dt><dd>Building capability</dd></div>
+            <div><dt>Here for</dt><dd>Public work that has to survive contact with reality</dd></div>
+            <div><dt>Occupation</dt><dd>Teaching, advising, coaching</dd></div>
+            <div><dt>Companies</dt><dd>University of Michigan, State Capacity AI, Thinking Weapons</dd></div>
+            <div><dt>Previously</dt><dd>18F, AIGA Portland, Portland Digital Corps</dd></div>
+            <div><dt>Hometown</dt><dd>Everywhere, eventually</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Photos</h2>
+        <div class="snaps">
+          <img src="assets/dfp-room.jpg" width="1400" height="1050" loading="lazy" alt="A packed room of designers and civic technologists at Design For The Public" />
+          <img src="assets/gsa-18f.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson and colleagues on a GSA stage" />
+          <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A student cohort beneath a Taubman College, University of Michigan banner" />
+          <img src="assets/design-month.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson speaking at Portland Design Month" />
+          <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque" />
+          <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school tennis team and a championship plaque" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ═══════════════ RIGHT COLUMN ═══════════════ -->
+    <div class="ms-main">
+
+      <div class="mod">
+        <h2 class="mod__t">About Me</h2>
+        <div class="mod__b">
+          <!-- ══ BLURB — Ron's copy goes here ══════════════════════════ -->
+          <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
+            spent eight years building design capability inside the federal government.</p>
+          <!-- ══ /BLURB ═══════════════════════════════════════════════ -->
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Top 6</h2>
+        <div class="top8">
+          <article class="friend">
+            <img src="assets/design-month.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://ronbronson.design">ronbronson.design</a><small>Writing, talks &amp; how I work</small></span>
+          </article>
+          <article class="friend">
+            <img src="assets/gsa-18f.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://ronbronson.dev">ronbronson.dev</a><small>How I think</small></span>
+          </article>
+          <article class="friend">
+            <img src="assets/dfp-room.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://thinkingweapons.com">thinkingweapons.com</a><small>Speculative civics + public exhibitions</small></span>
+          </article>
+          <article class="friend">
+            <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://blog.ronbronson.com">My blog</a></span>
+          </article>
+          <article class="friend">
+            <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a><small>Episode 236</small></span>
+          </article>
+          <article class="friend">
+            <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="" />
+            <span class="friend__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a><small>With Joel Goodman</small></span>
+          </article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Now Playing</h2>
+        <div class="players">
+          <div class="player">
+            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
+            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+          </div>
+          <div class="player">
+            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
+            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Interests</h2>
+        <div class="mod__b">
+          <dl class="interests">
+            <div><dt>General</dt><dd>How public services actually work. Where authority and judgment sit. Who absorbs the friction.</dd></div>
+            <div><dt>Teaching</dt><dd><a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics</a> at Taubman College, and whatever Urban Technology turns out to be.</dd></div>
+            <div><dt>Radio</dt><dd>Volunteer news broadcasting at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/">The Sound Bulletin</a> on KFFP 90.3 FM.</dd></div>
+            <div><dt>Sport</dt><dd>High school tennis. State co-chair for the Oregon Athletic Coaches Association. I invented <a href="https://en.wikipedia.org/wiki/Tennis_polo">a sport</a>.</dd></div>
+            <div><dt>Heroes</dt><dd>People who build the thing nobody assigned them.</dd></div>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="ms-foot">
+    Ron Bronson &nbsp;·&nbsp; <button class="foot__mail" type="button" data-contact style="background:none;border:0;padding:0;font:inherit;color:var(--ink);border-bottom:var(--frame) solid var(--accent);cursor:pointer;">Send a message</button>
+  </footer>
+
+  <script>
+    /* The address is assembled at click time and never written into the DOM. */
+    (function () {
+      var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
+        return String.fromCharCode(n);
+      }).join('');
+      document.querySelectorAll('[data-contact]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          window.location.href = 'mailto:' + address;
+        });
+      });
+    })();
+  </script>
+
+</div>
+</body>
+</html>
