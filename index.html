@@ -69,32 +69,47 @@
       repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 2px, transparent 2px 9px);
     color: var(--ink);
     font-family: var(--text);
-    font-size: 16px;
-    line-height: 1.5;
+    font-size: 17px;
+    line-height: 1.55;
   }
   a { color: var(--link); text-underline-offset: 2px; }
   a:hover { color: var(--ink); }
-  img { max-width: 100%; }
+  /* height:auto globally — the HTML height attribute is a presentational
+     hint that outranks aspect-ratio, which silently stretched the portrait
+     and the photo grids. More specific rules (book covers) still win. */
+  img { max-width: 100%; height: auto; }
 
   /* ── the profile container ── */
   .shell {
     max-width: 1080px;
     margin: 0 auto;
     background: var(--panel);
-    border: 3px solid var(--ink);
-    box-shadow: 8px 8px 0 rgba(0, 23, 31, .45);
+    border: 2px solid var(--ink);
+    box-shadow: 0 24px 60px -24px rgba(0, 23, 31, .65);
   }
 
   /* ── banner ── */
-  .banner { padding: clamp(16px, 2.6vw, 30px) clamp(14px, 2.4vw, 28px) clamp(12px, 2vw, 20px); border-bottom: 3px solid var(--ink); }
+  .banner {
+    display: flex; align-items: center; gap: clamp(14px, 2.4vw, 26px);
+    padding: clamp(18px, 2.6vw, 30px) clamp(16px, 2.4vw, 30px);
+    border-bottom: 2px solid var(--ink);
+  }
   .banner h1 {
     margin: 0;
     font-family: var(--display);
     font-weight: 700;
-    font-size: clamp(30px, 6.4vw, 78px);
-    line-height: .96;
+    font-size: clamp(28px, 5.6vw, 66px);
+    line-height: .98;
     letter-spacing: -.01em;
     text-transform: uppercase;
+  }
+  .pic {
+    flex: none;
+    width: clamp(64px, 11vw, 108px);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center 22%;
+    border: 2px solid var(--ink);
   }
 
   /* ── columns ── */
@@ -104,29 +119,31 @@
     gap: 0;
   }
   .cols > * { min-width: 0; }
-  .rail { padding: clamp(14px, 2.2vw, 22px); border-right: 3px solid var(--ink); background: var(--rail-bg); }
-  .main { padding: clamp(14px, 2.2vw, 22px); }
+  .rail { padding: clamp(16px, 2.2vw, 24px); border-right: 2px solid var(--ink); background: var(--rail-bg); }
+  .main { padding: clamp(16px, 2.2vw, 26px); }
+  @media (min-width: 781px) {
+    .rail__inner { position: sticky; top: clamp(12px, 2.5vw, 34px); }
+  }
 
   /* ── module ── */
-  .mod { border: 2px solid var(--ink); background: var(--panel); margin-bottom: clamp(14px, 2vw, 22px); }
+  .mod { border: 1px solid var(--ink); background: var(--panel); margin-bottom: clamp(16px, 2vw, 24px); overflow: hidden; }
   .mod:last-child { margin-bottom: 0; }
   .mod__t {
-    margin: 0; padding: 7px 11px;
+    margin: 0; padding: 9px 14px;
     background: var(--ink); color: var(--white);
     font-family: var(--std); font-weight: 500;
-    font-size: 13px; letter-spacing: .11em; text-transform: uppercase;
+    font-size: 13.5px; letter-spacing: .1em; text-transform: uppercase;
   }
-  .mod__b { padding: clamp(12px, 1.7vw, 18px); }
+  .mod__b { padding: clamp(16px, 2vw, 22px); }
   .mod__b > :first-child { margin-top: 0; }
   .mod__b > :last-child { margin-bottom: 0; }
 
-  .pic { display: block; width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border: 2px solid var(--ink); margin-bottom: clamp(14px, 2vw, 22px); }
 
   /* ── contact buttons ── */
   .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ink); }
   .cg > * {
     display: flex; align-items: center; justify-content: center; gap: 6px;
-    min-height: 44px; padding: 8px 6px;
+    min-height: 48px; padding: 10px 8px;
     background: var(--panel); border: 0; cursor: pointer;
     font-family: var(--ui); font-weight: 500; font-size: 12px;
     color: var(--link); text-align: center; text-decoration: none;
@@ -135,7 +152,7 @@
 
 
   /* ── blurb ── */
-  .blurb p { margin: 0 0 .8em; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.5; }
+  .blurb p { margin: 0 0 .9em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; }
   .blurb p:last-child { margin-bottom: 0; }
 
 
@@ -196,7 +213,7 @@
 
   .footbar {
     padding: 13px clamp(14px, 2.4vw, 28px);
-    border-top: 3px solid var(--ink); background: var(--white);
+    border-top: 2px solid var(--ink); background: var(--white);
     font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2);
   }
   .footbar button {
@@ -205,9 +222,11 @@
   }
   .footbar button:hover { color: var(--ink); }
 
-  @media (max-width: 760px) {
+  @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
-    .rail { border-right: 0; border-bottom: 3px solid var(--ink); }
+    .main { order: 1; }
+    .rail { order: 2; border-right: 0; border-top: 2px solid var(--ink); }
+    .banner { padding-bottom: clamp(16px, 4vw, 22px); }
   }
   @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } .boards { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) {
@@ -221,6 +240,7 @@
 <div class="shell">
 
   <header class="banner">
+    <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson" />
     <h1>Ron Bronson</h1>
   </header>
 
@@ -228,7 +248,7 @@
 
     <!-- ══════════ RAIL ══════════ -->
     <div class="rail">
-      <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Black and white portrait of Ron Bronson smiling in front of a brick wall" />
+      <div class="rail__inner">
 
       <div class="mod">
         <h2 class="mod__t">Contacting Ron</h2>
@@ -263,6 +283,7 @@
         <div class="mod__b">
           <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
         </div>
+      </div>
       </div>
     </div>
 
