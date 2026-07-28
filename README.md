@@ -53,8 +53,14 @@ Module order in `.main`, and the reasoning behind it:
 | Currently | Present tense, immediately after the grafs, so "has been trusted with" is followed by "still doing it". |
 | Elsewhere | The four site links. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
-| Service & Convening | Was `Board Service`; the entries include founding a design week and running Design Month, which is convening, not governance. |
 | Now Playing | Podcasts. |
+
+**Board service is deliberately gone.** A grid of org names and date ranges is a résumé
+section, and it earned its space by looking like credentials rather than by telling anyone
+what Ron does. The appointments that carry signal — AIGA Portland's presidency, the City
+of Portland's Historic Landmarks Commission — are stated in the opening grafs instead,
+in the grammar of appointment, which is where the README always said they belonged. Don't
+reintroduce the grid.
 
 Rail B holds `Listening` and `Reading` only. The radio line used to live down there, where
 it read as a hobby; it's in `Currently` now, which is the whole point of that module.

@@ -181,7 +181,11 @@
   }
   .books .book__title { display: none; }
 
-  /* ── board service grid ── */
+  /* ── label/detail grid ──────────────────────────────────────────────
+     Currently unused: the Board Service module it was built for is gone.
+     Kept because it's the house pattern for any "term + dates" list and
+     the content is mid-rewrite. Delete if nothing claims it.
+     ──────────────────────────────────────────────────────────────── */
   .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
   .board { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
   .board b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.15; }
@@ -355,18 +359,6 @@
           <article class="t8">
             <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
           </article>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Service &amp; Convening</h2>
-        <div class="boards">
-          <article class="board"><b>AIGA Portland</b><span>Board President, 2023&ndash;25</span></article>
-          <article class="board"><b>PDX Design Month</b><span>2024&ndash;present</span></article>
-          <article class="board"><b>Portland Historic Landmarks Commission</b><span>City of Portland, 2020</span></article>
-          <article class="board"><b>WFHB Community Radio</b><span>2017&ndash;18</span></article>
-          <article class="board"><b>AIGA Indianapolis</b><span>2016&ndash;18</span></article>
-          <article class="board"><b>Indianapolis Design Week</b><span>Founder, 2017</span></article>
         </div>
       </div>
 
