@@ -152,14 +152,6 @@
   }
   .t8 small { display: block; padding: 0 9px 9px; font-family: var(--ui); font-weight: 500; font-size: 11px; color: var(--ink-2); }
 
-  /* ── Leadership: signals only, no sentences ── */
-  .sig { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(14px, 2vw, 26px); }
-  .sig li {
-    padding: 9px 0; border-top: 1px solid var(--rule);
-    font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25;
-  }
-  .sig li:nth-child(-n+2) { border-top: 0; padding-top: 0; }
-  .sig b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(19px, 1.9vw, 26px); letter-spacing: -.01em; }
 
   /* ── sites list in the rail ── */
   .sites { margin: 0; padding: 0; list-style: none; font-family: var(--ui); font-weight: 500; font-size: 13px; }
@@ -201,8 +193,6 @@
   @media (max-width: 520px) {
     .cg { grid-template-columns: 1fr; }
     .top8 { grid-template-columns: repeat(2, 1fr); }
-    .sig { grid-template-columns: 1fr; }
-    .sig li:nth-child(2) { border-top: 1px solid var(--rule); padding-top: 9px; }
     .dl div, .int div { grid-template-columns: 1fr; gap: 2px; }
   }
 </style>
@@ -266,24 +256,6 @@
           <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
             spent eight years building design capability inside the federal government.</p>
           <!-- ══ /BLURB ═══════════════════════════════════════════════ -->
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Leadership</h2>
-        <div class="mod__b">
-          <ul class="sig">
-            <li><b>40+</b> designers and design managers led</li>
-            <li><b>9</b> managers reporting in</li>
-            <li><b>1,500</b> at Portland Design Month</li>
-            <li><b>80+</b> at Design For The Public</li>
-            <li><b>6</b> nonprofit sites rebuilt in four months</li>
-            <li><b>4</b> individual state champions coached</li>
-            <li><b>Board president</b> AIGA Portland</li>
-            <li><b>Commissioner</b> Portland Historic Landmarks</li>
-            <li><b>State co-chair</b> Oregon tennis</li>
-            <li><b>8 years</b> inside the federal government</li>
-          </ul>
         </div>
       </div>
 
