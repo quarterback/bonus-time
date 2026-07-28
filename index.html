@@ -116,10 +116,13 @@
     gap: 0;
   }
   .cols > * { min-width: 0; }
-  .rail { padding: clamp(14px, 2.2vw, 22px); border-right: 3px solid var(--ink); background: var(--rail-bg); }
+  .rail { padding: clamp(14px, 2.2vw, 22px); background: var(--rail-bg); }
   .main { padding: clamp(16px, 2.2vw, 26px); }
   @media (min-width: 781px) {
-    .rail__inner { position: sticky; top: clamp(12px, 2.5vw, 34px); }
+    .rail { border-right: 3px solid var(--ink); }
+    .rail--a { grid-column: 1; grid-row: 1; }
+    .rail--b { grid-column: 1; grid-row: 2; padding-top: 0; }
+    .main    { grid-column: 2; grid-row: 1 / span 2; }
   }
 
   /* ── module ── */
@@ -219,15 +222,35 @@
   }
   .footbar button:hover { color: var(--ink); }
 
+  /* ── Breakpoints, widest first so the cascade resolves predictably.
+     The 900px rule used to sit after the phone rule and quietly won on
+     phones, which is why the grids never got denser down there. ────── */
+  @media (max-width: 900px) {
+    .top8   { grid-template-columns: repeat(3, 1fr); }
+    .boards { grid-template-columns: repeat(2, 1fr); }
+  }
+
   @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
-    .rail { border-right: 0; border-bottom: 3px solid var(--ink); }
+    /* Contact rides at the top; the widgets drop below the content. */
+    .rail--a {
+      display: flex; align-items: flex-start; gap: 14px;
+      border-bottom: 3px solid var(--ink);
+    }
+    .rail--a .pic { width: 108px; flex: none; margin-bottom: 0; }
+    .rail--a .mod { flex: 1; margin-bottom: 0; }
+    .rail--b { border-top: 3px solid var(--ink); }
+    /* Dense grids so the phone view stays a page, not an endless scroll. */
+    .top8   { grid-template-columns: repeat(4, 1fr); }
+    .boards { grid-template-columns: repeat(2, 1fr); }
+    .books  { grid-template-columns: repeat(6, 1fr); }
+    .doors  { grid-template-columns: repeat(2, 1fr); }
   }
-  @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } .boards { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px) {
+
+  @media (max-width: 430px) {
     .cg { grid-template-columns: 1fr; }
-    .top8 { grid-template-columns: repeat(2, 1fr); }
-    .doors, .boards { grid-template-columns: 1fr; }
+    .doors { grid-template-columns: 1fr; }
+    .rail--a .pic { width: 84px; }
   }
 </style>
 </head>
@@ -241,8 +264,7 @@
   <div class="cols">
 
     <!-- ══════════ RAIL ══════════ -->
-    <div class="rail">
-      <div class="rail__inner">
+    <div class="rail rail--a">
       <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson smiling in front of a brick wall" />
 
       <div class="mod">
@@ -253,33 +275,6 @@
         </div>
       </div>
 
-      <div class="mod">
-        <h2 class="mod__t">Listening</h2>
-        <div class="mod__b">
-          <p class="np">
-            <span class="np__label" id="np-label">Last played</span>
-            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
-              <b class="np__track" id="np-track">&mdash;</b>
-              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Reading</h2>
-        <div class="mod__b">
-          <ul class="books" id="reading-list"></ul>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Community Radio</h2>
-        <div class="mod__b">
-          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
-        </div>
-      </div>
-      </div>
     </div>
 
     <!-- ══════════ MAIN ══════════ -->
@@ -379,6 +374,35 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="rail rail--b">
+      <div class="mod">
+        <h2 class="mod__t">Listening</h2>
+        <div class="mod__b">
+          <p class="np">
+            <span class="np__label" id="np-label">Last played</span>
+            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
+              <b class="np__track" id="np-track">&mdash;</b>
+              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Reading</h2>
+        <div class="mod__b">
+          <ul class="books" id="reading-list"></ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Community Radio</h2>
+        <div class="mod__b">
+          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
+        </div>
+      </div>
     </div>
 
   </div>
