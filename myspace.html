@@ -131,12 +131,6 @@
   }
   .cg > *:hover { background: var(--ink); color: var(--white); }
 
-  /* ── details ── */
-  .dl { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; }
-  .dl div { display: grid; grid-template-columns: 7.5em 1fr; gap: 8px; padding: 6px 0; border-top: 1px solid var(--rule); }
-  .dl div:first-child { border-top: 0; padding-top: 0; }
-  .dl dt { color: var(--ink-2); }
-  .dl dd { margin: 0; }
 
   /* ── blurb ── */
   .blurb p { margin: 0 0 .8em; font-size: clamp(17px, 1.4vw, 21px); line-height: 1.5; }
@@ -150,12 +144,32 @@
   .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
 
 
-  /* ── sites list in the rail ── */
-  .sites { margin: 0; padding: 0; list-style: none; font-family: var(--ui); font-weight: 500; font-size: 13px; }
-  .sites li { padding: 7px 0; border-top: 1px solid var(--rule); }
-  .sites li:first-child { border-top: 0; padding-top: 0; }
-  .sites a { text-decoration: none; }
-  .sites span { display: block; color: var(--ink-2); font-size: 11.5px; margin-top: 1px; }
+  /* ── scrobble ── */
+  .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
+  .np__label { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
+  .np__track { display: block; font-family: var(--std); font-size: 16px; line-height: 1.2; }
+  .np__artist { display: block; color: var(--ink-2); margin-top: 2px; }
+  .np a { text-decoration: none; }
+
+  /* ── books ── */
+  .books { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .books .book__body, .books .book__by { display: none; }
+  .books .book__cover { position: relative; display: block; aspect-ratio: 2/3; background: var(--rule); overflow: hidden; }
+  .books .book__cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .books .book__cover-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 22px; color: var(--ink);
+  }
+  .books .book__title { display: none; }
+
+  /* ── site cards, back in the 4-up grid ── */
+  .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
+  .door { position: relative; background: var(--panel); padding: clamp(14px, 2vw, 22px); }
+  .door:hover { background: var(--rail-bg); }
+  .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
+  .door__t a { text-decoration: none; }
+  .door__t a::after { content: ""; position: absolute; inset: 0; }
+  .door__n { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
 
   /* ── players ── */
   .players { display: grid; gap: 2px; background: var(--ink); }
@@ -164,12 +178,6 @@
   .player__n a { text-decoration: none; }
   .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
 
-  /* ── interests ── */
-  .int { margin: 0; font-size: clamp(15px, 1.25vw, 18px); }
-  .int div { display: grid; grid-template-columns: 8em 1fr; gap: 10px; padding: 8px 0; border-top: 1px solid var(--rule); }
-  .int div:first-child { border-top: 0; padding-top: 0; }
-  .int dt { font-family: var(--ui); font-weight: 600; font-size: 11px; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-2); padding-top: 4px; }
-  .int dd { margin: 0; line-height: 1.45; }
 
   .footbar {
     padding: 13px clamp(14px, 2.4vw, 28px);
@@ -190,7 +198,7 @@
   @media (max-width: 520px) {
     .cg { grid-template-columns: 1fr; }
     .top8 { grid-template-columns: repeat(2, 1fr); }
-    .dl div, .int div { grid-template-columns: 1fr; gap: 2px; }
+    .doors { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -216,28 +224,22 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">What Ron Does</h2>
+        <h2 class="mod__t">Listening</h2>
         <div class="mod__b">
-          <dl class="dl">
-            <div><dt>Works on</dt><dd>How public services actually work</dd></div>
-            <div><dt>Builds</dt><dd>Teams, programs, conferences, software</dd></div>
-            <div><dt>Teaches</dt><dd>Urban Technology, University of Michigan</dd></div>
-            <div><dt>Leads</dt><dd>Design organizations and the managers in them</dd></div>
-            <div><dt>Advises</dt><dd>State Capacity AI</dd></div>
-            <div><dt>Coaches</dt><dd>High school tennis</dd></div>
-          </dl>
+          <p class="np">
+            <span class="np__label" id="np-label">Last played</span>
+            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
+              <b class="np__track" id="np-track">&mdash;</b>
+              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
+            </a>
+          </p>
         </div>
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Ron's Sites</h2>
+        <h2 class="mod__t">Reading</h2>
         <div class="mod__b">
-          <ul class="sites">
-            <li><a href="https://ronbronson.design">ronbronson.design</a><span>Writing, talks &amp; how I work</span></li>
-            <li><a href="https://ronbronson.dev">ronbronson.dev</a><span>How I think</span></li>
-            <li><a href="https://thinkingweapons.com">thinkingweapons.com</a><span>Speculative civics + public exhibitions</span></li>
-            <li><a href="https://blog.ronbronson.com">My blog</a></li>
-          </ul>
+          <ul class="books" id="reading-list"></ul>
         </div>
       </div>
     </div>
@@ -301,14 +303,12 @@
 
 
       <div class="mod">
-        <h2 class="mod__t">Ron's Interests</h2>
-        <div class="mod__b">
-          <dl class="int">
-            <div><dt>General</dt><dd>How public services actually work. Where authority and judgment sit. Who absorbs the friction.</dd></div>
-            <div><dt>Teaching</dt><dd><a href="https://taubmancollege.umich.edu/course/urp610-public-mechanics-how-services-work-section-1-fall-2026/">Public Mechanics</a> at Taubman College, and whatever Urban Technology turns out to be.</dd></div>
-            <div><dt>Radio</dt><dd>Volunteer news broadcasting at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/">The Sound Bulletin</a> on KFFP 90.3 FM.</dd></div>
-            <div><dt>Sport</dt><dd>High school tennis. State co-chair for the Oregon Athletic Coaches Association. I invented <a href="https://en.wikipedia.org/wiki/Tennis_polo">a sport</a>.</dd></div>
-          </dl>
+        <h2 class="mod__t">Elsewhere</h2>
+        <div class="doors">
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Writing, talks &amp; how I work</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">How I think</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics + public exhibitions</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3></article>
         </div>
       </div>
 
@@ -332,6 +332,90 @@
         window.location.href = 'mailto:' + address;
       });
     });
+  })();
+
+  /* Last played — live from last.fm, same CORS-open endpoint and key the
+     .design site already uses. Label flips to "Now playing" when something
+     is actually on. On failure the em-dash placeholder stays. */
+  (function () {
+    var USER = "statechampion";
+    var KEY = "4f1d49f394a1567717e2c9049947d004";
+    fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" +
+          USER + "&limit=1&api_key=" + KEY + "&format=json")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var t = d && d.recenttracks && d.recenttracks.track && d.recenttracks.track[0];
+        if (!t) return;
+        var now = t["@attr"] && t["@attr"].nowplaying === "true";
+        var name = t.name || "";
+        var artist = (t.artist && (t.artist["#text"] || t.artist.name)) || "";
+        var track = document.getElementById("np-track");
+        var art = document.getElementById("np-artist");
+        var label = document.getElementById("np-label");
+        if (track && name) track.textContent = name;
+        if (art && artist) art.textContent = artist;
+        if (label) label.textContent = now ? "Now playing" : "Last played";
+      })
+      .catch(function () { /* leave the placeholder */ });
+  })();
+
+  /* Currently reading — live from Literal's public GraphQL API, the same
+     two-step (profile lookup, then shelf) the .design reading page uses.
+     The module hides itself if the shelf is empty or the call fails, so a
+     dead feed never leaves an empty box on the page. */
+  (function () {
+    var ENDPOINT = "https://api.literal.club/graphql/";
+    var HANDLE = "ron";
+    var LIMIT = 6;
+    var list = document.getElementById("reading-list");
+    if (!list) return;
+    var mod = list.closest(".mod");
+
+    function esc(x) {
+      return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function gql(query, variables) {
+      return fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: query, variables: variables })
+      }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      }).then(function (j) {
+        if (j.errors) throw new Error("GraphQL error");
+        return j.data;
+      });
+    }
+    function tile(b) {
+      var cover = b.cover ? b.cover.replace(/^http:\/\//, "https://") : "";
+      var url = "https://literal.club/book/" + b.slug;
+      return '<li class="book">' +
+        '<a class="book__cover" href="' + esc(url) + '" target="_blank" rel="noopener" aria-label="' + esc(b.title) + '">' +
+          '<span class="book__cover-fallback" aria-hidden="true">' + esc((b.title || "?").slice(0, 1)) + '</span>' +
+          (cover ? '<img src="' + esc(cover) + '" alt="Cover of ' + esc(b.title) + '" loading="lazy" onerror="this.remove()" />' : "") +
+        '</a></li>';
+    }
+    var Q = "query B($s: ReadingStatus!, $p: String!, $l: Int!) {" +
+            "  booksByReadingStateAndProfile(limit: $l, offset: 0, readingStatus: $s, profileId: $p) {" +
+            "    title slug cover" +
+            "  }" +
+            "}";
+    function hide() { if (mod) mod.style.display = "none"; }
+
+    gql("query P($h: String!) { profileByHandle(handle: $h) { id } }", { h: HANDLE })
+      .then(function (d) {
+        var id = d && d.profileByHandle && d.profileByHandle.id;
+        if (!id) return hide();
+        return gql(Q, { s: "IS_READING", p: id, l: LIMIT }).then(function (r) {
+          var books = (r && r.booksByReadingStateAndProfile) || [];
+          if (!books.length) return hide();
+          list.innerHTML = books.map(tile).join("");
+        });
+      })
+      .catch(hide);
   })();
 </script>
 
