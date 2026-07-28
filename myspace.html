@@ -33,13 +33,23 @@
   @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight:600; font-display:swap; }
 
   :root {
-    --paper:  #e8e4d9;   /* page ground */
-    --panel:  #fbfaf6;   /* module body */
-    --ink:    #16233d;   /* text + module header bar */
-    --ink-2:  #55617a;   /* secondary text */
-    --rule:   #c6c0b1;
-    --link:   #1b47c4;
-    --accent: #e2542a;
+    /* Ron's palette. fresh-sky is 2.76:1 on white, so it is never used for
+       text — only fills, hovers and rules. Every text role below clears AA. */
+    --white:     #ffffff;
+    --fresh-sky: #00a7e1;
+    --ink-black: #00171f;
+    --navy:      #003459;
+    --cerulean:  #007ea7;
+
+    --paper:  var(--navy);       /* page ground behind the profile */
+    --panel:  var(--white);      /* module bodies */
+    --ink:    var(--ink-black);  /* body text, header bars — 18.4:1 on white */
+    --ink-2:  var(--navy);       /* secondary text — 12.8:1 on white */
+    --link:   var(--cerulean);   /* links — 4.6:1 on white */
+    --accent: var(--fresh-sky);  /* fills and hovers only, never text */
+    --rule:   rgba(0, 23, 31, .18);
+    --rail-bg: rgba(0, 167, 225, .07);
+
     --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
     --std:     "PP Formula Std", "PP Pangram Sans", sans-serif;
     --text:    "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -54,14 +64,14 @@
     background: var(--paper);
     /* faint tiled ground — the "background image" slot, done in CSS */
     background-image:
-      repeating-linear-gradient(45deg, rgba(22,35,61,.030) 0 2px, transparent 2px 9px);
+      repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 2px, transparent 2px 9px);
     color: var(--ink);
     font-family: var(--text);
     font-size: 16px;
     line-height: 1.5;
   }
   a { color: var(--link); text-underline-offset: 2px; }
-  a:hover { color: var(--accent); }
+  a:hover { color: var(--ink); }
   img { max-width: 100%; }
 
   /* ── the profile container ── */
@@ -70,7 +80,7 @@
     margin: 0 auto;
     background: var(--panel);
     border: 3px solid var(--ink);
-    box-shadow: 7px 7px 0 rgba(22,35,61,.22);
+    box-shadow: 8px 8px 0 rgba(0, 23, 31, .45);
   }
 
   /* ── banner ── */
@@ -92,7 +102,7 @@
     gap: 0;
   }
   .cols > * { min-width: 0; }
-  .rail { padding: clamp(14px, 2.2vw, 22px); border-right: 3px solid var(--ink); background: #efece3; }
+  .rail { padding: clamp(14px, 2.2vw, 22px); border-right: 3px solid var(--ink); background: var(--rail-bg); }
   .main { padding: clamp(14px, 2.2vw, 22px); }
 
   /* ── module ── */
@@ -100,7 +110,7 @@
   .mod:last-child { margin-bottom: 0; }
   .mod__t {
     margin: 0; padding: 7px 11px;
-    background: var(--ink); color: var(--paper);
+    background: var(--ink); color: var(--white);
     font-family: var(--std); font-weight: 500;
     font-size: 13px; letter-spacing: .11em; text-transform: uppercase;
   }
@@ -119,7 +129,7 @@
     font-family: var(--ui); font-weight: 500; font-size: 12px;
     color: var(--link); text-align: center; text-decoration: none;
   }
-  .cg > *:hover { background: var(--ink); color: var(--paper); }
+  .cg > *:hover { background: var(--ink); color: var(--white); }
 
   /* ── details ── */
   .dl { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; }
@@ -163,14 +173,14 @@
 
   .footbar {
     padding: 13px clamp(14px, 2.4vw, 28px);
-    border-top: 3px solid var(--ink); background: #efece3;
+    border-top: 3px solid var(--ink); background: var(--white);
     font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2);
   }
   .footbar button {
     background: none; border: 0; padding: 0; font: inherit;
     color: var(--link); text-decoration: underline; cursor: pointer;
   }
-  .footbar button:hover { color: var(--accent); }
+  .footbar button:hover { color: var(--ink); }
 
   @media (max-width: 760px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
