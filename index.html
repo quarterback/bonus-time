@@ -4,362 +4,493 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson has repeatedly been trusted to build capability that did not exist: a design profession inside the federal government at 18F, Urban Technology at Michigan, AIGA Portland, Portland Design Month, and statewide high school tennis in Oregon." />
-<meta property="og:type" content="website" />
+<meta name="description" content="Ron Bronson is an Assistant Professor of Practice in Urban Technology at the University of Michigan Taubman College. He spent more than a decade in federal service, including eight years at 18F leading one of the federal government's largest design organizations." />
+<meta property="og:type" content="profile" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Repeatedly asked to build the capability that isn’t there yet. Start here." />
-<meta property="og:image" content="https://ronbronson.com/assets/dfp-room.jpg" />
+<meta property="og:description" content="Teaching, building, coaching, convening. Start here." />
+<meta property="og:image" content="https://ronbronson.com/assets/profile.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Repeatedly asked to build the capability that isn’t there yet. Start here." />
-<meta name="twitter:image" content="https://ronbronson.com/assets/dfp-room.jpg" />
+<meta name="twitter:description" content="Teaching, building, coaching, convening. Start here." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/profile.jpg" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-192.png" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-<link rel="stylesheet" href="assets/site.css" />
-<script src="assets/palette.js"></script>
 <style>
-  /* ── PP Neue Montreal Text — the text-optimised cut of the family, used
-     for running copy only. Declared here rather than in assets/site.css:
-     that file is copied verbatim across .com / .dev / .design / thinking
-     weapons, so editing it would desync the other three sites. ───────── */
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-Light.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-Light.woff")  format("woff");
-    font-weight: 300; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-LightItalic.woff")  format("woff");
-    font-weight: 300; font-style: italic; font-display: swap;
-  }
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-Book.woff")  format("woff");
-    font-weight: 400; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff")  format("woff");
-    font-weight: 400; font-style: italic; font-display: swap;
-  }
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff")  format("woff");
-    font-weight: 700; font-style: normal; font-display: swap;
-  }
-  @font-face {
-    font-family: "PP Neue Montreal Text";
-    src: url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff2") format("woff2"),
-         url("assets/fonts/MTL/PPNeueMontrealText-BoldItalic.woff")  format("woff");
-    font-weight: 700; font-style: italic; font-display: swap;
-  }
+  /* ═══════════════════════════════════════════════════════════════════
+     Deliberately standalone: this page does NOT load assets/site.css or
+     palette.js, which are byte-identical copies shared with .dev, .design
+     and thinkingweapons. Its own palette and PP Formula display face keep
+     it distinct from the house style. The previous front door is archived
+     at /_indexarchive.html.
+     ═══════════════════════════════════════════════════════════════════ */
 
-  /* ── PP Pangram Sans — the small-text/UI face: card subtitles and the
-     footer. Replaces the mono register (RX100) in both places.
-     The upload ships no Regular in the standard width (upright goes
-     Thin / Medium / Semibold / Bold; "Regular" exists only as an italic), so
-     Medium at 500 is the text weight — which is the right pick at 11–13px
-     anyway. No woff2 in the set either, so .woff is all there is. ─────── */
-  @font-face {
-    font-family: "PP Pangram Sans";
-    src: url("assets/fonts/PPPangramSans-Medium.woff") format("woff");
-    font-weight: 500; font-style: normal; font-display: swap;
-  }
+  @font-face { font-family:"PP Formula"; src:url("assets/fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"PP Formula Std"; src:url("assets/fonts/PPFormula-Medium.woff") format("woff"); font-weight:500; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Book.woff") format("woff"); font-weight:400; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff") format("woff"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Medium.woff") format("woff"); font-weight:500; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight:600; font-display:swap; }
 
-  /* --display (Author) stays. --mono (RX100) is now unused on this page. */
   :root {
-    --text: "PP Neue Montreal Text", "Hanken Grotesk", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --sans: var(--text);
-    --ui: "PP Pangram Sans", "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  }
-  body { font-family: var(--text); }
+    /* Ron's palette. fresh-sky is 2.76:1 on white, so it is never used for
+       text — only fills, hovers and rules. Every text role below clears AA. */
+    --white:     #ffffff;
+    --fresh-sky: #00a7e1;
+    --ink-black: #00171f;
+    --navy:      #003459;
+    --cerulean:  #007ea7;
 
-  .masthead { display: block; }
+    --paper:  var(--navy);       /* page ground behind the profile */
+    --panel:  var(--white);      /* module bodies */
+    --ink:    var(--ink-black);  /* body text, header bars — 18.4:1 on white */
+    --ink-2:  var(--navy);       /* secondary text — 12.8:1 on white */
+    --link:   var(--cerulean);   /* links — 4.6:1 on white */
+    --accent: var(--fresh-sky);  /* fills and hovers only, never text */
+    --rule:   rgba(0, 23, 31, .18);
+    --rail-bg: rgba(0, 167, 225, .07);
 
-  /* 1 — Photos */
-  .plates {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--hair);
-    margin: clamp(26px, 3.5vw, 40px) 0 0;
-    background: var(--ink);
-    border: var(--frame) solid var(--ink);
-  }
-  .plate { position: relative; margin: 0; }
-  .plate img {
-    display: block;
-    width: 100%;
-    height: auto;           /* clears the HTML height attribute so aspect-ratio wins */
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    background: var(--bg-deeper);
+    --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
+    --std:     "PP Formula Std", "PP Pangram Sans", sans-serif;
+    --text:    "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --ui:      "PP Pangram Sans", "PP Neue Montreal Text", Helvetica, Arial, sans-serif;
   }
 
-  /* 2 — Intro: H2 + short blurb */
-  .intro { margin: clamp(30px, 4vw, 48px) 0 0; }
-  .intro__h {
-    max-width: 22ch;
-    margin: clamp(40px, 6vw, 76px) 0 0;
-    font-family: var(--display);
-    font-size: clamp(32px, 4.2vw, 62px);
-    line-height: 1.02;
-    letter-spacing: -.035em;
-    text-wrap: balance;
-  }
-  .orient {
-    max-width: 58ch;
-    font-family: var(--text);
-    font-size: clamp(20px, 1.85vw, 26px);
-    line-height: 1.5;
-    text-wrap: pretty;
-  }
-  .orient p { margin: 0; }
-  .orient p + p { margin-top: 1.05em; }
-  .orient a {
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: clamp(12px, 2.5vw, 34px) clamp(10px, 2vw, 24px) clamp(40px, 6vw, 70px);
+    background: var(--paper);
+    /* faint tiled ground — the "background image" slot, done in CSS */
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 2px, transparent 2px 9px);
     color: var(--ink);
-    border-bottom: var(--frame) solid var(--accent);
-    padding-bottom: 1px;
+    font-family: var(--text);
+    font-size: 17px;
+    line-height: 1.55;
   }
-  .orient a:hover { color: var(--accent); }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+  /* height:auto globally — the HTML height attribute is a presentational
+     hint that outranks aspect-ratio, which silently stretched the portrait
+     and the photo grids. More specific rules (book covers) still win. */
+  img { max-width: 100%; height: auto; }
 
-  /* 3 — Card grids. Podcasts and site links share one system so the two
-     bands read as a pair rather than two unrelated components. */
-  .cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--hair);
-    margin: clamp(48px, 7vw, 88px) 0 0;
-    background: var(--ink);
-    border: var(--frame) solid var(--ink);
+  /* ── the profile container ── */
+  .shell {
+    max-width: 1080px;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 2px solid var(--ink);
+    box-shadow: 0 24px 60px -24px rgba(0, 23, 31, .65);
   }
-  .cards__label {
-    display: block;
-    margin: clamp(48px, 7vw, 88px) 0 -14px;
-    font-family: var(--ui);
-    font-weight: 500;
-    font-size: 11px;
-    letter-spacing: .12em;
+
+  /* ── banner ── */
+  .banner {
+    display: flex; align-items: center; gap: clamp(14px, 2.4vw, 26px);
+    padding: clamp(18px, 2.6vw, 30px) clamp(16px, 2.4vw, 30px);
+    border-bottom: 2px solid var(--ink);
+  }
+  .banner h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(28px, 5.6vw, 66px);
+    line-height: .98;
+    letter-spacing: -.01em;
     text-transform: uppercase;
-    color: var(--ink);
   }
-  .cards__label + .cards { margin-top: 14px; }
-
-  .pod { display: flex; flex-direction: column; background: var(--bg); }
-  .pod__head { padding: clamp(18px, 2.4vw, 26px) clamp(18px, 2.4vw, 26px) 14px; }
-  .pod__title {
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(21px, 2.1vw, 28px);
-    line-height: 1.08;
-    letter-spacing: -.02em;
-  }
-  .pod__title a { color: var(--ink); }
-  .pod__title a:hover { color: var(--accent); }
-  .pod iframe {
-    display: block;
-    width: 100%;
-    height: 152px;
-    border: 0;
-    margin-top: auto;
-    background: var(--bg-deeper);
+  .pic {
+    flex: none;
+    width: clamp(64px, 11vw, 108px);
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    object-position: center 22%;
+    border: 2px solid var(--ink);
   }
 
-  .doors {
+  /* ── columns ── */
+  .cols {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--hair);
-    margin: 14px 0 0;
-    background: var(--ink);
-    border: var(--frame) solid var(--ink);
+    grid-template-columns: minmax(200px, 290px) minmax(0, 1fr);
+    gap: 0;
   }
-  .door {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    padding: clamp(22px, 3vw, 34px);
-    background: var(--bg);
-  }
-  .door:hover { background: var(--bg-deeper); }
-  .door__title {
-    margin: 0;
-    font-family: var(--display);
-    font-size: clamp(26px, 3vw, 40px);
-    line-height: 1.02;
-    letter-spacing: -.03em;
-    overflow-wrap: anywhere;
-  }
-  .door__title a { color: var(--ink); }
-  .door__title a:hover { color: var(--accent); }
-  .door__title a::after { content: ""; position: absolute; inset: 0; }
-  .door { position: relative; }
-  /* --ink, not --ink-soft: soft/bg measures 3.85:1 on the Pollen ground
-     (RBPalette.audit()), which fails AA for text this size. Hierarchy comes
-     from the size and typeface gap against the display-serif title instead. */
-  .door__note {
-    font-family: var(--ui);
-    font-weight: 500;
-    font-size: 13px;
-    line-height: 1.45;
-    color: var(--ink);
+  .cols > * { min-width: 0; }
+  .rail { padding: clamp(16px, 2.2vw, 24px); border-right: 2px solid var(--ink); background: var(--rail-bg); }
+  .main { padding: clamp(16px, 2.2vw, 26px); }
+  @media (min-width: 781px) {
+    .rail__inner { position: sticky; top: clamp(12px, 2.5vw, 34px); }
   }
 
-  /* 4 — Contact */
-  /* footer.foot in site.css is an element+class selector — match it or the
-     shared grid wins and the mail button stretches full width. */
-  footer.foot {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 8px 18px;
-    margin-top: clamp(44px, 6vw, 76px);
-    padding: clamp(24px, 3vw, 36px) 0 clamp(36px, 4vw, 52px);
-    border-top: var(--frame) solid var(--ink);
-    font-family: var(--ui);
-    font-weight: 500;
-    font-size: 14px;
+  /* ── module ── */
+  .mod { border: 1px solid var(--ink); background: var(--panel); margin-bottom: clamp(16px, 2vw, 24px); overflow: hidden; }
+  .mod:last-child { margin-bottom: 0; }
+  .mod__t {
+    margin: 0; padding: 9px 14px;
+    background: var(--ink); color: var(--white);
+    font-family: var(--std); font-weight: 500;
+    font-size: 13.5px; letter-spacing: .1em; text-transform: uppercase;
   }
-  .foot__label { color: var(--ink); letter-spacing: .08em; text-transform: uppercase; font-size: 11px; }
-  .foot__pitch {
-    flex: 1 1 22ch;
-    margin: 0;
-    font-family: var(--text);
-    font-size: clamp(19px, 1.6vw, 23px);
-    line-height: 1.45;
-    color: var(--ink);   /* site.css sets .foot to --ink-soft (3.85:1) — override */
-  }
-  .button {
-    display: inline-flex;
-    align-items: center;
-    min-height: 46px;
-    padding: 11px 18px;
-    border: var(--frame) solid var(--ink);
-    background: transparent;
-    font-family: var(--ui);
-    font-weight: 500;
-    font-size: 14px;
-    color: var(--ink);
-    cursor: pointer;
-  }
-  .button:hover { background: var(--ink); color: var(--bg); }
+  .mod__b { padding: clamp(16px, 2vw, 22px); }
+  .mod__b > :first-child { margin-top: 0; }
+  .mod__b > :last-child { margin-bottom: 0; }
 
 
-  /* Photos stay 2-up even on phones — four stacked plates push the text
-     a full screen down and bury the thing people came to read. */
-  @media (max-width: 900px) {
-    .plates { grid-template-columns: repeat(3, 1fr); }
+  /* ── contact buttons ── */
+  .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ink); }
+  .cg > * {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 48px; padding: 10px 8px;
+    background: var(--panel); border: 0; cursor: pointer;
+    font-family: var(--ui); font-weight: 500; font-size: 12px;
+    color: var(--link); text-align: center; text-decoration: none;
   }
-  @media (max-width: 560px) {
-    .plates { grid-template-columns: repeat(2, 1fr); }
-    .doors { grid-template-columns: 1fr; }
+  .cg > *:hover { background: var(--ink); color: var(--white); }
+
+
+  /* ── blurb ── */
+  .blurb p { margin: 0 0 .9em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; }
+  .blurb p:last-child { margin-bottom: 0; }
+
+
+  /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
+     not "what websites does Ron have". ── */
+  .top8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--ink); }
+  .t8 { background: var(--panel); display: flex; flex-direction: column; }
+  .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
+
+
+  .radio { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.5; }
+
+  /* ── scrobble ── */
+  .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
+  .np__label { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
+  .np__track { display: block; font-family: var(--std); font-size: 16px; line-height: 1.2; }
+  .np__artist { display: block; color: var(--ink-2); margin-top: 2px; }
+  .np a { text-decoration: none; }
+
+  /* ── books ── */
+  .books { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .books .book__body, .books .book__by { display: none; }
+  .books .book__cover { position: relative; display: block; aspect-ratio: 2/3; background: var(--rule); overflow: hidden; }
+  .books .book__cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .books .book__cover-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 22px; color: var(--ink);
+  }
+  .books .book__title { display: none; }
+
+  /* ── board service grid ── */
+  .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
+  .board { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
+  .board b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.15; }
+  .board span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
+
+  /* ── site cards, back in the 4-up grid ── */
+  .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
+  .door { position: relative; background: var(--panel); padding: clamp(14px, 2vw, 22px); }
+  /* Opaque fill. --rail-bg is 7% alpha, which composited over the grid's
+     ink-black gap colour instead of the card's white and went nearly black.
+     ink-black on fresh-sky is 6.67:1; navy on it is 4.66:1 — both clear AA. */
+  .door:hover { background: var(--fresh-sky); }
+  .door:hover .door__t a,
+  .door:hover .door__n { color: var(--ink-black); }
+  .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
+  .door__t a { text-decoration: none; }
+  .door__t a::after { content: ""; position: absolute; inset: 0; }
+  .door__n { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
+
+  /* ── players ── */
+  .players { display: grid; gap: 2px; background: var(--ink); }
+  .player { background: var(--panel); }
+  .player__n { margin: 0; padding: 9px 12px 7px; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.4vw, 19px); }
+  .player__n a { text-decoration: none; }
+  .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
+
+
+  .footbar {
+    padding: 13px clamp(14px, 2.4vw, 28px);
+    border-top: 2px solid var(--ink); background: var(--white);
+    font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2);
+  }
+  .footbar button {
+    background: none; border: 0; padding: 0; font: inherit;
+    color: var(--link); text-decoration: underline; cursor: pointer;
+  }
+  .footbar button:hover { color: var(--ink); }
+
+  @media (max-width: 780px) {
+    .cols { grid-template-columns: minmax(0, 1fr); }
+    .main { order: 1; }
+    .rail { order: 2; border-right: 0; border-top: 2px solid var(--ink); }
+    .banner { padding-bottom: clamp(16px, 4vw, 22px); }
+  }
+  @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } .boards { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 520px) {
+    .cg { grid-template-columns: 1fr; }
+    .top8 { grid-template-columns: repeat(2, 1fr); }
+    .doors, .boards { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
-<div class="wrap">
+<div class="shell">
 
-  <header class="masthead">
-    <a class="name" href="/">Ron Bronson</a>
+  <header class="banner">
+    <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson" />
+    <h1>Ron Bronson</h1>
   </header>
 
-  <main>
-    <h2 class="intro__h">People keep asking me to build the thing that isn&rsquo;t there yet.</h2>
+  <div class="cols">
 
-    <section class="plates" aria-label="Photographs">
-      <figure class="plate">
-        <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public, many with hands raised" />
-      </figure>
-      <figure class="plate">
-        <img src="assets/gsa-18f.jpg" width="1400" height="1050" alt="Ron Bronson and colleagues on a GSA stage in front of a screen reading &quot;18F knows how to work within government &mdash; because we&rsquo;re already here&quot;" />
-      </figure>
-      <figure class="plate">
-        <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A large student cohort posed beneath a Taubman College, University of Michigan banner" />
-      </figure>
-      <figure class="plate">
-        <img src="assets/design-month.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson speaking at Portland Design Month beside a slide reading &quot;Ron Bronson, President of AIGA Portland&quot;" />
-      </figure>
-      <figure class="plate">
-        <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque in front of an Oregon Athletic Coaches Association backdrop" />
-      </figure>
-      <figure class="plate">
-        <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
-      </figure>
-    </section>
+    <!-- ══════════ RAIL ══════════ -->
+    <div class="rail">
+      <div class="rail__inner">
 
-    <section class="intro" aria-label="About Ron Bronson">
-      <!-- ══ BLURB — Ron's copy goes here. Keep it to two or three sentences;
-           the photos above already carry the institutions. ══════════════ -->
-      <div class="orient">
-        <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
-          spent eight years building design capability inside the federal government.</p>
+      <div class="mod">
+        <h2 class="mod__t">Contacting Ron</h2>
+        <div class="cg">
+          <button type="button" data-contact>✉ Send Message</button>
+          <a href="https://blog.ronbronson.com">✎ My blog</a>
+        </div>
       </div>
-      <!-- ══ /BLURB ═══════════════════════════════════════════════════════ -->
-    </section>
 
-    <span class="cards__label">Listen</span>
-    <section class="cards" aria-label="Podcasts">
-      <article class="pod">
-        <div class="pod__head">
-          <h3 class="pod__title"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></h3>
+      <div class="mod">
+        <h2 class="mod__t">Listening</h2>
+        <div class="mod__b">
+          <p class="np">
+            <span class="np__label" id="np-label">Last played</span>
+            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
+              <b class="np__track" id="np-track">&mdash;</b>
+              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
+            </a>
+          </p>
         </div>
-        <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
-      </article>
-      <article class="pod">
-        <div class="pod__head">
-          <h3 class="pod__title"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></h3>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Reading</h2>
+        <div class="mod__b">
+          <ul class="books" id="reading-list"></ul>
         </div>
-        <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
-      </article>
-    </section>
+      </div>
 
-    <span class="cards__label">Elsewhere</span>
-    <section class="doors" aria-label="Where to go next">
-      <article class="door">
-        <h3 class="door__title"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3>
-        <span class="door__note">Writing, talks &amp; how I work</span>
-      </article>
-      <article class="door">
-        <h3 class="door__title"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3>
-        <span class="door__note">How I think</span>
-      </article>
-      <article class="door">
-        <h3 class="door__title"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3>
-        <span class="door__note">Speculative civics + public exhibitions</span>
-      </article>
-      <article class="door">
-        <h3 class="door__title"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3>
-      </article>
-    </section>
-  </main>
+      <div class="mod">
+        <h2 class="mod__t">Community Radio</h2>
+        <div class="mod__b">
+          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
+        </div>
+      </div>
+      </div>
+    </div>
 
-  <footer class="foot" id="contact">
-    <span class="foot__label">Contact</span>
-    <p class="foot__pitch">If you&rsquo;re building something that has to work in public, tell me about it.</p>
-    <button class="button" type="button" data-contact>Email me</button>
-  </footer>
+    <!-- ══════════ MAIN ══════════ -->
+    <div class="main">
 
-  <script>
-    /* The address is assembled at click time and never written into the DOM,
-       so it stays off the page for scrapers and for anyone reading source. */
-    (function () {
-      var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
-        return String.fromCharCode(n);
-      }).join('');
-      document.querySelectorAll('[data-contact]').forEach(function (button) {
-        button.addEventListener('click', function () {
-          window.location.href = 'mailto:' + address;
-        });
-      });
-    })();
-  </script>
+      <div class="mod">
+        <h2 class="mod__t">About Me</h2>
+        <div class="mod__b blurb">
+          <p>I&rsquo;m an Assistant Professor of Practice in Urban Technology at the University of
+            Michigan Taubman College of Architecture and Urban Planning. I spent more than a decade in
+            the federal government, including eight years at 18F, where I served as a Senior Advisor to
+            the FAS Deputy Commissioner and led one of the federal government&rsquo;s largest design
+            organizations. My teams partnered with the White House, Congress, FTC, CMS, VA, DOD, USFS,
+            and dozens of other agencies to improve digital services relied on by millions of Americans.</p>
+          <p>Before federal service, I led digital strategy and communications in higher education and
+            local government, overseeing enterprise web operations, organizational transformation, and
+            multidisciplinary teams serving statewide and municipal institutions. I&rsquo;m also a
+            veteran of the US Air Force.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Top 8</h2>
+        <div class="top8">
+          <article class="t8">
+            <img src="assets/design-month.jpg" width="1400" height="1050" alt="Ron Bronson speaking at Portland Design Month beside a slide reading President of AIGA Portland" />
+          </article>
+          <article class="t8">
+            <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public" />
+          </article>
+          <article class="t8">
+            <img src="assets/gsa-18f.jpg" width="1400" height="1050" alt="Ron Bronson and colleagues on a GSA stage" />
+          </article>
+          <article class="t8">
+            <img src="assets/digital-corps.jpg" width="1100" height="825" loading="lazy" alt="A Portland Digital Corps team presenting the Cape Perpetua Collaborative website redesign" />
+          </article>
+          <article class="t8">
+            <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school tennis team holding a championship plaque" />
+          </article>
+          <article class="t8">
+            <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque before an Oregon Athletic Coaches Association backdrop" />
+          </article>
+          <article class="t8">
+            <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A student cohort beneath a Taubman College, University of Michigan banner" />
+          </article>
+          <article class="t8">
+            <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
+          </article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Interests</h2>
+        <div class="mod__b blurb">
+          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
+            interested less in artifacts than in the systems, incentives, processes, and institutions
+            that shape outcomes.</p>
+          <p>Across two decades of writing, software, teaching, exhibitions, and public-sector
+            leadership, the throughline has remained the same: understanding how things work, why they
+            fail, and how they can work better.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Board Service</h2>
+        <div class="boards">
+          <article class="board"><b>AIGA Portland</b><span>Board President, 2023&ndash;25</span></article>
+          <article class="board"><b>PDX Design Month</b><span>2024&ndash;present</span></article>
+          <article class="board"><b>Portland Historic Landmarks Commission</b><span>City of Portland, 2020</span></article>
+          <article class="board"><b>WFHB Community Radio</b><span>2017&ndash;18</span></article>
+          <article class="board"><b>AIGA Indianapolis</b><span>2016&ndash;18</span></article>
+          <article class="board"><b>Indianapolis Design Week</b><span>Founder, 2017</span></article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Now Playing</h2>
+        <div class="players">
+          <div class="player">
+            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
+            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+          </div>
+          <div class="player">
+            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
+            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="mod">
+        <h2 class="mod__t">Elsewhere</h2>
+        <div class="doors">
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Writing, talks &amp; how I work</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">How I think</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics + public exhibitions</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3></article>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footbar">
+    Ron Bronson &nbsp;·&nbsp; <button type="button" data-contact>Send a message</button>
+  </div>
 
 </div>
+
+<script>
+  /* The address is assembled at click time and never written into the DOM. */
+  (function () {
+    var address = [98, 114, 111, 110, 115, 111, 110, 114, 64, 117, 109, 105, 99, 104, 46, 101, 100, 117].map(function (n) {
+      return String.fromCharCode(n);
+    }).join('');
+    document.querySelectorAll('[data-contact]').forEach(function (el) {
+      el.addEventListener('click', function () {
+        window.location.href = 'mailto:' + address;
+      });
+    });
+  })();
+
+  /* Last played — live from last.fm, same CORS-open endpoint and key the
+     .design site already uses. Label flips to "Now playing" when something
+     is actually on. On failure the em-dash placeholder stays. */
+  (function () {
+    var USER = "statechampion";
+    var KEY = "4f1d49f394a1567717e2c9049947d004";
+    fetch("https://ws.audioscrobbler.com/2.0/?method=user.getrecenttracks&user=" +
+          USER + "&limit=1&api_key=" + KEY + "&format=json")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (d) {
+        var t = d && d.recenttracks && d.recenttracks.track && d.recenttracks.track[0];
+        if (!t) return;
+        var now = t["@attr"] && t["@attr"].nowplaying === "true";
+        var name = t.name || "";
+        var artist = (t.artist && (t.artist["#text"] || t.artist.name)) || "";
+        var track = document.getElementById("np-track");
+        var art = document.getElementById("np-artist");
+        var label = document.getElementById("np-label");
+        if (track && name) track.textContent = name;
+        if (art && artist) art.textContent = artist;
+        if (label) label.textContent = now ? "Now playing" : "Last played";
+      })
+      .catch(function () { /* leave the placeholder */ });
+  })();
+
+  /* Currently reading — live from Literal's public GraphQL API, the same
+     two-step (profile lookup, then shelf) the .design reading page uses.
+     The module hides itself if the shelf is empty or the call fails, so a
+     dead feed never leaves an empty box on the page. */
+  (function () {
+    var ENDPOINT = "https://api.literal.club/graphql/";
+    var HANDLE = "ron";
+    var LIMIT = 6;
+    var list = document.getElementById("reading-list");
+    if (!list) return;
+    var mod = list.closest(".mod");
+
+    function esc(x) {
+      return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function gql(query, variables) {
+      return fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: query, variables: variables })
+      }).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      }).then(function (j) {
+        if (j.errors) throw new Error("GraphQL error");
+        return j.data;
+      });
+    }
+    function tile(b) {
+      var cover = b.cover ? b.cover.replace(/^http:\/\//, "https://") : "";
+      var url = "https://literal.club/book/" + b.slug;
+      return '<li class="book">' +
+        '<a class="book__cover" href="' + esc(url) + '" target="_blank" rel="noopener" aria-label="' + esc(b.title) + '">' +
+          '<span class="book__cover-fallback" aria-hidden="true">' + esc((b.title || "?").slice(0, 1)) + '</span>' +
+          (cover ? '<img src="' + esc(cover) + '" alt="Cover of ' + esc(b.title) + '" loading="lazy" onerror="this.remove()" />' : "") +
+        '</a></li>';
+    }
+    var Q = "query B($s: ReadingStatus!, $p: String!, $l: Int!) {" +
+            "  booksByReadingStateAndProfile(limit: $l, offset: 0, readingStatus: $s, profileId: $p) {" +
+            "    title slug cover" +
+            "  }" +
+            "}";
+    function hide() { if (mod) mod.style.display = "none"; }
+
+    gql("query P($h: String!) { profileByHandle(handle: $h) { id } }", { h: HANDLE })
+      .then(function (d) {
+        var id = d && d.profileByHandle && d.profileByHandle.id;
+        if (!id) return hide();
+        return gql(Q, { s: "IS_READING", p: id, l: LIMIT }).then(function (r) {
+          var books = (r && r.booksByReadingStateAndProfile) || [];
+          if (!books.length) return hide();
+          list.innerHTML = books.map(tile).join("");
+        });
+      })
+      .catch(hide);
+  })();
+</script>
+
 </body>
 </html>
