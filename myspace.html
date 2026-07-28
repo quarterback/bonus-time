@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson — teaching at Michigan, advising State Capacity AI, coaching high school tennis, and formerly building design capability inside the federal government." />
+<meta name="description" content="Ron Bronson is an Assistant Professor of Practice in Urban Technology at the University of Michigan Taubman College. He spent more than a decade in federal service, including eight years at 18F leading one of the federal government's largest design organizations." />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Ron Bronson" />
 <meta property="og:description" content="Teaching, building, coaching, convening. Start here." />
@@ -144,6 +144,8 @@
   .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
 
 
+  .radio { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.5; }
+
   /* ── scrobble ── */
   .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
   .np__label { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
@@ -162,10 +164,21 @@
   }
   .books .book__title { display: none; }
 
+  /* ── board service grid ── */
+  .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
+  .board { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
+  .board b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.15; }
+  .board span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
+
   /* ── site cards, back in the 4-up grid ── */
   .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
   .door { position: relative; background: var(--panel); padding: clamp(14px, 2vw, 22px); }
-  .door:hover { background: var(--rail-bg); }
+  /* Opaque fill. --rail-bg is 7% alpha, which composited over the grid's
+     ink-black gap colour instead of the card's white and went nearly black.
+     ink-black on fresh-sky is 6.67:1; navy on it is 4.66:1 — both clear AA. */
+  .door:hover { background: var(--fresh-sky); }
+  .door:hover .door__t a,
+  .door:hover .door__n { color: var(--ink-black); }
   .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
   .door__t a { text-decoration: none; }
   .door__t a::after { content: ""; position: absolute; inset: 0; }
@@ -194,11 +207,11 @@
     .cols { grid-template-columns: minmax(0, 1fr); }
     .rail { border-right: 0; border-bottom: 3px solid var(--ink); }
   }
-  @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } .boards { grid-template-columns: repeat(2, 1fr); } }
   @media (max-width: 520px) {
     .cg { grid-template-columns: 1fr; }
     .top8 { grid-template-columns: repeat(2, 1fr); }
-    .doors { grid-template-columns: 1fr; }
+    .doors, .boards { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -242,6 +255,13 @@
           <ul class="books" id="reading-list"></ul>
         </div>
       </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Community Radio</h2>
+        <div class="mod__b">
+          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
+        </div>
+      </div>
     </div>
 
     <!-- ══════════ MAIN ══════════ -->
@@ -250,10 +270,16 @@
       <div class="mod">
         <h2 class="mod__t">About Me</h2>
         <div class="mod__b blurb">
-          <!-- ══ BLURB — Ron's copy goes here ══════════════════════════ -->
-          <p>Placeholder. I teach at Michigan, advise State Capacity AI, coach high school tennis, and
-            spent eight years building design capability inside the federal government.</p>
-          <!-- ══ /BLURB ═══════════════════════════════════════════════ -->
+          <p>I&rsquo;m an Assistant Professor of Practice in Urban Technology at the University of
+            Michigan Taubman College of Architecture and Urban Planning. I spent more than a decade in
+            the federal government, including eight years at 18F, where I served as a Senior Advisor to
+            the FAS Deputy Commissioner and led one of the federal government&rsquo;s largest design
+            organizations. My teams partnered with the White House, Congress, FTC, CMS, VA, DOD, USFS,
+            and dozens of other agencies to improve digital services relied on by millions of Americans.</p>
+          <p>Before federal service, I led digital strategy and communications in higher education and
+            local government, overseeing enterprise web operations, organizational transformation, and
+            multidisciplinary teams serving statewide and municipal institutions. I&rsquo;m also a
+            veteran of the US Air Force.</p>
         </div>
       </div>
 
@@ -284,6 +310,30 @@
           <article class="t8">
             <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
           </article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Interests</h2>
+        <div class="mod__b blurb">
+          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
+            interested less in artifacts than in the systems, incentives, processes, and institutions
+            that shape outcomes.</p>
+          <p>Across two decades of writing, software, teaching, exhibitions, and public-sector
+            leadership, the throughline has remained the same: understanding how things work, why they
+            fail, and how they can work better.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Board Service</h2>
+        <div class="boards">
+          <article class="board"><b>AIGA Portland</b><span>Board President, 2023&ndash;25</span></article>
+          <article class="board"><b>PDX Design Month</b><span>2024&ndash;present</span></article>
+          <article class="board"><b>Portland Historic Landmarks Commission</b><span>City of Portland, 2020</span></article>
+          <article class="board"><b>WFHB Community Radio</b><span>2017&ndash;18</span></article>
+          <article class="board"><b>AIGA Indianapolis</b><span>2016&ndash;18</span></article>
+          <article class="board"><b>Indianapolis Design Week</b><span>Founder, 2017</span></article>
         </div>
       </div>
 
