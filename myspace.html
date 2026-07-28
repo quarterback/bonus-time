@@ -141,17 +141,32 @@
   .snaps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
   .snaps img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--rule); }
 
-  /* ── top 6: typographic tiles, no arbitrary thumbnails ── */
-  .top6 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
-  .t6 { position: relative; background: var(--panel); padding: 13px 14px 15px; }
-  .t6:hover { background: #eef1fb; }
-  .t6 b {
-    display: block; font-family: var(--std); font-weight: 500;
-    font-size: clamp(15px, 1.4vw, 19px); letter-spacing: .01em;
+  /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
+     not "what websites does Ron have". ── */
+  .top8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--ink); }
+  .t8 { background: var(--panel); display: flex; flex-direction: column; }
+  .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
+  .t8 b {
+    display: block; padding: 8px 9px 3px;
+    font-family: var(--std); font-weight: 500; font-size: 13px; line-height: 1.2;
   }
-  .t6 b a { text-decoration: none; }
-  .t6 b a::after { content: ""; position: absolute; inset: 0; }
-  .t6 small { display: block; margin-top: 3px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
+  .t8 small { display: block; padding: 0 9px 9px; font-family: var(--ui); font-weight: 500; font-size: 11px; color: var(--ink-2); }
+
+  /* ── Leadership: signals only, no sentences ── */
+  .sig { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 clamp(14px, 2vw, 26px); }
+  .sig li {
+    padding: 9px 0; border-top: 1px solid var(--rule);
+    font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.25;
+  }
+  .sig li:nth-child(-n+2) { border-top: 0; padding-top: 0; }
+  .sig b { display: block; font-family: var(--display); font-weight: 700; font-size: clamp(19px, 1.9vw, 26px); letter-spacing: -.01em; }
+
+  /* ── sites list in the rail ── */
+  .sites { margin: 0; padding: 0; list-style: none; font-family: var(--ui); font-weight: 500; font-size: 13px; }
+  .sites li { padding: 7px 0; border-top: 1px solid var(--rule); }
+  .sites li:first-child { border-top: 0; padding-top: 0; }
+  .sites a { text-decoration: none; }
+  .sites span { display: block; color: var(--ink-2); font-size: 11.5px; margin-top: 1px; }
 
   /* ── players ── */
   .players { display: grid; gap: 2px; background: var(--ink); }
@@ -182,8 +197,12 @@
     .cols { grid-template-columns: minmax(0, 1fr); }
     .rail { border-right: 0; border-bottom: 3px solid var(--ink); }
   }
+  @media (max-width: 900px) { .top8 { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 520px) {
-    .cg, .top6 { grid-template-columns: 1fr; }
+    .cg { grid-template-columns: 1fr; }
+    .top8 { grid-template-columns: repeat(2, 1fr); }
+    .sig { grid-template-columns: 1fr; }
+    .sig li:nth-child(2) { border-top: 1px solid var(--rule); padding-top: 9px; }
     .dl div, .int div { grid-template-columns: 1fr; gap: 2px; }
   }
 </style>
@@ -211,15 +230,28 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Ron's Details</h2>
+        <h2 class="mod__t">What Ron Does</h2>
         <div class="mod__b">
           <dl class="dl">
-            <div><dt>Status</dt><dd>Building capability</dd></div>
-            <div><dt>Here for</dt><dd>Public work that has to survive contact with reality</dd></div>
-            <div><dt>Occupation</dt><dd>Teaching, advising, coaching</dd></div>
-            <div><dt>Now</dt><dd>University of Michigan, State Capacity AI, Thinking Weapons</dd></div>
-            <div><dt>Previously</dt><dd>18F, AIGA Portland, Portland Digital Corps</dd></div>
+            <div><dt>Works on</dt><dd>How public services actually work</dd></div>
+            <div><dt>Builds</dt><dd>Teams, programs, conferences, software</dd></div>
+            <div><dt>Teaches</dt><dd>Urban Technology, University of Michigan</dd></div>
+            <div><dt>Leads</dt><dd>Design organizations and the managers in them</dd></div>
+            <div><dt>Advises</dt><dd>State Capacity AI</dd></div>
+            <div><dt>Coaches</dt><dd>High school tennis</dd></div>
           </dl>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Sites</h2>
+        <div class="mod__b">
+          <ul class="sites">
+            <li><a href="https://ronbronson.design">ronbronson.design</a><span>Writing, talks &amp; how I work</span></li>
+            <li><a href="https://ronbronson.dev">ronbronson.dev</a><span>How I think</span></li>
+            <li><a href="https://thinkingweapons.com">thinkingweapons.com</a><span>Speculative civics + public exhibitions</span></li>
+            <li><a href="https://blog.ronbronson.com">My blog</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -238,14 +270,70 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Ron's Photos</h2>
+        <h2 class="mod__t">Leadership</h2>
+        <div class="mod__b">
+          <ul class="sig">
+            <li><b>40+</b> designers and design managers led</li>
+            <li><b>9</b> managers reporting in</li>
+            <li><b>1,500</b> at Portland Design Month</li>
+            <li><b>80+</b> at Design For The Public</li>
+            <li><b>6</b> nonprofit sites rebuilt in four months</li>
+            <li><b>4</b> individual state champions coached</li>
+            <li><b>Board president</b> AIGA Portland</li>
+            <li><b>Commissioner</b> Portland Historic Landmarks</li>
+            <li><b>State co-chair</b> Oregon tennis</li>
+            <li><b>8 years</b> inside the federal government</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Ron's Top 8</h2>
+        <div class="top8">
+          <article class="t8">
+            <img src="assets/design-month.jpg" width="1400" height="1050" alt="Ron Bronson speaking at Portland Design Month beside a slide reading President of AIGA Portland" />
+            <b>Portland Design Month</b><small>Founded it. Ran it.</small>
+          </article>
+          <article class="t8">
+            <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public" />
+            <b>Design For The Public</b><small>Organizer, keynote</small>
+          </article>
+          <article class="t8">
+            <img src="assets/gsa-18f.jpg" width="1400" height="1050" alt="Ron Bronson and colleagues on a GSA stage" />
+            <b>18F</b><small>Head of Design, senior team</small>
+          </article>
+          <article class="t8">
+            <img src="assets/digital-corps.jpg" width="1100" height="825" loading="lazy" alt="A Portland Digital Corps team presenting the Cape Perpetua Collaborative website redesign" />
+            <b>Portland Digital Corps</b><small>Founding director</small>
+          </article>
+          <article class="t8">
+            <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school tennis team holding a championship plaque" />
+            <b>Coaching</b><small>State titles, four individual champions</small>
+          </article>
+          <article class="t8">
+            <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque before an Oregon Athletic Coaches Association backdrop" />
+            <b>Oregon tennis</b><small>State co-chair, OACA</small>
+          </article>
+          <article class="t8">
+            <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A student cohort beneath a Taubman College, University of Michigan banner" />
+            <b>Taubman College</b><small>Teaching Urban Technology</small>
+          </article>
+          <article class="t8">
+            <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
+            <b>Speaking</b><small>Stages in several countries</small>
+          </article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">More Photos</h2>
         <div class="snaps">
-          <img src="assets/dfp-room.jpg" width="1400" height="1050" alt="A packed room of designers and civic technologists at Design For The Public" />
-          <img src="assets/gsa-18f.jpg" width="1400" height="1050" alt="Ron Bronson and colleagues on a GSA stage" />
-          <img src="assets/michigan.jpg" width="1400" height="1050" loading="lazy" alt="A student cohort beneath a Taubman College, University of Michigan banner" />
-          <img src="assets/design-month.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson speaking at Portland Design Month" />
-          <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque" />
-          <img src="assets/tennis-title.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson with his high school tennis team and a championship plaque" />
+          <img src="assets/dfp-audience.jpg" width="1100" height="825" loading="lazy" alt="A full seated audience at Design For The Public" />
+          <img src="assets/cfa-summit.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson with a group at the Code for America Summit" />
+          <img src="assets/gallery-night.jpg" width="1100" height="825" loading="lazy" alt="A gallery full of people at an evening design event" />
+          <img src="assets/welcome-18f.jpg" width="1100" height="825" loading="lazy" alt="A whiteboard reading Welcome 18F design in coloured marker" />
+          <img src="assets/cfa-banner.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson and colleagues beside a Code for America Summit banner" />
+          <img src="assets/team-travel.jpg" width="1100" height="825" loading="lazy" alt="A team posed on an airport tarmac in front of a plane" />
         </div>
       </div>
 
@@ -263,15 +351,6 @@
         </div>
       </div>
 
-      <div class="mod">
-        <h2 class="mod__t">Ron's Top 4</h2>
-        <div class="top6">
-          <article class="t6"><b><a href="https://ronbronson.design">ronbronson.design</a></b><small>Writing, talks &amp; how I work</small></article>
-          <article class="t6"><b><a href="https://ronbronson.dev">ronbronson.dev</a></b><small>How I think</small></article>
-          <article class="t6"><b><a href="https://thinkingweapons.com">thinkingweapons.com</a></b><small>Speculative civics + public exhibitions</small></article>
-          <article class="t6"><b><a href="https://blog.ronbronson.com">My blog</a></b></article>
-        </div>
-      </div>
 
       <div class="mod">
         <h2 class="mod__t">Ron's Interests</h2>
