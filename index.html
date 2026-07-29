@@ -51,6 +51,10 @@
     --accent: var(--fresh-sky);  /* fills and hovers only, never text */
     --rule:   rgba(0, 23, 31, .18);
     --rail-bg: rgba(0, 167, 225, .07);
+    /* Opaque light sky — the flat equivalent of fresh-sky at ~12% on white.
+       Must not be an alpha value: anything translucent composites over the
+       ink gap colour in the 2px-gap grids and goes nearly black. */
+    --tint:   #e2f4fb;
 
     --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
     --std:     "PP Formula Std", "PP Pangram Sans", sans-serif;
@@ -156,6 +160,40 @@
   .blurb p:last-child { margin-bottom: 0; }
 
 
+  /* ── claim list ─────────────────────────────────────────────────────
+     Used by "What I Believe" and "Who I'd Like to Meet". One assertion per
+     row, dashed rules between them. This is the page's in-depth register —
+     it replaced a wall of <p> text, so don't let paragraphs back in here.
+     ──────────────────────────────────────────────────────────────── */
+  .claims { margin: 0; padding: 0; list-style: none; }
+  .claims li {
+    position: relative;
+    padding: 10px 0 10px 25px;
+    border-bottom: 1px dashed var(--rule);
+    font-size: clamp(15px, 1.2vw, 18px); line-height: 1.45;
+  }
+  .claims li:last-child { border-bottom: 0; padding-bottom: 0; }
+  .claims li::before {
+    content: "\203A";                 /* › */
+    position: absolute; left: 5px; top: 10px;
+    font-family: var(--std); font-weight: 500; font-size: 17px;
+    color: var(--link); line-height: 1.45;
+  }
+
+  /* ── label/value table, the old profile info block ── */
+  .info { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 2px; background: var(--ink); }
+  .info dt {
+    background: var(--tint); color: var(--ink);
+    padding: 10px 12px;
+    font-family: var(--ui); font-weight: 500;
+    font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase;
+  }
+  .info dd {
+    background: var(--panel); margin: 0;
+    padding: 10px 12px;
+    font-size: clamp(14px, 1.1vw, 16px); line-height: 1.4;
+  }
+
   /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
      not "what websites does Ron have". ── */
   .top8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--ink); }
@@ -241,6 +279,8 @@
     .cg { grid-template-columns: 1fr; }
     .doors { grid-template-columns: 1fr; }
     .rail--a .pic { width: 84px; }
+    /* max-content labels squeeze the value column to nothing down here. */
+    .info { grid-template-columns: minmax(0, 1fr); }
   }
 </style>
 </head>
@@ -275,22 +315,12 @@
         <div class="mod__b blurb">
           <p>Institutions keep asking me to build capability they don&rsquo;t have yet. GSA asked me to
             lead one of the federal government&rsquo;s largest design organizations. AIGA Portland&rsquo;s
-            members made me their board president. The City of Portland appointed me to its Historic
-            Landmarks Commission. The University of Michigan hired me to teach urban technology at
-            Taubman College of Architecture and Urban Planning, where I&rsquo;m an Assistant Professor of
-            Practice. The domains don&rsquo;t connect. The work does.</p>
-          <p>I spent more than a decade in federal service, including eight years at 18F, where I was a
-            Senior Advisor to the FAS Deputy Commissioner. My teams partnered with the White House,
-            Congress, FTC, CMS, VA, DOD, USFS, and dozens of other agencies on digital services relied on
-            by millions of Americans. Before that I led digital strategy and communications in higher
-            education and local government, overseeing enterprise web operations, organizational
-            transformation, and multidisciplinary teams serving statewide and municipal institutions.
-            I&rsquo;m also a veteran of the US Air Force.</p>
-          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
-            interested less in artifacts than in the systems, incentives, processes, and institutions
-            that shape outcomes. Across two decades of writing, software, teaching, exhibitions, and
-            public-sector leadership, the throughline has remained the same: understanding how things
-            work, why they fail, and how they can work better.</p>
+            members made me their board president. The University of Michigan hired me to teach urban
+            technology at Taubman College, where I&rsquo;m an Assistant Professor of Practice.</p>
+          <p>More than a decade of it was federal &mdash; eight years at 18F, advising the FAS Deputy
+            Commissioner, with teams working alongside the White House, Congress, FTC, CMS, VA and DOD.
+            Before Washington, digital strategy in higher education and local government. Before all of
+            it, the US Air Force.</p>
         </div>
       </div>
 
@@ -315,6 +345,46 @@
             <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
             <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
           </div>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">What I Believe</h2>
+        <div class="mod__b">
+          <ul class="claims">
+            <li>Systems rarely fail all at once. They leak, jam, and get stuck.</li>
+            <li>When they do, it isn&rsquo;t designers or executives who respond. It&rsquo;s the people already inside them, doing the work that keeps things running.</li>
+            <li>The last mile of delivery is always political.</li>
+            <li>Maintenance is the work. The launch is just the part with a photographer.</li>
+            <li>The object of design isn&rsquo;t the artifact. It&rsquo;s the incentives, processes, and institutions that decide what the artifact does to people.</li>
+            <li>Consequence is a design material. What a service does to someone is a decision, whether or not anyone meant to make it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Who I&rsquo;d Like to Meet</h2>
+        <div class="mod__b">
+          <ul class="claims">
+            <li>People rebuilding institutions that already exist, rather than starting something adjacent and calling it a fix.</li>
+            <li>Anyone who has had to make a thirty-year-old system work on a Monday morning.</li>
+            <li>People who understand that procurement is a design problem.</li>
+            <li>Teams who want a practice built, not just a designer hired.</li>
+            <li>Students who would rather repair something than launch something.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Interests</h2>
+        <div class="mod__b">
+          <dl class="info">
+            <dt>General</dt><dd>Bureaucracy, repair, and the last mile of public services</dd>
+            <dt>Music</dt><dd>Whatever the sidebar says I played last</dd>
+            <dt>Books</dt><dd>Six on the shelf at any given time</dd>
+            <dt>Sports</dt><dd>Tennis &mdash; coaching it, and rewriting the formats that don&rsquo;t work</dd>
+            <dt>Heroes</dt><dd>The people already inside the system on Monday morning</dd>
+          </dl>
         </div>
       </div>
 

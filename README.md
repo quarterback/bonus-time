@@ -44,10 +44,22 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| About Me | Range and the grammar of appointment. Closes with the practice graf — what the work is *for*. Formerly a separate `Interests` module that restated the same thesis in a second box. |
+| About Me | Two short grafs, in the grammar of appointment. **Keep it brief** — this is the authoritative intro, not the whole story. Depth belongs in the claim lists below, not in more `<p>`. |
 | My Sites | The four site links, directly under the bio. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
 | Now Playing | Podcasts. |
+| What I Believe | The philosophical register. Claims drawn from the Design as Repair and public mechanics talk abstracts on `.design`. |
+| Who I'd Like to Meet | The MySpace field, used straight. The only forward-looking block on the page. |
+| Interests | The old profile info table — label/value rows, stacks to one column under 430px. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
+
+**The page is deliberately not paragraph-led.** A wall of `<p>` is what the previous
+version was, and it buried everything. In-depth content goes in `.claims` (one assertion
+per row) or `.info` (label/value), both of which a stranger can skim. If you're reaching
+for a third paragraph in About Me, the material belongs in a list instead.
+
+`--tint` must stay an **opaque** colour. The 2px-gap grids show the ink gap colour behind
+translucent fills, so any alpha value composites to near-black. Same trap the `.door`
+hover comment describes.
 
 Rail B holds `Listening` and `Reading` only.
 
