@@ -45,8 +45,8 @@ Module order in `.main`, and the reasoning behind it:
 | Module | Why it sits there |
 | --- | --- |
 | About Me | Range and the grammar of appointment. Closes with the practice graf — what the work is *for*. Formerly a separate `Interests` module that restated the same thesis in a second box. |
-| Now Playing | Podcasts, sitting directly under the bio. |
-| Elsewhere | The four site links. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
+| My Sites | The four site links, directly under the bio. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
+| Now Playing | Podcasts. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
 Rail B holds `Listening` and `Reading` only.
