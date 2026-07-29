@@ -4,14 +4,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson builds capability that institutions don't have yet — a design practice inside the federal government, a statewide digital operation, a professional community. He teaches urban technology at the University of Michigan Taubman College, anchors news on community radio, and coaches high school tennis." />
+<meta name="description" content="Ron Bronson — Assistant Professor of Practice at the University of Michigan. Advisor to governments, nonprofits, and public-benefit organizations in the United States and Europe. Research on AI economics and public delivery. Previously 18F, TTS and GSA." />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Teaching, coaching, convening, broadcasting. Start here." />
+<meta property="og:description" content="Teaching, advising, research, coaching, writing. Start here." />
 <meta property="og:image" content="https://ronbronson.com/assets/profile.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Teaching, coaching, convening, broadcasting. Start here." />
+<meta name="twitter:description" content="Teaching, advising, research, coaching, writing. Start here." />
 <meta name="twitter:image" content="https://ronbronson.com/assets/profile.jpg" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
@@ -166,29 +166,39 @@
   .cg > *:hover { background: var(--ink); color: var(--white); }
 
 
-  /* ── blurb ── */
-  .blurb p { margin: 0 0 .9em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; }
-  .blurb p:last-child { margin-bottom: 0; }
 
-
-  /* ── claim list ─────────────────────────────────────────────────────
-     Used by "What I Believe" and "Who I'd Like to Meet". One assertion per
-     row, dashed rules between them. This is the page's in-depth register —
-     it replaced a wall of <p> text, so don't let paragraphs back in here.
+  /* ── Now ────────────────────────────────────────────────────────────
+     Role, then the bare context under it. Reality, not narrative — the
+     visitor assembles the picture. No prose here, ever: the moment this
+     turns back into sentences the page is an About page again.
      ──────────────────────────────────────────────────────────────── */
-  .claims { margin: 0; padding: 0; list-style: none; }
-  .claims li {
-    position: relative;
-    padding: 10px 0 10px 25px;
-    border-bottom: 1px dashed var(--rule);
-    font-size: clamp(15px, 1.2vw, 18px); line-height: 1.45;
+  .now { margin: 0; }
+  .now dt {
+    font-family: var(--std); font-weight: 500;
+    font-size: clamp(17px, 1.5vw, 21px); line-height: 1.15;
   }
-  .claims li:last-child { border-bottom: 0; padding-bottom: 0; }
-  .claims li::before {
-    content: "\203A";                 /* › */
-    position: absolute; left: 5px; top: 10px;
-    font-family: var(--std); font-weight: 500; font-size: 17px;
-    color: var(--link); line-height: 1.45;
+  .now dd {
+    margin: 0 0 13px; padding-bottom: 13px;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--ui); font-weight: 500;
+    font-size: 13.5px; line-height: 1.5; color: var(--ink-2);
+  }
+  .now dd:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+
+  /* ── Experience: institutions only. No titles, no dates, no duration.
+     That restraint is the point — it reads as context, not a CV. ── */
+  .exp { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
+  .exp__i { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
+  .exp__i b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.15; }
+  .exp__i span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; line-height: 1.4; color: var(--ink-2); }
+
+  /* ── Working together: a wrapping tag row, so any number of entries
+     fits without leaving an empty cell showing the grid's ink ground. ── */
+  .work { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .work li {
+    border: 2px solid var(--ink); padding: 8px 13px;
+    font-family: var(--std); font-weight: 500;
+    font-size: clamp(14px, 1.2vw, 17px); line-height: 1.15;
   }
 
   /* ── favorites, rail-weight ─────────────────────────────────────────
@@ -381,16 +391,24 @@
     <div class="main main--top">
 
       <div class="mod">
-        <h2 class="mod__t">About Me</h2>
-        <div class="mod__b blurb">
-          <p>Institutions keep asking me to build capability they don&rsquo;t have yet. GSA asked me to
-            lead one of the federal government&rsquo;s largest design organizations. AIGA Portland&rsquo;s
-            members made me their board president. The University of Michigan hired me to teach urban
-            technology at Taubman College, where I&rsquo;m an Assistant Professor of Practice.</p>
-          <p>More than a decade of it was federal &mdash; eight years at 18F, advising the FAS Deputy
-            Commissioner, with teams working alongside the White House, Congress, FTC, CMS, VA and DOD.
-            Before Washington, digital strategy in higher education and local government. Before all of
-            it, the US Air Force.</p>
+        <h2 class="mod__t">Now</h2>
+        <div class="mod__b">
+          <dl class="now">
+            <dt>Assistant Professor of Practice</dt>
+            <dd>University of Michigan</dd>
+
+            <dt>Advisor</dt>
+            <dd>Governments, nonprofits, and public-benefit organizations<br />United States + Europe</dd>
+
+            <dt>Research</dt>
+            <dd>AI economics and public delivery</dd>
+
+            <dt>Coach</dt>
+            <dd>Lincoln High School Tennis</dd>
+
+            <dt>Writer</dt>
+            <dd>Since 2003</dd>
+          </dl>
         </div>
       </div>
 
@@ -419,16 +437,16 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">What I Believe</h2>
-        <div class="mod__b">
-          <ul class="claims">
-            <li>Systems rarely fail all at once. They leak, jam, and get stuck.</li>
-            <li>When they do, it isn&rsquo;t designers or executives who respond. It&rsquo;s the people already inside them, doing the work that keeps things running.</li>
-            <li>The last mile of delivery is always political.</li>
-            <li>Maintenance is the work. The launch is just the part with a photographer.</li>
-            <li>The object of design isn&rsquo;t the artifact. It&rsquo;s the incentives, processes, and institutions that decide what the artifact does to people.</li>
-            <li>Consequence is a design material. What a service does to someone is a decision, whether or not anyone meant to make it.</li>
-          </ul>
+        <h2 class="mod__t">Experience</h2>
+        <div class="exp">
+          <article class="exp__i"><b>18F</b><span>Technology Transformation Services &middot; General Services Administration</span></article>
+          <article class="exp__i"><b>Federal Trade Commission</b></article>
+          <article class="exp__i"><b>Centers for Medicare &amp; Medicaid Services</b></article>
+          <article class="exp__i"><b>Department of Defense</b></article>
+          <article class="exp__i"><b>University of Michigan</b></article>
+          <article class="exp__i"><b>City and State Government</b></article>
+          <article class="exp__i"><b>Higher Education</b></article>
+          <article class="exp__i"><b>U.S. Air Force</b></article>
         </div>
       </div>
 
@@ -440,14 +458,16 @@
     <div class="main main--wide">
 
       <div class="mod">
-        <h2 class="mod__t">Who I&rsquo;d Like to Meet</h2>
+        <h2 class="mod__t">Working Together</h2>
         <div class="mod__b">
-          <ul class="claims">
-            <li>People rebuilding institutions that already exist, rather than starting something adjacent and calling it a fix.</li>
-            <li>Anyone who has had to make a thirty-year-old system work on a Monday morning.</li>
-            <li>People who understand that procurement is a design problem.</li>
-            <li>Teams who want a practice built, not just a designer hired.</li>
-            <li>Students who would rather repair something than launch something.</li>
+          <ul class="work">
+            <li>Advisory work</li>
+            <li>Executive coaching and counsel</li>
+            <li>Speaking</li>
+            <li>Teaching</li>
+            <li>Boards</li>
+            <li>Fractional leadership</li>
+            <li>Special projects</li>
           </ul>
         </div>
       </div>

@@ -2,6 +2,16 @@
 
 Source for **ronbronson.com** — the front door for the four sites.
 
+**This page answers "what's true right now?", not "who am I?"** That is a different
+information architecture from a personal site, and it is the decision everything else
+follows from. There is no About page here and no essay to read. The visitor is given
+orientation — role, institution, context — and is trusted to assemble the picture
+themselves. For people used to evaluating senior leaders, that assumption of competence
+is a stronger signal than a well-written paragraph.
+
+The scan it is built for: *"Oh, he teaches." → "Oh, federal leadership." → "Oh, AI." →
+"Oh, Europe."* Each section adds a piece of context. None of them summarizes him.
+
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
@@ -12,17 +22,19 @@ Four things, in this order, and nothing else:
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **A few orientation grafs** — written in the grammar of appointment: *hired me,
-   asked me, made me president, appointed me*. The career is a sequence of people
-   trusting Ron to build capability that didn't exist yet, in unrelated domains. That
-   is the signal, and it is the thing every previous version of this page buried.
-   Not an inventory of events, not a career timeline, not proof he still does the work.
+2. **Now** — reality, not aspirations and not philosophy. Role, then the bare context
+   under it. Five entries, no sentences.
+3. **Experience** — context, not a CV. **Institution names only**: no titles, no dates,
+   no durations, no "this taught me…". The restraint is the whole point; the moment
+   dates appear it becomes a résumé grid, which is what board service was and why it
+   was cut.
+4. **Working Together** — the questions senior people actually have, answered as a bare
+   list. Not "hire me", no pitch, no elaboration.
+5. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+6. **Contact.**
 
-   The test: **if someone spends two minutes here, do they realize this person has
-   repeatedly been entrusted to build organizations, professions, communities, and
-   public institutions?** If a change doesn't help that, it doesn't belong.
-3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-4. **Contact.**
+The test: **can someone get the shape of this person in about fifteen seconds without
+reading a paragraph?** If a change doesn't help that, it doesn't belong.
 
 Deliberately *not* here: talks (`.design`), **projects, case studies, prototypes and
 indices** (`.dev`, `.design`), event write-ups (`thinkingweapons.com`), a résumé, a
@@ -30,11 +42,14 @@ timeline, or a "side quests" section. The portfolio is not a front-door asset �
 it doesn't add anything a stranger needs in the first two minutes, and it turns the page
 into an inventory. Send people onward to it instead.
 
-Coaching, boards, and the commission belong in the same prose as 18F — splitting them out
-into their own narrative sections is what buried them last time. Card grids are not an
-exception to this: a "Currently" module of teaching/coaching/radio/writing cards was tried
-and cut, because the grid form flattened four unlike things into one shape and said less
-than the grafs already do.
+**There is no prose on this page, and that is deliberate.** Every version before this one
+was paragraph-led and buried everything in it. Content goes in `.now` (role + context),
+`.exp` (institution names), `.work` (a tag row), or `.favs` in the rail. If you find
+yourself writing a sentence, the material either belongs in one of those forms or belongs
+on `.design`.
+
+Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
+(a résumé grid of orgs and date ranges), and community radio.
 
 ## Structure
 
@@ -44,14 +59,22 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| About Me | Two short grafs, in the grammar of appointment. **Keep it brief** — this is the authoritative intro, not the whole story. Depth belongs in the claim lists below, not in more `<p>`. |
-| My Sites | The four site links, directly under the bio. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
+| Now | `.now` — role in the display face, bare context under it. The page opens with reality. |
+| My Sites | The four site links. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
 | Now Playing | Podcasts. |
-| What I Believe | The philosophical register. Claims drawn from the Design as Repair and public mechanics talk abstracts on `.design`. |
-| Who I'd Like to Meet | The MySpace field, used straight. The only forward-looking block on the page. |
+| Experience | `.exp` — a 2-up grid of institution names. Eight entries fill four rows exactly; an odd count leaves an empty cell showing the grid's ink ground. |
+| Working Together | `.work` — a wrapping tag row, so any number of entries fits without that empty-cell problem. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
-**The rail ends after Favorites.** Everything below it — `Who I'd Like to Meet` and the
+`Now` and `Now Playing` both start with the same word and sit three modules apart. If a
+better name for the podcast module turns up, take it — "Listening" is already used by the
+rail scrobble.
+
+`Experience` sits in `.main--top` rather than the full-width section on purpose: it is
+what balances the content column against the rail's height. Moving it down leaves a white
+gap beside the rail.
+
+**The rail ends after Favorites.** Everything below it — `Working Together` and the
 `Top 8` — sits in `.main--wide`, which spans both columns. Three things make that work,
 and breaking any one of them brings back a blue column running past its own content:
 
@@ -71,17 +94,9 @@ Rail B holds `Listening`, `Reading` and `Favorites`. `Favorites` uses `.favs`, n
 nothing for the value. It mirrors the `.np` idiom (micro uppercase label, value in the
 display face) so the rail reads as one thing.
 
-**The page is deliberately not paragraph-led.** A wall of `<p>` is what the previous
-version was, and it buried everything. In-depth content goes in `.claims` (one assertion
-per row) or `.info` (label/value), both of which a stranger can skim. If you're reaching
-for a third paragraph in About Me, the material belongs in a list instead.
-
-`--tint` must stay an **opaque** colour. The 2px-gap grids show the ink gap colour behind
-translucent fills, so any alpha value composites to near-black. Same trap the `.door`
+Any new fill colour must be **opaque**. The 2px-gap grids show the ink gap colour behind
+translucent fills, so an alpha value composites to near-black. Same trap the `.door`
 hover comment describes.
-
-Board service is gone on purpose — it's a résumé grid. The appointments worth keeping are
-in the opening grafs. Don't bring it back.
 
 - `assets/site.css` and `assets/palette.js` are **copied verbatim across all four
   repos** — do not edit them here, it silently desyncs the other three sites. Anything
