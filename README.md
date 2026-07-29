@@ -49,8 +49,12 @@ Module order in `.main`, and the reasoning behind it:
 | Now Playing | Podcasts. |
 | What I Believe | The philosophical register. Claims drawn from the Design as Repair and public mechanics talk abstracts on `.design`. |
 | Who I'd Like to Meet | The MySpace field, used straight. The only forward-looking block on the page. |
-| Interests | The old profile info table — label/value rows, stacks to one column under 430px. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
+
+Rail B holds `Listening`, `Reading` and `Favorites`. `Favorites` uses `.favs`, not the
+2px-gap grid the main column uses — the rail is ~200–290px, so a label column would leave
+nothing for the value. It mirrors the `.np` idiom (micro uppercase label, value in the
+display face) so the rail reads as one thing.
 
 **The page is deliberately not paragraph-led.** A wall of `<p>` is what the previous
 version was, and it buried everything. In-depth content goes in `.claims` (one assertion
@@ -60,8 +64,6 @@ for a third paragraph in About Me, the material belongs in a list instead.
 `--tint` must stay an **opaque** colour. The 2px-gap grids show the ink gap colour behind
 translucent fills, so any alpha value composites to near-black. Same trap the `.door`
 hover comment describes.
-
-Rail B holds `Listening` and `Reading` only.
 
 Board service is gone on purpose — it's a résumé grid. The appointments worth keeping are
 in the opening grafs. Don't bring it back.
