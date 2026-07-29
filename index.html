@@ -4,15 +4,31 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson is an Assistant Professor of Practice in Urban Technology at the University of Michigan Taubman College. He spent more than a decade in federal service, including eight years at 18F leading one of the federal government's largest design organizations." />
+<meta name="description" content="Ron Bronson is an advisor at State Capacity AI, where he designed a consumer price index and labor tracker for AI spend, and a part-time Urban Technology faculty member at the University of Michigan Taubman College. Two decades leading digital transformation, including heading the design practice at 18F." />
+<link rel="canonical" href="https://ronbronson.com/" />
+
+<!-- Social card. og.png is 1200×630 (1.91:1) and generated from assets/og.html —
+     regenerate it there when this copy changes. The portrait is deliberately not
+     used directly: it's 4:5, and summary_large_image crops that to a letterbox
+     straight through Ron's forehead. -->
 <meta property="og:type" content="profile" />
+<meta property="og:site_name" content="Ron Bronson" />
+<meta property="og:url" content="https://ronbronson.com/" />
+<meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Teaching, building, coaching, convening. Start here." />
-<meta property="og:image" content="https://ronbronson.com/assets/profile.jpg" />
+<meta property="og:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta property="og:image" content="https://ronbronson.com/assets/og.png" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
+<meta property="profile:first_name" content="Ron" />
+<meta property="profile:last_name" content="Bronson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Teaching, building, coaching, convening. Start here." />
-<meta name="twitter:image" content="https://ronbronson.com/assets/profile.jpg" />
+<meta name="twitter:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta name="twitter:image" content="https://ronbronson.com/assets/og.png" />
+<meta name="twitter:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
@@ -118,12 +134,27 @@
   .cols > * { min-width: 0; }
   .rail { padding: clamp(14px, 2.2vw, 22px); background: var(--rail-bg); }
   .main { padding: clamp(16px, 2.2vw, 26px); }
+  /* Follows .main--top directly in both layouts, so it never needs its own
+     top padding — the module gap above it comes from .main--top's bottom. */
+  .main--wide { padding-top: 0; }
   @media (min-width: 781px) {
-    .rail { border-right: 3px solid var(--ink); }
-    .rail--a { grid-column: 1; grid-row: 1; }
-    .rail--b { grid-column: 1; grid-row: 2; padding-top: 0; }
-    .main    { grid-column: 2; grid-row: 1 / span 2; }
+    /* Two rows. Row 1 is the rail beside the top of the content; row 2 spans
+       both columns, so the rail ends after Favorites and everything below it
+       runs full width.
+       align-self:start is what actually ends the rail — without it the blue
+       ground and the 3px border stretch to fill row 1, which is as tall as
+       .main--top. The border lives on the wrapper, not on each half, so it
+       draws once and stops with the rail. */
+    .railwrap {
+      grid-column: 1; grid-row: 1;
+      align-self: start;
+      border-right: 3px solid var(--ink);
+    }
+    .rail--b   { padding-top: 0; }
+    .main--top { grid-column: 2; grid-row: 1; }
+    .main--wide { grid-column: 1 / -1; grid-row: 2; }
   }
+
 
   /* ── module ── */
   .mod { border: 2px solid var(--ink); background: var(--panel); margin-bottom: clamp(14px, 2vw, 22px); overflow: hidden; }
@@ -151,10 +182,33 @@
   .cg > *:hover { background: var(--ink); color: var(--white); }
 
 
-  /* ── blurb ── */
-  .blurb p { margin: 0 0 .9em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.6; }
+
+  /* ── prose ──────────────────────────────────────────────────────────
+     Short paragraphs, a few per module. Sized down from the old bio: the
+     copy carries the page now, so it reads rather than declaims.
+     ──────────────────────────────────────────────────────────────── */
+  .blurb p { margin: 0 0 .85em; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
   .blurb p:last-child { margin-bottom: 0; }
 
+  /* ── favorites, rail-weight ─────────────────────────────────────────
+     Deliberately not the 2px-gap grid the main column uses: the rail is
+     ~200-290px and a label column would leave nothing for the value.
+     Mirrors the .np (Listening) idiom instead — micro uppercase label,
+     value in the display face — so the rail reads as one thing.
+     ──────────────────────────────────────────────────────────────── */
+  .favs { margin: 0; }
+  .favs dt {
+    font-family: var(--ui); font-weight: 500;
+    font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .favs dd {
+    margin: 0 0 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--std); font-weight: 500;
+    font-size: 15px; line-height: 1.2;
+  }
+  .favs dd:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
 
   /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
      not "what websites does Ron have". ── */
@@ -162,8 +216,6 @@
   .t8 { background: var(--panel); display: flex; flex-direction: column; }
   .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
 
-
-  .radio { margin: 0; font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.5; }
 
   /* ── scrobble ── */
   .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
@@ -182,12 +234,6 @@
     font-family: var(--display); font-size: 22px; color: var(--ink);
   }
   .books .book__title { display: none; }
-
-  /* ── board service grid ── */
-  .boards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
-  .board { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
-  .board b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(14px, 1.3vw, 17px); line-height: 1.15; }
-  .board span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
 
   /* ── site cards, back in the 4-up grid ── */
   .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
@@ -227,11 +273,18 @@
      phones, which is why the grids never got denser down there. ────── */
   @media (max-width: 900px) {
     .top8   { grid-template-columns: repeat(3, 1fr); }
-    .boards { grid-template-columns: repeat(2, 1fr); }
   }
 
   @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
+    /* Wrapper dissolves so the two rail halves can be placed independently.
+       Without the explicit rows the widgets would follow the portrait
+       immediately, since the halves are adjacent in the source. */
+    .railwrap   { display: contents; }
+    .rail--a    { grid-row: 1; }
+    .main--top  { grid-row: 2; }
+    .main--wide { grid-row: 3; }
+    .rail--b    { grid-row: 4; }
     /* Contact rides at the top; the widgets drop below the content. */
     .rail--a {
       display: flex; align-items: flex-start; gap: 14px;
@@ -242,7 +295,6 @@
     .rail--b { border-top: 3px solid var(--ink); }
     /* Dense grids so the phone view stays a page, not an endless scroll. */
     .top8   { grid-template-columns: repeat(4, 1fr); }
-    .boards { grid-template-columns: repeat(2, 1fr); }
     .books  { grid-template-columns: repeat(6, 1fr); }
     .doors  { grid-template-columns: repeat(2, 1fr); }
   }
@@ -263,12 +315,20 @@
 
   <div class="cols">
 
-    <!-- ══════════ RAIL ══════════ -->
+    <!-- ══════════ RAIL ══════════
+         rail--a and rail--b are wrapped so the whole rail is a single grid
+         item and the two halves sit flush. Placed in separate rows they were
+         pushed apart, because a row-spanning .main--top inflates the
+         max-content size of every row it crosses. The wrapper collapses to
+         display:contents under 780px so the halves can be re-ordered around
+         the content. -->
+    <div class="railwrap">
+
     <div class="rail rail--a">
       <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson smiling in front of a brick wall" />
 
       <div class="mod">
-        <h2 class="mod__t">Contacting Ron</h2>
+        <h2 class="mod__t">Contact</h2>
         <div class="cg">
           <button type="button" data-contact>✉ Send Message</button>
           <a href="https://blog.ronbronson.com">✎ My blog</a>
@@ -277,32 +337,123 @@
 
     </div>
 
-    <!-- ══════════ MAIN ══════════ -->
-    <div class="main">
-
+    <div class="rail rail--b">
       <div class="mod">
-        <h2 class="mod__t">About Me</h2>
-        <div class="mod__b blurb">
-          <p>I&rsquo;m an Assistant Professor of Practice in Urban Technology at the University of
-            Michigan Taubman College of Architecture and Urban Planning. I spent more than a decade in
-            the federal government, including eight years at 18F, where I served as a Senior Advisor to
-            the FAS Deputy Commissioner and led one of the federal government&rsquo;s largest design
-            organizations. My teams partnered with the White House, Congress, FTC, CMS, VA, DOD, USFS,
-            and dozens of other agencies to improve digital services relied on by millions of Americans.</p>
-          <p>Before federal service, I led digital strategy and communications in higher education and
-            local government, overseeing enterprise web operations, organizational transformation, and
-            multidisciplinary teams serving statewide and municipal institutions. I&rsquo;m also a
-            veteran of the US Air Force.</p>
+        <h2 class="mod__t">Listening</h2>
+        <div class="mod__b">
+          <p class="np">
+            <span class="np__label" id="np-label">Last played</span>
+            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
+              <b class="np__track" id="np-track">&mdash;</b>
+              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
+            </a>
+          </p>
         </div>
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Elsewhere</h2>
+        <h2 class="mod__t">Reading</h2>
+        <div class="mod__b">
+          <ul class="books" id="reading-list"></ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Favorites</h2>
+        <div class="mod__b">
+          <dl class="favs">
+            <dt>Artist</dt><dd>Nam June Paik</dd>
+            <dt>Album</dt><dd>Songs In The Key of Life</dd>
+            <dt>Scent</dt><dd>BDK Gris Charnel</dd>
+            <dt>Tea</dt><dd>Ruby 21</dd>
+            <dt>Cocktail</dt><dd>Mezcal Negroni</dd>
+            <dt>Game</dt><dd>Balatro</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+<!-- ══════════ MAIN ══════════ -->
+    <div class="main main--top">
+
+      <div class="mod">
+        <h2 class="mod__t">Currently</h2>
+        <div class="mod__b blurb">
+          <p>I&rsquo;m an advisor at State Capacity AI, where I designed a
+            <a href="https://occupant.ee/indices">consumer price index and labor tracker for AI spend</a>.</p>
+          <p>I&rsquo;m also a part-time
+            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban Technology</a>
+            faculty member at the University of Michigan Taubman College of Architecture and Urban
+            Planning.</p>
+          <p>Over six years I led the passage of a team tournament for Oregon high school tennis,
+            changing a format untouched since 1946, on data from
+            <a href="https://oregontennis.org/">oregontennis.org</a>, which I designed and built.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">My Sites</h2>
         <div class="doors">
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Writing, talks &amp; how I work</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">How I think</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics + public exhibitions</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Talks, how I work, and what I&rsquo;m reading</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">Things I build to think with</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics and public exhibitions</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3><span class="door__n">Two decades of writing, still going</span></article>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Now Playing</h2>
+        <div class="players">
+          <div class="player">
+            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
+            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+          </div>
+          <div class="player">
+            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
+            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Experience</h2>
+        <div class="mod__b blurb">
+          <p>Two decades of experience leading digital transformation, strategy &amp; tactics. While at
+            18F, I was part of the management team, where I headed the design practice. I worked on
+            critical technology projects impacting millions of Americans for the White House, Congress,
+            DOD, HHS, VA, USFS, Treasury and others. Offline, I&rsquo;m a state championship&ndash;winning
+            high school tennis coach.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ══════════ FULL WIDTH ══════════
+         Sits below the rail, spanning both columns, so the rail ends after
+         Favorites instead of running a blue column past its own content. -->
+    <div class="main main--wide">
+
+      <div class="mod">
+        <h2 class="mod__t">Working With Me</h2>
+        <div class="mod__b blurb">
+          <p>Executive advising. Interim and fractional leadership. Public delivery &amp; deployment.
+            AI, transformation &amp; emerging technology. Coaching. Or if you want me to host a game
+            show, because that&rsquo;d be fun.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Recently</h2>
+        <div class="mod__b blurb">
+          <p>So far in 2026, I&rsquo;ve spent part of the summer in Northern Europe working on strategic
+            engagements. I organized a conference that brought together technologists &amp; policy
+            students to discuss the next stage of public mechanics &amp; civic technology. I guest
+            lectured at Harvard University and keynoted a design conference in January.</p>
+          <p>I completed a board stint in 2025 as President of AIGA Portland, where I oversaw the
+            creation and launch of Portland Design Month, now in its third year this October.</p>
         </div>
       </div>
 
@@ -336,73 +487,6 @@
         </div>
       </div>
 
-      <div class="mod">
-        <h2 class="mod__t">Interests</h2>
-        <div class="mod__b blurb">
-          <p>My practice uses design as a tactical tool for solving complex public problems. I&rsquo;m
-            interested less in artifacts than in the systems, incentives, processes, and institutions
-            that shape outcomes.</p>
-          <p>Across two decades of writing, software, teaching, exhibitions, and public-sector
-            leadership, the throughline has remained the same: understanding how things work, why they
-            fail, and how they can work better.</p>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Board Service</h2>
-        <div class="boards">
-          <article class="board"><b>AIGA Portland</b><span>Board President, 2023&ndash;25</span></article>
-          <article class="board"><b>PDX Design Month</b><span>2024&ndash;present</span></article>
-          <article class="board"><b>Portland Historic Landmarks Commission</b><span>City of Portland, 2020</span></article>
-          <article class="board"><b>WFHB Community Radio</b><span>2017&ndash;18</span></article>
-          <article class="board"><b>AIGA Indianapolis</b><span>2016&ndash;18</span></article>
-          <article class="board"><b>Indianapolis Design Week</b><span>Founder, 2017</span></article>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Now Playing</h2>
-        <div class="players">
-          <div class="player">
-            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
-            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
-          </div>
-          <div class="player">
-            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
-            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rail rail--b">
-      <div class="mod">
-        <h2 class="mod__t">Listening</h2>
-        <div class="mod__b">
-          <p class="np">
-            <span class="np__label" id="np-label">Last played</span>
-            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
-              <b class="np__track" id="np-track">&mdash;</b>
-              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Reading</h2>
-        <div class="mod__b">
-          <ul class="books" id="reading-list"></ul>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Community Radio</h2>
-        <div class="mod__b">
-          <p class="radio">News anchor at KBOO 90.7 FM. I host <a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">The Sound Bulletin</a> on KFFP 90.3 FM.</p>
-        </div>
-      </div>
     </div>
 
   </div>

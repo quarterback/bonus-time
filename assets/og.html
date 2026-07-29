@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Ron Bronson — social card source</title>
+<!--
+  Source for assets/og.png (1200×630, the Open Graph / Twitter card).
+  Not linked from anywhere; it exists so the card can be regenerated when the
+  copy changes, instead of the image drifting out of date with the page.
+
+  To regenerate, from the repo root:
+    python3 -m http.server 8080 &
+    node -e "const {chromium}=require('playwright');(async()=>{
+      const b=await chromium.launch();
+      const p=await b.newPage({viewport:{width:1200,height:630},deviceScaleFactor:2});
+      await p.goto('http://localhost:8080/assets/og.html',{waitUntil:'networkidle'});
+      await p.screenshot({path:'assets/og.png'});await b.close();})()"
+
+  Keep it 1200×630. That is 1.91:1, what summary_large_image crops to; the
+  portrait alone is 4:5 and loses Ron's head at that ratio.
+-->
+<style>
+  @font-face { font-family:"PP Formula"; src:url("fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight:700; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"); font-weight:400; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("fonts/PPPangramSans-Medium.woff") format("woff"); font-weight:500; }
+
+  :root {
+    --white:#ffffff; --fresh-sky:#00a7e1; --ink:#00171f; --navy:#003459; --cerulean:#007ea7;
+  }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html, body { width:1200px; height:630px; }
+  body {
+    background:var(--navy);
+    background-image:repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 2px, transparent 2px 9px);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"PP Neue Montreal Text", Helvetica, Arial, sans-serif;
+    color:var(--ink);
+  }
+  .card {
+    width:1112px; height:542px;
+    background:var(--white);
+    border:4px solid var(--ink);
+    box-shadow:12px 12px 0 rgba(0,23,31,.45);
+    display:grid; grid-template-columns:300px 1fr;
+  }
+  .shot { border-right:4px solid var(--ink); overflow:hidden; }
+  .shot img { width:100%; height:100%; object-fit:cover; object-position:50% 22%; display:block; }
+  .body { padding:44px 46px; display:flex; flex-direction:column; justify-content:center; }
+  h1 {
+    font-family:"PP Formula", Impact, sans-serif; font-weight:700;
+    font-size:92px; line-height:.92; letter-spacing:-.015em; text-transform:uppercase;
+  }
+  .rule { height:5px; background:var(--fresh-sky); margin:26px 0 24px; width:150px; }
+  .lede { font-size:27px; line-height:1.4; }
+  .lede b { font-weight:400; color:var(--cerulean); }
+  .foot {
+    margin-top:auto; padding-top:26px;
+    font-family:"PP Pangram Sans", Helvetica, Arial, sans-serif; font-weight:500;
+    font-size:16px; letter-spacing:.11em; text-transform:uppercase; color:var(--navy);
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="shot">
+      <img src="profile.jpg" alt="" />
+    </div>
+    <div class="body">
+      <h1>Ron<br />Bronson</h1>
+      <div class="rule"></div>
+      <p class="lede">Advisor at <b>State Capacity AI</b>. Urban Technology faculty at the <b>University of Michigan</b>.</p>
+      <p class="foot">ronbronson.com</p>
+    </div>
+  </div>
+</body>
+</html>
