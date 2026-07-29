@@ -210,6 +210,26 @@
   }
   .favs dd:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
 
+  /* ── outbound, rail-weight ── */
+  .out { margin: 0; padding: 0; list-style: none; }
+  .out li {
+    margin-bottom: 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .out li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  .out a {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--std); font-weight: 500; font-size: 15px; line-height: 1.2;
+    text-decoration: none;
+  }
+  .out a:hover { text-decoration: underline; }
+  .out__mark { width: 14px; height: 14px; flex: none; fill: currentColor; }
+  .out span {
+    display: block; margin-top: 2px;
+    font-family: var(--ui); font-weight: 500;
+    font-size: 11.5px; line-height: 1.35; color: var(--ink-2);
+  }
+
   /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
      not "what websites does Ron have". ── */
   .top8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--ink); }
@@ -369,6 +389,29 @@
             <dt>Cocktail</dt><dd>Mezcal Negroni</dd>
             <dt>Game</dt><dd>Balatro</dd>
           </dl>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Elsewhere</h2>
+        <div class="mod__b">
+          <ul class="out">
+            <li>
+              <a href="https://www.are.na/ron-bronson-zgjvvrzhlq8/channels" target="_blank" rel="noopener">Are.na</a>
+              <span>Channels and collections</span>
+            </li>
+            <li>
+              <a href="https://www.pi.fyi/u/ron" target="_blank" rel="noopener">PI.FYI</a>
+              <span>Recommendations, mostly unserious</span>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="noopener">
+                <!-- Official mark, inlined. Nothing on this page loads from a
+                     third party, so no icon font and no remote SVG. -->
+                <svg class="out__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg>Bluesky</a>
+              <span>@ronbronson.com</span>
+            </li>
+          </ul>
         </div>
       </div>
 

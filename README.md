@@ -86,7 +86,16 @@ and breaking any one of them brings back a blue column running past its own cont
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
 explicit `grid-row`, so the widgets land at the bottom instead of following the portrait.
 
-Rail B holds `Listening`, `Reading` and `Favorites`. `Favorites` uses `.favs`, not the
+Rail B holds `Listening`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
+page stops being a CV — the scrobble, the shelf, the favorites and the Are.na / PI.FYI /
+Bluesky links are the counterweight to the institutions in the main column. If the page
+starts reading corporate again, the fix is usually more here, not less there.
+
+`Elsewhere` uses `.out`. The Bluesky butterfly is the official mark, inlined as an SVG
+path: nothing on this page loads from a third party, so no icon font and no remote asset.
+Any further social marks go the same way.
+
+`Favorites` uses `.favs`, not the
 2px-gap grid the main column uses — the rail is ~200–290px, so a label column would leave
 nothing for the value. It mirrors the `.np` idiom (micro uppercase label, value in the
 display face) so the rail reads as one thing.
