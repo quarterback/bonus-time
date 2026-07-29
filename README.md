@@ -95,6 +95,15 @@ Any new fill colour must be **opaque**. The 2px-gap grids show the ink gap colou
 translucent fills, so an alpha value composites to near-black. Same trap the `.door`
 hover comment describes.
 
+## Social card
+
+`assets/og.png` is 1200×630 and is generated from `assets/og.html`, which carries the
+regeneration command in a comment at the top. **Regenerate it when the `Currently` copy
+changes** — the card repeats that copy, and nothing enforces the match.
+
+Don't point `og:image` at `profile.jpg`. It's 4:5, and `summary_large_image` crops to
+1.91:1 straight through Ron's forehead — which is what the card previously did.
+
 - `assets/site.css` and `assets/palette.js` are **copied verbatim across all four
   repos** — do not edit them here, it silently desyncs the other three sites. Anything
   site-specific goes in the `<style>` block in `index.html`.
