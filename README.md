@@ -22,19 +22,19 @@ Four things, in this order, and nothing else:
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **Now** — reality, not aspirations and not philosophy. Role, then the bare context
-   under it. Five entries, no sentences.
-3. **Experience** — context, not a CV. **Institution names only**: no titles, no dates,
-   no durations, no "this taught me…". The restraint is the whole point; the moment
-   dates appear it becomes a résumé grid, which is what board service was and why it
-   was cut.
-4. **Working Together** — the questions senior people actually have, answered as a bare
-   list. Not "hire me", no pitch, no elaboration.
-5. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-6. **Contact.**
+2. **Currently** — what Ron is doing right now, in two short grafs. State Capacity AI
+   and the Michigan faculty post, each carrying one link out.
+3. **Experience** — one graf. Two decades, the 18F management role, the agencies, and
+   the tennis coaching. Not a CV, not a timeline, and no dates.
+4. **Working With Me** — the engagement types as clipped sentences, ending on the game
+   show joke. The joke is load-bearing; it's what keeps the section from being a rate
+   card. Don't tidy it away.
+5. **Recently** — the current year's activity, in two grafs.
+6. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+7. **Contact.**
 
-The test: **can someone get the shape of this person in about fifteen seconds without
-reading a paragraph?** If a change doesn't help that, it doesn't belong.
+The test: **can someone get the shape of this person in about fifteen seconds?** If a
+change doesn't help that, it doesn't belong.
 
 Deliberately *not* here: talks (`.design`), **projects, case studies, prototypes and
 indices** (`.dev`, `.design`), event write-ups (`thinkingweapons.com`), a résumé, a
@@ -42,11 +42,14 @@ timeline, or a "side quests" section. The portfolio is not a front-door asset �
 it doesn't add anything a stranger needs in the first two minutes, and it turns the page
 into an inventory. Send people onward to it instead.
 
-**There is no prose on this page, and that is deliberate.** Every version before this one
-was paragraph-led and buried everything in it. Content goes in `.now` (role + context),
-`.exp` (institution names), `.work` (a tag row), or `.favs` in the rail. If you find
-yourself writing a sentence, the material either belongs in one of those forms or belongs
-on `.design`.
+**Prose, but rationed.** Every module in the main column is one or two short grafs — the
+copy is Ron's and it carries the page. What killed earlier versions wasn't prose, it was
+*volume*: a single About block long enough that nobody read any of it. Four short modules
+that each answer one question beat one long one that answers all of them.
+
+A fully list-based version was tried — role/context pairs, a grid of institution names, a
+tag row of engagement types — and cut. It scanned well but flattened the voice, and the
+game show line has nowhere to live in a tag row.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), and community radio.
@@ -59,23 +62,17 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| Now | `.now` — role in the display face, bare context under it. The page opens with reality. |
+| Currently | The page opens with what's true now, not with a history. |
 | My Sites | The four site links. Four doors, four `href`s — sharpen the subtitles freely, don't add a fifth. |
 | Now Playing | Podcasts. |
-| Experience | `.exp` — a 2-up grid of institution names. Eight entries fill four rows exactly; an odd count leaves an empty cell showing the grid's ink ground. |
-| Working Together | `.work` — a wrapping tag row, so any number of entries fits without that empty-cell problem. |
+| Experience | One graf. Sits here rather than full width because it's what balances the content column against the rail's height — move it down and a white gap opens beside the rail. |
+| Working With Me | Engagement types. Ends on the game show line. |
+| Recently | The current year. Needs a refresh each year or it quietly becomes a lie. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
-`Now` and `Now Playing` both start with the same word and sit three modules apart. If a
-better name for the podcast module turns up, take it — "Listening" is already used by the
-rail scrobble.
-
-`Experience` sits in `.main--top` rather than the full-width section on purpose: it is
-what balances the content column against the rail's height. Moving it down leaves a white
-gap beside the rail.
-
-**The rail ends after Favorites.** Everything below it — `Working Together` and the
-`Top 8` — sits in `.main--wide`, which spans both columns. Three things make that work,
+**The rail ends after Favorites.** Everything below it — `Working With Me`, `Recently`
+and the `Top 8` — sits in `.main--wide`, which spans both columns. Three things make that
+work,
 and breaking any one of them brings back a blue column running past its own content:
 
 - `.railwrap` wraps both rail halves so they are **one** grid item. Placed in separate

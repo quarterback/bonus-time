@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson — Assistant Professor of Practice at the University of Michigan. Advisor to governments, nonprofits, and public-benefit organizations in the United States and Europe. Research on AI economics and public delivery. Previously 18F, TTS and GSA." />
+<meta name="description" content="Ron Bronson is an advisor at State Capacity AI, where he designed a consumer price index and labor tracker for AI spend, and a part-time Urban Technology faculty member at the University of Michigan Taubman College. Two decades leading digital transformation, including heading the design practice at 18F." />
 <meta property="og:type" content="profile" />
 <meta property="og:title" content="Ron Bronson" />
 <meta property="og:description" content="Teaching, advising, research, coaching, writing. Start here." />
@@ -167,39 +167,12 @@
 
 
 
-  /* ── Now ────────────────────────────────────────────────────────────
-     Role, then the bare context under it. Reality, not narrative — the
-     visitor assembles the picture. No prose here, ever: the moment this
-     turns back into sentences the page is an About page again.
+  /* ── prose ──────────────────────────────────────────────────────────
+     Short paragraphs, a few per module. Sized down from the old bio: the
+     copy carries the page now, so it reads rather than declaims.
      ──────────────────────────────────────────────────────────────── */
-  .now { margin: 0; }
-  .now dt {
-    font-family: var(--std); font-weight: 500;
-    font-size: clamp(17px, 1.5vw, 21px); line-height: 1.15;
-  }
-  .now dd {
-    margin: 0 0 13px; padding-bottom: 13px;
-    border-bottom: 1px dashed var(--rule);
-    font-family: var(--ui); font-weight: 500;
-    font-size: 13.5px; line-height: 1.5; color: var(--ink-2);
-  }
-  .now dd:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
-
-  /* ── Experience: institutions only. No titles, no dates, no duration.
-     That restraint is the point — it reads as context, not a CV. ── */
-  .exp { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
-  .exp__i { background: var(--panel); padding: clamp(12px, 1.6vw, 17px); }
-  .exp__i b { display: block; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.35vw, 18px); line-height: 1.15; }
-  .exp__i span { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; line-height: 1.4; color: var(--ink-2); }
-
-  /* ── Working together: a wrapping tag row, so any number of entries
-     fits without leaving an empty cell showing the grid's ink ground. ── */
-  .work { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
-  .work li {
-    border: 2px solid var(--ink); padding: 8px 13px;
-    font-family: var(--std); font-weight: 500;
-    font-size: clamp(14px, 1.2vw, 17px); line-height: 1.15;
-  }
+  .blurb p { margin: 0 0 .85em; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .blurb p:last-child { margin-bottom: 0; }
 
   /* ── favorites, rail-weight ─────────────────────────────────────────
      Deliberately not the 2px-gap grid the main column uses: the rail is
@@ -391,24 +364,14 @@
     <div class="main main--top">
 
       <div class="mod">
-        <h2 class="mod__t">Now</h2>
-        <div class="mod__b">
-          <dl class="now">
-            <dt>Assistant Professor of Practice</dt>
-            <dd>University of Michigan</dd>
-
-            <dt>Advisor</dt>
-            <dd>Governments, nonprofits, and public-benefit organizations<br />United States + Europe</dd>
-
-            <dt>Research</dt>
-            <dd>AI economics and public delivery</dd>
-
-            <dt>Coach</dt>
-            <dd>Lincoln High School Tennis</dd>
-
-            <dt>Writer</dt>
-            <dd>Since 2003</dd>
-          </dl>
+        <h2 class="mod__t">Currently</h2>
+        <div class="mod__b blurb">
+          <p>I&rsquo;m an advisor at State Capacity AI, where I designed a
+            <a href="https://occupant.ee/indices">consumer price index and labor tracker for AI spend</a>.</p>
+          <p>I&rsquo;m also a part-time
+            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban Technology</a>
+            faculty member at the University of Michigan Taubman College of Architecture and Urban
+            Planning.</p>
         </div>
       </div>
 
@@ -438,15 +401,12 @@
 
       <div class="mod">
         <h2 class="mod__t">Experience</h2>
-        <div class="exp">
-          <article class="exp__i"><b>18F</b><span>Technology Transformation Services &middot; General Services Administration</span></article>
-          <article class="exp__i"><b>Federal Trade Commission</b></article>
-          <article class="exp__i"><b>Centers for Medicare &amp; Medicaid Services</b></article>
-          <article class="exp__i"><b>Department of Defense</b></article>
-          <article class="exp__i"><b>University of Michigan</b></article>
-          <article class="exp__i"><b>City and State Government</b></article>
-          <article class="exp__i"><b>Higher Education</b></article>
-          <article class="exp__i"><b>U.S. Air Force</b></article>
+        <div class="mod__b blurb">
+          <p>Two decades of experience leading digital transformation, strategy &amp; tactics. While at
+            18F, I was part of the management team, where I headed the design practice. I worked on
+            critical technology projects impacting millions of Americans for the White House, Congress,
+            DOD, HHS, VA, USFS, Treasury and others. Offline, I&rsquo;m a state championship&ndash;winning
+            high school tennis coach.</p>
         </div>
       </div>
 
@@ -458,17 +418,23 @@
     <div class="main main--wide">
 
       <div class="mod">
-        <h2 class="mod__t">Working Together</h2>
-        <div class="mod__b">
-          <ul class="work">
-            <li>Advisory work</li>
-            <li>Executive coaching and counsel</li>
-            <li>Speaking</li>
-            <li>Teaching</li>
-            <li>Boards</li>
-            <li>Fractional leadership</li>
-            <li>Special projects</li>
-          </ul>
+        <h2 class="mod__t">Working With Me</h2>
+        <div class="mod__b blurb">
+          <p>Executive advising. Interim and fractional leadership. Public delivery &amp; deployment.
+            AI, transformation &amp; emerging technology. Coaching. Or if you want me to host a game
+            show, because that&rsquo;d be fun.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Recently</h2>
+        <div class="mod__b blurb">
+          <p>So far in 2026, I&rsquo;ve spent part of the summer in Northern Europe working on strategic
+            engagements. I organized a conference that brought together technologists &amp; policy
+            students to discuss the next stage of public mechanics &amp; civic technology. I guest
+            lectured at Harvard University and keynoted a design conference in January.</p>
+          <p>I completed a board stint in 2025 as President of AIGA Portland, where I oversaw the
+            creation and launch of Portland Design Month, now in its third year this October.</p>
         </div>
       </div>
 
