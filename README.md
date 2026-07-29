@@ -51,6 +51,21 @@ Module order in `.main`, and the reasoning behind it:
 | Who I'd Like to Meet | The MySpace field, used straight. The only forward-looking block on the page. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
+**The rail ends after Favorites.** Everything below it — `Who I'd Like to Meet` and the
+`Top 8` — sits in `.main--wide`, which spans both columns. Three things make that work,
+and breaking any one of them brings back a blue column running past its own content:
+
+- `.railwrap` wraps both rail halves so they are **one** grid item. Placed in separate
+  rows they got pushed apart, because a row-spanning `.main--top` inflates the
+  `max-content` size of every row it crosses.
+- `align-self: start` on the wrapper. Without it the rail's ground and its 3px border
+  stretch to fill row 1, which is as tall as `.main--top`.
+- The border-right lives on `.railwrap`, not on `.rail`, so it draws once and stops
+  where the rail stops.
+
+Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
+explicit `grid-row`, so the widgets land at the bottom instead of following the portrait.
+
 Rail B holds `Listening`, `Reading` and `Favorites`. `Favorites` uses `.favs`, not the
 2px-gap grid the main column uses — the rail is ~200–290px, so a label column would leave
 nothing for the value. It mirrors the `.np` idiom (micro uppercase label, value in the

@@ -118,16 +118,27 @@
   .cols > * { min-width: 0; }
   .rail { padding: clamp(14px, 2.2vw, 22px); background: var(--rail-bg); }
   .main { padding: clamp(16px, 2.2vw, 26px); }
+  /* Follows .main--top directly in both layouts, so it never needs its own
+     top padding — the module gap above it comes from .main--top's bottom. */
+  .main--wide { padding-top: 0; }
   @media (min-width: 781px) {
-    /* Row 1 must be max-content. Left auto, the two rows split .main's full
-       height between them, which inflated row 1 far past the portrait and
-       left a long empty gap above the rail widgets. */
-    .cols { grid-template-rows: max-content 1fr; }
-    .rail { border-right: 3px solid var(--ink); }
-    .rail--a { grid-column: 1; grid-row: 1; }
-    .rail--b { grid-column: 1; grid-row: 2; padding-top: 0; }
-    .main    { grid-column: 2; grid-row: 1 / span 2; }
+    /* Two rows. Row 1 is the rail beside the top of the content; row 2 spans
+       both columns, so the rail ends after Favorites and everything below it
+       runs full width.
+       align-self:start is what actually ends the rail — without it the blue
+       ground and the 3px border stretch to fill row 1, which is as tall as
+       .main--top. The border lives on the wrapper, not on each half, so it
+       draws once and stops with the rail. */
+    .railwrap {
+      grid-column: 1; grid-row: 1;
+      align-self: start;
+      border-right: 3px solid var(--ink);
+    }
+    .rail--b   { padding-top: 0; }
+    .main--top { grid-column: 2; grid-row: 1; }
+    .main--wide { grid-column: 1 / -1; grid-row: 2; }
   }
+
 
   /* ── module ── */
   .mod { border: 2px solid var(--ink); background: var(--panel); margin-bottom: clamp(14px, 2vw, 22px); overflow: hidden; }
@@ -267,6 +278,14 @@
 
   @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
+    /* Wrapper dissolves so the two rail halves can be placed independently.
+       Without the explicit rows the widgets would follow the portrait
+       immediately, since the halves are adjacent in the source. */
+    .railwrap   { display: contents; }
+    .rail--a    { grid-row: 1; }
+    .main--top  { grid-row: 2; }
+    .main--wide { grid-row: 3; }
+    .rail--b    { grid-row: 4; }
     /* Contact rides at the top; the widgets drop below the content. */
     .rail--a {
       display: flex; align-items: flex-start; gap: 14px;
@@ -297,7 +316,15 @@
 
   <div class="cols">
 
-    <!-- ══════════ RAIL ══════════ -->
+    <!-- ══════════ RAIL ══════════
+         rail--a and rail--b are wrapped so the whole rail is a single grid
+         item and the two halves sit flush. Placed in separate rows they were
+         pushed apart, because a row-spanning .main--top inflates the
+         max-content size of every row it crosses. The wrapper collapses to
+         display:contents under 780px so the halves can be re-ordered around
+         the content. -->
+    <div class="railwrap">
+
     <div class="rail rail--a">
       <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson smiling in front of a brick wall" />
 
@@ -311,8 +338,47 @@
 
     </div>
 
-    <!-- ══════════ MAIN ══════════ -->
-    <div class="main">
+    <div class="rail rail--b">
+      <div class="mod">
+        <h2 class="mod__t">Listening</h2>
+        <div class="mod__b">
+          <p class="np">
+            <span class="np__label" id="np-label">Last played</span>
+            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
+              <b class="np__track" id="np-track">&mdash;</b>
+              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
+            </a>
+          </p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Reading</h2>
+        <div class="mod__b">
+          <ul class="books" id="reading-list"></ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Favorites</h2>
+        <div class="mod__b">
+          <dl class="favs">
+            <dt>Artist</dt><dd>Nam June Paik</dd>
+            <dt>Album</dt><dd>Songs In The Key of Life</dd>
+            <dt>Scent</dt><dd>BDK Gris Charnel</dd>
+            <dt>Tea</dt><dd>Ruby 21</dd>
+            <dt>Cocktail</dt><dd>Mezcal Negroni</dd>
+            <dt>Game</dt><dd>Balatro</dd>
+          </dl>
+        </div>
+      </div>
+
+    </div>
+
+    </div>
+
+<!-- ══════════ MAIN ══════════ -->
+    <div class="main main--top">
 
       <div class="mod">
         <h2 class="mod__t">About Me</h2>
@@ -366,6 +432,13 @@
         </div>
       </div>
 
+    </div>
+
+    <!-- ══════════ FULL WIDTH ══════════
+         Sits below the rail, spanning both columns, so the rail ends after
+         Favorites instead of running a blue column past its own content. -->
+    <div class="main main--wide">
+
       <div class="mod">
         <h2 class="mod__t">Who I&rsquo;d Like to Meet</h2>
         <div class="mod__b">
@@ -406,43 +479,6 @@
           <article class="t8">
             <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
           </article>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="rail rail--b">
-      <div class="mod">
-        <h2 class="mod__t">Listening</h2>
-        <div class="mod__b">
-          <p class="np">
-            <span class="np__label" id="np-label">Last played</span>
-            <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener">
-              <b class="np__track" id="np-track">&mdash;</b>
-              <span class="np__artist" id="np-artist">last.fm/statechampion</span>
-            </a>
-          </p>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Reading</h2>
-        <div class="mod__b">
-          <ul class="books" id="reading-list"></ul>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Favorites</h2>
-        <div class="mod__b">
-          <dl class="favs">
-            <dt>Artist</dt><dd>Nam June Paik</dd>
-            <dt>Album</dt><dd>Songs In The Key of Life</dd>
-            <dt>Scent</dt><dd>BDK Gris Charnel</dd>
-            <dt>Tea</dt><dd>Ruby 21</dd>
-            <dt>Cocktail</dt><dd>Mezcal Negroni</dd>
-            <dt>Game</dt><dd>Balatro</dd>
-          </dl>
         </div>
       </div>
 
