@@ -188,8 +188,6 @@
      ink-black gap colour instead of the card's white and went nearly black.
      ink-black on fresh-sky is 6.67:1; navy on it is 4.66:1 — both clear AA. */
   .door:hover { background: var(--fresh-sky); }
-  /* Cards with no link must not offer a hover affordance they can't honour. */
-  .door--static:hover { background: var(--panel); }
   .door:hover .door__t a,
   .door:hover .door__n { color: var(--ink-black); }
   .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
@@ -296,17 +294,17 @@
         </div>
       </div>
 
-      <!-- Present tense, and every fact here already appears elsewhere on the page.
-           This module exists so the page states what Ron does now before it states
-           what he has been trusted with. Static cards carry no link and must not
-           imply one — hence .door--static. -->
       <div class="mod">
-        <h2 class="mod__t">Currently</h2>
-        <div class="doors">
-          <article class="door door--static"><h3 class="door__t">Teaching</h3><span class="door__n">Urban technology at Taubman College, University of Michigan</span></article>
-          <article class="door door--static"><h3 class="door__t">Coaching</h3><span class="door__n">High school tennis &middot; Oregon Athletic Coaches Association Coach of the Year</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://www.mixcloud.com/908RB/" target="_blank" rel="noopener">Community radio &rarr;</a></h3><span class="door__n">News anchor at KBOO 90.7 FM &middot; The Sound Bulletin on KFFP 90.3 FM</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">Writing &rarr;</a></h3><span class="door__n">Essays on public institutions, design and consequence</span></article>
+        <h2 class="mod__t">Now Playing</h2>
+        <div class="players">
+          <div class="player">
+            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
+            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
+          </div>
+          <div class="player">
+            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
+            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
+          </div>
         </div>
       </div>
 
@@ -347,20 +345,6 @@
           <article class="t8">
             <img src="assets/dotgov-panel.jpg" width="1100" height="825" loading="lazy" alt="Ron Bronson on a DotGov Design Conference panel" />
           </article>
-        </div>
-      </div>
-
-      <div class="mod">
-        <h2 class="mod__t">Now Playing</h2>
-        <div class="players">
-          <div class="player">
-            <p class="player__n"><a href="https://podme.com/no/episode/8906441/">Service Design Show</a></p>
-            <iframe src="https://open.spotify.com/embed/episode/5G8QyUzrsinHfsHquqp0Bn?utm_source=generator&amp;si=0105a276f053432c" height="152" loading="lazy" allow="clipboard-write; encrypted-media; fullscreen; picture-in-picture" title="Service Design Show, episode 236"></iframe>
-          </div>
-          <div class="player">
-            <p class="player__n"><a href="https://futureperfectbook.club">Future Perfect Book Club</a></p>
-            <iframe src="https://embed.podcasts.apple.com/us/podcast/future-perfect-book-club/id1798639616" height="152" loading="lazy" allow="encrypted-media *; clipboard-write" title="Future Perfect Book Club"></iframe>
-          </div>
         </div>
       </div>
 
