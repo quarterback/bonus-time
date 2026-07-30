@@ -22,13 +22,14 @@ Four things, in this order, and nothing else:
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **What I'm Up To Right Now** — a few bullets, teaching first, under a date stamp.
-   **No bio.** The page high-levels it and sends people onward; the long version lives
-   on `.design`. Keep the stamp current — a "right now" block with a stale date is
-   worse than no block at all.
-3. **2026 So Far** — that year's wins as bullets, each carrying its link.
-4. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-5. **Contact.**
+2. **If You're New Here** — orientation, not a bio: a north-star graf, then
+   Currently / Past. The long version lives on `.design`.
+3. **What I'm Up To Right Now** — a few bullets under a date stamp. Keep the stamp
+   current; a "right now" block with a stale date is worse than no block at all.
+4. **2026 So Far** — that year's wins as bullets, each carrying its link. Name the work
+   (article titles, talk titles) rather than describing it.
+5. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+6. **Contact.**
 
 The test: **can someone get the shape of this person in about fifteen seconds?** If a
 change doesn't help that, it doesn't belong.
@@ -54,17 +55,25 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| What I'm Up To Right Now | `.ups` bullets under a `.stamp` date. Teaching first. |
+| If You're New Here | Currently / Past. The north-star graf above them is still a `TK` comment. |
+| What I'm Up To Right Now | `.ups` bullets under a `.stamp` date. |
 | 2026 So Far | Same `.ups` list. Rename per year. |
+| Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
-One bullet is still commented out in `What I'm Up To Right Now` — an npm package / AI item
-that hasn't been described precisely enough to write. It stays commented rather than
-guessed at.
+Two `TK` comments are live in the markup and both stay commented rather than guessed at:
+the north-star graf, and an npm package / AI bullet that hasn't been described precisely
+enough to write.
 
-`.blurb` is retained but unused; nothing on the page is prose now.
+**The Design as Repair embed is here only because `.design` doesn't have one** — that site
+links the talk but never embeds it. If an embed lands there, delete this module rather than
+running the same video in two places. The Throughline delivery of the same talk isn't
+public, which is why the Oslo recording is the one worth showing.
+
+`.player--video` overrides the 152px audio-player height with a 16/9 ratio; without it the
+video renders as a strip.
 
 **The rail ends after Favorites.** Everything below it — the `Top 8` — sits in
 `.main--wide`, which spans both columns. Three things make that work,

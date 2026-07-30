@@ -293,6 +293,8 @@
   .player__n { margin: 0; padding: 9px 12px 7px; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.4vw, 19px); }
   .player__n a { text-decoration: none; }
   .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
+  /* Video, not an audio player — 152px would letterbox it to a strip. */
+  .player--video iframe { height: auto; aspect-ratio: 16 / 9; }
 
 
   .footbar {
@@ -440,16 +442,25 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <!-- No bio by design. The page high-levels it and sends people onward;
-           the long version lives on .design. Keep the date stamp current —
-           a "right now" block with a stale date is worse than no block. -->
+      <!-- Orientation, not a bio. The long version lives on .design. -->
+      <div class="mod">
+        <h2 class="mod__t">If You&rsquo;re New Here</h2>
+        <div class="mod__b blurb">
+          <!-- TK: the north star graf — Ron's words. Goes above the two lines below. -->
+          <p><b>Currently:</b> part-time
+            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban Technology</a>
+            faculty at the University of Michigan.<br />
+            <b>Past:</b> 18F, Nava.</p>
+        </div>
+      </div>
+
+      <!-- Keep the date stamp current — a "right now" block with a stale date
+           is worse than no block. -->
       <div class="mod">
         <h2 class="mod__t">What I&rsquo;m Up To Right Now</h2>
         <div class="mod__b">
           <span class="stamp">Updated July 2026</span>
           <ul class="ups">
-            <li>Teaching at the
-              <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">University of Michigan</a>.</li>
             <li>Building a multilateral public delivery practice. Not yet named.</li>
             <!-- TK: the npm package / AI item. "npm package / ai bullshit" isn't
                  enough to write from — needs Ron's wording and a link. -->
@@ -468,14 +479,28 @@
               (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
             <li>Developed the first-ever analytics platform
               (<a href="https://www.mallo.fi">mallo.fi</a>) for Finnish pes&auml;pallo.</li>
-            <li>Keynoted the
-              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>
-              conference.</li>
+            <li>Closing keynote at
+              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>.
+              The Throughline talk isn&rsquo;t public, but the
+              <a href="https://www.ixda.no/talks/design-as-repair">IxDA Oslo</a> version of
+              &ldquo;Design as Repair&rdquo; went online this year &mdash; below.</li>
             <li>Ran <a href="https://yearsahead.io">Years Ahead 26</a> at the University of
               Michigan.</li>
-            <li><a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Piccalilli</a>
-              article.</li>
+            <li>&ldquo;<a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Some
+              advice on managing your design career upwards</a>&rdquo; for Piccalilli.</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- Embedded here because .design links this talk but doesn't embed it.
+           If an embed ever lands there, drop this one rather than duplicating. -->
+      <div class="mod">
+        <h2 class="mod__t">Design as Repair</h2>
+        <div class="players">
+          <div class="player player--video">
+            <p class="player__n"><a href="https://www.ixda.no/talks/design-as-repair" target="_blank" rel="noopener">IxDA Oslo, September 2025</a></p>
+            <iframe src="https://player.vimeo.com/video/1177783240?h=ca450c1bd6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="fullscreen; picture-in-picture; clipboard-write" title="Design as Repair &mdash; Ron Bronson at IxDA Oslo"></iframe>
+          </div>
         </div>
       </div>
 
