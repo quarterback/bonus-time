@@ -9,8 +9,9 @@ orientation — role, institution, context — and is trusted to assemble the pi
 themselves. For people used to evaluating senior leaders, that assumption of competence
 is a stronger signal than a well-written paragraph.
 
-The scan it is built for: *"Oh, he teaches." → "Oh, federal leadership." → "Oh, AI." →
-"Oh, Europe."* Each section adds a piece of context. None of them summarizes him.
+What carries it now is the work itself — named, dated, linked — plus the rail. Nothing on
+the page characterizes Ron; the reader infers him from specifics. That inference is the
+whole mechanism, and it's why summarizing blocks keep getting cut.
 
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
@@ -22,14 +23,11 @@ Four things, in this order, and nothing else:
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **If You're New Here** — orientation, not a bio: a north-star graf, then
-   Currently / Past. The long version lives on `.design`.
-3. **What I'm Up To Right Now** — a few bullets under a date stamp. Keep the stamp
-   current; a "right now" block with a stale date is worse than no block at all.
-4. **2026 So Far** — that year's wins as bullets, each carrying its link. Name the work
-   (article titles, talk titles) rather than describing it.
-5. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-6. **Contact.**
+2. **2026 So Far** — the year's work as bullets, each carrying its link. Name the work
+   (article titles, talk titles) rather than describing it. **No bio, no orientation
+   block, no "currently" framing** — all three were tried and cut.
+3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+4. **Contact.**
 
 The test: **can someone get the shape of this person in about fifteen seconds?** If a
 change doesn't help that, it doesn't belong.
@@ -49,23 +47,23 @@ Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, boar
 
 ## Structure
 
-Single hand-authored `index.html`. No framework, no build step, no dependencies.
+Single hand-authored `index.html`. No framework, no bundler, no dependencies, and nothing
+to run before deploying — the page is served as-is.
+
+The one piece of machinery is `scripts/build-letterboxd.mjs`, run on a schedule by
+`.github/workflows/refresh-letterboxd.yml`, which commits `data/letterboxd.json` for the
+`Watching` grid. It is not a build step: the page works whether or not it has ever run,
+and the module hides itself if the JSON is missing.
 
 Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| If You're New Here | Currently / Past. The north-star graf above them is still a `TK` comment. |
-| What I'm Up To Right Now | `.ups` bullets under a `.stamp` date. |
-| 2026 So Far | Same `.ups` list. Rename per year. |
+| 2026 So Far | `.ups` bullets. Rename per year. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
-
-Two `TK` comments are live in the markup and both stay commented rather than guessed at:
-the north-star graf, and an npm package / AI bullet that hasn't been described precisely
-enough to write.
 
 **The Design as Repair embed is here only because `.design` doesn't have one** — that site
 links the talk but never embeds it. If an embed lands there, delete this module rather than
@@ -90,7 +88,7 @@ and breaking any one of them brings back a blue column running past its own cont
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
 explicit `grid-row`, so the widgets land at the bottom instead of following the portrait.
 
-Rail B holds `Listening`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
+Rail B holds `Listening`, `Watching`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
 page stops being a CV — the scrobble, the shelf, the favorites and the Are.na / PI.FYI /
 Bluesky links are the counterweight to the institutions in the main column. If the page
 starts reading corporate again, the fix is usually more here, not less there.
@@ -99,13 +97,21 @@ starts reading corporate again, the fix is usually more here, not less there.
 path: nothing on this page loads from a third party, so no icon font and no remote asset.
 Any further social marks go the same way.
 
-**Letterboxd is a plain link, not a poster grid, and can't easily be one.** Two reasons,
-both checked: `letterboxd.com/<user>/rss/` sends no `access-control-allow-origin`, so the
-browser blocks the fetch — the `Listening` and `Reading` widgets only work because last.fm
-and Literal do send it. And there is no favourites feed (`/favorites/rss/` and friends all
-403); the only feed is recently-watched. Getting posters on the page needs the feed fetched
-server-side and committed, the way `2026-site` refreshes `data/stream.json` on a schedule —
-a real build step, which this repo doesn't have.
+### Watching
+
+Posters come from `data/letterboxd.json`, committed by the scheduled workflow — **not**
+fetched live. `letterboxd.com/<user>/rss/` sends no `access-control-allow-origin`, so a
+browser fetch is blocked; `Listening` and `Reading` can go direct only because last.fm and
+Literal do send it. The page reads the committed JSON same-origin instead, the same
+arrangement `2026-site` uses for `data/stream.json`.
+
+**It is recently-watched, not favourites.** Letterboxd publishes no favourites feed —
+`/favorites/rss/`, `/favourites/rss/` and `/likes/rss/` all 403 — so favourites aren't
+obtainable. If the module ever needs to be genuinely four faves, they have to be hand-kept.
+
+The builder exits non-zero on a failed or empty fetch, which leaves the last good JSON
+committed rather than blanking the grid. The module reuses the `.books` classes, so posters
+and book covers share one 2:3 grid; don't fork the styles.
 
 `Favorites` uses `.favs`, not the
 2px-gap grid the main column uses — the rail is ~200–290px, so a label column would leave
@@ -119,8 +125,13 @@ hover comment describes.
 ## Social card
 
 `assets/og.png` is 1200×630 and is generated from `assets/og.html`, which carries the
-regeneration command in a comment at the top. **Regenerate it when the `Currently` copy
-changes** — the card repeats that copy, and nothing enforces the match.
+regeneration command in a comment at the top. **Regenerate it when the framing changes** —
+the card carries its own one-line summary and nothing enforces a match with the page.
+
+The card, `<meta name="description">`, and the OG/Twitter descriptions still carry the
+State Capacity AI / Michigan framing from the deleted `Currently` section. The facts hold,
+but they are now the only summarizing copy anywhere in the project — worth revisiting with
+Ron's words when he has them.
 
 Don't point `og:image` at `profile.jpg`. It's 4:5, and `summary_large_image` crops to
 1.91:1 straight through Ron's forehead — which is what the card previously did.

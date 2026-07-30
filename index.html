@@ -399,6 +399,13 @@
       </div>
 
       <div class="mod">
+        <h2 class="mod__t">Watching</h2>
+        <div class="mod__b">
+          <ul class="books" id="watch-list"></ul>
+        </div>
+      </div>
+
+      <div class="mod">
         <h2 class="mod__t">Favorites</h2>
         <div class="mod__b">
           <dl class="favs">
@@ -445,39 +452,13 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <!-- Orientation, not a bio. The long version lives on .design. -->
-      <div class="mod">
-        <h2 class="mod__t">If You&rsquo;re New Here</h2>
-        <div class="mod__b blurb">
-          <!-- TK: the north star graf — Ron's words. Goes above the two lines below. -->
-          <p><b>Currently:</b> part-time
-            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban Technology</a>
-            faculty at the University of Michigan.<br />
-            <b>Past:</b> 18F, Nava.</p>
-        </div>
-      </div>
-
-      <!-- Keep the date stamp current — a "right now" block with a stale date
-           is worse than no block. -->
-      <div class="mod">
-        <h2 class="mod__t">What I&rsquo;m Up To Right Now</h2>
-        <div class="mod__b">
-          <span class="stamp">Updated July 2026</span>
-          <ul class="ups">
-            <li>Building a multilateral public delivery practice. Not yet named.</li>
-            <!-- TK: the npm package / AI item. "npm package / ai bullshit" isn't
-                 enough to write from — needs Ron's wording and a link. -->
-            <li>Successfully led an initiative to expand the
-              <a href="https://oregontennis.org/">Oregon high school tennis</a>
-              state tournament for the first time since 1946.</li>
-          </ul>
-        </div>
-      </div>
-
       <div class="mod">
         <h2 class="mod__t">2026 So Far</h2>
         <div class="mod__b">
           <ul class="ups">
+            <li>Successfully led an initiative to expand the
+              <a href="https://oregontennis.org/">Oregon high school tennis</a>
+              state tournament for the first time since 1946.</li>
             <li>Built AI economic models for State Capacity AI
               (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
             <li>Developed the first-ever analytics platform
@@ -672,6 +653,40 @@
           if (!books.length) return hide();
           list.innerHTML = books.map(tile).join("");
         });
+      })
+      .catch(hide);
+  })();
+
+  /* Watching — recently-watched films, read from data/letterboxd.json. That
+     file is committed by .github/workflows/refresh-letterboxd.yml rather than
+     fetched live: letterboxd.com sends no access-control-allow-origin, so the
+     browser can't read the RSS itself. Same self-hiding behaviour as Reading,
+     and it reuses the .books grid so the posters match the covers. */
+  (function () {
+    var list = document.getElementById("watch-list");
+    if (!list) return;
+    var mod = list.closest(".mod");
+    function hide() { if (mod) mod.style.display = "none"; }
+
+    function esc(x) {
+      return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function tile(f) {
+      var label = f.title + (f.year ? " (" + f.year + ")" : "");
+      return '<li class="book">' +
+        '<a class="book__cover" href="' + esc(f.url) + '" target="_blank" rel="noopener" aria-label="' + esc(label) + '">' +
+          '<span class="book__cover-fallback" aria-hidden="true">' + esc((f.title || "?").slice(0, 1)) + '</span>' +
+          (f.poster ? '<img src="' + esc(f.poster) + '" alt="Poster for ' + esc(label) + '" loading="lazy" onerror="this.remove()" />' : "") +
+        '</a></li>';
+    }
+
+    fetch("data/letterboxd.json")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (films) {
+        if (!films || !films.length) return hide();
+        list.innerHTML = films.map(tile).join("");
       })
       .catch(hide);
   })();

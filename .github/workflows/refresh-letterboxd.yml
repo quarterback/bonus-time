@@ -1,0 +1,51 @@
+name: Refresh Letterboxd
+
+# Keeps data/letterboxd.json (the rail's "Watching" poster grid) current by
+# re-reading the Letterboxd RSS feed on a schedule and committing any changes.
+# The page fetches that JSON same-origin, which is the only way to get the
+# posters on the page: letterboxd.com sends no access-control-allow-origin, so
+# a browser fetch is blocked.
+#
+# Note: scheduled workflows only run on the repository's default branch.
+
+on:
+  schedule:
+    - cron: "0 */12 * * *" # twice a day; the feed moves slowly
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-letterboxd
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # Exits non-zero on a failed or empty fetch, which leaves the committed
+      # JSON untouched rather than blanking the grid.
+      - name: Rebuild letterboxd.json
+        run: node scripts/build-letterboxd.mjs
+
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain data/letterboxd.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "github-actions[bot]@users.noreply.github.com"
+            git add data/letterboxd.json
+            git commit -m "Refresh Letterboxd posters [skip ci]"
+            git push
+          else
+            echo "No changes."
+          fi
