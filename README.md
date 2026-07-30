@@ -22,10 +22,13 @@ Four things, in this order, and nothing else:
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **An intro text block** — copy from Ron, pending. A commented slot marks its place
-   above `My Sites`. A bulleted block may follow it; also pending. Do not draft either.
-3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-4. **Contact.**
+2. **What I'm Up To Right Now** — a few bullets, teaching first, under a date stamp.
+   **No bio.** The page high-levels it and sends people onward; the long version lives
+   on `.design`. Keep the stamp current — a "right now" block with a stale date is
+   worse than no block at all.
+3. **2026 So Far** — that year's wins as bullets, each carrying its link.
+4. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
+5. **Contact.**
 
 The test: **can someone get the shape of this person in about fifteen seconds?** If a
 change doesn't help that, it doesn't belong.
@@ -51,13 +54,17 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| *(intro slot)* | Commented placeholder above My Sites. Ron's copy, pending — plus maybe a bulleted block. The `.blurb` styles are kept for it. |
+| What I'm Up To Right Now | `.ups` bullets under a `.stamp` date. Teaching first. |
+| 2026 So Far | Same `.ups` list. Rename per year. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
-Until the intro lands, the main column is shorter than the rail and the right column shows
-white space below Now Playing — known, interim, filled by the incoming copy.
+One bullet is still commented out in `What I'm Up To Right Now` — an npm package / AI item
+that hasn't been described precisely enough to write. It stays commented rather than
+guessed at.
+
+`.blurb` is retained but unused; nothing on the page is prose now.
 
 **The rail ends after Favorites.** Everything below it — the `Top 8` — sits in
 `.main--wide`, which spans both columns. Three things make that work,

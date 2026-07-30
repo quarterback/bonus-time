@@ -183,6 +183,29 @@
 
 
 
+  /* ── up-to list ─────────────────────────────────────────────────────
+     Square marker in fresh-sky. The palette forbids that colour for text
+     but permits it as a fill, which is what a ::before block is.
+     ──────────────────────────────────────────────────────────────── */
+  .ups { margin: 0; padding: 0; list-style: none; }
+  .ups li {
+    position: relative; padding-left: 21px; margin-bottom: .62em;
+    font-size: clamp(16px, 1.2vw, 18px); line-height: 1.5;
+  }
+  .ups li:last-child { margin-bottom: 0; }
+  .ups li::before {
+    content: ""; position: absolute; left: 2px; top: .6em;
+    width: 7px; height: 7px; background: var(--accent);
+  }
+
+  /* Date stamp under a module header. */
+  .stamp {
+    display: block; margin: 0 0 clamp(11px, 1.5vw, 15px);
+    font-family: var(--ui); font-weight: 500;
+    font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
   /* ── prose ──────────────────────────────────────────────────────────
      Short paragraphs, a few per module. Sized down from the old bio: the
      copy carries the page now, so it reads rather than declaims.
@@ -417,8 +440,45 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <!-- Intro text block goes here — copy from Ron, not yet written.
-           A bulleted block may follow it in place of the removed sections. -->
+      <!-- No bio by design. The page high-levels it and sends people onward;
+           the long version lives on .design. Keep the date stamp current —
+           a "right now" block with a stale date is worse than no block. -->
+      <div class="mod">
+        <h2 class="mod__t">What I&rsquo;m Up To Right Now</h2>
+        <div class="mod__b">
+          <span class="stamp">Updated July 2026</span>
+          <ul class="ups">
+            <li>Teaching at the
+              <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">University of Michigan</a>.</li>
+            <li>Building a multilateral public delivery practice. Not yet named.</li>
+            <!-- TK: the npm package / AI item. "npm package / ai bullshit" isn't
+                 enough to write from — needs Ron's wording and a link. -->
+            <li>Successfully led an initiative to expand the
+              <a href="https://oregontennis.org/">Oregon high school tennis</a>
+              state tournament for the first time since 1946.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">2026 So Far</h2>
+        <div class="mod__b">
+          <ul class="ups">
+            <li>Built AI economic models for State Capacity AI
+              (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
+            <li>Developed the first-ever analytics platform
+              (<a href="https://www.mallo.fi">mallo.fi</a>) for Finnish pes&auml;pallo.</li>
+            <li>Keynoted the
+              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>
+              conference.</li>
+            <li>Ran <a href="https://yearsahead.io">Years Ahead 26</a> at the University of
+              Michigan.</li>
+            <li><a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Piccalilli</a>
+              article.</li>
+          </ul>
+        </div>
+      </div>
+
 
       <div class="mod">
         <h2 class="mod__t">My Sites</h2>
