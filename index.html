@@ -183,6 +183,29 @@
 
 
 
+  /* ── up-to list ─────────────────────────────────────────────────────
+     Square marker in fresh-sky. The palette forbids that colour for text
+     but permits it as a fill, which is what a ::before block is.
+     ──────────────────────────────────────────────────────────────── */
+  .ups { margin: 0; padding: 0; list-style: none; }
+  .ups li {
+    position: relative; padding-left: 21px; margin-bottom: .62em;
+    font-size: clamp(16px, 1.2vw, 18px); line-height: 1.5;
+  }
+  .ups li:last-child { margin-bottom: 0; }
+  .ups li::before {
+    content: ""; position: absolute; left: 2px; top: .6em;
+    width: 7px; height: 7px; background: var(--accent);
+  }
+
+  /* Date stamp under a module header. */
+  .stamp {
+    display: block; margin: 0 0 clamp(11px, 1.5vw, 15px);
+    font-family: var(--ui); font-weight: 500;
+    font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+
   /* ── prose ──────────────────────────────────────────────────────────
      Short paragraphs, a few per module. Sized down from the old bio: the
      copy carries the page now, so it reads rather than declaims.
@@ -270,6 +293,8 @@
   .player__n { margin: 0; padding: 9px 12px 7px; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.4vw, 19px); }
   .player__n a { text-decoration: none; }
   .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
+  /* Video, not an audio player — 152px would letterbox it to a strip. */
+  .player--video iframe { height: auto; aspect-ratio: 16 / 9; }
 
 
   .footbar {
@@ -374,6 +399,13 @@
       </div>
 
       <div class="mod">
+        <h2 class="mod__t">Watching</h2>
+        <div class="mod__b">
+          <ul class="books" id="watch-list"></ul>
+        </div>
+      </div>
+
+      <div class="mod">
         <h2 class="mod__t">Favorites</h2>
         <div class="mod__b">
           <dl class="favs">
@@ -401,6 +433,9 @@
               <a href="https://www.instagram.com/portlandneon" target="_blank" rel="noopener">Portland Neon</a>
             </li>
             <li>
+              <a href="https://letterboxd.com/ronbronson/" target="_blank" rel="noopener">Letterboxd</a>
+            </li>
+            <li>
               <a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="noopener">
                 <!-- Official mark, inlined. Nothing on this page loads from a
                      third party, so no icon font and no remote SVG. -->
@@ -417,8 +452,42 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <!-- Intro text block goes here — copy from Ron, not yet written.
-           A bulleted block may follow it in place of the removed sections. -->
+      <div class="mod">
+        <h2 class="mod__t">2026 So Far</h2>
+        <div class="mod__b">
+          <ul class="ups">
+            <li>Successfully led an initiative to expand the
+              <a href="https://oregontennis.org/">Oregon high school tennis</a>
+              state tournament for the first time since 1946.</li>
+            <li>Built AI economic models for State Capacity AI
+              (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
+            <li>Developed the first-ever analytics platform
+              (<a href="https://www.mallo.fi">mallo.fi</a>) for Finnish pes&auml;pallo.</li>
+            <li>Closing keynote at
+              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>.
+              The Throughline talk isn&rsquo;t public, but the
+              <a href="https://www.ixda.no/talks/design-as-repair">IxDA Oslo</a> version of
+              &ldquo;Design as Repair&rdquo; went online this year &mdash; below.</li>
+            <li>Ran <a href="https://yearsahead.io">Years Ahead 26</a> at the University of
+              Michigan.</li>
+            <li>&ldquo;<a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Some
+              advice on managing your design career upwards</a>&rdquo; for Piccalilli.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Embedded here because .design links this talk but doesn't embed it.
+           If an embed ever lands there, drop this one rather than duplicating. -->
+      <div class="mod">
+        <h2 class="mod__t">Design as Repair</h2>
+        <div class="players">
+          <div class="player player--video">
+            <p class="player__n"><a href="https://www.ixda.no/talks/design-as-repair" target="_blank" rel="noopener">IxDA Oslo, September 2025</a></p>
+            <iframe src="https://player.vimeo.com/video/1177783240?h=ca450c1bd6&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" loading="lazy" allow="fullscreen; picture-in-picture; clipboard-write" title="Design as Repair &mdash; Ron Bronson at IxDA Oslo"></iframe>
+          </div>
+        </div>
+      </div>
+
 
       <div class="mod">
         <h2 class="mod__t">My Sites</h2>
@@ -584,6 +653,40 @@
           if (!books.length) return hide();
           list.innerHTML = books.map(tile).join("");
         });
+      })
+      .catch(hide);
+  })();
+
+  /* Watching — recently-watched films, read from data/letterboxd.json. That
+     file is committed by .github/workflows/refresh-letterboxd.yml rather than
+     fetched live: letterboxd.com sends no access-control-allow-origin, so the
+     browser can't read the RSS itself. Same self-hiding behaviour as Reading,
+     and it reuses the .books grid so the posters match the covers. */
+  (function () {
+    var list = document.getElementById("watch-list");
+    if (!list) return;
+    var mod = list.closest(".mod");
+    function hide() { if (mod) mod.style.display = "none"; }
+
+    function esc(x) {
+      return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+    function tile(f) {
+      var label = f.title + (f.year ? " (" + f.year + ")" : "");
+      return '<li class="book">' +
+        '<a class="book__cover" href="' + esc(f.url) + '" target="_blank" rel="noopener" aria-label="' + esc(label) + '">' +
+          '<span class="book__cover-fallback" aria-hidden="true">' + esc((f.title || "?").slice(0, 1)) + '</span>' +
+          (f.poster ? '<img src="' + esc(f.poster) + '" alt="Poster for ' + esc(label) + '" loading="lazy" onerror="this.remove()" />' : "") +
+        '</a></li>';
+    }
+
+    fetch("data/letterboxd.json")
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (films) {
+        if (!films || !films.length) return hide();
+        list.innerHTML = films.map(tile).join("");
       })
       .catch(hide);
   })();
