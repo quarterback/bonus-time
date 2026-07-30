@@ -99,6 +99,14 @@ starts reading corporate again, the fix is usually more here, not less there.
 path: nothing on this page loads from a third party, so no icon font and no remote asset.
 Any further social marks go the same way.
 
+**Letterboxd is a plain link, not a poster grid, and can't easily be one.** Two reasons,
+both checked: `letterboxd.com/<user>/rss/` sends no `access-control-allow-origin`, so the
+browser blocks the fetch — the `Listening` and `Reading` widgets only work because last.fm
+and Literal do send it. And there is no favourites feed (`/favorites/rss/` and friends all
+403); the only feed is recently-watched. Getting posters on the page needs the feed fetched
+server-side and committed, the way `2026-site` refreshes `data/stream.json` on a schedule —
+a real build step, which this repo doesn't have.
+
 `Favorites` uses `.favs`, not the
 2px-gap grid the main column uses — the rail is ~200–290px, so a label column would leave
 nothing for the value. It mirrors the `.np` idiom (micro uppercase label, value in the
