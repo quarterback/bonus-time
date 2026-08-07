@@ -40,19 +40,25 @@ it doesn't add anything a stranger needs in the first two minutes, and it turns 
 into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words. The bio
-paragraphs are the existing meta/OG description turned into first person, not new writing;
-they're a holding pattern until Ron sends his, not a licence to draft more. The `closedtab`
-copy is his too, from the package's npm description and README.
+get rejected — leave slots empty (or commented) until he supplies the words. The bio is
+Ron's own, from [gpo.delivery/about.html](https://www.gpo.delivery/about.html), turned into
+first person and cut to front-door length. That page is the long version and the source of
+truth; don't rewrite these sentences to read better.
 
-### Two standing facts about the bio
+### Three standing facts about the bio
 
+- **The site says "Principal at the Global Office of Public Delivery."** Ron's formal title
+  there is Head of Delivery (CEO). He does not want it on his personal site. Don't
+  "correct" the page against gpo.delivery or LinkedIn.
 - **State Capacity AI is a silent advisory role.** It was on the page, in all three meta
   descriptions and baked into `assets/og.png`, and it is out of all four. Don't reinstate
-  it anywhere, and don't link `occupant.ee` from the front door.
-- **gpo.delivery — the Global Office of Public Delivery — is the current engagement**, and
-  it is not on the page yet because nobody but Ron can say what the role is. There is a
-  commented TK in `index.html` holding the slot. Don't guess at a title to fill it.
+  it, don't link `occupant.ee`, and don't reinstate the consumer-price-index line that goes
+  with it — gpo.delivery's own about page still carries that line, so it will look like an
+  omission to fix. It isn't.
+- **`closedtab` is a link inside the bio and nothing more.** It had its own module for one
+  commit, which was wrong: the package is already covered on `.dev`, and giving it a
+  section turns the front door back into an inventory of things Ron has shipped. Anything
+  else he releases goes in a sentence in the bio, or on `.dev` — not in a module.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
@@ -73,7 +79,6 @@ Module order in `.main`, and the reasoning behind it:
 | Module | Why it sits there |
 | --- | --- |
 | *(the bio)* | `.mod.lede`. No header bar, undated on purpose — see above. |
-| closedtab | The npm package. The thing the year list had no room for. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
