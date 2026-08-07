@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson is an advisor at State Capacity AI, where he designed a consumer price index and labor tracker for AI spend, and a part-time Urban Technology faculty member at the University of Michigan Taubman College. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta name="description" content="Ron Bronson is a Principal at the Global Office of Public Delivery and an Assistant Professor of Practice in Urban Technology at the University of Michigan Taubman College. Eight years at 18F, including Head of Design and Strategic Initiatives, and founder of the federal government's first dedicated service design unit." />
 <link rel="canonical" href="https://ronbronson.com/" />
 
 <!-- Social card. og.png is 1200×630 (1.91:1) and generated from assets/og.html —
@@ -16,19 +16,19 @@
 <meta property="og:url" content="https://ronbronson.com/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta property="og:description" content="Principal at the Global Office of Public Delivery. Urban Technology faculty at the University of Michigan. Eight years at 18F, including Head of Design and Strategic Initiatives." />
 <meta property="og:image" content="https://ronbronson.com/assets/og.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
+<meta property="og:image:alt" content="Ron Bronson — Principal at the Global Office of Public Delivery and Urban Technology faculty at the University of Michigan." />
 <meta property="profile:first_name" content="Ron" />
 <meta property="profile:last_name" content="Bronson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta name="twitter:description" content="Principal at the Global Office of Public Delivery. Urban Technology faculty at the University of Michigan. Eight years at 18F, including Head of Design and Strategic Initiatives." />
 <meta name="twitter:image" content="https://ronbronson.com/assets/og.png" />
-<meta name="twitter:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
+<meta name="twitter:image:alt" content="Ron Bronson — Principal at the Global Office of Public Delivery and Urban Technology faculty at the University of Michigan." />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
@@ -91,8 +91,8 @@
   a { color: var(--link); text-underline-offset: 2px; }
   a:hover { color: var(--ink); }
   /* height:auto globally — the HTML height attribute is a presentational
-     hint that outranks aspect-ratio, which silently stretched the portrait
-     and the photo grids. More specific rules (book covers) still win. */
+     hint that outranks aspect-ratio, which silently stretched the photo
+     grids. More specific rules (book covers) still win. */
   img { max-width: 100%; height: auto; }
 
   /* ── the profile container ── */
@@ -118,13 +118,6 @@
     letter-spacing: -.01em;
     text-transform: uppercase;
   }
-  .pic {
-    display: block; width: 100%;
-    aspect-ratio: 4/5; object-fit: cover;
-    border: 2px solid var(--ink);
-    margin-bottom: clamp(14px, 2vw, 22px);
-  }
-
   /* ── columns ── */
   .cols {
     display: grid;
@@ -198,13 +191,39 @@
     width: 7px; height: 7px; background: var(--accent);
   }
 
-  /* Date stamp under a module header. */
-  .stamp {
-    display: block; margin: 0 0 clamp(11px, 1.5vw, 15px);
-    font-family: var(--ui); font-weight: 500;
-    font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--ink-2);
+  /* ── let's talk about, rail-weight ──────────────────────────────────
+     Interests, not credentials, and the one thing on the front door that
+     exists nowhere else: .dev catalogues what Ron has built and .design
+     covers how he works, so neither of them ever says what he's actually
+     interested in.
+
+     Topics only — no sentence underneath, no links. That's what keeps the
+     temperature down and what makes it swappable: this list changes with
+     Ron's mood, so every entry has to be cheap to add and cheap to drop.
+     A topic that needs explaining belongs on the blog.
+
+     Same rail idiom as .out and .favs dd — dashed rules, display face,
+     15px. line-height is tight because the topics are long enough to wrap
+     to two and three lines at 200px and they need to stay one block each.
+     ──────────────────────────────────────────────────────────────── */
+  .talk { margin: 0; padding: 0; list-style: none; }
+  .talk li {
+    margin-bottom: 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--std); font-weight: 500;
+    font-size: 15px; line-height: 1.25;
   }
+  .talk li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+
+  /* ── the lede ───────────────────────────────────────────────────────
+     The bio, and deliberately the only module with no header bar. It is
+     the first thing under the masthead, so a label would only name what
+     the reader can already see — you land on the site and you are
+     reading it. Set a step larger than .blurb for the same reason.
+     ──────────────────────────────────────────────────────────────── */
+  .lede .mod__b { padding: clamp(16px, 2.2vw, 25px); }
+  .lede p { margin: 0 0 .7em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; }
+  .lede p:last-child { margin-bottom: 0; }
 
   /* ── prose ──────────────────────────────────────────────────────────
      Short paragraphs, a few per module. Sized down from the old bio: the
@@ -318,20 +337,15 @@
   @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
     /* Wrapper dissolves so the two rail halves can be placed independently.
-       Without the explicit rows the widgets would follow the portrait
-       immediately, since the halves are adjacent in the source. */
+       Without the explicit rows the widgets would follow Contact immediately,
+       since the halves are adjacent in the source. */
     .railwrap   { display: contents; }
     .rail--a    { grid-row: 1; }
     .main--top  { grid-row: 2; }
     .main--wide { grid-row: 3; }
     .rail--b    { grid-row: 4; }
     /* Contact rides at the top; the widgets drop below the content. */
-    .rail--a {
-      display: flex; align-items: flex-start; gap: 14px;
-      border-bottom: 3px solid var(--ink);
-    }
-    .rail--a .pic { width: 108px; flex: none; margin-bottom: 0; }
-    .rail--a .mod { flex: 1; margin-bottom: 0; }
+    .rail--a { border-bottom: 3px solid var(--ink); }
     .rail--b { border-top: 3px solid var(--ink); }
     /* Dense grids so the phone view stays a page, not an endless scroll. */
     .top8   { grid-template-columns: repeat(4, 1fr); }
@@ -342,7 +356,6 @@
   @media (max-width: 430px) {
     .cg { grid-template-columns: 1fr; }
     .doors { grid-template-columns: 1fr; }
-    .rail--a .pic { width: 84px; }
   }
 </style>
 </head>
@@ -365,8 +378,6 @@
     <div class="railwrap">
 
     <div class="rail rail--a">
-      <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson smiling in front of a brick wall" />
-
       <div class="mod">
         <h2 class="mod__t">Contact</h2>
         <div class="cg">
@@ -378,6 +389,31 @@
     </div>
 
     <div class="rail rail--b">
+      <!-- Interests, and the only module on the page that isn't available on
+           .dev or .design: those two cover what Ron has built and how he works,
+           neither says what he's interested in.
+
+           Topics only. No sentence under them, no links — a topic that needs
+           explaining belongs on the blog, and a link turns this into a
+           portfolio row. It sits at the top of the rail because it's the most
+           swappable thing here: the list changes with Ron's mood, so it wants
+           to be the module you edit without thinking about the rest of the
+           page. Rewrite it freely; there's nothing to keep in sync. -->
+      <div class="mod">
+        <h2 class="mod__t">Let&rsquo;s Talk About</h2>
+        <div class="mod__b">
+          <ul class="talk">
+            <li>Public trust as a depleting resource &amp; the built environments of
+              social trust</li>
+            <li>Star Trek</li>
+            <li>City &amp; Sports PC sims</li>
+            <li>Cybernetics and the lost science of organizations</li>
+            <li>Systems after systems</li>
+            <li>Economic anthropology</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="mod">
         <h2 class="mod__t">Listening</h2>
         <div class="mod__b">
@@ -452,27 +488,57 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <div class="mod">
-        <h2 class="mod__t">2026 So Far</h2>
+      <!-- The bio. Replaces "2026 So Far", which went stale between updates and
+           always read as an incomplete list of the year. A bio has neither
+           problem, so nothing here gets a datestamp or a bullet count — if a
+           line needs a year on it, it belongs on .design or .dev instead.
+
+           No header bar on purpose: it's the first thing under the masthead
+           and titling it only named what the reader could already see.
+
+           Copy below is Ron's, from his bio at gpo.delivery/about.html, turned
+           into first person and cut to front-door length. Treat it as a
+           stand-in: he's rewriting it in a register this doesn't have yet —
+           how he'd introduce himself at a party, with the bonafides folded in
+           rather than led with. Michigan carries most of that weight.
+
+           The bonafides stay. This is a personal site and not a CV, but someone
+           arriving cold with no idea who he is needs the anchor, or the rest of
+           the page reads as a stranger's hobbies. Lower the temperature without
+           removing the orientation — when the new copy lands, keep an
+           institution in the first sentence. gpo.delivery/about.html remains
+           the long version; don't rewrite these facts, only their register.
+
+           "Principal" is deliberate and is what this site says. Ron's formal
+           title at GPO is Head of Delivery (CEO); he doesn't want it on his
+           personal site. Don't "correct" it against gpo.delivery or LinkedIn.
+
+           State Capacity AI is a *silent* advisory role. It came out of the
+           bio, the meta tags and the social card. Don't reinstate it, and don't
+           reinstate the consumer-price-index line that goes with it.
+
+           closedtab is a link inside this bio and nothing more. It had its own
+           module for one commit, which was wrong: the package already has a
+           home on ronbronson.dev, and giving it a section here turns the front
+           door back into an inventory of things Ron has shipped. Anything else
+           he releases goes in a sentence here, or on .dev — not in a module. -->
+      <div class="mod lede">
         <div class="mod__b">
-          <ul class="ups">
-            <li>Successfully led an initiative to expand the
-              <a href="https://oregontennis.org/">Oregon high school tennis</a>
-              state tournament for the first time since 1946.</li>
-            <li>Built AI economic models for State Capacity AI
-              (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
-            <li>Developed the first-ever analytics platform
-              (<a href="https://www.mallo.fi">mallo.fi</a>) for Finnish pes&auml;pallo.</li>
-            <li>Closing keynote at
-              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>.
-              The Throughline talk isn&rsquo;t public, but the
-              <a href="https://www.ixda.no/talks/design-as-repair">IxDA Oslo</a> version of
-              &ldquo;Design as Repair&rdquo; went online this year &mdash; below.</li>
-            <li>Ran <a href="https://yearsahead.io">Years Ahead 26</a> at the University of
-              Michigan.</li>
-            <li>&ldquo;<a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Some
-              advice on managing your design career upwards</a>&rdquo; for Piccalilli.</li>
-          </ul>
+          <p>I&rsquo;m a Principal at the
+            <a href="https://www.gpo.delivery">Global Office of Public Delivery</a>, an
+            independent office for people working on the machinery of public life. I&rsquo;m
+            also an Assistant Professor of Practice in
+            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban
+            Technology</a> at the University of Michigan&rsquo;s Taubman College.</p>
+          <p>I spent eight years at 18F in executive and senior leadership roles, including
+            Head of Design and Strategic Initiatives, and later served as principal senior
+            advisor to the Deputy Commissioner of Technology Transformation Services. I
+            established the federal government&rsquo;s first dedicated service design unit
+            and co-built the platform states use to secure billions in Medicaid funding.</p>
+          <p>I built <a href="https://www.npmjs.com/package/closedtab">closedtab</a>, a
+            shared record for human-agent teams. I speak globally on public delivery,
+            service design, digital statecraft, and technology&rsquo;s impact on public
+            trust.</p>
         </div>
       </div>
 

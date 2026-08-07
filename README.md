@@ -2,30 +2,31 @@
 
 Source for **ronbronson.com** — the front door for the four sites.
 
-**This page answers "what's true right now?", not "who am I?"** That is a different
-information architecture from a personal site, and it is the decision everything else
-follows from. There is no About page here and no essay to read. The visitor is given
-orientation — role, institution, context — and is trusted to assemble the picture
-themselves. For people used to evaluating senior leaders, that assumption of competence
-is a stronger signal than a well-written paragraph.
+**This page introduces Ron and sends people onward.** There is still no About page and no
+essay to read: the introduction is two short paragraphs, and everything after it is
+evidence the reader assembles for themselves.
 
-What carries it now is the work itself — named, dated, linked — plus the rail. Nothing on
-the page characterizes Ron; the reader infers him from specifics. That inference is the
-whole mechanism, and it's why summarizing blocks keep getting cut.
+That introduction replaced **2026 So Far**, a dated list of the year's work. The list
+failed for two reasons, and both are worth remembering before proposing anything like it
+again: it went stale between updates, and any finite list of a year reads as a claim that
+the year was only that. An introduction has neither problem — it doesn't expire and it
+doesn't imply completeness. So nothing in the opening module gets a datestamp or a bullet
+count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
 
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
+1. **The bio** — first person, no dates, and **no header bar**. It is the first thing under
+   the masthead; labelling it only named what the reader could already see. `.mod.lede`,
+   a module with a `.mod__b` and no `.mod__t`. Keep it in sync with
+   `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
+2. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
    institution on its face: Design For The Public, 18F at GSA, Taubman College, AIGA
    Portland, the Oregon Athletic Coaches Association, a championship team. Pick images
    that show a room, a cohort, a banner, or a governing body — never a screenshot of
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **2026 So Far** — the year's work as bullets, each carrying its link. Name the work
-   (article titles, talk titles) rather than describing it. **No bio, no orientation
-   block, no "currently" framing** — all three were tried and cut.
 3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
 4. **Contact.**
 
@@ -39,7 +40,47 @@ it doesn't add anything a stranger needs in the first two minutes, and it turns 
 into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words.
+get rejected — leave slots empty (or commented) until he supplies the words. The bio is
+Ron's own, from [gpo.delivery/about.html](https://www.gpo.delivery/about.html), turned into
+first person and cut to front-door length. That page is the long version and the source of
+truth; don't rewrite these sentences to read better.
+
+### The front door's actual test
+
+**Does this exist anywhere else?** `.dev` catalogues what Ron has built; `.design` covers
+how he works. If a module repeats either of them it is taking up room the front door
+doesn't have. By that test the rail is the strongest part of the page — Favorites,
+Listening, Reading, Watching, the Top 8 and the players exist nowhere else — and the
+`Design as Repair` embed is the weakest, since `.design` already carries that talk.
+
+**Lower the temperature.** `.dev` argues for the significance of every entry, which is
+right for a catalogue of invented sports and simulation engines that nothing about the
+names explains. It is wrong here. The front door states things; it doesn't make a case.
+Anything that starts reaching for significance belongs on `.dev`.
+
+**`Let's Talk About` is the module that passes that test outright.** Topics Ron is interested
+in, at the top of Rail B. It's the only place on any of the sites that says what he's
+interested in rather than what he's built — `Favorites` gestures at it but only as data.
+
+Topics only: no sentence underneath and no links. A topic that needs explaining belongs on
+the blog, and a link turns the module into a portfolio row. **The list changes with Ron's
+mood** — that's the point of it, and why it's the cheapest module on the page to edit.
+Rewrite it freely; nothing else depends on it.
+
+### Three standing facts about the bio
+
+- **The site says "Principal at the Global Office of Public Delivery."** Ron's formal title
+  there is Head of Delivery (CEO). He does not want it on his personal site. Don't
+  "correct" the page against gpo.delivery or LinkedIn.
+- **State Capacity AI is a silent advisory role.** It was on the page, in all three meta
+  descriptions and baked into `assets/og.png`, and it is out of all four. Don't reinstate
+  it, don't link `occupant.ee`, and don't reinstate the consumer-price-index line that goes
+  with it — gpo.delivery's own about page still carries that line, so it will look like an
+  omission to fix. It isn't.
+- **`closedtab` is a link inside the bio and nothing more.** It had its own module for one
+  commit, which was wrong: the package is already covered on `.dev`, and giving it a
+  section turns the front door back into an inventory of things Ron has shipped. Anything
+  else he releases goes in a sentence in the bio, or on `.dev` — not in a module.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
@@ -59,7 +100,7 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| 2026 So Far | `.ups` bullets. Rename per year. |
+| *(the bio)* | `.mod.lede`. No header bar, undated on purpose — see above. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
@@ -85,8 +126,15 @@ and breaking any one of them brings back a blue column running past its own cont
 - The border-right lives on `.railwrap`, not on `.rail`, so it draws once and stops
   where the rail stops.
 
+Rail B leads with `Let's Talk About`, then the live widgets, then `Favorites` and
+`Elsewhere`.
+
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
-explicit `grid-row`, so the widgets land at the bottom instead of following the portrait.
+explicit `grid-row`, so the widgets land at the bottom instead of following Contact.
+
+**There is no portrait on the page.** Rail A is Contact and nothing else. `assets/profile.jpg`
+stays in the repo because `assets/og.html` still uses it for the social card — don't delete
+the file, and don't put it back on the page.
 
 Rail B holds `Listening`, `Watching`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
 page stops being a CV — the scrobble, the shelf, the favorites and the Are.na / PI.FYI /
@@ -128,10 +176,15 @@ hover comment describes.
 regeneration command in a comment at the top. **Regenerate it when the framing changes** —
 the card carries its own one-line summary and nothing enforces a match with the page.
 
-The card, `<meta name="description">`, and the OG/Twitter descriptions still carry the
-State Capacity AI / Michigan framing from the deleted `Currently` section. The facts hold,
-but they are now the only summarizing copy anywhere in the project — worth revisiting with
-Ron's words when he has them.
+The card, `<meta name="description">`, and the OG/Twitter descriptions carry the same
+Michigan / 18F framing as the bio — third person there, first person on the page. That is
+four copies of one paragraph, and **the card is the copy that goes stale silently**,
+because its text is baked into a PNG: it read "Advisor at State Capacity AI" for as long
+as it took someone to notice. Change one, change all four, and regenerate.
+
+The command in `og.html` carried a `deviceScaleFactor:2` that wrote a 2400×1260 file while
+`og:image:width` / `og:image:height` still declared 1200×630. It's been dropped. If you
+want the 2× card, update those two meta tags in the same commit.
 
 Don't point `og:image` at `profile.jpg`. It's 4:5, and `summary_large_image` crops to
 1.91:1 straight through Ron's forehead — which is what the card previously did.
