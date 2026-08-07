@@ -16,7 +16,7 @@ count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **The introduction** — first person, two sentences, no dates, no credentials, and **no header bar**. It is the first thing under
+1. **The introduction** — first person, two sentences, no dates, no career history, and **no header bar**. It is the first thing under
    the masthead; labelling it only named what the reader could already see. `.mod.lede`,
    a module with a `.mod__b` and no `.mod__t`. Keep it in sync with
    `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
@@ -41,8 +41,8 @@ into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
 get rejected — leave slots empty (or commented) until he supplies the words. The opening
-is a personal introduction, not the short form of a professional bio: it should reveal
-Ron through his curiosities rather than establish his credentials.
+is a personal introduction, not the short form of a professional bio: it should name
+Ron's fields and the concerns connecting his work without reciting credentials.
 
 ### The front door's actual test
 
@@ -68,9 +68,9 @@ Rewrite it freely; nothing else depends on it.
 
 ### The introduction is not a résumé
 
-Keep jobs, titles, tenure, accomplishments, advisory roles, and individual projects out
-of the opening. Those details already have better homes on the other sites. The front door
-should sound like meeting an interesting person, not reading the case for their expertise.
+Keep employers, titles, tenure, accomplishments, advisory roles, and individual projects
+out of the opening. Those details already have better homes on the other sites. Broad
+descriptors are useful orientation; a career history or case for expertise is not.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
