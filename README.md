@@ -45,6 +45,25 @@ Ron's own, from [gpo.delivery/about.html](https://www.gpo.delivery/about.html), 
 first person and cut to front-door length. That page is the long version and the source of
 truth; don't rewrite these sentences to read better.
 
+### The front door's actual test
+
+**Does this exist anywhere else?** `.dev` catalogues what Ron has built; `.design` covers
+how he works. If a module repeats either of them it is taking up room the front door
+doesn't have. By that test the rail is the strongest part of the page — Favorites,
+Listening, Reading, Watching, the Top 8 and the players exist nowhere else — and the
+`Design as Repair` embed is the weakest, since `.design` already carries that talk.
+
+**Lower the temperature.** `.dev` argues for the significance of every entry, which is
+right for a catalogue of invented sports and simulation engines that nothing about the
+names explains. It is wrong here. The front door states things; it doesn't make a case.
+Anything that starts reaching for significance belongs on `.dev`.
+
+**`Let's Talk About` is the missing module** and sits commented out in `index.html` awaiting
+Ron's copy — a topic and one or two flat sentences, four or five times, no links. It is the
+only place on any of the sites where he says what he *thinks* rather than what he's made,
+which makes it the one block that passes the test above outright. `Favorites` gestures at
+it but only as data: answers without positions.
+
 ### Three standing facts about the bio
 
 - **The site says "Principal at the Global Office of Public Delivery."** Ron's formal title

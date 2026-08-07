@@ -191,6 +191,30 @@
     width: 7px; height: 7px; background: var(--accent);
   }
 
+  /* ── let's talk about ───────────────────────────────────────────────
+     Positions, not credentials. The one thing on the front door that
+     exists nowhere else: .dev catalogues what Ron has built and .design
+     covers how he works, so neither of them ever says what he thinks.
+
+     A topic and a couple of plain sentences under it. No links, no
+     argument, no hedging — the value is that it's stated flatly, which
+     is also what keeps the temperature down. Anything that starts
+     reaching for significance belongs on .dev instead.
+     ──────────────────────────────────────────────────────────────── */
+  .talk { margin: 0; padding: 0; list-style: none; }
+  .talk > li {
+    padding-bottom: clamp(11px, 1.5vw, 15px);
+    margin-bottom: clamp(11px, 1.5vw, 15px);
+    border-bottom: 1px dashed var(--rule);
+  }
+  .talk > li:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
+  .talk__t {
+    display: block; margin-bottom: 3px;
+    font-family: var(--std); font-weight: 500;
+    font-size: clamp(16px, 1.4vw, 19px); line-height: 1.2;
+  }
+  .talk p { margin: 0; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.5; color: var(--ink-2); }
+
   /* ── the lede ───────────────────────────────────────────────────────
      The bio, and deliberately the only module with no header bar. It is
      the first thing under the masthead, so a label would only name what
@@ -447,10 +471,18 @@
            No header bar on purpose: it's the first thing under the masthead
            and titling it only named what the reader could already see.
 
-           Copy is Ron's, from his bio at gpo.delivery/about.html, turned into
-           first person and cut to the front-door length. Don't rewrite these
-           sentences to sound better — they are the source of truth, and
-           gpo.delivery is where the long version lives.
+           Copy below is Ron's, from his bio at gpo.delivery/about.html, turned
+           into first person and cut to front-door length. Treat it as a
+           stand-in: he's rewriting it in a register this doesn't have yet —
+           how he'd introduce himself at a party, with the bonafides folded in
+           rather than led with. Michigan carries most of that weight.
+
+           The bonafides stay. This is a personal site and not a CV, but someone
+           arriving cold with no idea who he is needs the anchor, or the rest of
+           the page reads as a stranger's hobbies. Lower the temperature without
+           removing the orientation — when the new copy lands, keep an
+           institution in the first sentence. gpo.delivery/about.html remains
+           the long version; don't rewrite these facts, only their register.
 
            "Principal" is deliberate and is what this site says. Ron's formal
            title at GPO is Head of Delivery (CEO); he doesn't want it on his
@@ -484,6 +516,33 @@
             trust.</p>
         </div>
       </div>
+
+      <!-- ═══ LET'S TALK ABOUT — awaiting Ron's copy, then uncomment ═══════
+           Positions, not credentials, and the only thing on this page that
+           exists nowhere else: .dev catalogues what he's built, .design covers
+           how he works, neither says what he thinks. That's the gap this fills,
+           and it's the reason the front door isn't just a rehash of the other
+           two sites.
+
+           Shape: a topic, then one or two plain sentences. Stated, not argued —
+           "Bitcoin is for everyone" energy, not a thesis. No links; a link turns
+           it back into a portfolio row. Four or five topics is the whole module.
+
+           The .talk CSS is already in the stylesheet, so this only needs the
+           copy dropped in and the comment markers removed.
+
+      <div class="mod">
+        <h2 class="mod__t">Let&rsquo;s Talk About</h2>
+        <div class="mod__b">
+          <ul class="talk">
+            <li>
+              <b class="talk__t">TOPIC</b>
+              <p>One or two sentences. Ron's words.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+           ═══════════════════════════════════════════════════════════════ -->
 
       <!-- Embedded here because .design links this talk but doesn't embed it.
            If an embed ever lands there, drop this one rather than duplicating. -->
