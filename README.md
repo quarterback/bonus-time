@@ -2,30 +2,30 @@
 
 Source for **ronbronson.com** — the front door for the four sites.
 
-**This page answers "what's true right now?", not "who am I?"** That is a different
-information architecture from a personal site, and it is the decision everything else
-follows from. There is no About page here and no essay to read. The visitor is given
-orientation — role, institution, context — and is trusted to assemble the picture
-themselves. For people used to evaluating senior leaders, that assumption of competence
-is a stronger signal than a well-written paragraph.
+**This page introduces Ron and sends people onward.** There is still no About page and no
+essay to read: the introduction is two short paragraphs, and everything after it is
+evidence the reader assembles for themselves.
 
-What carries it now is the work itself — named, dated, linked — plus the rail. Nothing on
-the page characterizes Ron; the reader infers him from specifics. That inference is the
-whole mechanism, and it's why summarizing blocks keep getting cut.
+That introduction replaced **2026 So Far**, a dated list of the year's work. The list
+failed for two reasons, and both are worth remembering before proposing anything like it
+again: it went stale between updates, and any finite list of a year reads as a claim that
+the year was only that. An introduction has neither problem — it doesn't expire and it
+doesn't imply completeness. So nothing in the opening module gets a datestamp or a bullet
+count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
 
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
+1. **Introduction** — two paragraphs, first person, no dates. Role and institution, then
+   the two-decade line. Keep it in sync with `<meta name="description">` and the OG/Twitter
+   descriptions, which carry the same framing in third person.
+2. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
    institution on its face: Design For The Public, 18F at GSA, Taubman College, AIGA
    Portland, the Oregon Athletic Coaches Association, a championship team. Pick images
    that show a room, a cohort, a banner, or a governing body — never a screenshot of
    software, and never a solo speaker shot. A photo of Ron presenting proves
    practitioner; a photo of the room proves institution. The image does the work, so
    don't label it; `alt` text carries the description for screen readers.
-2. **2026 So Far** — the year's work as bullets, each carrying its link. Name the work
-   (article titles, talk titles) rather than describing it. **No bio, no orientation
-   block, no "currently" framing** — all three were tried and cut.
 3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
 4. **Contact.**
 
@@ -39,7 +39,9 @@ it doesn't add anything a stranger needs in the first two minutes, and it turns 
 into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words.
+get rejected — leave slots empty (or commented) until he supplies the words. The
+`Introduction` paragraphs are the existing meta/OG description turned into first person,
+not new writing; they're a placeholder for Ron's own wording, not a licence to draft more.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
@@ -59,7 +61,7 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| 2026 So Far | `.ups` bullets. Rename per year. |
+| Introduction | `.blurb` prose. Undated on purpose — see above. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
@@ -86,7 +88,11 @@ and breaking any one of them brings back a blue column running past its own cont
   where the rail stops.
 
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
-explicit `grid-row`, so the widgets land at the bottom instead of following the portrait.
+explicit `grid-row`, so the widgets land at the bottom instead of following Contact.
+
+**There is no portrait on the page.** Rail A is Contact and nothing else. `assets/profile.jpg`
+stays in the repo because `assets/og.html` still uses it for the social card — don't delete
+the file, and don't put it back on the page.
 
 Rail B holds `Listening`, `Watching`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
 page stops being a CV — the scrobble, the shelf, the favorites and the Are.na / PI.FYI /
@@ -128,10 +134,10 @@ hover comment describes.
 regeneration command in a comment at the top. **Regenerate it when the framing changes** —
 the card carries its own one-line summary and nothing enforces a match with the page.
 
-The card, `<meta name="description">`, and the OG/Twitter descriptions still carry the
-State Capacity AI / Michigan framing from the deleted `Currently` section. The facts hold,
-but they are now the only summarizing copy anywhere in the project — worth revisiting with
-Ron's words when he has them.
+The card, `<meta name="description">`, and the OG/Twitter descriptions carry the same
+State Capacity AI / Michigan framing as the `Introduction` module — third person there,
+first person on the page. They are now four copies of one paragraph; change one and change
+the rest, or the card will describe a page that no longer says that.
 
 Don't point `og:image` at `profile.jpg`. It's 4:5, and `summary_large_image` crops to
 1.91:1 straight through Ron's forehead — which is what the card previously did.

@@ -91,8 +91,8 @@
   a { color: var(--link); text-underline-offset: 2px; }
   a:hover { color: var(--ink); }
   /* height:auto globally — the HTML height attribute is a presentational
-     hint that outranks aspect-ratio, which silently stretched the portrait
-     and the photo grids. More specific rules (book covers) still win. */
+     hint that outranks aspect-ratio, which silently stretched the photo
+     grids. More specific rules (book covers) still win. */
   img { max-width: 100%; height: auto; }
 
   /* ── the profile container ── */
@@ -118,13 +118,6 @@
     letter-spacing: -.01em;
     text-transform: uppercase;
   }
-  .pic {
-    display: block; width: 100%;
-    aspect-ratio: 4/5; object-fit: cover;
-    border: 2px solid var(--ink);
-    margin-bottom: clamp(14px, 2vw, 22px);
-  }
-
   /* ── columns ── */
   .cols {
     display: grid;
@@ -318,20 +311,15 @@
   @media (max-width: 780px) {
     .cols { grid-template-columns: minmax(0, 1fr); }
     /* Wrapper dissolves so the two rail halves can be placed independently.
-       Without the explicit rows the widgets would follow the portrait
-       immediately, since the halves are adjacent in the source. */
+       Without the explicit rows the widgets would follow Contact immediately,
+       since the halves are adjacent in the source. */
     .railwrap   { display: contents; }
     .rail--a    { grid-row: 1; }
     .main--top  { grid-row: 2; }
     .main--wide { grid-row: 3; }
     .rail--b    { grid-row: 4; }
     /* Contact rides at the top; the widgets drop below the content. */
-    .rail--a {
-      display: flex; align-items: flex-start; gap: 14px;
-      border-bottom: 3px solid var(--ink);
-    }
-    .rail--a .pic { width: 108px; flex: none; margin-bottom: 0; }
-    .rail--a .mod { flex: 1; margin-bottom: 0; }
+    .rail--a { border-bottom: 3px solid var(--ink); }
     .rail--b { border-top: 3px solid var(--ink); }
     /* Dense grids so the phone view stays a page, not an endless scroll. */
     .top8   { grid-template-columns: repeat(4, 1fr); }
@@ -342,7 +330,6 @@
   @media (max-width: 430px) {
     .cg { grid-template-columns: 1fr; }
     .doors { grid-template-columns: 1fr; }
-    .rail--a .pic { width: 84px; }
   }
 </style>
 </head>
@@ -365,8 +352,6 @@
     <div class="railwrap">
 
     <div class="rail rail--a">
-      <img class="pic" src="assets/profile.jpg" width="760" height="950" alt="Portrait of Ron Bronson smiling in front of a brick wall" />
-
       <div class="mod">
         <h2 class="mod__t">Contact</h2>
         <div class="cg">
@@ -452,27 +437,22 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
+      <!-- Replaces "2026 So Far", which went stale between updates and always
+           read as an incomplete list of the year. An introduction doesn't
+           expire, so nothing here should be datestamped or enumerated — if a
+           line needs a year on it, it belongs on .design or .dev instead.
+           Copy is Ron's own framing, reflowed from the meta/OG description
+           into first person; keep the two in sync when either changes. -->
       <div class="mod">
-        <h2 class="mod__t">2026 So Far</h2>
-        <div class="mod__b">
-          <ul class="ups">
-            <li>Successfully led an initiative to expand the
-              <a href="https://oregontennis.org/">Oregon high school tennis</a>
-              state tournament for the first time since 1946.</li>
-            <li>Built AI economic models for State Capacity AI
-              (<a href="https://occupant.ee/indices">occupant.ee</a>).</li>
-            <li>Developed the first-ever analytics platform
-              (<a href="https://www.mallo.fi">mallo.fi</a>) for Finnish pes&auml;pallo.</li>
-            <li>Closing keynote at
-              <a href="https://www.throughlineconf.com/speakers/ron-bronson">Throughline</a>.
-              The Throughline talk isn&rsquo;t public, but the
-              <a href="https://www.ixda.no/talks/design-as-repair">IxDA Oslo</a> version of
-              &ldquo;Design as Repair&rdquo; went online this year &mdash; below.</li>
-            <li>Ran <a href="https://yearsahead.io">Years Ahead 26</a> at the University of
-              Michigan.</li>
-            <li>&ldquo;<a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/">Some
-              advice on managing your design career upwards</a>&rdquo; for Piccalilli.</li>
-          </ul>
+        <h2 class="mod__t">Introduction</h2>
+        <div class="mod__b blurb">
+          <p>I&rsquo;m an advisor at
+            <a href="https://occupant.ee/indices">State Capacity AI</a>, where I designed a
+            consumer price index and labor tracker for AI spend, and part-time
+            <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban
+            Technology</a> faculty at the University of Michigan&rsquo;s Taubman College.</p>
+          <p>Two decades leading digital transformation, including heading the design
+            practice at 18F.</p>
         </div>
       </div>
 
