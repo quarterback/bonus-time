@@ -3,7 +3,7 @@
 Source for **ronbronson.com** — the front door for the four sites.
 
 **This page introduces Ron and sends people onward.** There is still no About page and no
-essay to read: the introduction is two short paragraphs, and everything after it is
+essay to read: the introduction is two sentences, and everything after it is
 evidence the reader assembles for themselves.
 
 That introduction replaced **2026 So Far**, a dated list of the year's work. The list
@@ -16,7 +16,7 @@ count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **The bio** — first person, no dates, and **no header bar**. It is the first thing under
+1. **The introduction** — first person, two sentences, no dates, no credentials, and **no header bar**. It is the first thing under
    the masthead; labelling it only named what the reader could already see. `.mod.lede`,
    a module with a `.mod__b` and no `.mod__t`. Keep it in sync with
    `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
@@ -40,10 +40,9 @@ it doesn't add anything a stranger needs in the first two minutes, and it turns 
 into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words. The bio is
-Ron's own, from [gpo.delivery/about.html](https://www.gpo.delivery/about.html), turned into
-first person and cut to front-door length. That page is the long version and the source of
-truth; don't rewrite these sentences to read better.
+get rejected — leave slots empty (or commented) until he supplies the words. The opening
+is a personal introduction, not the short form of a professional bio: it should reveal
+Ron through his curiosities rather than establish his credentials.
 
 ### The front door's actual test
 
@@ -67,20 +66,11 @@ the blog, and a link turns the module into a portfolio row. **The list changes w
 mood** — that's the point of it, and why it's the cheapest module on the page to edit.
 Rewrite it freely; nothing else depends on it.
 
-### Three standing facts about the bio
+### The introduction is not a résumé
 
-- **The site says "Principal at the Global Office of Public Delivery."** Ron's formal title
-  there is Head of Delivery (CEO). He does not want it on his personal site. Don't
-  "correct" the page against gpo.delivery or LinkedIn.
-- **State Capacity AI is a silent advisory role.** It was on the page, in all three meta
-  descriptions and baked into `assets/og.png`, and it is out of all four. Don't reinstate
-  it, don't link `occupant.ee`, and don't reinstate the consumer-price-index line that goes
-  with it — gpo.delivery's own about page still carries that line, so it will look like an
-  omission to fix. It isn't.
-- **`closedtab` is a link inside the bio and nothing more.** It had its own module for one
-  commit, which was wrong: the package is already covered on `.dev`, and giving it a
-  section turns the front door back into an inventory of things Ron has shipped. Anything
-  else he releases goes in a sentence in the bio, or on `.dev` — not in a module.
+Keep jobs, titles, tenure, accomplishments, advisory roles, and individual projects out
+of the opening. Those details already have better homes on the other sites. The front door
+should sound like meeting an interesting person, not reading the case for their expertise.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
@@ -100,7 +90,7 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| *(the bio)* | `.mod.lede`. No header bar, undated on purpose — see above. |
+| *(the introduction)* | `.mod.lede`. Two sentences, no header bar, undated on purpose — see above. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
