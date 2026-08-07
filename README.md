@@ -91,8 +91,8 @@ Module order in `.main`, and the reasoning behind it:
 | Module | Why it sits there |
 | --- | --- |
 | *(the introduction)* | `.mod.lede`. Two sentences, no header bar, undated on purpose — see above. |
-| Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
+| Design as Repair | The IxDA Oslo talk, embedded. |
 | Now Playing | Podcasts. |
 | Ron's Top 8 | Photographic evidence, uncaptioned. |
 
