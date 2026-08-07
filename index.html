@@ -191,29 +191,29 @@
     width: 7px; height: 7px; background: var(--accent);
   }
 
-  /* ── let's talk about ───────────────────────────────────────────────
-     Positions, not credentials. The one thing on the front door that
+  /* ── let's talk about, rail-weight ──────────────────────────────────
+     Interests, not credentials, and the one thing on the front door that
      exists nowhere else: .dev catalogues what Ron has built and .design
-     covers how he works, so neither of them ever says what he thinks.
+     covers how he works, so neither of them ever says what he's actually
+     interested in.
 
-     A topic and a couple of plain sentences under it. No links, no
-     argument, no hedging — the value is that it's stated flatly, which
-     is also what keeps the temperature down. Anything that starts
-     reaching for significance belongs on .dev instead.
+     Topics only — no sentence underneath, no links. That's what keeps the
+     temperature down and what makes it swappable: this list changes with
+     Ron's mood, so every entry has to be cheap to add and cheap to drop.
+     A topic that needs explaining belongs on the blog.
+
+     Same rail idiom as .out and .favs dd — dashed rules, display face,
+     15px. line-height is tight because the topics are long enough to wrap
+     to two and three lines at 200px and they need to stay one block each.
      ──────────────────────────────────────────────────────────────── */
   .talk { margin: 0; padding: 0; list-style: none; }
-  .talk > li {
-    padding-bottom: clamp(11px, 1.5vw, 15px);
-    margin-bottom: clamp(11px, 1.5vw, 15px);
+  .talk li {
+    margin-bottom: 9px; padding-bottom: 9px;
     border-bottom: 1px dashed var(--rule);
-  }
-  .talk > li:last-child { padding-bottom: 0; margin-bottom: 0; border-bottom: 0; }
-  .talk__t {
-    display: block; margin-bottom: 3px;
     font-family: var(--std); font-weight: 500;
-    font-size: clamp(16px, 1.4vw, 19px); line-height: 1.2;
+    font-size: 15px; line-height: 1.25;
   }
-  .talk p { margin: 0; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.5; color: var(--ink-2); }
+  .talk li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
 
   /* ── the lede ───────────────────────────────────────────────────────
      The bio, and deliberately the only module with no header bar. It is
@@ -389,6 +389,31 @@
     </div>
 
     <div class="rail rail--b">
+      <!-- Interests, and the only module on the page that isn't available on
+           .dev or .design: those two cover what Ron has built and how he works,
+           neither says what he's interested in.
+
+           Topics only. No sentence under them, no links — a topic that needs
+           explaining belongs on the blog, and a link turns this into a
+           portfolio row. It sits at the top of the rail because it's the most
+           swappable thing here: the list changes with Ron's mood, so it wants
+           to be the module you edit without thinking about the rest of the
+           page. Rewrite it freely; there's nothing to keep in sync. -->
+      <div class="mod">
+        <h2 class="mod__t">Let&rsquo;s Talk About</h2>
+        <div class="mod__b">
+          <ul class="talk">
+            <li>Public trust as a depleting resource &amp; the built environments of
+              social trust</li>
+            <li>Star Trek</li>
+            <li>Speculative present</li>
+            <li>Cybernetics and the lost science of organizations</li>
+            <li>Systems after systems</li>
+            <li>Economic anthropology</li>
+          </ul>
+        </div>
+      </div>
+
       <div class="mod">
         <h2 class="mod__t">Listening</h2>
         <div class="mod__b">
@@ -516,33 +541,6 @@
             trust.</p>
         </div>
       </div>
-
-      <!-- ═══ LET'S TALK ABOUT — awaiting Ron's copy, then uncomment ═══════
-           Positions, not credentials, and the only thing on this page that
-           exists nowhere else: .dev catalogues what he's built, .design covers
-           how he works, neither says what he thinks. That's the gap this fills,
-           and it's the reason the front door isn't just a rehash of the other
-           two sites.
-
-           Shape: a topic, then one or two plain sentences. Stated, not argued —
-           "Bitcoin is for everyone" energy, not a thesis. No links; a link turns
-           it back into a portfolio row. Four or five topics is the whole module.
-
-           The .talk CSS is already in the stylesheet, so this only needs the
-           copy dropped in and the comment markers removed.
-
-      <div class="mod">
-        <h2 class="mod__t">Let&rsquo;s Talk About</h2>
-        <div class="mod__b">
-          <ul class="talk">
-            <li>
-              <b class="talk__t">TOPIC</b>
-              <p>One or two sentences. Ron's words.</p>
-            </li>
-          </ul>
-        </div>
-      </div>
-           ═══════════════════════════════════════════════════════════════ -->
 
       <!-- Embedded here because .design links this talk but doesn't embed it.
            If an embed ever lands there, drop this one rather than duplicating. -->

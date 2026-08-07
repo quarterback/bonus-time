@@ -58,11 +58,14 @@ right for a catalogue of invented sports and simulation engines that nothing abo
 names explains. It is wrong here. The front door states things; it doesn't make a case.
 Anything that starts reaching for significance belongs on `.dev`.
 
-**`Let's Talk About` is the missing module** and sits commented out in `index.html` awaiting
-Ron's copy — a topic and one or two flat sentences, four or five times, no links. It is the
-only place on any of the sites where he says what he *thinks* rather than what he's made,
-which makes it the one block that passes the test above outright. `Favorites` gestures at
-it but only as data: answers without positions.
+**`Let's Talk About` is the module that passes that test outright.** Topics Ron is interested
+in, at the top of Rail B. It's the only place on any of the sites that says what he's
+interested in rather than what he's built — `Favorites` gestures at it but only as data.
+
+Topics only: no sentence underneath and no links. A topic that needs explaining belongs on
+the blog, and a link turns the module into a portfolio row. **The list changes with Ron's
+mood** — that's the point of it, and why it's the cheapest module on the page to edit.
+Rewrite it freely; nothing else depends on it.
 
 ### Three standing facts about the bio
 
@@ -122,6 +125,9 @@ and breaking any one of them brings back a blue column running past its own cont
   stretch to fill row 1, which is as tall as `.main--top`.
 - The border-right lives on `.railwrap`, not on `.rail`, so it draws once and stops
   where the rail stops.
+
+Rail B leads with `Let's Talk About`, then the live widgets, then `Favorites` and
+`Elsewhere`.
 
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
 explicit `grid-row`, so the widgets land at the bottom instead of following Contact.
