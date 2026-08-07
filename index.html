@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Ron Bronson is an advisor at State Capacity AI, where he designed a consumer price index and labor tracker for AI spend, and a part-time Urban Technology faculty member at the University of Michigan Taubman College. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta name="description" content="Ron Bronson is a part-time Urban Technology faculty member at the University of Michigan Taubman College. Two decades leading digital transformation, including heading the design practice at 18F." />
 <link rel="canonical" href="https://ronbronson.com/" />
 
 <!-- Social card. og.png is 1200×630 (1.91:1) and generated from assets/og.html —
@@ -16,19 +16,19 @@
 <meta property="og:url" content="https://ronbronson.com/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta property="og:description" content="Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
 <meta property="og:image" content="https://ronbronson.com/assets/og.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
+<meta property="og:image:alt" content="Ron Bronson — Urban Technology faculty at the University of Michigan." />
 <meta property="profile:first_name" content="Ron" />
 <meta property="profile:last_name" content="Bronson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Advisor at State Capacity AI. Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
+<meta name="twitter:description" content="Urban Technology faculty at the University of Michigan. Two decades leading digital transformation, including heading the design practice at 18F." />
 <meta name="twitter:image" content="https://ronbronson.com/assets/og.png" />
-<meta name="twitter:image:alt" content="Ron Bronson — advisor at State Capacity AI and Urban Technology faculty at the University of Michigan." />
+<meta name="twitter:image:alt" content="Ron Bronson — Urban Technology faculty at the University of Michigan." />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
@@ -191,13 +191,15 @@
     width: 7px; height: 7px; background: var(--accent);
   }
 
-  /* Date stamp under a module header. */
-  .stamp {
-    display: block; margin: 0 0 clamp(11px, 1.5vw, 15px);
-    font-family: var(--ui); font-weight: 500;
-    font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
-    color: var(--ink-2);
-  }
+  /* ── the lede ───────────────────────────────────────────────────────
+     The bio, and deliberately the only module with no header bar. It is
+     the first thing under the masthead, so a label would only name what
+     the reader can already see — you land on the site and you are
+     reading it. Set a step larger than .blurb for the same reason.
+     ──────────────────────────────────────────────────────────────── */
+  .lede .mod__b { padding: clamp(16px, 2.2vw, 25px); }
+  .lede p { margin: 0 0 .7em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; }
+  .lede p:last-child { margin-bottom: 0; }
 
   /* ── prose ──────────────────────────────────────────────────────────
      Short paragraphs, a few per module. Sized down from the old bio: the
@@ -437,22 +439,43 @@
 <!-- ══════════ MAIN ══════════ -->
     <div class="main main--top">
 
-      <!-- Replaces "2026 So Far", which went stale between updates and always
-           read as an incomplete list of the year. An introduction doesn't
-           expire, so nothing here should be datestamped or enumerated — if a
+      <!-- The bio. Replaces "2026 So Far", which went stale between updates and
+           always read as an incomplete list of the year. A bio has neither
+           problem, so nothing here gets a datestamp or a bullet count — if a
            line needs a year on it, it belongs on .design or .dev instead.
-           Copy is Ron's own framing, reflowed from the meta/OG description
-           into first person; keep the two in sync when either changes. -->
-      <div class="mod">
-        <h2 class="mod__t">Introduction</h2>
-        <div class="mod__b blurb">
-          <p>I&rsquo;m an advisor at
-            <a href="https://occupant.ee/indices">State Capacity AI</a>, where I designed a
-            consumer price index and labor tracker for AI spend, and part-time
+
+           No header bar on purpose: it's the first thing under the masthead
+           and titling it only named what the reader could already see.
+
+           TK — RON'S COPY. The two paragraphs below are a holding pattern, not
+           the bio: they're the existing meta/OG description turned into first
+           person, minus State Capacity AI. Two things are missing and can only
+           come from Ron, so they are not drafted here:
+             · gpo.delivery (Global Office of Public Delivery) — the current
+               engagement. Needs his one line on what the role actually is.
+             · State Capacity AI is a *silent* advisory role. It came out of the
+               bio, the meta tags and the social card. Don't reinstate it. -->
+      <div class="mod lede">
+        <div class="mod__b">
+          <p>I&rsquo;m part-time
             <a href="https://taubmancollege.umich.edu/academics/urban-and-regional-planning/bachelor-of-science-in-urban-technology/">Urban
             Technology</a> faculty at the University of Michigan&rsquo;s Taubman College.</p>
           <p>Two decades leading digital transformation, including heading the design
             practice at 18F.</p>
+        </div>
+      </div>
+
+      <!-- The reason "2026 So Far" came out: this had no place in a dated list.
+           Copy is Ron's own, from the package README and its npm description. -->
+      <div class="mod">
+        <h2 class="mod__t">closedtab</h2>
+        <div class="mod__b blurb">
+          <p>A shared record for human-agent teams. Review the work your AI agents do:
+            scaffold an Agent Action Record &mdash; Intent, Action, Judgment, Deviation,
+            Consequence, Change &mdash; score it, and reconcile it against a trace of what
+            the agent actually did. CLI + MCP.</p>
+          <p><a href="https://www.npmjs.com/package/closedtab">npm</a> &nbsp;&middot;&nbsp;
+            <a href="https://github.com/quarterback/closedtab">GitHub</a></p>
         </div>
       </div>
 

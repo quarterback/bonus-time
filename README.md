@@ -16,9 +16,10 @@ count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
 Its only job is to orient someone who has never met Ron and send them onward.
 Four things, in this order, and nothing else:
 
-1. **Introduction** — two paragraphs, first person, no dates. Role and institution, then
-   the two-decade line. Keep it in sync with `<meta name="description">` and the OG/Twitter
-   descriptions, which carry the same framing in third person.
+1. **The bio** — first person, no dates, and **no header bar**. It is the first thing under
+   the masthead; labelling it only named what the reader could already see. `.mod.lede`,
+   a module with a `.mod__b` and no `.mod__t`. Keep it in sync with
+   `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
 2. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
    institution on its face: Design For The Public, 18F at GSA, Taubman College, AIGA
    Portland, the Oregon Athletic Coaches Association, a championship team. Pick images
@@ -39,9 +40,19 @@ it doesn't add anything a stranger needs in the first two minutes, and it turns 
 into an inventory. Send people onward to it instead.
 
 **All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words. The
-`Introduction` paragraphs are the existing meta/OG description turned into first person,
-not new writing; they're a placeholder for Ron's own wording, not a licence to draft more.
+get rejected — leave slots empty (or commented) until he supplies the words. The bio
+paragraphs are the existing meta/OG description turned into first person, not new writing;
+they're a holding pattern until Ron sends his, not a licence to draft more. The `closedtab`
+copy is his too, from the package's npm description and README.
+
+### Two standing facts about the bio
+
+- **State Capacity AI is a silent advisory role.** It was on the page, in all three meta
+  descriptions and baked into `assets/og.png`, and it is out of all four. Don't reinstate
+  it anywhere, and don't link `occupant.ee` from the front door.
+- **gpo.delivery — the Global Office of Public Delivery — is the current engagement**, and
+  it is not on the page yet because nobody but Ron can say what the role is. There is a
+  commented TK in `index.html` holding the slot. Don't guess at a title to fill it.
 
 Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
 (a résumé grid of orgs and date ranges), community radio, and the four prose sections
@@ -61,7 +72,8 @@ Module order in `.main`, and the reasoning behind it:
 
 | Module | Why it sits there |
 | --- | --- |
-| Introduction | `.blurb` prose. Undated on purpose — see above. |
+| *(the bio)* | `.mod.lede`. No header bar, undated on purpose — see above. |
+| closedtab | The npm package. The thing the year list had no room for. |
 | Design as Repair | The IxDA Oslo talk, embedded. |
 | My Sites | The four site links. Four doors, four `href`s. |
 | Now Playing | Podcasts. |
@@ -135,9 +147,14 @@ regeneration command in a comment at the top. **Regenerate it when the framing c
 the card carries its own one-line summary and nothing enforces a match with the page.
 
 The card, `<meta name="description">`, and the OG/Twitter descriptions carry the same
-State Capacity AI / Michigan framing as the `Introduction` module — third person there,
-first person on the page. They are now four copies of one paragraph; change one and change
-the rest, or the card will describe a page that no longer says that.
+Michigan / 18F framing as the bio — third person there, first person on the page. That is
+four copies of one paragraph, and **the card is the copy that goes stale silently**,
+because its text is baked into a PNG: it read "Advisor at State Capacity AI" for as long
+as it took someone to notice. Change one, change all four, and regenerate.
+
+The command in `og.html` carried a `deviceScaleFactor:2` that wrote a 2400×1260 file while
+`og:image:width` / `og:image:height` still declared 1200×630. It's been dropped. If you
+want the 2× card, update those two meta tags in the same commit.
 
 Don't point `og:image` at `profile.jpg`. It's 4:5, and `summary_large_image` crops to
 1.91:1 straight through Ron's forehead — which is what the card previously did.

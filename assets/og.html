@@ -12,12 +12,15 @@
     python3 -m http.server 8080 &
     node -e "const {chromium}=require('playwright');(async()=>{
       const b=await chromium.launch();
-      const p=await b.newPage({viewport:{width:1200,height:630},deviceScaleFactor:2});
+      const p=await b.newPage({viewport:{width:1200,height:630}});
       await p.goto('http://localhost:8080/assets/og.html',{waitUntil:'networkidle'});
       await p.screenshot({path:'assets/og.png'});await b.close();})()"
 
   Keep it 1200×630. That is 1.91:1, what summary_large_image crops to; the
-  portrait alone is 4:5 and loses Ron's head at that ratio.
+  portrait alone is 4:5 and loses Ron's head at that ratio. No
+  deviceScaleFactor — this command used to carry a 2, which writes a
+  2400×1260 file while og:image:width/height in index.html still declare
+  1200×630. Change one and you have to change the other.
 -->
 <style>
   @font-face { font-family:"PP Formula"; src:url("fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight:700; }
@@ -68,7 +71,12 @@
     <div class="body">
       <h1>Ron<br />Bronson</h1>
       <div class="rule"></div>
-      <p class="lede">Advisor at <b>State Capacity AI</b>. Urban Technology faculty at the <b>University of Michigan</b>.</p>
+      <!-- Keep this in step with the bio in index.html and the meta/OG
+           descriptions — four copies of one paragraph, and only this one is
+           baked into a PNG, so it's the one that silently goes stale.
+           State Capacity AI was removed here deliberately: it's a silent
+           advisory role. Don't put it back. -->
+      <p class="lede">Urban Technology faculty at the <b>University of Michigan</b>. Two decades of digital transformation, including <b>18F</b>.</p>
       <p class="foot">ronbronson.com</p>
     </div>
   </div>
