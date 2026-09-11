@@ -3,10 +3,12 @@
 Source for **ronbronson.com** — the front door for the four sites.
 
 **This page is Ron's statement of what his work is, in his words, plus the personal
-rail.** The main column carries his positioning copy: a deck line under the name, a
-three-paragraph introduction, the five current lines of inquiry, a short critical stance
-on service design, and a Practice paragraph that establishes the bonafides (Michigan,
-18F, where the work has been presented). Then `Elsewhere`, the four onward links.
+rail.** The main column carries his copy: a two-paragraph introduction and a Practice
+paragraph that establishes the bonafides (Michigan, 18F, where the work has been
+presented). Then `Elsewhere`, the four onward links.
+
+Copy rule from Ron: no negation, no contrastive frames, no repetition. Anything in that
+register gets rejected.
 
 This replaced the earlier two-sentence front door, and before that **2026 So Far**. The
 two-sentence version was rejected for being generic; the point of the page now is the
@@ -145,9 +147,8 @@ hover comment describes.
 regeneration command in a comment at the top. **Regenerate it when the framing changes** —
 the card carries its own one-line summary and nothing enforces a match with the page.
 
-The card, `<meta name="description">`, and the OG/Twitter descriptions carry the deck
-line, "Systems design for the world after service design", and the four fields from the
-introduction. That is
+The card, `<meta name="description">`, and the OG/Twitter descriptions carry the first
+sentence of the introduction, third person there and first person on the page. That is
 four copies of one paragraph, and **the card is the copy that goes stale silently**,
 because its text is baked into a PNG: it read "Advisor at State Capacity AI" for as long
 as it took someone to notice. Change one, change all four, and regenerate.
