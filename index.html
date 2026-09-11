@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Ron Bronson</title>
-<meta name="description" content="Designer and professor speaking globally about post-contemporary economics, public mechanics &amp; the ways that public trust has been eroded by technology." />
+<meta name="description" content="Systems design for the world after service design. Ron Bronson works across service design, critical urbanism, digital public infrastructure, and the politics of technology." />
 <link rel="canonical" href="https://ronbronson.com/" />
 
 <!-- Social card. og.png is 1200×630 (1.91:1) and generated from assets/og.html —
@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://ronbronson.com/" />
 <meta property="og:locale" content="en_US" />
 <meta property="og:title" content="Ron Bronson" />
-<meta property="og:description" content="Designer and professor speaking globally about post-contemporary economics, public mechanics &amp; the ways that public trust has been eroded by technology." />
+<meta property="og:description" content="Systems design for the world after service design. Ron Bronson works across service design, critical urbanism, digital public infrastructure, and the politics of technology." />
 <meta property="og:image" content="https://ronbronson.com/assets/og.png" />
 <meta property="og:image:type" content="image/png" />
 <meta property="og:image:width" content="1200" />
@@ -26,7 +26,7 @@
 <meta property="profile:last_name" content="Bronson" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Ron Bronson" />
-<meta name="twitter:description" content="Designer and professor speaking globally about post-contemporary economics, public mechanics &amp; the ways that public trust has been eroded by technology." />
+<meta name="twitter:description" content="Systems design for the world after service design. Ron Bronson works across service design, critical urbanism, digital public infrastructure, and the politics of technology." />
 <meta name="twitter:image" content="https://ronbronson.com/assets/og.png" />
 <meta name="twitter:image:alt" content="Ron Bronson and a short introduction." />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
@@ -117,6 +117,12 @@
     line-height: .96;
     letter-spacing: -.01em;
     text-transform: uppercase;
+  }
+  .deck {
+    margin: 10px 0 0;
+    font-family: var(--std); font-weight: 500;
+    font-size: clamp(16px, 1.7vw, 22px); line-height: 1.25;
+    color: var(--ink-2);
   }
   /* ── columns ── */
   .cols {
@@ -222,15 +228,33 @@
      reading it. Set a step larger than .blurb for the same reason.
      ──────────────────────────────────────────────────────────────── */
   .lede .mod__b { padding: clamp(16px, 2.2vw, 25px); }
-  .lede p { margin: 0 0 .7em; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; }
+  .lede p { margin: 0 0 .7em; max-width: 62ch; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; }
   .lede p:last-child { margin-bottom: 0; }
+  .lede p:first-child { font-family: var(--std); font-size: clamp(18px, 1.5vw, 22px); line-height: 1.4; }
 
   /* ── prose ──────────────────────────────────────────────────────────
      Short paragraphs, a few per module. Sized down from the old bio: the
      copy carries the page now, so it reads rather than declaims.
      ──────────────────────────────────────────────────────────────── */
-  .blurb p { margin: 0 0 .85em; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .blurb p { margin: 0 0 .85em; max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
   .blurb p:last-child { margin-bottom: 0; }
+
+  /* ── lines of inquiry ───────────────────────────────────────────────
+     Five named threads in one module. Each is a title in the display
+     face over a short run of prose, separated by the same dashed rule
+     the rail uses, so the page reads as one system top to bottom.
+     ──────────────────────────────────────────────────────────────── */
+  .inq { margin: 0; padding: 0; list-style: none; }
+  .inq li { padding: clamp(14px, 1.8vw, 20px) 0; border-top: 1px dashed var(--rule); }
+  .inq li:first-child { padding-top: 0; border-top: 0; }
+  .inq li:last-child { padding-bottom: 0; }
+  .inq h3 {
+    margin: 0 0 .35em;
+    font-family: var(--std); font-weight: 500;
+    font-size: clamp(18px, 1.6vw, 23px); line-height: 1.15;
+  }
+  .inq p { margin: 0 0 .7em; max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .inq p:last-child { margin-bottom: 0; }
 
   /* ── favorites, rail-weight ─────────────────────────────────────────
      Deliberately not the 2px-gap grid the main column uses: the rail is
@@ -306,6 +330,7 @@
   .door__t a::after { content: ""; position: absolute; inset: 0; }
   .door__n { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
 
+
   /* ── players ── */
   .players { display: grid; gap: 2px; background: var(--ink); }
   .player { background: var(--panel); }
@@ -314,7 +339,6 @@
   .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
   /* Video, not an audio player — 152px would letterbox it to a strip. */
   .player--video iframe { height: auto; aspect-ratio: 16 / 9; }
-
 
   .footbar {
     padding: 13px clamp(14px, 2.4vw, 28px);
@@ -364,6 +388,7 @@
 
   <header class="banner">
     <h1>Ron Bronson</h1>
+    <p class="deck">Systems design for the world after service design.</p>
   </header>
 
   <div class="cols">
@@ -456,7 +481,7 @@
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">Elsewhere</h2>
+        <h2 class="mod__t">Links</h2>
         <div class="mod__b">
           <ul class="out">
             <li>
@@ -494,20 +519,112 @@
            bar: it would only label the obvious. -->
       <div class="mod lede">
         <div class="mod__b">
-          <p>I&rsquo;m a design leader, educator, and cultural critic.</p>
-          <p>My work is wide-ranging, but I&rsquo;m most interested in building resilient
-            communities of practice and solving consequential problems in public life,
-            often involving technology.</p>
+          <p>I work across service design, critical urbanism, digital public
+            infrastructure, and the politics of technology.</p>
+          <p>I&rsquo;m interested in what happens when designed systems leave the
+            conditions in which they were imagined and become part of everyday life:
+            when an interface becomes a rule, a service becomes infrastructure, an
+            optimization redistributes cost, or a technical system starts making
+            decisions that used to belong to people.</p>
+          <p>Service design has been useful for making systems visible. It is much
+            weaker at accounting for what those systems produce at scale. My work
+            starts there.</p>
         </div>
       </div>
 
       <div class="mod">
-        <h2 class="mod__t">My Sites</h2>
+        <h2 class="mod__t">Current lines of inquiry</h2>
+        <div class="mod__b">
+          <ul class="inq">
+            <li>
+              <h3>Consequence Design</h3>
+              <p>Since 2017, I&rsquo;ve used Consequence Design to examine what services
+                and interfaces produce beyond their intended outcomes.</p>
+              <p>The central question is not simply whether a system works. It is what
+                becomes possible because it works, who absorbs the consequences, and
+                what happens when the assumptions embedded in the design meet a world
+                that does not share them.</p>
+            </li>
+            <li>
+              <h3>Design as Repair</h3>
+              <p>Design interventions enter environments that already have histories,
+                constraints, dependencies, and damage.</p>
+              <p>Design as Repair treats maintenance and operational failure as part of
+                the design problem. It argues for designers working closer to where
+                problems actually occur rather than arriving downstream after the
+                important framing decisions have already been made.</p>
+            </li>
+            <li>
+              <h3>Public Mechanics</h3>
+              <p>Services are not only experiences. They are rules, money, people,
+                technical systems, discretion, handoffs, and operations.</p>
+              <p>Public Mechanics studies that layer: how a policy becomes a decision,
+                how a decision becomes an interaction, and whether the person who
+                needed something actually received it.</p>
+            </li>
+            <li>
+              <h3>Digital public infrastructure</h3>
+              <p>Digital public infrastructure is closer to public works and statecraft
+                than to conventional software delivery.</p>
+              <p>Identity systems, payment rails, registries, data exchanges, and
+                increasingly AI-mediated services are becoming part of the operating
+                environment of everyday life. I&rsquo;m interested in who designs these
+                systems, what forms of authority they encode, and whether cities and
+                public bodies have the capacity to govern what they are becoming
+                dependent upon.</p>
+            </li>
+            <li>
+              <h3>Judgment after interfaces</h3>
+              <p>Large language models and autonomous agents move interaction away from
+                fixed interfaces and toward responses assembled through memory,
+                retrieval, tools, instructions, permissions, and models.</p>
+              <p>That changes the design problem. The important questions become who
+                owns the response experience, where judgment resides, what context the
+                system can see, and what happens when machines increasingly mediate the
+                relationship between people and services.</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">A critical practice of service design</h2>
+        <div class="mod__b blurb">
+          <p>I have spent much of my career inside service design while remaining
+            skeptical of what the discipline claims it can accomplish.</p>
+          <p>A clean journey does not make a harmful system benign. Reducing friction
+            can make the wrong thing work better. Improving organizational capacity
+            does not determine what that capacity will be used to do. And increasingly,
+            the service encounter is only the visible edge of much larger technical,
+            economic, and political systems.</p>
+          <p>I&rsquo;m interested in what design becomes when those conditions are
+            treated as part of the material.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Practice</h2>
+        <div class="mod__b blurb">
+          <p>My practice moves between systems and service design, writing, teaching,
+            tool-building, public experiments, and convening.</p>
+          <p>I&rsquo;m an Assistant Professor of Practice in Urban Technology at the
+            University of Michigan. Previously, I was Head of Design at 18F.gov, where
+            I helped establish the first service design practice in the U.S. federal
+            government.</p>
+          <p>My work has been presented internationally at the Service Design Global
+            Conference, IxDA Oslo, universities, and other design and research venues.
+            I&rsquo;ve also created independent programs including Design for the
+            Public and Years Ahead.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Elsewhere</h2>
         <div class="doors">
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">ronbronson.design &rarr;</a></h3><span class="door__n">Writing, talks &amp; how I work</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">ronbronson.dev &rarr;</a></h3><span class="door__n">How I think</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">thinkingweapons.com &rarr;</a></h3><span class="door__n">Speculative civics + public exhibitions</span></article>
-          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">My blog &rarr;</a></h3></article>
+          <article class="door"><h3 class="door__t"><a href="https://blog.ronbronson.com">Writing &rarr;</a></h3><span class="door__n">Making Public Work &middot; blog.ronbronson.com</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.dev">Things I build &rarr;</a></h3><span class="door__n">ronbronson.dev</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://ronbronson.design">Design practice and talks &rarr;</a></h3><span class="door__n">ronbronson.design</span></article>
+          <article class="door"><h3 class="door__t"><a href="https://thinkingweapons.com">Studio &rarr;</a></h3><span class="door__n">Thinking Weapons</span></article>
         </div>
       </div>
 

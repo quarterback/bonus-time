@@ -2,47 +2,41 @@
 
 Source for **ronbronson.com** — the front door for the four sites.
 
-**This page introduces Ron and sends people onward.** There is still no About page and no
-essay to read: the introduction is two sentences, and everything after it is
-evidence the reader assembles for themselves.
+**This page is Ron's statement of what his work is, in his words, plus the personal
+rail.** The main column carries his positioning copy: a deck line under the name, a
+three-paragraph introduction, the five current lines of inquiry, a short critical stance
+on service design, and a Practice paragraph that establishes the bonafides (Michigan,
+18F, where the work has been presented). Then `Elsewhere`, the four onward links.
 
-That introduction replaced **2026 So Far**, a dated list of the year's work. The list
-failed for two reasons, and both are worth remembering before proposing anything like it
-again: it went stale between updates, and any finite list of a year reads as a claim that
-the year was only that. An introduction has neither problem — it doesn't expire and it
-doesn't imply completeness. So nothing in the opening module gets a datestamp or a bullet
-count; if an item needs a year on it, it belongs on `.design` or `.dev` instead.
+This replaced the earlier two-sentence front door, and before that **2026 So Far**. The
+two-sentence version was rejected for being generic; the point of the page now is the
+argument, not the routing. Two rules survive from the old version:
 
-Its only job is to orient someone who has never met Ron and send them onward.
-Four things, in this order, and nothing else:
+- **All copy is Ron's.** Nothing in the main column was drafted on his behalf. Edit the
+  words only when he supplies new ones.
+- **No Selected work / portfolio index.** `.dev` and `.design` carry the work. The
+  Practice paragraph is as far as credentials go on this page.
 
-1. **The introduction** — first person, two sentences, no dates, no career history, and **no header bar**. It is the first thing under
-   the masthead; labelling it only named what the reader could already see. `.mod.lede`,
-   a module with a `.mod__b` and no `.mod__t`. Keep it in sync with
+Module order in `.main`:
+
+1. **The introduction** — `.mod.lede`, no header bar. Keep it in sync with
    `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
-2. **Photos** — evidence, not decoration, and **uncaptioned**. Each one carries an
-   institution on its face: Design For The Public, 18F at GSA, Taubman College, AIGA
-   Portland, the Oregon Athletic Coaches Association, a championship team. Pick images
-   that show a room, a cohort, a banner, or a governing body — never a screenshot of
-   software, and never a solo speaker shot. A photo of Ron presenting proves
-   practitioner; a photo of the room proves institution. The image does the work, so
-   don't label it; `alt` text carries the description for screen readers.
-3. **Links to the other sites** — `.design`, `.dev`, `thinkingweapons.com`, the blog.
-4. **Contact.**
+2. **Current lines of inquiry** — `.inq`, five titled entries in one module.
+3. **A critical practice of service design** — `.blurb`.
+4. **Practice** — `.blurb`. The one place titles and employers appear.
+5. **Elsewhere** — `.doors`, the four sites labelled by their job.
+6. **Ron's Top 8** — photos, uncaptioned, full width below the rail.
 
-The test: **can someone get the shape of this person in about fifteen seconds?** If a
-change doesn't help that, it doesn't belong.
+7. **Design as Repair** — the IxDA Oslo talk, embedded.
+8. **Now Playing** — podcasts.
 
-Deliberately *not* here: talks (`.design`), **projects, case studies, prototypes and
-indices** (`.dev`, `.design`), event write-ups (`thinkingweapons.com`), a résumé, a
-timeline, or a "side quests" section. The portfolio is not a front-door asset — routing to
-it doesn't add anything a stranger needs in the first two minutes, and it turns the page
-into an inventory. Send people onward to it instead.
+Only `My Sites` changed, and only its words: the same four links now carry Ron's
+`Elsewhere` labels.
 
-**All copy is Ron's.** Descriptions, subtitles, and section text drafted on his behalf
-get rejected — leave slots empty (or commented) until he supplies the words. The opening
-is a personal introduction, not the short form of a professional bio: it should name
-Ron's fields and the concerns connecting his work without reciting credentials.
+**The rail stays.** Contact, `Let's Talk About`, Listening, Reading, Watching, Favorites
+and `Links` (formerly `Elsewhere`; renamed because the main column now owns that word).
+It is the counterweight to the main column's register and the only place any of the
+sites says what Ron is into rather than what he argues.
 
 ### The front door's actual test
 
@@ -86,21 +80,6 @@ The one piece of machinery is `scripts/build-letterboxd.mjs`, run on a schedule 
 `Watching` grid. It is not a build step: the page works whether or not it has ever run,
 and the module hides itself if the JSON is missing.
 
-Module order in `.main`, and the reasoning behind it:
-
-| Module | Why it sits there |
-| --- | --- |
-| *(the introduction)* | `.mod.lede`. Two sentences, no header bar, undated on purpose — see above. |
-| My Sites | The four site links. Four doors, four `href`s. |
-| Design as Repair | The IxDA Oslo talk, embedded. |
-| Now Playing | Podcasts. |
-| Ron's Top 8 | Photographic evidence, uncaptioned. |
-
-**The Design as Repair embed is here only because `.design` doesn't have one** — that site
-links the talk but never embeds it. If an embed lands there, delete this module rather than
-running the same video in two places. The Throughline delivery of the same talk isn't
-public, which is why the Oslo recording is the one worth showing.
-
 `.player--video` overrides the 152px audio-player height with a 16/9 ratio; without it the
 video renders as a strip.
 
@@ -117,7 +96,7 @@ and breaking any one of them brings back a blue column running past its own cont
   where the rail stops.
 
 Rail B leads with `Let's Talk About`, then the live widgets, then `Favorites` and
-`Elsewhere`.
+`Links`.
 
 Under 780px the wrapper becomes `display: contents` and the four pieces are placed by
 explicit `grid-row`, so the widgets land at the bottom instead of following Contact.
@@ -126,12 +105,12 @@ explicit `grid-row`, so the widgets land at the bottom instead of following Cont
 stays in the repo because `assets/og.html` still uses it for the social card — don't delete
 the file, and don't put it back on the page.
 
-Rail B holds `Listening`, `Watching`, `Reading`, `Favorites` and `Elsewhere`. The rail is where the
+Rail B holds `Listening`, `Watching`, `Reading`, `Favorites` and `Links`. The rail is where the
 page stops being a CV — the scrobble, the shelf, the favorites and the Are.na / PI.FYI /
 Bluesky links are the counterweight to the institutions in the main column. If the page
 starts reading corporate again, the fix is usually more here, not less there.
 
-`Elsewhere` uses `.out`. The Bluesky butterfly is the official mark, inlined as an SVG
+`Links` uses `.out`. The Bluesky butterfly is the official mark, inlined as an SVG
 path: nothing on this page loads from a third party, so no icon font and no remote asset.
 Any further social marks go the same way.
 
@@ -166,8 +145,9 @@ hover comment describes.
 regeneration command in a comment at the top. **Regenerate it when the framing changes** —
 the card carries its own one-line summary and nothing enforces a match with the page.
 
-The card, `<meta name="description">`, and the OG/Twitter descriptions carry the same
-Michigan / 18F framing as the bio — third person there, first person on the page. That is
+The card, `<meta name="description">`, and the OG/Twitter descriptions carry the deck
+line, "Systems design for the world after service design", and the four fields from the
+introduction. That is
 four copies of one paragraph, and **the card is the copy that goes stale silently**,
 because its text is baked into a PNG: it read "Advisor at State Capacity AI" for as long
 as it took someone to notice. Change one, change all four, and regenerate.
