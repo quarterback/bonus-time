@@ -1,0 +1,327 @@
+  /* ═══════════════════════════════════════════════════════════════════
+     Deliberately standalone: this page does NOT load assets/site.css or
+     palette.js, which are byte-identical copies shared with .dev, .design
+     and thinkingweapons. Its own palette and PP Formula display face keep
+     it distinct from the house style. The previous front door is archived
+     at /_indexarchive.html.
+     ═══════════════════════════════════════════════════════════════════ */
+
+  @font-face { font-family:"PP Formula"; src:url("assets/fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"PP Formula Std"; src:url("assets/fonts/PPFormula-Medium.woff") format("woff"); font-weight:500; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Book.woff") format("woff"); font-weight:400; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"); font-weight:400; font-style:italic; font-display:swap; }
+  @font-face { font-family:"PP Neue Montreal Text"; src:url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"),url("assets/fonts/MTL/PPNeueMontrealText-Bold.woff") format("woff"); font-weight:700; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Medium.woff") format("woff"); font-weight:500; font-display:swap; }
+  @font-face { font-family:"PP Pangram Sans"; src:url("assets/fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight:600; font-display:swap; }
+
+  :root {
+    /* Ron's palette. fresh-sky is 2.76:1 on white, so it is never used for
+       text — only fills, hovers and rules. Every text role below clears AA. */
+    --white:     #ffffff;
+    --fresh-sky: #00a7e1;
+    --ink-black: #00171f;
+    --navy:      #003459;
+    --cerulean:  #007ea7;
+
+    --paper:  var(--navy);       /* page ground behind the profile */
+    --panel:  var(--white);      /* module bodies */
+    --ink:    var(--ink-black);  /* body text, header bars — 18.4:1 on white */
+    --ink-2:  var(--navy);       /* secondary text — 12.8:1 on white */
+    --link:   var(--cerulean);   /* links — 4.6:1 on white */
+    --accent: var(--fresh-sky);  /* fills and hovers only, never text */
+    --rule:   rgba(0, 23, 31, .18);
+    --rail-bg: rgba(0, 167, 225, .07);
+
+    --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
+    --std:     "PP Formula Std", "PP Pangram Sans", sans-serif;
+    --text:    "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --ui:      "PP Pangram Sans", "PP Neue Montreal Text", Helvetica, Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    padding: clamp(12px, 2.5vw, 34px) clamp(10px, 2vw, 24px) clamp(40px, 6vw, 70px);
+    background: var(--paper);
+    /* faint tiled ground — the "background image" slot, done in CSS */
+    background-image:
+      repeating-linear-gradient(45deg, rgba(255,255,255,.045) 0 2px, transparent 2px 9px);
+    color: var(--ink);
+    font-family: var(--text);
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  a { color: var(--link); text-underline-offset: 2px; }
+  a:hover { color: var(--ink); }
+  /* height:auto globally — the HTML height attribute is a presentational
+     hint that outranks aspect-ratio, which silently stretched the photo
+     grids. More specific rules (book covers) still win. */
+  img { max-width: 100%; height: auto; }
+
+  /* ── the profile container ── */
+  .shell {
+    max-width: 1080px;
+    margin: 0 auto;
+    background: var(--panel);
+    border: 3px solid var(--ink);
+    box-shadow: 8px 8px 0 rgba(0, 23, 31, .45);
+  }
+
+  /* ── banner ── */
+  .banner {
+    padding: clamp(16px, 2.6vw, 30px) clamp(14px, 2.4vw, 28px) clamp(12px, 2vw, 20px);
+    border-bottom: 3px solid var(--ink);
+  }
+  .banner h1 {
+    margin: 0;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(30px, 6.4vw, 78px);
+    line-height: .96;
+    letter-spacing: -.01em;
+    text-transform: uppercase;
+  }
+  /* ── columns ── */
+  .cols {
+    display: grid;
+    grid-template-columns: minmax(200px, 290px) minmax(0, 1fr);
+    gap: 0;
+  }
+  .cols > * { min-width: 0; }
+  .rail { padding: clamp(14px, 2.2vw, 22px); background: var(--rail-bg); }
+  .main { padding: clamp(16px, 2.2vw, 26px); }
+  /* Follows .main--top directly in both layouts, so it never needs its own
+     top padding — the module gap above it comes from .main--top's bottom. */
+  .main--wide { padding-top: 0; }
+  @media (min-width: 781px) {
+    /* Two rows. Row 1 is the rail beside the top of the content; row 2 spans
+       both columns, so the rail ends after Favorites and everything below it
+       runs full width.
+       align-self:start is what actually ends the rail — without it the blue
+       ground and the 3px border stretch to fill row 1, which is as tall as
+       .main--top. The border lives on the wrapper, not on each half, so it
+       draws once and stops with the rail. */
+    .railwrap {
+      grid-column: 1; grid-row: 1;
+      align-self: start;
+      border-right: 3px solid var(--ink);
+    }
+    .rail--b   { padding-top: 0; }
+    .main--top { grid-column: 2; grid-row: 1; }
+    .main--wide { grid-column: 1 / -1; grid-row: 2; }
+  }
+
+
+  /* ── module ── */
+  .mod { border: 2px solid var(--ink); background: var(--panel); margin-bottom: clamp(14px, 2vw, 22px); overflow: hidden; }
+  .mod:last-child { margin-bottom: 0; }
+  .mod__t {
+    margin: 0; padding: 7px 11px;
+    background: var(--ink); color: var(--white);
+    font-family: var(--std); font-weight: 500;
+    font-size: 13px; letter-spacing: .11em; text-transform: uppercase;
+  }
+  .mod__b { padding: clamp(13px, 1.8vw, 19px); }
+  .mod__b > :first-child { margin-top: 0; }
+  .mod__b > :last-child { margin-bottom: 0; }
+
+
+  /* ── contact buttons ── */
+  .cg { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: var(--ink); }
+  .cg > * {
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    min-height: 48px; padding: 10px 8px;
+    background: var(--panel); border: 0; cursor: pointer;
+    font-family: var(--ui); font-weight: 500; font-size: 12px;
+    color: var(--link); text-align: center; text-decoration: none;
+  }
+  .cg > *:hover { background: var(--ink); color: var(--white); }
+
+
+
+  /* ── up-to list ─────────────────────────────────────────────────────
+     Square marker in fresh-sky. The palette forbids that colour for text
+     but permits it as a fill, which is what a ::before block is.
+     ──────────────────────────────────────────────────────────────── */
+  .ups { margin: 0; padding: 0; list-style: none; }
+  .ups li {
+    position: relative; padding-left: 21px; margin-bottom: .62em;
+    font-size: clamp(16px, 1.2vw, 18px); line-height: 1.5;
+  }
+  .ups li:last-child { margin-bottom: 0; }
+  .ups li::before {
+    content: ""; position: absolute; left: 2px; top: .6em;
+    width: 7px; height: 7px; background: var(--accent);
+  }
+
+  /* ── let's talk about, rail-weight ──────────────────────────────────
+     Interests, not credentials, and the one thing on the front door that
+     exists nowhere else: .dev catalogues what Ron has built and .design
+     covers how he works, so neither of them ever says what he's actually
+     interested in.
+
+     Topics only — no sentence underneath, no links. That's what keeps the
+     temperature down and what makes it swappable: this list changes with
+     Ron's mood, so every entry has to be cheap to add and cheap to drop.
+     A topic that needs explaining belongs on the blog.
+
+     Same rail idiom as .out and .favs dd — dashed rules, display face,
+     15px. line-height is tight because the topics are long enough to wrap
+     to two and three lines at 200px and they need to stay one block each.
+     ──────────────────────────────────────────────────────────────── */
+  .talk { margin: 0; padding: 0; list-style: none; }
+  .talk li {
+    margin-bottom: 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--std); font-weight: 500;
+    font-size: 15px; line-height: 1.25;
+  }
+  .talk li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+
+  /* ── the lede ───────────────────────────────────────────────────────
+     The bio, and deliberately the only module with no header bar. It is
+     the first thing under the masthead, so a label would only name what
+     the reader can already see — you land on the site and you are
+     reading it. Set a step larger than .blurb for the same reason.
+     ──────────────────────────────────────────────────────────────── */
+  .lede .mod__b { padding: clamp(16px, 2.2vw, 25px); }
+  .lede p { margin: 0 0 .7em; max-width: 62ch; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; }
+  .lede p:last-child { margin-bottom: 0; }
+  .lede p:first-child { font-family: var(--std); font-size: clamp(18px, 1.5vw, 22px); line-height: 1.4; }
+
+  /* ── prose ──────────────────────────────────────────────────────────
+     Short paragraphs, a few per module. Sized down from the old bio: the
+     copy carries the page now, so it reads rather than declaims.
+     ──────────────────────────────────────────────────────────────── */
+  .blurb p { margin: 0 0 .85em; max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .blurb p:last-child { margin-bottom: 0; }
+
+
+  /* ── favorites, rail-weight ─────────────────────────────────────────
+     Deliberately not the 2px-gap grid the main column uses: the rail is
+     ~200-290px and a label column would leave nothing for the value.
+     Mirrors the .np (Listening) idiom instead — micro uppercase label,
+     value in the display face — so the rail reads as one thing.
+     ──────────────────────────────────────────────────────────────── */
+  .favs { margin: 0; }
+  .favs dt {
+    font-family: var(--ui); font-weight: 500;
+    font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--ink-2);
+  }
+  .favs dd {
+    margin: 0 0 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+    font-family: var(--std); font-weight: 500;
+    font-size: 15px; line-height: 1.2;
+  }
+  .favs dd:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+
+  /* ── outbound, rail-weight ── */
+  .out { margin: 0; padding: 0; list-style: none; }
+  .out li {
+    margin-bottom: 9px; padding-bottom: 9px;
+    border-bottom: 1px dashed var(--rule);
+  }
+  .out li:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  .out a {
+    display: flex; align-items: center; gap: 6px;
+    font-family: var(--std); font-weight: 500; font-size: 15px; line-height: 1.2;
+    text-decoration: none;
+  }
+  .out a:hover { text-decoration: underline; }
+  .out__mark { width: 14px; height: 14px; flex: none; fill: currentColor; }
+
+  /* ── Top 8: photographic evidence. Answers "what does Ron actually do",
+     not "what websites does Ron have". ── */
+  .top8 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; background: var(--ink); }
+  .t8 { background: var(--panel); display: flex; flex-direction: column; }
+  .t8 img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; background: var(--rule); }
+
+
+  /* ── scrobble ── */
+  .np { font-family: var(--ui); font-weight: 500; font-size: 13px; line-height: 1.4; }
+  .np__label { display: block; font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 5px; }
+  .np__track { display: block; font-family: var(--std); font-size: 16px; line-height: 1.2; }
+  .np__artist { display: block; color: var(--ink-2); margin-top: 2px; }
+  .np a { text-decoration: none; }
+
+  /* ── books ── */
+  .books { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .books .book__body, .books .book__by { display: none; }
+  .books .book__cover { position: relative; display: block; aspect-ratio: 2/3; background: var(--rule); overflow: hidden; }
+  .books .book__cover img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .books .book__cover-fallback {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--display); font-size: 22px; color: var(--ink);
+  }
+  .books .book__title { display: none; }
+
+  /* ── site cards, back in the 4-up grid ── */
+  .doors { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px; background: var(--ink); }
+  /* Three doors: one row, so no empty ink cell. Collapses with the rest under 780px. */
+  .doors--3 { grid-template-columns: repeat(3, 1fr); }
+  .door { position: relative; background: var(--panel); padding: clamp(14px, 2vw, 22px); }
+  /* Opaque fill. --rail-bg is 7% alpha, which composited over the grid's
+     ink-black gap colour instead of the card's white and went nearly black.
+     ink-black on fresh-sky is 6.67:1; navy on it is 4.66:1 — both clear AA. */
+  .door:hover { background: var(--fresh-sky); }
+  .door:hover .door__t a,
+  .door:hover .door__n { color: var(--ink-black); }
+  .door__t { margin: 0; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.6vw, 22px); line-height: 1.1; overflow-wrap: anywhere; }
+  .door__t a { text-decoration: none; }
+  .door__t a::after { content: ""; position: absolute; inset: 0; }
+  .door__n { display: block; margin-top: 4px; font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2); }
+
+
+  /* ── players ── */
+  .players { display: grid; gap: 2px; background: var(--ink); }
+  .player { background: var(--panel); }
+  .player__n { margin: 0; padding: 9px 12px 7px; font-family: var(--std); font-weight: 500; font-size: clamp(15px, 1.4vw, 19px); }
+  .player__n a { text-decoration: none; }
+  .player iframe { display: block; width: 100%; height: 152px; border: 0; background: var(--rule); }
+  /* Video, not an audio player — 152px would letterbox it to a strip. */
+  .player--video iframe { height: auto; aspect-ratio: 16 / 9; }
+
+  .footbar {
+    padding: 13px clamp(14px, 2.4vw, 28px);
+    border-top: 3px solid var(--ink); background: var(--white);
+    font-family: var(--ui); font-weight: 500; font-size: 12px; color: var(--ink-2);
+  }
+  .footbar button {
+    background: none; border: 0; padding: 0; font: inherit;
+    color: var(--link); text-decoration: underline; cursor: pointer;
+  }
+  .footbar button:hover { color: var(--ink); }
+
+  /* ── Breakpoints, widest first so the cascade resolves predictably.
+     The 900px rule used to sit after the phone rule and quietly won on
+     phones, which is why the grids never got denser down there. ────── */
+  @media (max-width: 900px) {
+    .top8   { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 780px) {
+    .cols { grid-template-columns: minmax(0, 1fr); }
+    /* Wrapper dissolves so the two rail halves can be placed independently.
+       Without the explicit rows the widgets would follow Contact immediately,
+       since the halves are adjacent in the source. */
+    .railwrap   { display: contents; }
+    .rail--a    { grid-row: 1; }
+    .main--top  { grid-row: 2; }
+    .main--wide { grid-row: 3; }
+    .rail--b    { grid-row: 4; }
+    /* Contact rides at the top; the widgets drop below the content. */
+    .rail--a { border-bottom: 3px solid var(--ink); }
+    .rail--b { border-top: 3px solid var(--ink); }
+    /* Dense grids so the phone view stays a page, not an endless scroll. */
+    .top8   { grid-template-columns: repeat(4, 1fr); }
+    .books  { grid-template-columns: repeat(6, 1fr); }
+    .doors  { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 430px) {
+    .cg { grid-template-columns: 1fr; }
+    .doors, .doors--3 { grid-template-columns: 1fr; }
+  }
