@@ -81,12 +81,11 @@ The front door's styles live in `assets/front.css` (moved out of the inline `<st
 the course pages can share them). It is specific to this repo; `site.css` is still the
 untouched shared copy.
 
-**Course pages.** `interaction-design.html` (UT 330) and `public-mechanics.html`
-(UT 402 / URP 610), both Fall 2026. Each carries the catalog facts and the catalog
-description, quoted, and marked slots for Ron's own modules (syllabus, schedule,
-readings). The front page's `Teaching` module links them, plus the Winter 2026 service
-design studio (UT 360), which links to its catalog listing. Same copy rule applies:
-nothing on these pages beyond the catalog quote is drafted on Ron's behalf.
+**Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
+(UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
+carries the course facts and Ron's own copy: overview, objectives, week-by-week, project,
+and readings. The front page's `Teaching` module links all three. Same copy rule applies:
+nothing on these pages is drafted on Ron's behalf.
 
 The introduction, `Practice`, and `Let's Talk About` were removed pending Ron's
 replacement copy; each spot is marked with an HTML comment showing the markup to restore.
