@@ -74,8 +74,21 @@ Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, boar
 
 ## Structure
 
-Single hand-authored `index.html`. No framework, no bundler, no dependencies, and nothing
-to run before deploying — the page is served as-is.
+Hand-authored HTML. No framework, no bundler, no dependencies, and nothing to run before
+deploying — the pages are served as-is.
+
+The front door's styles live in `assets/front.css` (moved out of the inline `<style>` so
+the course pages can share them). It is specific to this repo; `site.css` is still the
+untouched shared copy.
+
+**Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
+(UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
+carries the course facts and Ron's own copy: overview, objectives, week-by-week, project,
+and readings. The front page's `Teaching` module links all three. Same copy rule applies:
+nothing on these pages is drafted on Ron's behalf.
+
+The introduction, `Practice`, and `Let's Talk About` were removed pending Ron's
+replacement copy; each spot is marked with an HTML comment showing the markup to restore.
 
 The one piece of machinery is `scripts/build-letterboxd.mjs`, run on a schedule by
 `.github/workflows/refresh-letterboxd.yml`, which commits `data/letterboxd.json` for the
