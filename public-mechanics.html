@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>UT 402 Public Mechanics: How Services Work · Ron Bronson</title>
-<meta name="description" content="UT 402 Public Mechanics: How Services Work, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
+<title>Public Mechanics: How Services Work · Ron Bronson</title>
+<meta name="description" content="Public Mechanics: How Services Work. Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
 <link rel="canonical" href="https://ronbronson.com/public-mechanics.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ron Bronson" />
 <meta property="og:url" content="https://ronbronson.com/public-mechanics.html" />
-<meta property="og:title" content="UT 402 Public Mechanics: How Services Work" />
-<meta property="og:description" content="UT 402 Public Mechanics: How Services Work, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
+<meta property="og:title" content="Public Mechanics: How Services Work" />
+<meta property="og:description" content="Public Mechanics: How Services Work. Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
 <meta property="og:image" content="https://ronbronson.com/assets/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
@@ -19,25 +19,39 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="stylesheet" href="assets/front.css" />
 <style>
-  /* Course pages: one column, no rail. Everything else comes from front.css.
-     Section order follows the structure Ron is using (title and details,
-     overview, learning objectives, weekly schedule, studio themes,
-     framework and learning materials, acknowledgment, gallery). */
+  /* Course pages: one column, no rail. Base look comes from front.css.
+     All copy on this page is Ron's; edit words only when he supplies new ones. */
   .cols--one { grid-template-columns: minmax(0, 1fr); }
   .banner__k { display: block; margin: 0 0 8px; font-family: var(--std); font-weight: 500; font-size: 13px; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-2); }
   .banner__k a { text-decoration: none; }
-  .details { margin: 0; padding: 0; list-style: none; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; }
-  .objectives { margin: 0; padding-left: 1.4em; max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
-  .objectives li { margin-bottom: .5em; }
-  .weeks { margin: 0; padding: 0; list-style: none; }
-  .weeks li { display: grid; grid-template-columns: 4ch 1fr; gap: 0 14px; padding: 8px 0; border-bottom: 1px dashed var(--rule); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; }
+  .facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-size: clamp(15px, 1.1vw, 17px); }
+  .facts dt { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
+  .facts dd { margin: 0; }
+  .blurb ul, .blurb ol { max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .blurb li { margin-bottom: .5em; }
+  .blurb cite { font-style: italic; }
+  /* numbered panels: the three frames, the four project stages */
+  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--ink); margin-top: 14px; }
+  .panel { background: var(--panel); padding: 14px 16px; }
+  .panel__t { margin: 0 0 10px; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.15; }
+  .panel__n { display: inline-block; margin-right: 6px; font-family: var(--ui); font-size: 12px; letter-spacing: .08em; color: var(--ink-2); }
+  .panel__eq { margin: 0 0 10px; font-family: var(--display); font-size: clamp(22px, 2.4vw, 34px); line-height: 1; }
+  .panel p, .panel ul, .panel ol { margin: 0; font-size: 15px; line-height: 1.5; }
+  .panel ul, .panel ol { padding-left: 1.3em; }
+  .panel li { margin-bottom: .35em; }
+  .lenses { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 12px; font-size: 15px; line-height: 1.45; }
+  .lenses dt { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 2px; }
+  .lenses dd { margin: 0; }
+  /* week rows: number, title, note */
+  .weeks { margin: 14px 0 0; padding: 0; list-style: none; }
+  .weeks li { display: grid; grid-template-columns: 3ch 1fr; gap: 2px 14px; padding: 8px 0; border-bottom: 1px dashed var(--rule); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; }
   .weeks li:last-child { border-bottom: 0; }
-  .weeks b { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
-  .themes { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2px; background: var(--ink); }
-  .themes li { background: var(--panel); padding: 14px; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.4vw, 20px); }
-  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
-  .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--panel); }
-  @media (max-width: 780px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+  .weeks b { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; color: var(--ink-2); padding-top: 3px; }
+  .weeks i { grid-column: 2; font-style: normal; font-size: 14px; color: var(--ink-2); }
+  @media (min-width: 781px) {
+    .weeks--note li { grid-template-columns: 3ch 1fr max-content; }
+    .weeks--note i { grid-column: auto; font-family: var(--ui); font-size: 12px; letter-spacing: .04em; padding-top: 3px; }
+  }
 </style>
 </head>
 <body>
@@ -45,81 +59,116 @@
 
   <header class="banner">
     <span class="banner__k"><a href="index.html">Ron Bronson</a> &middot; Fall 2026</span>
-    <h1>UT 402 Public Mechanics: How Services Work</h1>
+    <h1>Public Mechanics: How Services Work</h1>
   </header>
 
   <div class="cols cols--one">
     <div class="main">
 
-      <!-- Title and details. Facts from the Taubman listing. Add the syllabus
-           link and any collaborators here, in the same list. -->
       <div class="mod">
         <div class="mod__b">
-          <ul class="details">
-            <li><strong>Instructor:</strong> Ron Bronson</li>
-            <li><strong>Meets:</strong> Tuesday, 8:30&ndash;11:30am, 3142 A&amp;AB</li>
-            <li><strong>Class number:</strong> 35648 &middot; UT 402, Section 1 &middot; cross-listed URP 610, Section 1 &middot; 3 credits</li>
-            <li><a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-1-fall-2026/">Listing at taubmancollege.umich.edu &rarr;</a></li>
-            <!-- <li><strong>Syllabus:</strong> <a href="">PDF</a></li> -->
-            <!-- <li><strong>Collaborators:</strong> ...</li> -->
+          <dl class="facts">
+            <dt>Course</dt><dd>Public Mechanics: How Services Work</dd>
+            <dt>Meets</dt><dd>Tuesdays, 8:30 to 11:30</dd>
+            <dt>Room</dt><dd>2210 A&amp;AB</dd>
+            <dt>Instructor</dt><dd>Ron Bronson</dd>
+          </dl>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Overview</h2>
+        <div class="mod__b blurb">
+          <p>Public services are authorized, funded, organized, contracted, operated, maintained, and changed. Public Mechanics studies the machinery between a policy and the moment a person meets its result, across cities, counties, states, public authorities, utilities, schools, and libraries.</p>
+          <p>Most of that machinery stays out of view. The processes, rules, routines, and repairs that hold a service together are the ones people rely on and rarely notice. Students learn to trace how a service holds together, diagram it, and explain it to someone who has never seen inside it. By the end of the term, each student produces a deep inquiry into one public system, showing how invisible work, coordination, and repair keep it running.</p>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Three frames</h2>
+        <div class="mod__b blurb">
+          <p>Three frames arrive in the first three weeks and carry through the rest of the term.</p>
+          <div class="panels">
+            <section class="panel">
+              <h3 class="panel__t"><span class="panel__n">01</span>The five lenses</h3>
+              <dl class="lenses">
+                <dt>Purpose</dt><dd>What is supposed to happen, for whom, and toward what outcome?</dd>
+                <dt>Authority</dt><dd>Who has the legal or institutional power to make it happen?</dd>
+                <dt>Capacity</dt><dd>Who has the people, knowledge, equipment, and organization to do the work?</dd>
+                <dt>Control</dt><dd>Who controls funding, vendors, information, assets, and major decisions?</dd>
+                <dt>Delivery</dt><dd>How is the work performed, monitored, maintained, changed, and evaluated?</dd>
+              </dl>
+            </section>
+            <section class="panel">
+              <h3 class="panel__t"><span class="panel__n">02</span>Civil Economics</h3>
+              <p class="panel__eq">V<sub>a</sub> = V<sub>p</sub> + V<sub>e</sub> + V<sub>r</sub></p>
+              <ul>
+                <li><b>V<sub>a</sub></b> the total value an activity generates.</li>
+                <li><b>V<sub>p</sub></b> the value captured privately, as profit, wages, fees, and equity.</li>
+                <li><b>V<sub>e</sub></b> the value pushed onto people outside the transaction.</li>
+                <li><b>V<sub>r</sub></b> the residual obligation left with the public after the activity ends.</li>
+              </ul>
+            </section>
+            <section class="panel">
+              <h3 class="panel__t"><span class="panel__n">03</span>The ambiguity economy loop</h3>
+              <ol>
+                <li>A regulated domain exists.</li>
+                <li>A reframe detaches the activity from the category.</li>
+                <li>Intermediaries operationalize the gap.</li>
+                <li>Capital accelerates coordination faster than oversight.</li>
+                <li>The costs land on public institutions.</li>
+              </ol>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div class="mod">
+        <h2 class="mod__t">Fourteen weeks</h2>
+        <div class="mod__b blurb">
+          <p>Each week adds one mechanism and carries the ones before it forward. Cases appear wherever a mechanism needs an example, and the same service returns under different lenses across the term.</p>
+          <ul class="weeks weeks--note">
+            <li><b>01</b><span>The five lenses</span><i>opens the term</i></li>
+            <li><b>02</b><span>Civil Economics: V<sub>a</sub> = V<sub>p</sub> + V<sub>e</sub> + V<sub>r</sub></span><i>carries 1</i></li>
+            <li><b>03</b><span>The ambiguity economy loop</span><i>carries 2</i></li>
+            <li><b>04</b><span>Authorization: who is allowed to act</span><i>carries 1</i></li>
+            <li><b>05</b><span>Money: where it comes from and what it may buy</span><i>carries 2, 4</i></li>
+            <li><b>06</b><span>Capacity, and what gets bought instead</span><i>carries 4, 5</i></li>
+            <li><b>07</b><span>Standards: what counts as the work being done</span><i>carries 1, 6</i></li>
+            <li><b>08</b><span>Public Futures midterm</span><i>carries 1 through 7</i></li>
+            <li><b>09</b><span>Field research launch: methods and site selection</span><i>carries 1 through 7</i></li>
+            <li><b>10</b><span>Discretion: the edge case and who decides it</span><i>carries 3, 7</i></li>
+            <li><b>11</b><span>Maintenance and failure</span><i>carries 5, 6</i></li>
+            <li><b>12</b><span>Comparative delivery: same function, different places</span><i>carries 4, 7</i></li>
+            <li><b>13</b><span>Think tank</span><i>carries 2, 3</i></li>
+            <li><b>14</b><span>Synthesis and final presentations</span><i>carries all</i></li>
           </ul>
         </div>
       </div>
 
-      <!-- OVERVIEW. Catalog description for now, quoted. Replace with Ron's
-           overview when he sends it. -->
       <div class="mod">
-        <h2 class="mod__t">Overview</h2>
+        <h2 class="mod__t">The final project</h2>
         <div class="mod__b blurb">
-          <p>&ldquo;How does the trash get delivered? How does a grocery clerk end up enforcing federal nutrition policy? Why do bike lanes change when you cross a city line? This course is designed for students across disciplines who want to build fluency in how public services work and to examine the latency between policy development and on-the-ground implementation, across federal, state, and local government as well as public institutions like libraries, transit systems, and utilities.</p>
-          <p>The first half of the semester introduces service fundamentals through case studies, historical analysis, and discussion. In the second half, students conduct service analysis and research and produce final projects that examine a service of their choosing. Students leave with practical tools for understanding service systems and an expanded understanding of the verbs that animate cities.&rdquo;</p>
+          <p>Each student takes one public system and asks how it works. Three things are required: an interview with someone who operates the system, direct observation at the point of service, and a trace from statutory authority down to the shop floor. The result is a ten slide deck and a two page executive summary.</p>
         </div>
       </div>
 
-      <!-- LEARNING OBJECTIVES. Ron's words only. Numbered list.
       <div class="mod">
-        <h2 class="mod__t">Learning objectives</h2>
-        <div class="mod__b"><ol class="objectives"><li>...</li></ol></div>
+        <h2 class="mod__t">What we read</h2>
+        <div class="mod__b blurb">
+          <p>Readings attach to the mechanism they illuminate and arrive when it does.</p>
+          <ul>
+            <li><cite>Seeing Like a State</cite>, James C. Scott. Read against the five lenses and how the state makes a service legible.</li>
+            <li><cite>The Utopia of Rules</cite>, David Graeber. Read against authorization, procedure, and discretion.</li>
+            <li><cite>The Fifth Risk</cite>, Michael Lewis. Read against capacity and what a government quietly maintains.</li>
+            <li><cite>Bonds of Inequality</cite>, Destin Jenkins. Read against money, debt, and who municipal finance serves.</li>
+            <li><cite>Crabgrass Frontier</cite>, Kenneth T. Jackson. Read against special districts and the shape of local governance.</li>
+            <li><cite>The Color of Law</cite>, Richard Rothstein. Read against residual obligation and how public systems produced exclusion.</li>
+            <li><cite>The Color of Money</cite>, Mehrsa Baradaran. Read against value capture and who it reaches.</li>
+          </ul>
+        </div>
       </div>
-      -->
 
-      <!-- WEEKLY SCHEDULE. Ron's words only. One row per week; the second
-           cell takes the theme and, when there is one, a link to the week's page.
-      <div class="mod">
-        <h2 class="mod__t">Weekly schedule</h2>
-        <div class="mod__b"><ul class="weeks">
-          <li><b>W1</b><span>...</span></li>
-        </ul></div>
-      </div>
-      -->
-
-      <!-- STUDIO THEMES. Ron's words only.
-      <div class="mod">
-        <h2 class="mod__t">Studio themes</h2>
-        <div class="mod__b"><ul class="themes"><li>...</li></ul></div>
-      </div>
-      -->
-
-      <!-- FRAMEWORK AND LEARNING MATERIALS. Ron's words only.
-      <div class="mod">
-        <h2 class="mod__t">Framework &amp; learning materials</h2>
-        <div class="mod__b blurb"><p>...</p></div>
-      </div>
-      -->
-
-      <!-- ACKNOWLEDGMENT. Ron's words only.
-      <div class="mod">
-        <h2 class="mod__t">Acknowledgment</h2>
-        <div class="mod__b blurb"><p>...</p></div>
-      </div>
-      -->
-
-      <!-- GALLERY. Pre-size photos to ~1400px and under 260K, as on the front page.
-      <div class="mod">
-        <h2 class="mod__t">Gallery</h2>
-        <div class="gallery"><img src="assets/..." width="1400" height="1050" loading="lazy" alt="" /></div>
-      </div>
-      -->
 
     </div>
   </div>
