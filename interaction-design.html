@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Interaction Design and Urban Experiences · Ron Bronson</title>
-<meta name="description" content="UT 330, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
+<title>UT 330 Interaction Design and Urban Experiences · Ron Bronson</title>
+<meta name="description" content="UT 330 Interaction Design and Urban Experiences, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
 <link rel="canonical" href="https://ronbronson.com/interaction-design.html" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Ron Bronson" />
 <meta property="og:url" content="https://ronbronson.com/interaction-design.html" />
-<meta property="og:title" content="Interaction Design and Urban Experiences" />
-<meta property="og:description" content="UT 330, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
+<meta property="og:title" content="UT 330 Interaction Design and Urban Experiences" />
+<meta property="og:description" content="UT 330 Interaction Design and Urban Experiences, Fall 2026, University of Michigan Taubman College. Taught by Ron Bronson." />
 <meta property="og:image" content="https://ronbronson.com/assets/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/MTL/PPNeueMontrealText-Book.woff2" crossorigin />
@@ -19,13 +19,25 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 <link rel="stylesheet" href="assets/front.css" />
 <style>
-  /* Course pages: one column, no rail. Everything else comes from front.css. */
+  /* Course pages: one column, no rail. Everything else comes from front.css.
+     Section order follows the structure Ron is using (title and details,
+     overview, learning objectives, weekly schedule, studio themes,
+     framework and learning materials, acknowledgment, gallery). */
   .cols--one { grid-template-columns: minmax(0, 1fr); }
-  .facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-size: clamp(15px, 1.1vw, 17px); }
-  .facts dt { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
-  .facts dd { margin: 0; }
   .banner__k { display: block; margin: 0 0 8px; font-family: var(--std); font-weight: 500; font-size: 13px; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-2); }
   .banner__k a { text-decoration: none; }
+  .details { margin: 0; padding: 0; list-style: none; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.6; }
+  .objectives { margin: 0; padding-left: 1.4em; max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
+  .objectives li { margin-bottom: .5em; }
+  .weeks { margin: 0; padding: 0; list-style: none; }
+  .weeks li { display: grid; grid-template-columns: 4ch 1fr; gap: 0 14px; padding: 8px 0; border-bottom: 1px dashed var(--rule); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; }
+  .weeks li:last-child { border-bottom: 0; }
+  .weeks b { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
+  .themes { margin: 0; padding: 0; list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 2px; background: var(--ink); }
+  .themes li { background: var(--panel); padding: 14px; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.4vw, 20px); }
+  .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--ink); }
+  .gallery img { display: block; width: 100%; height: auto; aspect-ratio: 4/3; object-fit: cover; background: var(--panel); }
+  @media (max-width: 780px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
 </style>
 </head>
 <body>
@@ -33,39 +45,80 @@
 
   <header class="banner">
     <span class="banner__k"><a href="index.html">Ron Bronson</a> &middot; Fall 2026</span>
-    <h1>Interaction Design and Urban Experiences</h1>
+    <h1>UT 330 Interaction Design and Urban Experiences</h1>
   </header>
 
   <div class="cols cols--one">
     <div class="main">
 
+      <!-- Title and details. Facts from the Taubman listing. Add the syllabus
+           link and any collaborators here, in the same list. -->
       <div class="mod">
-        <h2 class="mod__t">Course</h2>
         <div class="mod__b">
-          <dl class="facts">
-            <dt>Course</dt><dd>UT 330, Section 1</dd>
-            <dt>Term</dt><dd>Fall 2026</dd>
-            <dt>Meets</dt><dd>Monday, Wednesday, Friday, 9:00am&ndash;12:00pm</dd>
-            <dt>Room</dt><dd>3100 A&amp;AB</dd>
-            <dt>Credits</dt><dd>6</dd>
-            <dt>Class number</dt><dd>28076</dd>
-            <dt>Instructor</dt><dd>Ron Bronson</dd>
-          </dl>
+          <ul class="details">
+            <li><strong>Instructor:</strong> Ron Bronson</li>
+            <li><strong>Meets:</strong> Monday, Wednesday, Friday, 9:00am&ndash;12:00pm, 3100 A&amp;AB</li>
+            <li><strong>Class number:</strong> 28076 &middot; UT 330, Section 1 &middot; 6 credits</li>
+            <li><a href="https://taubmancollege.umich.edu/course/ut330-interaction-design-and-urban-experiences-section-1-fall-2026/">Listing at taubmancollege.umich.edu &rarr;</a></li>
+            <!-- <li><strong>Syllabus:</strong> <a href="">PDF</a></li> -->
+            <!-- <li><strong>Collaborators:</strong> ...</li> -->
+          </ul>
         </div>
       </div>
 
-      <!-- Catalog description, quoted from the Taubman College listing. -->
+      <!-- OVERVIEW. Catalog description for now, quoted. Replace with Ron's
+           overview when he sends it. -->
       <div class="mod">
-        <h2 class="mod__t">From the catalog</h2>
+        <h2 class="mod__t">Overview</h2>
         <div class="mod__b blurb">
           <p>&ldquo;In this studio, students will focus on interaction design related to a core urban service such as mobility, collective decision-making, resource sharing, or resource utilization. Students will work through the full design process from discovery to definition, development, and validation. After conducting qualitative research to identify user needs, students will develop wireframes, mockups, and other prototypes to test with real-world users.&rdquo;</p>
-          <p><a href="https://taubmancollege.umich.edu/course/ut330-interaction-design-and-urban-experiences-section-1-fall-2026/">Listing at taubmancollege.umich.edu &rarr;</a></p>
         </div>
       </div>
 
-      <!-- COURSE SLOTS. Ron's words only. Add modules here in the same shape:
-           <div class="mod"><h2 class="mod__t">Syllabus</h2><div class="mod__b blurb">...</div></div>
-           Likely modules: Syllabus, Schedule, Readings, Projects, Office hours. -->
+      <!-- LEARNING OBJECTIVES. Ron's words only. Numbered list.
+      <div class="mod">
+        <h2 class="mod__t">Learning objectives</h2>
+        <div class="mod__b"><ol class="objectives"><li>...</li></ol></div>
+      </div>
+      -->
+
+      <!-- WEEKLY SCHEDULE. Ron's words only. One row per week; the second
+           cell takes the theme and, when there is one, a link to the week's page.
+      <div class="mod">
+        <h2 class="mod__t">Weekly schedule</h2>
+        <div class="mod__b"><ul class="weeks">
+          <li><b>W1</b><span>...</span></li>
+        </ul></div>
+      </div>
+      -->
+
+      <!-- STUDIO THEMES. Ron's words only.
+      <div class="mod">
+        <h2 class="mod__t">Studio themes</h2>
+        <div class="mod__b"><ul class="themes"><li>...</li></ul></div>
+      </div>
+      -->
+
+      <!-- FRAMEWORK AND LEARNING MATERIALS. Ron's words only.
+      <div class="mod">
+        <h2 class="mod__t">Framework &amp; learning materials</h2>
+        <div class="mod__b blurb"><p>...</p></div>
+      </div>
+      -->
+
+      <!-- ACKNOWLEDGMENT. Ron's words only.
+      <div class="mod">
+        <h2 class="mod__t">Acknowledgment</h2>
+        <div class="mod__b blurb"><p>...</p></div>
+      </div>
+      -->
+
+      <!-- GALLERY. Pre-size photos to ~1400px and under 260K, as on the front page.
+      <div class="mod">
+        <h2 class="mod__t">Gallery</h2>
+        <div class="gallery"><img src="assets/..." width="1400" height="1050" loading="lazy" alt="" /></div>
+      </div>
+      -->
 
     </div>
   </div>
