@@ -14,7 +14,8 @@ Every page type here is a copy of a live page's `<body>`, content verbatim, with
 
 | File | Page type | Built from |
 | --- | --- | --- |
-| `front-door.html` | Front door | `index.html` |
+| `front-door.html` | Front door (DDR-010) | the Portfolio Demo board "System test, Front door type", copy verbatim with its DRAFT markers and [placeholders] |
+| `front-door-as-live.html` | Front door, as live | `index.html` |
 | `course.html` | Course page | `interaction-design.html` |
 
 ## Left for cleanup before launch
@@ -25,6 +26,8 @@ Every page type here is a copy of a live page's `<body>`, content verbatim, with
 - Spacing and type sizes are the source pages' values; nothing has been tuned visually.
 
 ## Masthead specifics
+
+- Type follows DDR-010 in the design system: PP Neue Montreal Black 900 / Extrabold 800 display, Author 600 subtitle (`--serif`), Neue Montreal Book text, 1280px shell (`--shell-max`), no uppercase labels. PP Formula and Neue Montreal Text stay loaded in `faces.css` only until the live pages move over.
 
 - `assets/palette-masthead.js` is the masthead's engine: Fresh Sky (as live) and a Navy dark scheme. It writes `--field`, `--on-ink`, `--mark` and `--shadow` beyond the six house roles. `assets/palette.js` is still the archived Pollen engine used by `_indexarchive.html`.
 - `body.site--masthead` scopes the front door's base: the field ground with its stripe, underlined links, 400-weight text.

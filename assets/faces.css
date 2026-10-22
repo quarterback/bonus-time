@@ -12,16 +12,29 @@
 @font-face { font-family: "PP Pangram Sans"; src: url("fonts/PPPangramSans-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
 @font-face { font-family: "PP Pangram Sans"; src: url("fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight: 600; font-display: swap; }
 
+/* DDR-010: the masthead follows the Front door type. */
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/MTL/PPNeueMontreal-Book.woff2") format("woff2"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/MTL/PPNeueMontreal-Medium.woff2") format("woff2"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/MTL/PPNeueMontreal-Extrabold.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal"; src: url("fonts/MTL/PPNeueMontreal-Black.woff2") format("woff2"); font-weight: 900; font-display: swap; }
+@font-face { font-family: "Author"; src: url("fonts/author-semibold.woff") format("woff"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Author"; src: url("fonts/author-bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
+
 :root {
   /* Fresh Sky. Fresh sky (#00a7e1) is 2.76:1 on white: fills only, never text. */
   --bg: #ffffff; --bg-deeper: #00a7e1; --ink: #00171f; --ink-soft: #003459; --rule: rgba(0, 23, 31, .18); --accent: #007ea7;
   --field: #003459; --on-ink: #ffffff; --mark: #00a7e1; --digression: var(--ink-soft); --shadow: rgba(0, 23, 31, .45);
 
-  --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
-  --deck:    "PP Formula Std", "PP Pangram Sans", sans-serif;
+  /* DDR-010: Neue Montreal Black 900 / Extrabold 800 display, Author 600 subtitle,
+     Neue Montreal Book text. PP Formula and Neue Montreal Text stay loaded for
+     pages not yet moved over. */
+  --display: "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --deck:    "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --std:     var(--deck);
-  --text:    "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif:   "Author", Georgia, serif;
+  --text:    "PP Neue Montreal", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --sans:    var(--text);
   --ui:      "PP Pangram Sans", "PP Neue Montreal Text", Helvetica, Arial, sans-serif;
   --mono:    var(--ui);
+  --shell-max: 1280px;
 }

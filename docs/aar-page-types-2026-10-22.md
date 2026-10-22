@@ -42,3 +42,12 @@
 **Keep doing:** copy content verbatim; leave copy to Ron.
 **Should not be delegated to an agent at all:** the site copy.
 **Signal that the change worked:** live pages load only `faces.css` + `core.css` + the palette engine, and `page-types/` is deleted.
+
+---
+
+## Follow-up: catch up to the newest design system (DDR-010)
+
+**Instruction given (actual wording):** "why isn't this using the newest design system?"
+**Root cause:** the page types were built from the agent's local copy of the design system. A later session published DDR-010 (masthead type follows the Front door) to the live system, and the local copy was never re-read before building.
+**What changed:** `assets/faces.css` takes the DDR-010 type (PP Neue Montreal Book/Medium/Extrabold/Black, Author 600/700 as `--serif`, `--shell-max: 1280px`); `assets/core.css` (identical in all three repos) takes the DDR-010 rules: module titles in Extrabold, no uppercase labels on the masthead, and the front-door story components (`banner--bar`, `hero`, `band`, `chapter`, `strip`, `elsewhere`). `page-types/front-door.html` is now the "System test, Front door type" board from the Portfolio Demo canvas, copy verbatim with its DRAFT markers and placeholders; the previous version is `page-types/front-door-as-live.html`.
+**Change for next run:** read the live design system (`project/README.md`, `03-decisions.md`, `tokens.json`, `components/bundle.css`) right before building from it, every time.
