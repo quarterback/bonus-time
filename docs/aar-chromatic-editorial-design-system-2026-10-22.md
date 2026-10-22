@@ -51,3 +51,17 @@
 **Keep doing:** measure contrast before writing token notes; diff "shared" files before trusting the inventory.
 **Should not be delegated to an agent at all:** front-door copy; the masthead's palette and faces.
 **Signal that the change worked:** `core.css` byte-identical across repos and no pigment hex in component CSS.
+
+---
+
+## Follow-up run (same day): Style Lab
+
+**Instruction given (actual wording):** "i would want to consider other custom fonts for this system if that makes sense to at least see what i like more, i also am VERY interested in unorhthodox color ways for the various sites, a dark/light for each in different looks that's been my signature across sites in this era"
+
+**What the agent did:** inventoried fonts Ron already owns across the repos (PP Fuji, Object Sans, Valve, Neue Montreal + Mono, extra Formula and Pangram Sans widths, Trancoso Sans) and rendered a specimen to choose by eye. Drafted three light/dark colorway pairs per site, each pair from two different pigment families, and auto-tuned failing pigments toward ink in 2% steps until every role pair passed. Built a Style Lab page in the artifact (site × colorway × type, light and dark side by side, live audit) and added 16 trial font files. Recorded DDR-008 (light/dark from different families, accepted from Ron's statement) and DDR-009 (type trials, proposed).
+
+**Decisions made alone:** every colorway concept and name (Riso/Darkroom, Municipal, Plum & Bottle, Blueprint/Phosphor, Hazard/Cleanroom, Box Score/Stadium, Hot Sauce/Smoked, Profile 2006/Skin, Pool/Night Swim); the type trios; Instrument Serif as the one non-owned face. All are candidates; nothing was adopted into the live themes or the sites.
+
+**Risk:** more PP font files copied into the private artifact; licence check still Ron's (DDR-009).
+
+**Next:** Ron picks one colorway and one trio per site in the lab; the agent then promotes the picks into the six themes.
