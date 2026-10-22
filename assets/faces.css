@@ -1,0 +1,27 @@
+/* ──────────────────────────────────────────────────────────
+   faces.css — masthead.ronbronson.com: this site's faces, type slots and fallback
+   colours for the Chromatic Editorial System. Load before core.css.
+   palette-masthead.js overwrites the colour roles at load; the values here are
+   the static "Fresh Sky" fallback for a JS-off render.
+   ────────────────────────────────────────────────────────── */
+@font-face { font-family: "PP Formula"; src: url("fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "PP Formula Std"; src: url("fonts/PPFormula-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal Text"; src: url("fonts/MTL/PPNeueMontrealText-Book.woff2") format("woff2"), url("fonts/MTL/PPNeueMontrealText-Book.woff") format("woff"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal Text"; src: url("fonts/MTL/PPNeueMontrealText-BookItalic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+@font-face { font-family: "PP Neue Montreal Text"; src: url("fonts/MTL/PPNeueMontrealText-Bold.woff2") format("woff2"), url("fonts/MTL/PPNeueMontrealText-Bold.woff") format("woff"); font-weight: 700; font-display: swap; }
+@font-face { font-family: "PP Pangram Sans"; src: url("fonts/PPPangramSans-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
+@font-face { font-family: "PP Pangram Sans"; src: url("fonts/PPPangramSans-Semibold.woff") format("woff"); font-weight: 600; font-display: swap; }
+
+:root {
+  /* Fresh Sky. Fresh sky (#00a7e1) is 2.76:1 on white: fills only, never text. */
+  --bg: #ffffff; --bg-deeper: #00a7e1; --ink: #00171f; --ink-soft: #003459; --rule: rgba(0, 23, 31, .18); --accent: #007ea7;
+  --field: #003459; --on-ink: #ffffff; --mark: #00a7e1; --digression: var(--ink-soft); --shadow: rgba(0, 23, 31, .45);
+
+  --display: "PP Formula", "PP Pangram Sans", Impact, sans-serif;
+  --deck:    "PP Formula Std", "PP Pangram Sans", sans-serif;
+  --std:     var(--deck);
+  --text:    "PP Neue Montreal Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans:    var(--text);
+  --ui:      "PP Pangram Sans", "PP Neue Montreal Text", Helvetica, Arial, sans-serif;
+  --mono:    var(--ui);
+}
