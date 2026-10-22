@@ -19,18 +19,22 @@ argument, not the routing. Two rules survive from the old version:
 - **No Selected work / portfolio index.** `.dev` and `.design` carry the work. The
   Practice paragraph is as far as credentials go on this page.
 
-Module order in `.main`:
+Page order, top to bottom (`assets/home.css` carries the layout; PR #26):
 
-1. **The introduction** — `.mod.lede`, no header bar. Keep it in sync with
+1. **TopBar** — `.topbar`, the name as `h1`, the three other sites, a mail button.
+2. **Hero** — `.hx`: the introduction as `.hx__title` + `.hx__lead` beside the portrait,
+   with the Send Message and My blog buttons. Keep the lead in sync with
    `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
-2. **Current lines of inquiry** — `.inq`, five titled entries in one module.
-3. **A critical practice of service design** — `.blurb`.
-4. **Practice** — `.blurb`. The one place titles and employers appear.
-5. **Elsewhere** — `.doors`, the four sites labelled by their job.
-6. **Ron's Top 8** — photos, uncaptioned, full width below the rail.
+3. **Strip** — `.hx-strip`, Last played from last.fm.
+4. **Rail** — `.hx-rail`: `Let's Talk About`, Reading, Watching, Favorites, Links.
+5. **Main** — `.hx-main`: `Practice` (the one place titles and employers appear),
+   Teaching, Elsewhere, Design as Repair, Now Playing.
+6. **Ron's Top 8** — photos, uncaptioned, full width.
+7. **Footer** — the Send a message button.
 
-7. **Design as Repair** — the IxDA Oslo talk, embedded.
-8. **Now Playing** — podcasts.
+An earlier draft of this list named a `Current lines of inquiry` module (`.inq`) and
+`A critical practice of service design`. Neither has ever existed in `index.html` and
+there is no `.inq` style; they are noted here only so nobody goes looking for them.
 
 Only `My Sites` changed, and only its words: the same four links now carry Ron's
 `Elsewhere` labels.
@@ -77,9 +81,13 @@ Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, boar
 Hand-authored HTML. No framework, no bundler, no dependencies, and nothing to run before
 deploying — the pages are served as-is.
 
-The front door's styles live in `assets/front.css` (moved out of the inline `<style>` so
-the course pages can share them). It is specific to this repo; `site.css` is still the
-untouched shared copy.
+The front door is on the shared Chromatic Editorial System, `assets/faces.css` (this
+site's faces and type slots) plus `assets/core.css` (the shared layer, byte-identical in
+2026-site, dev-site and bonus-time), with `assets/palette-masthead.js` writing the colour
+roles and `assets/home.css` carrying the front page's own layout. The course pages load
+`faces.css` + `core.css` only. **`assets/front.css` and `assets/site.css` are no longer
+loaded by any page**; they are left in the repo but nothing reads them. `assets/palette.js`
+is still the archived Pollen engine behind `_indexarchive.html`.
 
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
 (UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
@@ -87,8 +95,13 @@ carries the course facts and Ron's own copy: overview, objectives, week-by-week,
 and readings. The front page's `Teaching` module links all three. Same copy rule applies:
 nothing on these pages is drafted on Ron's behalf.
 
-The introduction, `Practice`, and `Let's Talk About` were removed pending Ron's
-replacement copy; each spot is marked with an HTML comment showing the markup to restore.
+The introduction, `Practice`, and `Let's Talk About` were empty for a stretch pending
+Ron's replacement copy. They are filled again. `Let's Talk About` is Ron's own list,
+restored verbatim from `fd125d3`. The introduction and `Practice` were drafted by an agent
+in the Kentucky register (`CAREER-NARRATIVE-REGISTER.md`, now kept in `2026-site`) at Ron's
+explicit instruction, from facts already in these repos; that instruction is the only thing
+that overrides the copy rule above, it applied to one run, and it does not carry to the
+next. See `docs/aar-front-door-copy-2026-10-22.md`.
 
 The one piece of machinery is `scripts/build-letterboxd.mjs`, run on a schedule by
 `.github/workflows/refresh-letterboxd.yml`, which commits `data/letterboxd.json` for the

@@ -116,5 +116,7 @@
 }
 @media (prefers-reduced-motion: reduce) { .tile, .hx-rail .books .book__cover { transition: none; } }
 
-/* Labels and navigation use the deck face on this page. */
-.site--tiles .topbar nav, .site--tiles .topbar nav a { font-family: var(--deck); }
+/* Labels use the deck face on this page. The TopBar nav is set in the display
+   face at the rail-heading (H3) size, underlined and nothing else: no arrows,
+   no icons, no decoration. Ron's call. */
+.site--tiles .topbar nav a { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.03em; text-decoration: underline; text-underline-offset: .14em; text-decoration-thickness: 2px; }
