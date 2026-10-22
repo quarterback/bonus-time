@@ -9,7 +9,7 @@
      Coral Glow       #f78e69   lead fill: bar and hero (ink on it 5.99)
      Cherry Rose      #a5243d   links and the deep chapter (7.00 on snow;
                                 snow on it 7.00)
-     Two tuned shades: soft text = ink 34% toward snow (#617481, 4.73),
+     Two tuned shades: soft text = ink 20% toward snow (#566a78, APCA Lc 76),
      hairline = ink 60% toward snow (#9fa9b0, decorative only).
 
    Navy (dark) — the Fresh Sky family
@@ -43,7 +43,7 @@
     jasmine:   '#f6df79',
     coral:     '#f78e69',
     cherry:    '#a5243d',
-    softInk:   '#617481',
+    softInk:   '#566a78',
     hair:      '#9fa9b0',
     white:     '#ffffff',
     freshSky:  '#00a7e1',
@@ -83,8 +83,8 @@
       lead: PIG.coral, onLead: PIG.deepSpace, deep: PIG.cherry, onDeep: PIG.snow,
     }),
     navy: build('Navy', {
-      bg: PIG.inkBlack, deeper: PIG.navy, ink: PIG.white, soft: '#7fd3f0',
-      rule: '#2a5a70', accent: PIG.freshSky,
+      bg: PIG.inkBlack, deeper: PIG.navy, ink: PIG.white, soft: '#8ed8f2',
+      rule: '#2a5a70', accent: '#94daf2', /* Fresh Sky 58% toward white: links, Lc 77 (DDR-013) */
       field: '#000a0e', onInk: PIG.inkBlack, mark: PIG.freshSky, shadow: 'rgba(0, 167, 225, .35)',
       lead: PIG.freshSky, onLead: PIG.inkBlack, deep: PIG.cerulean, onDeep: PIG.white,
     }),

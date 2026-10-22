@@ -22,7 +22,7 @@
 
 :root {
   /* Front door: Snow, Deep Space Blue, Jasmine, Coral Glow, Cherry Rose (DDR-012). */
-  --bg: #fffbfa; --bg-deeper: #f6df79; --ink: #102f42; --ink-soft: #617481; --rule: #9fa9b0; --accent: #a5243d;
+  --bg: #fffbfa; --bg-deeper: #f6df79; --ink: #102f42; --ink-soft: #566a78; --rule: #9fa9b0; --accent: #a5243d;
   --field: #fffbfa; --on-ink: #fffbfa; --mark: #f78e69; --digression: var(--ink-soft); --shadow: #102f42;
   --lead: #f78e69; --on-lead: #102f42; --deep: #a5243d; --on-deep: #fffbfa;
 
