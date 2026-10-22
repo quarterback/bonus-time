@@ -2,7 +2,7 @@
    faces.css — masthead.ronbronson.com: this site's faces, type slots and fallback
    colours for the Chromatic Editorial System. Load before core.css.
    palette-masthead.js overwrites the colour roles at load; the values here are
-   the static "Fresh Sky" fallback for a JS-off render.
+   the static "Front door" fallback for a JS-off render.
    ────────────────────────────────────────────────────────── */
 @font-face { font-family: "PP Formula"; src: url("fonts/PPFormula-ExtendedBold.woff") format("woff"); font-weight: 700; font-display: swap; }
 @font-face { font-family: "PP Formula Std"; src: url("fonts/PPFormula-Medium.woff") format("woff"); font-weight: 500; font-display: swap; }
@@ -21,9 +21,10 @@
 @font-face { font-family: "Author"; src: url("fonts/author-bold.woff") format("woff"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
-  /* Fresh Sky. Fresh sky (#00a7e1) is 2.76:1 on white: fills only, never text. */
-  --bg: #ffffff; --bg-deeper: #00a7e1; --ink: #00171f; --ink-soft: #003459; --rule: rgba(0, 23, 31, .18); --accent: #007ea7;
-  --field: #003459; --on-ink: #ffffff; --mark: #00a7e1; --digression: var(--ink-soft); --shadow: rgba(0, 23, 31, .45);
+  /* Front door: Snow, Deep Space Blue, Jasmine, Coral Glow, Cherry Rose (DDR-012). */
+  --bg: #fffbfa; --bg-deeper: #f6df79; --ink: #102f42; --ink-soft: #566a78; --rule: #9fa9b0; --accent: #a5243d;
+  --field: #fffbfa; --on-ink: #fffbfa; --mark: #f78e69; --digression: var(--ink-soft); --shadow: #102f42;
+  --lead: #f78e69; --on-lead: #102f42; --deep: #a5243d; --on-deep: #fffbfa;
 
   /* DDR-010: Neue Montreal Black 900 / Extrabold 800 display, Author 600 subtitle,
      Neue Montreal Book text. PP Formula and Neue Montreal Text stay loaded for

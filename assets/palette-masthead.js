@@ -2,12 +2,20 @@
    Palette engine — masthead, WCAG-mapped. Same engine as .design
    and .dev; RBPalette.audit() prints the ratios.
 
-     Ink Black #00171f   ink (18.38 on white)
-     White     #ffffff   panel ground / dark-scheme ink
-     Navy      #003459   soft text (12.84) and the field behind the shell
-     Cerulean  #007ea7   links and marks (4.62 on white)
-     Fresh Sky #00a7e1   fills and hovers (2.76 on white, never text);
-                         the dark scheme's accent (6.67 on ink black)
+   Front door (light, default) — the Front door board's palette
+     Snow             #fffbfa   ground
+     Deep Space Blue  #102f42   ink (13.55 on snow)
+     Jasmine          #f6df79   soft fill (ink on it 10.45)
+     Coral Glow       #f78e69   lead fill: bar and hero (ink on it 5.99)
+     Cherry Rose      #a5243d   links and the deep chapter (7.00 on snow;
+                                snow on it 7.00)
+     Two tuned shades: soft text = ink 20% toward snow (#566a78, APCA Lc 76),
+     hairline = ink 60% toward snow (#9fa9b0, decorative only).
+
+   Navy (dark) — the Fresh Sky family
+     Ink Black #00171f ground · White ink · Navy soft fill ·
+     Fresh Sky lead and signal (6.67 with ink black) ·
+     Cerulean deep (white on it 4.62)
    ────────────────────────────────────────────────────────── */
 (function () {
   /* ── contrast math (audit only) ───────────────────── */
@@ -28,13 +36,20 @@
     return (hi + 0.05) / (lo + 0.05);
   }
 
-  /* ── the five pigments ────────────────────────────── */
+  /* ── the pigments ─────────────────────────────────── */
   const PIG = {
-    white:    '#ffffff',
-    freshSky: '#00a7e1',
-    inkBlack: '#00171f',
-    navy:     '#003459',
-    cerulean: '#007ea7',
+    snow:      '#fffbfa',
+    deepSpace: '#102f42',
+    jasmine:   '#f6df79',
+    coral:     '#f78e69',
+    cherry:    '#a5243d',
+    softInk:   '#566a78',
+    hair:      '#9fa9b0',
+    white:     '#ffffff',
+    freshSky:  '#00a7e1',
+    inkBlack:  '#00171f',
+    navy:      '#003459',
+    cerulean:  '#007ea7',
   };
 
   /* ── role-mapped schemes ──────────────────────────────
@@ -48,29 +63,33 @@
       label,
       bg: m.bg, deeper: m.deeper, ink: m.ink, soft: m.soft, rule: m.rule, accent: m.accent,
       field: m.field, onInk: m.onInk, mark: m.mark, shadow: m.shadow,
+      lead: m.lead, onLead: m.onLead, deep: m.deep, onDeep: m.onDeep,
       _audit: {
         'body ink / bg':  +contrast(m.ink, m.bg).toFixed(2),
         'soft / bg':      +contrast(m.soft, m.bg).toFixed(2),
         'accent / bg':    +contrast(m.accent, m.bg).toFixed(2),
         'ink on deeper':  +contrast(m.ink, m.deeper).toFixed(2),
+        'on-lead / lead': +contrast(m.onLead, m.lead).toFixed(2),
+        'on-deep / deep': +contrast(m.onDeep, m.deep).toFixed(2),
       },
     };
   }
 
   const PALETTES = {
-    sky: build('Fresh Sky', {
-      bg: PIG.white, deeper: PIG.freshSky, ink: PIG.inkBlack, soft: PIG.navy,
-      rule: 'rgba(0, 23, 31, .18)', accent: PIG.cerulean,
-      field: PIG.navy, onInk: PIG.white, mark: PIG.freshSky, shadow: 'rgba(0, 23, 31, .45)',
+    front: build('Front door', {
+      bg: PIG.snow, deeper: PIG.jasmine, ink: PIG.deepSpace, soft: PIG.softInk,
+      rule: PIG.hair, accent: PIG.cherry,
+      field: PIG.snow, onInk: PIG.snow, mark: PIG.coral, shadow: PIG.deepSpace,
+      lead: PIG.coral, onLead: PIG.deepSpace, deep: PIG.cherry, onDeep: PIG.snow,
     }),
     navy: build('Navy', {
-      bg: PIG.inkBlack, deeper: PIG.navy, ink: PIG.white, soft: '#7fd3f0',
-      rule: '#2a5a70', accent: PIG.freshSky,
+      bg: PIG.inkBlack, deeper: PIG.navy, ink: PIG.white, soft: '#8ed8f2',
+      rule: '#2a5a70', accent: '#94daf2', /* Fresh Sky 58% toward white: links, Lc 77 (DDR-013) */
       field: '#000a0e', onInk: PIG.inkBlack, mark: PIG.freshSky, shadow: 'rgba(0, 167, 225, .35)',
+      lead: PIG.freshSky, onLead: PIG.inkBlack, deep: PIG.cerulean, onDeep: PIG.white,
     }),
   };
-
-  const DEFAULT = 'sky';
+  const DEFAULT = 'front';
 
   /* ── application ──────────────────────────────────── */
   function setVars(p) {
@@ -85,6 +104,10 @@
     r.setProperty('--on-ink',    p.onInk);
     r.setProperty('--mark',      p.mark);
     r.setProperty('--shadow',    p.shadow);
+    r.setProperty('--lead',      p.lead);
+    r.setProperty('--on-lead',   p.onLead);
+    r.setProperty('--deep',      p.deep);
+    r.setProperty('--on-deep',   p.onDeep);
   }
 
   function recolorPatterns(p) {
