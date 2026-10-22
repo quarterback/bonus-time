@@ -72,7 +72,7 @@ The standing rule in this repo is "All copy is Ron's. Nothing in the main column
 
 - **Narrowly avoided:** `@font-face` rules in `assets/front.css` still carried root-relative `assets/fonts/…` URLs after being moved out of the inline `<style>`. From a stylesheet at `assets/front.css` those resolve to `assets/assets/fonts/…`, so all seven faces 404'd and every one of the four pages had been rendering in system fallbacks. A type-driven site would have launched with none of its type. Found only because the page was rendered rather than read.
 - **Live risk:** the biography facts are now an agent's paraphrase of source files, not Ron's own sentences. The numbers (2017–2025, close to four years as Head of Design, 40+ designers, 1,000+ applicants per opening, 100+ signups and fifty builders at Portland Digital Corps, six sites, eight-week sprints, 80+ at Design for the Public 24) each trace to a file, but the source files are themselves dated and were written for other purposes. **Ron should read the `Practice` paragraph as a factual claim about himself before this goes live.** That is the one check an agent cannot perform.
-- `assets/og.png` is now stale. The card's text is baked into the PNG and the lede changed, so the card still carries the old "working across service design…" line until it is regenerated with the command in `assets/og.html`. This is exactly the silent-staleness trap the README already warns about.
+- `assets/og.png` was briefly stale and has been regenerated with the command in `assets/og.html`, at 1200×630 and no `deviceScaleFactor`. It now carries the new lede. This is the silent-staleness trap the README warns about: the card's text is baked into a PNG, so the five copies of the lede only stay in step if the card is rebuilt in the same commit.
 
 **Downstream affected parties:** readers of the front door; `dev-site` and `2026-site`, which share `assets/core.css`.
 
@@ -83,8 +83,7 @@ The standing rule in this repo is "All copy is Ron's. Nothing in the main column
 **Specific changes before next run:**
 
 1. Ron reads `Practice` and the introduction as claims about himself and corrects them.
-2. Regenerate `assets/og.png` from `assets/og.html`; the lede in the PNG is stale right now.
-3. Decide whether the introduction should take the register's tenure opener (§3).
+2. Decide whether the introduction should take the register's tenure opener (§3).
 
 **Keep doing:** rendering the page headless instead of reading the markup. The font regression was invisible in the diff and in the source.
 
