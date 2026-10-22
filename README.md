@@ -99,7 +99,14 @@ is still the archived Pollen engine behind `_indexarchive.html`.
 
 **This is a single page that sends people to the other sites.** The TopBar links to
 sites (Blog, .design, .dev), never to individual pages on them, and there are no About or
-Talks pages here. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
+Talks pages here. The pages that do live here are masthead's own, with no home elsewhere:
+the three course pages and `coaching.html`.
+
+**`coaching.html` is the Coaching page type:** coral title block, cherry record strip
+(`.co-stats`), split sections of text beside a photo (`.co-split`, `--flip` for the
+photo on the left), then the colophon. Rules are at the end of `assets/home.css`. Its
+copy is Ron's, gathered from his other pages; `docs/aar-coaching-page-2026-10-22.md`
+names the source of every sentence. Linked from the front page's Coaching module. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
 page instead of a 404; add any page you drop there.
 
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
