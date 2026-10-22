@@ -30,12 +30,16 @@
 
 /* Strip: last played, under the hero */
 .hx-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding-top: 14px; padding-bottom: 14px; font-family: var(--deck); font-weight: 500; font-size: 16px; }
-.hx-strip .np { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; font-family: var(--deck); font-size: 16px; }
-.hx-strip .np__label, .hx-strip .np__track, .hx-strip .np__artist { display: inline; margin: 0; font-family: var(--deck); font-size: 16px; letter-spacing: 0; text-transform: none; color: var(--k-on-deep); }
-.hx-strip .np__track { font-weight: 700; }
+/* Last played: the label stays small in the deck face; the track and artist
+   are set in the display face, the same pattern the rail's .np uses, so the
+   strip reads as its own thing rather than a line of body text. Ron's call. */
+.hx-strip .np { display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; font-size: 16px; }
+.hx-strip .np__label { display: inline; margin: 0; font-family: var(--deck); font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-on-deep); }
+.hx-strip .np__track, .hx-strip .np__artist { display: inline; margin: 0; font-family: var(--display); font-size: 22px; line-height: 1; letter-spacing: -.03em; text-transform: none; color: var(--k-on-deep); }
+.hx-strip .np__track { font-weight: 800; }
+.hx-strip .np__artist { font-weight: 500; }
 .hx-strip .np__artist::before { content: "\2014\00a0"; }
 .hx-strip .np__track:empty + .np__artist::before { content: none; }
-.hx-strip nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
 .site--blocks .block--deep.hx-strip a:not(.x):not(.y):not(.z) { color: var(--k-on-deep); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .site--blocks .block--deep.hx-strip a:not(.x):not(.y):not(.z):hover { background: var(--k-on-deep); color: var(--k-deep); }
 .hx { padding-bottom: clamp(32px, 4vw, 56px); }
