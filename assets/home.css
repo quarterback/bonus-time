@@ -127,24 +127,3 @@
 .hx-colo { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(56px, 7vw, 96px); border-top: var(--frame) solid var(--k-ink); }
 .site--blocks .hx-colo .colophon, .site--blocks .hx-colo .colophon p { font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; }
 .site--blocks .hx-colo .colophon h2 { margin: 0 0 8px; font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--k-ink); }
-
-/* Secondary pages (course pages, About, Talks): the front page's TopBar and
-   colophon around one readable column. The name is a link here, not the h1. */
-.site--blocks .topbar a.name, .site--blocks .topbar a.name:not(.x):not(.y):not(.z) { color: var(--k-bg); text-decoration: none; }
-.site--tiles .topbar nav a[aria-current="page"] { text-decoration-thickness: 4px; }
-.pg-head { padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(20px, 3vw, 36px); }
-.pg-head .hx__title { margin: 0; max-width: 18ch; }
-.pg-k { margin: 0 0 14px; font-family: var(--deck); font-weight: 500; font-size: 18px; color: var(--ink-soft); }
-.pg { padding-top: 0; padding-bottom: clamp(56px, 7vw, 96px); }
-.pg > * { max-width: 760px; }
-.pg-sec + .pg-sec { margin-top: clamp(40px, 5vw, 56px); }
-.pg .blurb p, .pg .bio p { margin: 0; font-family: var(--text); font-size: 19px; line-height: 1.55; }
-.pg .blurb p + p, .pg .bio p + p { margin-top: 1em; }
-.pg .portrait { margin: clamp(32px, 4vw, 48px) 0 0; max-width: 380px; }
-.pg .portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border: var(--frame-heavy) solid var(--k-ink); box-shadow: 10px 10px 0 var(--k-ink); }
-.pg .talks-list { max-width: 900px; }
-/* Course panels sit in one row at full width (4, 3 or 2 of them), so no empty
-   grid cell shows the ink ground; one column on narrow screens. */
-.pg > .pg-sec:has(.panels) { max-width: none; }
-.pg .panels { grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
-@media (max-width: 900px) { .pg .panels { grid-template-columns: 1fr; } }

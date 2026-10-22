@@ -124,3 +124,13 @@ Corrections during the run, in order: **"this did not update the new design, you
 **Deviation:** after Ron said the secondary pages were the old design, the agent stated a plan and asked him to confirm it instead of doing it. He had already asked for it. That cost a round trip on an instruction that was not ambiguous.
 
 **Not checked:** `.design` still serves its own old-design About and Talks; they and these copies will drift unless one is retired.
+
+---
+
+## Follow-up: masthead is a single page again
+
+**Instruction given (actual wording):** "very well then, masthead.ronbronson.com can just stay a single site that's meant to direct yo u to other sites. DO NOT Link to the single pages from the other sites from there, the old ersion of the ite had it how i wanted it, all i was asking for was 1) a redesign of the colorways and 2) a reconstruction of the font/type system and instead hat i got was a broken frakensite that is nothing lik what i have inside the prototypes that are in design" · earlier: "create redirects for any pages i drop back to the main page essentially not a 404"
+
+**What changed:** `about.html` and `talks.html` deleted; the three course pages restored byte-identical to `main`; the secondary-page CSS removed from `assets/home.css`; the TopBar nav set to the sites the Portfolio Demo canvas's "Masthead B, rail kept" artboard links to, Blog, .design and .dev, in the display-face underlined style Ron asked for. New `vercel.json` 301s `/about`, `/about.html`, `/talks`, `/talks.html`, `/myspace` and `/myspace.html` to `/`; `myspace.html` was dropped earlier and was 404ing.
+
+**Root cause of the frankensite:** Ron's nav list ("about, talks, projects, Blog") was read as links into `.design`'s pages, then those pages were copied onto masthead and restyled as a set. None of that was in the brief, which was colourways and type on the existing site, and the canvas artboard Ron chose shows a nav of sites. The canvas was never opened until this point. It should have been the first thing read.

@@ -97,13 +97,10 @@ roles and `assets/home.css` carrying the front page's own layout. The course pag
 loaded by any page**; they are left in the repo but nothing reads them. `assets/palette.js`
 is still the archived Pollen engine behind `_indexarchive.html`.
 
-**Secondary pages share the front page's design.** `about.html`, `talks.html` and the three
-course pages carry the same TopBar (the name is a link back here, the current page's nav
-item is marked), one readable column on the plain ground, the same colophon, and the
-pinned theme dock. Their layout rules are at the end of `assets/home.css`
-("Secondary pages"). About and Talks are copied verbatim from `ronbronson.design`'s pages
-of the same name, so the nav keeps visitors on this site; edit them here, and remember
-`.design` still has its own copies.
+**This is a single page that sends people to the other sites.** The TopBar links to
+sites (Blog, .design, .dev), never to individual pages on them, and there are no About or
+Talks pages here. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
+page instead of a 404; add any page you drop there.
 
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
 (UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
