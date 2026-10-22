@@ -17,36 +17,11 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
-<link rel="stylesheet" href="assets/front.css" />
-<style>
-  /* Course pages: one column, no rail. Base look comes from front.css.
-     All copy on this page is Ron's; edit words only when he supplies new ones. */
-  .cols--one { grid-template-columns: minmax(0, 1fr); }
-  .banner__k { display: block; margin: 0 0 8px; font-family: var(--std); font-weight: 500; font-size: 13px; letter-spacing: .11em; text-transform: uppercase; color: var(--ink-2); }
-  .banner__k a { text-decoration: none; }
-  .facts { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; font-size: clamp(15px, 1.1vw, 17px); }
-  .facts dt { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding-top: 3px; }
-  .facts dd { margin: 0; }
-  .blurb ul, .blurb ol { max-width: 66ch; font-size: clamp(16px, 1.2vw, 18px); line-height: 1.55; }
-  .blurb li { margin-bottom: .5em; }
-  .blurb cite { font-style: italic; }
-  /* numbered panels: how the live project runs */
-  .panels { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2px; background: var(--ink); margin-top: 14px; }
-  .panel { background: var(--panel); padding: 14px 16px; }
-  .panel__t { margin: 0 0 10px; font-family: var(--std); font-weight: 500; font-size: clamp(16px, 1.4vw, 20px); line-height: 1.15; }
-  .panel__n { display: inline-block; margin-right: 6px; font-family: var(--ui); font-size: 12px; letter-spacing: .08em; color: var(--ink-2); }
-  .panel p, .panel ul, .panel ol { margin: 0; font-size: 15px; line-height: 1.5; }
-  .panel p + p { margin-top: .6em; }
-  /* week rows: number, title, then the two tracks */
-  .weeks { margin: 14px 0 0; padding: 0; list-style: none; }
-  .weeks li { display: grid; grid-template-columns: 3ch 1fr; gap: 2px 14px; padding: 8px 0; border-bottom: 1px dashed var(--rule); font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; }
-  .weeks li:last-child { border-bottom: 0; }
-  .weeks b { font-family: var(--ui); font-weight: 500; font-size: 12px; letter-spacing: .08em; color: var(--ink-2); padding-top: 3px; }
-  .weeks i { grid-column: 2; font-style: normal; font-size: 14px; color: var(--ink-2); }
-  .weeks i em { display: inline-block; min-width: 3.2em; font-family: var(--ui); font-style: normal; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-</style>
+<link rel="stylesheet" href="assets/faces.css" />
+<link rel="stylesheet" href="assets/core.css" />
+<script src="assets/palette-masthead.js"></script>
 </head>
-<body>
+<body class="site--masthead">
 <div class="shell">
 
   <header class="banner">
