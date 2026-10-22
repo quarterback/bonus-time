@@ -29,8 +29,15 @@ Page order, top to bottom (`assets/home.css` carries the layout; PR #26):
 4. **Rail** — `.hx-rail`: `Let's Talk About`, Reading, Watching, Favorites, Links.
 5. **Main** — `.hx-main`: `Practice` (the one place titles and employers appear),
    Teaching, Elsewhere, Design as Repair, Now Playing.
-6. **Ron's Top 8** — photos, uncaptioned, full width.
-7. **Footer** — the Send a message button.
+6. **Colophon, with Digressions** — `.hx-colo`, the same colophon as `.design` and
+   `.dev`: small, Azeret Mono (self-hosted, `assets/fonts/azeret-mono-variable.woff2`;
+   masthead's own `--mono` slot is Pangram Sans, which is not a monospace), with one
+   digression picked at random per load. The `DIGRESSIONS` list is copied from
+   `2026-site/index.html`; keep the two in step.
+
+Ron's Top 8 is gone (a previous idea) and so is the name + Send a message footer bar.
+The theme dock is pinned bottom-right (`palette-dock--fixed`, added in
+`assets/palette-masthead.js`), as on `.design`.
 
 An earlier draft of this list named a `Current lines of inquiry` module (`.inq`) and
 `A critical practice of service design`. Neither has ever existed in `index.html` and

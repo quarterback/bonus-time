@@ -92,3 +92,21 @@ Corrections during the run, in order: **"this did not update the new design, you
 **Should not be delegated to an agent at all:** which design is shipping, and whether the biography is true.
 
 **Signal that the change worked:** #26 merges with copy in it, and Ron reads `Practice` without correcting a fact.
+
+---
+
+## Follow-up: colophon, theme dock, Top 8 (after #28 merged)
+
+**Instruction given (actual wording):** "why did you break my design? masthead doesn't ahve the same colophon style as the .design page anymore and it used to, you put some generic copyright -- a thing i never had -- and a mail thing at the footer whichi i did not do either!" · "why is the theme button hidden all th way down there?" · "get rid of the top 8, that was from a previous idea, spike that section." · "No the one on design is randomized and i want the same thing on masthead JUST LIKE IT WAS BEFORE" · "dev also has one. do not change the design of it, keep it styled similarly" · "it's not meant to be big, it's meant to be small lIKE A COLOPHON" · "ADD A MONOSPACE TO KEEP IT CONSISTENT WHY DO I HAVE TO SPELL THIS OUT"
+
+**Where the footer came from:** `git log -S'hx-foot'` names `46ef578`, the #26 redesign. The footer line is byte-identical before and after this branch's commits. It was live, so it was fixed regardless.
+
+**Why the dock sat at the bottom:** both palette engines append the dock to the end of `<body>`. `.design`'s old `site.css` pins `.palette-dock` with `position: fixed`; the shared `core.css` moved that into a `.palette-dock--fixed` modifier and nothing added it. One class in `assets/palette-masthead.js`.
+
+**What changed:** Top 8 section and its CSS removed; the name + Send a message bar replaced by the `.design` colophon (heading, rotating digression with `.design`'s own list verbatim, last updated, built with, fonts); dock pinned; colophon set in Azeret Mono, copied from `2026-site`, at `.design`'s measured live values (heading 11px, weight 600, uppercase, 1.54px tracking; lines 12px, weight 500). `.dev`'s colophon was read and not touched.
+
+**Judgment calls:** "Built hastily with" drops Vercel and Font Awesome from `.design`'s line, because masthead's host is unverified from here and it loads no Font Awesome. The Good Internetting webring on `.design` was not added: joining a ring is a choice Ron did not make for this site. The digression line takes the colophon's ink-soft colour; `.design`'s is rust (rgb 178, 60, 0) from its own palette, and masthead's engine defines no `--digression` role.
+
+**Deviation, root cause:** the first colophon attempt took `core.css`'s `.colophon` styles on trust. On masthead, block-layer heading rules outrank `.colophon h2`, and `--mono` is not a monospace, so the heading rendered at 32px in the display face. It took three messages from Ron. The check that found it, measuring computed styles on live `.design` against the draft, should have come first.
+
+**Also:** fast-forwarding PR #26's branch recreated `claude/masthead-front-page` after it had been deleted on merge. It points at an already-merged commit. Delete it at will.
