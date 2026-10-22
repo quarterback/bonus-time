@@ -28,7 +28,8 @@ Page order, top to bottom (`assets/home.css` carries the layout; PR #26):
 3. **Strip** — `.hx-strip`, Last played from last.fm.
 4. **Rail** — `.hx-rail`: `Let's Talk About`, Reading, Watching, Favorites, Links.
 5. **Main** — `.hx-main`: `Practice` (the one place titles and employers appear),
-   Teaching, Elsewhere, Design as Repair, Now Playing.
+   Teaching, Design as Repair, Now Playing. (Elsewhere was removed at Ron's request;
+   the TopBar carries the onward links.)
 6. **Colophon, with Digressions** — `.hx-colo`, the same colophon as `.design` and
    `.dev`: small, Azeret Mono (self-hosted, `assets/fonts/azeret-mono-variable.woff2`;
    masthead's own `--mono` slot is Pangram Sans, which is not a monospace), with one
