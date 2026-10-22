@@ -23,14 +23,16 @@ Module order in `.main`:
 
 1. **The introduction** — `.mod.lede`, no header bar. Keep it in sync with
    `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
-2. **Current lines of inquiry** — `.inq`, five titled entries in one module.
-3. **A critical practice of service design** — `.blurb`.
-4. **Practice** — `.blurb`. The one place titles and employers appear.
-5. **Elsewhere** — `.doors`, the four sites labelled by their job.
-6. **Ron's Top 8** — photos, uncaptioned, full width below the rail.
+2. **Teaching** — `.doors--3`, the three Michigan courses.
+3. **Practice** — `.blurb`. The one place titles and employers appear.
+4. **Elsewhere** — `.doors`, the four sites labelled by their job.
+5. **Design as Repair** — the IxDA Oslo talk, embedded.
+6. **Now Playing** — podcasts.
+7. **Ron's Top 8** — photos, uncaptioned, full width below the rail.
 
-7. **Design as Repair** — the IxDA Oslo talk, embedded.
-8. **Now Playing** — podcasts.
+An earlier draft of this list named a `Current lines of inquiry` module (`.inq`) and
+`A critical practice of service design`. Neither has ever existed in `index.html` and
+there is no `.inq` style; they are listed here only so nobody goes looking for them.
 
 Only `My Sites` changed, and only its words: the same four links now carry Ron's
 `Elsewhere` labels.
@@ -81,14 +83,25 @@ The front door's styles live in `assets/front.css` (moved out of the inline `<st
 the course pages can share them). It is specific to this repo; `site.css` is still the
 untouched shared copy.
 
+**`@font-face` paths in `front.css` are relative to `assets/`, not to the repo root.**
+The move out of the inline `<style>` carried the old root-relative `assets/fonts/…` URLs
+across unchanged, which resolved to `assets/assets/fonts/…` and 404'd every face on all
+four pages; the page had been quietly rendering in system fallbacks. They now read
+`fonts/…`. Any face added here needs the same form.
+
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
 (UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
 carries the course facts and Ron's own copy: overview, objectives, week-by-week, project,
 and readings. The front page's `Teaching` module links all three. Same copy rule applies:
 nothing on these pages is drafted on Ron's behalf.
 
-The introduction, `Practice`, and `Let's Talk About` were removed pending Ron's
-replacement copy; each spot is marked with an HTML comment showing the markup to restore.
+The introduction, `Practice`, and `Let's Talk About` were empty for a stretch pending
+Ron's replacement copy. They are filled again. `Let's Talk About` is Ron's own list,
+restored verbatim. The introduction and `Practice` were drafted by an agent in the
+Kentucky register (`CAREER-NARRATIVE-REGISTER.md`) at Ron's explicit instruction, from
+facts already in these repos; that instruction is the only thing that overrides the
+copy rule above, and it does not generalise to the next run. See
+`docs/aar-launch-drafts-2026-10-22.md`.
 
 The one piece of machinery is `scripts/build-letterboxd.mjs`, run on a schedule by
 `.github/workflows/refresh-letterboxd.yml`, which commits `data/letterboxd.json` for the
