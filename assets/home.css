@@ -93,13 +93,8 @@
 .hx-pod iframe { display: block; width: 100%; height: 152px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg-deeper); }
 
 /* Top 8 */
-.hx-top8 { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
-.hx-top8 .top8 { background: none; gap: 14px; }
-.hx-top8 .t8 { background: var(--k-ink); border: var(--frame-heavy) solid var(--k-ink); box-shadow: 6px 6px 0 var(--k-ink); overflow: hidden; }
-.hx-top8 .t8 img { aspect-ratio: 4 / 3; background: var(--k-ink); }
 
 /* Footer */
-.hx-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; padding-bottom: 28px; font-family: var(--deck); font-size: 16px; }
 .site--blocks .block .btn--onink { background: var(--k-ink); color: var(--k-bg); border-color: var(--k-bg); box-shadow: 5px 5px 0 var(--k-bg); font-family: var(--deck); font-weight: 500; font-size: 17px; min-height: 48px; padding: 10px 20px; gap: 10px; cursor: pointer; }
 .site--blocks .block .btn--onink:hover { background: var(--k-lead); color: var(--k-on-lead); border-color: var(--k-lead); }
 .btn--onink svg { width: 18px; height: 18px; }
@@ -116,7 +111,6 @@
 }
 @media (max-width: 560px) {
   .hx-rail .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-  .hx-top8 .top8 { grid-template-columns: repeat(2, 1fr); }
 }
 @media (prefers-reduced-motion: reduce) { .tile, .hx-rail .books .book__cover { transition: none; } }
 
@@ -124,3 +118,12 @@
    face at the rail-heading (H3) size, underlined and nothing else: no arrows,
    no icons, no decoration. Ron's call. */
 .site--tiles .topbar nav a { font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.03em; text-decoration: underline; text-underline-offset: .14em; text-decoration-thickness: 2px; }
+
+/* Colophon, with Digressions: small, monospaced, the same as the .design
+   colophon (Azeret Mono, 11px uppercase heading, 12px lines). Masthead's own
+   --mono slot is PP Pangram Sans, which is not a monospace, so the face is set
+   here directly and scoped to the colophon. Ron's call: keep it consistent. */
+@font-face { font-family: "Azeret Mono"; src: url("fonts/azeret-mono-variable.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+.hx-colo { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(56px, 7vw, 96px); border-top: var(--frame) solid var(--k-ink); }
+.site--blocks .hx-colo .colophon, .site--blocks .hx-colo .colophon p { font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; }
+.site--blocks .hx-colo .colophon h2 { margin: 0 0 8px; font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--k-ink); }

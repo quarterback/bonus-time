@@ -28,9 +28,17 @@ Page order, top to bottom (`assets/home.css` carries the layout; PR #26):
 3. **Strip** — `.hx-strip`, Last played from last.fm.
 4. **Rail** — `.hx-rail`: `Let's Talk About`, Reading, Watching, Favorites, Links.
 5. **Main** — `.hx-main`: `Practice` (the one place titles and employers appear),
-   Teaching, Elsewhere, Design as Repair, Now Playing.
-6. **Ron's Top 8** — photos, uncaptioned, full width.
-7. **Footer** — the Send a message button.
+   Teaching, Design as Repair, Now Playing. (Elsewhere was removed at Ron's request;
+   the TopBar carries the onward links.)
+6. **Colophon, with Digressions** — `.hx-colo`, the same colophon as `.design` and
+   `.dev`: small, Azeret Mono (self-hosted, `assets/fonts/azeret-mono-variable.woff2`;
+   masthead's own `--mono` slot is Pangram Sans, which is not a monospace), with one
+   digression picked at random per load. The `DIGRESSIONS` list is copied from
+   `2026-site/index.html`; keep the two in step.
+
+Ron's Top 8 is gone (a previous idea) and so is the name + Send a message footer bar.
+The theme dock is pinned bottom-right (`palette-dock--fixed`, added in
+`assets/palette-masthead.js`), as on `.design`.
 
 An earlier draft of this list named a `Current lines of inquiry` module (`.inq`) and
 `A critical practice of service design`. Neither has ever existed in `index.html` and
@@ -88,6 +96,11 @@ roles and `assets/home.css` carrying the front page's own layout. The course pag
 `faces.css` + `core.css` only. **`assets/front.css` and `assets/site.css` are no longer
 loaded by any page**; they are left in the repo but nothing reads them. `assets/palette.js`
 is still the archived Pollen engine behind `_indexarchive.html`.
+
+**This is a single page that sends people to the other sites.** The TopBar links to
+sites (Blog, .design, .dev), never to individual pages on them, and there are no About or
+Talks pages here. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
+page instead of a 404; add any page you drop there.
 
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`
 (UT 402 / URP 610, Fall 2026), and `service-design.html` (UT 360, Winter 2026). Each
