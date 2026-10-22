@@ -1,0 +1,120 @@
+/* masthead.ronbronson.com front page: intro hero, rail and tiles.
+   Built on core.css blocks. Sits after core.css. The tile, shelf and
+   hero components match 2026-site/assets/home.css and are candidates
+   for the shared layer. */
+
+/* No rules between blocks on this page; colour and space do the separating. */
+.site--tiles .block + .block::before { content: none; }
+.site--tiles .wrap { max-width: 1280px; }
+.site--tiles .wrap--blocks { padding-bottom: 0; }
+.site--tiles .block a, .site--tiles .block button { text-decoration: none; }
+
+.hx-h { margin: 0 0 20px; font-family: var(--display); font-weight: 900; font-size: clamp(30px, 3.2vw, 44px); line-height: .95; letter-spacing: -.055em; color: var(--ink); }
+.hx-h3 { margin: 0 0 12px; font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; letter-spacing: -.03em; color: var(--ink); }
+
+/* Hero: the introduction and the portrait */
+.hx { padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(48px, 6vw, 88px); }
+.hx__grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: clamp(32px, 6vw, 96px); align-items: center; }
+.hx__title { margin: 0 0 20px; font-family: var(--display); font-weight: 900; line-height: .92; letter-spacing: -.055em; font-size: clamp(44px, 5.6vw, 80px); color: var(--ink); }
+.hx__lead { margin: 0 0 28px; max-width: 26em; font-family: var(--serif); font-weight: 600; font-size: clamp(22px, 2.2vw, 32px); line-height: 1.2; letter-spacing: -.01em; color: var(--ink); }
+.hx__photo { display: block; width: 100%; max-width: 380px; justify-self: end; aspect-ratio: 4 / 5; object-fit: cover; border: var(--frame-heavy) solid var(--k-ink); box-shadow: 10px 10px 0 var(--k-ink); background: var(--k-bg-deeper); }
+.hx__cta { display: flex; flex-wrap: wrap; gap: 14px; }
+/* Coral carries large type only (DDR-013), so the primary button is ink filled. */
+.btn--lead, .site--blocks .block .btn--lead { background: var(--k-ink); color: var(--k-bg); border-color: var(--k-ink); box-shadow: 5px 5px 0 var(--k-lead); font-family: var(--deck); font-weight: 500; font-size: 18px; min-height: 52px; padding: 12px 24px; gap: 10px; }
+.btn--ghost, .site--blocks .block .btn--ghost { background: var(--k-bg); color: var(--k-ink); border-color: var(--k-ink); box-shadow: 5px 5px 0 var(--k-ink); font-family: var(--deck); font-weight: 500; font-size: 18px; min-height: 52px; padding: 12px 24px; }
+.btn--lead svg { width: 18px; height: 18px; }
+.site--blocks .block .btn--lead:hover { background: var(--k-bg); color: var(--k-ink); }
+.site--blocks .block .btn--ghost:hover { background: var(--k-ink); color: var(--k-bg); }
+.site--blocks .topbar .btn-icon { display: inline-flex; align-items: center; justify-content: center; width: 48px; height: 48px; padding: 0; background: none; border: var(--frame) solid var(--k-bg); color: var(--k-bg); cursor: pointer; }
+.site--blocks .topbar .btn-icon:hover { background: var(--k-lead); color: var(--k-on-lead); border-color: var(--k-lead); }
+
+/* Strip: last played, under the hero */
+.hx-strip { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 32px; padding-top: 14px; padding-bottom: 14px; font-family: var(--deck); font-weight: 500; font-size: 16px; }
+.hx-strip .np { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; font-family: var(--deck); font-size: 16px; }
+.hx-strip .np__label, .hx-strip .np__track, .hx-strip .np__artist { display: inline; margin: 0; font-family: var(--deck); font-size: 16px; letter-spacing: 0; text-transform: none; color: var(--k-on-deep); }
+.hx-strip .np__track { font-weight: 700; }
+.hx-strip .np__artist::before { content: "\2014\00a0"; }
+.hx-strip .np__track:empty + .np__artist::before { content: none; }
+.hx-strip nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.site--blocks .block--deep.hx-strip a:not(.x):not(.y):not(.z) { color: var(--k-on-deep); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.site--blocks .block--deep.hx-strip a:not(.x):not(.y):not(.z):hover { background: var(--k-on-deep); color: var(--k-deep); }
+.hx { padding-bottom: clamp(32px, 4vw, 56px); }
+
+/* Rail and main */
+.hx-cols { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 0; padding-top: 0; padding-bottom: 0; }
+.hx-cols > * { min-width: 0; }
+.hx-rail { --bg: var(--k-bg-deeper); --ink: var(--k-ink); --ink-soft: var(--k-ink); --accent: var(--k-ink); background: var(--k-bg-deeper); color: var(--k-ink); padding: 36px clamp(20px, 2.6vw, 36px) 48px; display: grid; gap: 32px; align-content: start; }
+.hx-main { padding: 36px 0 48px clamp(28px, 4vw, 56px); display: grid; gap: 44px; align-content: start; }
+
+/* Listening */
+.hx-rail .np { font-family: var(--deck); font-size: 16px; }
+.hx-rail .np__label { font-family: var(--deck); font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); margin-bottom: 6px; }
+.hx-rail .np__track { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.03em; line-height: 1.1; }
+.hx-rail .np__artist { color: var(--k-ink); margin-top: 4px; }
+.site--blocks .block .hx-rail .np a:hover { background: none; color: var(--k-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+/* Shelves: Reading and Watching reuse the .books markup the scripts emit */
+.hx-rail .books { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.hx-rail .books .book__cover { border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); transition: transform .12s ease; }
+.hx-rail .books .book__cover:hover { transform: translateY(-3px); }
+.hx-rail .books .book__cover-fallback { font-family: var(--display); font-weight: 900; font-size: 36px; letter-spacing: -.05em; color: var(--k-ink); }
+
+/* Favorites */
+.hx-rail .favs { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 17px; }
+.hx-rail .favs dt { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); align-self: baseline; }
+.hx-rail .favs dd { margin: 0; padding: 0; border: 0; font-family: var(--deck); font-weight: 500; font-size: 17px; letter-spacing: 0; }
+
+/* Links */
+.hx-rail .out { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hx-rail .out li { margin: 0; }
+.site--blocks .block .hx-rail .out a:not(.x):not(.y):not(.z) { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-decoration: none; }
+.site--blocks .block .hx-rail .out a:not(.x):not(.y):not(.z):hover { background: var(--k-ink); color: var(--k-bg); }
+.hx-rail .out__mark { width: 15px; height: 15px; fill: currentColor; }
+
+/* Tiles */
+.tg { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.site--blocks .block a.tile:not(.x):not(.y):not(.z), .tile { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 120px; padding: 18px 20px 20px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); text-decoration: none; transition: transform .12s ease; }
+.tile .lab { min-height: 1.3em; font-family: var(--deck); font-weight: 500; font-size: 15px; line-height: 1.3; color: var(--ink-soft); }
+.tile b { font-family: var(--display); font-weight: 800; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.15; letter-spacing: -.025em; }
+.site--blocks .block a.tile:not(.x):not(.y):not(.z):hover { transform: translateY(-3px); background: var(--k-lead); color: var(--k-on-lead); text-decoration: none; }
+.site--blocks .block a.tile:not(.x):not(.y):not(.z):hover .lab { color: var(--k-on-lead); }
+
+/* Players */
+.hx-vid { position: relative; aspect-ratio: 16 / 9; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-ink); }
+.hx-vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.hx-cap { margin: 10px 0 0; font-family: var(--deck); font-weight: 500; font-size: 16px; }
+.site--blocks .block .hx-cap a:not(.x):not(.y):not(.z) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--k-accent); }
+.hx-pods { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.hx-pod .hx-cap { margin: 0 0 10px; }
+.hx-pod iframe { display: block; width: 100%; height: 152px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg-deeper); }
+
+/* Top 8 */
+.hx-top8 { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
+.hx-top8 .top8 { background: none; gap: 14px; }
+.hx-top8 .t8 { background: var(--k-ink); border: var(--frame-heavy) solid var(--k-ink); box-shadow: 6px 6px 0 var(--k-ink); overflow: hidden; }
+.hx-top8 .t8 img { aspect-ratio: 4 / 3; background: var(--k-ink); }
+
+/* Footer */
+.hx-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; padding-top: 28px; padding-bottom: 28px; font-family: var(--deck); font-size: 16px; }
+.site--blocks .block .btn--onink { background: var(--k-ink); color: var(--k-bg); border-color: var(--k-bg); box-shadow: 5px 5px 0 var(--k-bg); font-family: var(--deck); font-weight: 500; font-size: 17px; min-height: 48px; padding: 10px 20px; gap: 10px; cursor: pointer; }
+.site--blocks .block .btn--onink:hover { background: var(--k-lead); color: var(--k-on-lead); border-color: var(--k-lead); }
+.btn--onink svg { width: 18px; height: 18px; }
+
+@media (max-width: 900px) {
+  .hx__grid { grid-template-columns: 1fr; }
+  .hx__photo { justify-self: start; max-width: 300px; }
+  .hx-cols { grid-template-columns: 1fr; }
+  .hx-rail { order: 2; margin: 0 calc(-1 * clamp(0px, 2vw, 24px)); }
+  .hx-main { order: 1; padding-left: 0; }
+  .hx-rail .books { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .hx-pods { grid-template-columns: 1fr; }
+  .tile { min-height: 0; }
+}
+@media (max-width: 560px) {
+  .hx-rail .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .hx-top8 .top8 { grid-template-columns: repeat(2, 1fr); }
+}
+@media (prefers-reduced-motion: reduce) { .tile, .hx-rail .books .book__cover { transition: none; } }
+
+/* Labels and navigation use the deck face on this page. */
+.site--tiles .topbar nav, .site--tiles .topbar nav a { font-family: var(--deck); }
