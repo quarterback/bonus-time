@@ -70,3 +70,5 @@ Rendered at 1440px and on an emulated iPhone 13: one `h1`, zero arrows, theme do
 **What changed:** a "Writing on coaching" list at the end of the story: title linked, month and year after it, newest first. Titles are as the blog publishes them (so "On Tennis Rpo" keeps the blog's casing). "Delivery Is a Visibility Problem" is in the list even though the story already links it inline, because it is about coaching.
 
 **Not checked:** writing outside these three sites (old platforms, guest posts). If Ron has coaching writing elsewhere, it needs its own list of links.
+
+**Revised:** "I don't want the fee to do anything … I want you to find the fucking posts and I want you to put a few posts at the bottom of the fucking page". The list was static links, not a feed, but fourteen is not "a few". Cut to five, the posts most about coaching itself: On Developing Leaders, On Adapting My Coaching Philosophy, Why I Keep Coaching, Motivating (Or Setting Realistic Goals When Your Team Loses a Lot), Naming the courts. Each carries its title, date and the post's own opening sentence, verbatim (one keeps the post's typo, "accustoming").
