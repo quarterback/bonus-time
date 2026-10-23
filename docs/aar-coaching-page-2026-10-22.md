@@ -72,3 +72,5 @@ Rendered at 1440px and on an emulated iPhone 13: one `h1`, zero arrows, theme do
 **Not checked:** writing outside these three sites (old platforms, guest posts). If Ron has coaching writing elsewhere, it needs its own list of links.
 
 **Revised:** "I don't want the fee to do anything … I want you to find the fucking posts and I want you to put a few posts at the bottom of the fucking page". The list was static links, not a feed, but fourteen is not "a few". Cut to five, the posts most about coaching itself: On Developing Leaders, On Adapting My Coaching Philosophy, Why I Keep Coaching, Motivating (Or Setting Realistic Goals When Your Team Loses a Lot), Naming the courts. Each carries its title, date and the post's own opening sentence, verbatim (one keeps the post's typo, "accustoming").
+
+**Revised again:** "replace one of the middle pieces with an article about revamping the tennis format or oregontennis.org". Motivating (Or Setting Realistic Goals When Your Team Loses a Lot) is out; I Built a Power Ranking for Oregon High School Tennis (February 2026) is in, with its opening line verbatim: "I’ve owned oregontennis.org for five years."
