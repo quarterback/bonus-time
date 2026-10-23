@@ -58,3 +58,15 @@ Rendered at 1440px and on an emulated iPhone 13: one `h1`, zero arrows, theme do
 **Judgment:** the page is laid out for Ron to narrate, so it carries only his existing words, in story order; the one line of new copy from the last round ("128 varsity matches, one mark each.") is gone with the chart.
 
 **Deviation:** two rounds of numbers treatments went to Ron before he said what he wanted. The brief was a home for his coaching, and the first build turned the record into a dashboard nobody had asked for; the alternatives stayed inside the same assumption.
+
+---
+
+## Follow-up: Writing on coaching
+
+**Instruction (actual wording):** "I've got a bunch of blog posts in other writing I've done over the years about coaching that could be worth excavating and sharing at the bottom of this page … is that something that could be added to this page"
+
+**How the posts were found:** the three feeds `.design` already reads (blog.ronbronson.com, makingpublicwork.com, the game-design leaflet) carry only recent posts, so the full blog.ronbronson.com sitemap (112 posts) was read post by post and scored for coaching language. Fourteen are about coaching, June 2015 to October 2026. Making Public Work has nothing on coaching; the game-design blog's tennis posts are about the simulator, not coaching, and are left out.
+
+**What changed:** a "Writing on coaching" list at the end of the story: title linked, month and year after it, newest first. Titles are as the blog publishes them (so "On Tennis Rpo" keeps the blog's casing). "Delivery Is a Visibility Problem" is in the list even though the story already links it inline, because it is about coaching.
+
+**Not checked:** writing outside these three sites (old platforms, guest posts). If Ron has coaching writing elsewhere, it needs its own list of links.
