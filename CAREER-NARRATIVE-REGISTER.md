@@ -19,6 +19,8 @@ The best commercial technology writing adds what the athletic register often lea
 
 The target style is therefore *a generous institutional record with technical precision*: someone held responsibility for an identifiable part of an organization, did consequential work, and contributed to outcomes worth remembering.
 
+**Executive and delivery careers:** Section 13 translates design-, IT-, and communications-coded jobs into language of operational authority, technical leadership, and program delivery. Start there when an employment title understates the responsibility.
+
 The narrative doesn't need to defend the importance of the field, explain someone's career philosophy, or apologize for the fact that work was collaborative.
 
 ---
@@ -490,3 +492,260 @@ A full biography may use all four layers. A 55-word introduction can include jus
 - [Faris Aziz — services](https://www.faziz-dev.com/services) (separates engagement descriptions from professional history)
 
 **Addendum rule:** More language should make a person's demonstrated work easier to understand, not crowd the biography with fashionable terminology. Preserve the confidence of the Kentucky register, the specificity of technical achievement, and the portability of a well-prepared professional introduction.
+
+---
+
+## 12. Addendum: the first-person developer and independent-builder register (22 October 2026)
+
+**This section extends Sections 1–11.** The Kentucky register remains the standard for generous career credit; the technical-company and SaaS sections remain the standard for describing scope, decisions, shipped work, and adoption. This addition addresses a different writing situation: an established practitioner introducing their *current practice* in the first person, particularly when that practice combines software, design, research, publishing, teaching, and community-building.
+
+It is a content and narrative convention, not a visual design specification or a demand to adopt an engineering job title. It is useful for personal About pages, maker profiles, open-source contributor introductions, project biographies, and other first-person descriptions. Third-person staff biographies and portable speaker introductions still follow the existing guidance.
+
+### What the developer biographies contribute
+
+In a staff biography, **the principal unit is an appointment and its record**: remit, team, decisions, accomplishments, and preceding positions. In a first-person builder biography, **the principal unit is an active practice**: what someone makes, which problems they keep returning to, what they maintain or contribute to, and the communities they help sustain. The same earlier accomplishments remain available in both accounts.
+
+Several real examples demonstrate different ways to do this:
+
+| Practitioner | Distinctive editorial convention | What to borrow |
+| --- | --- | --- |
+| [Lea Verou](https://verou.me/about/) | Describes an expansive practice through tools, products, standards, research, and independently recognizable accomplishments. | Give breadth substance through named implementations, roles, and results. |
+| [Chris Coyier](https://chriscoyier.net/bio/) | Treats software products, publishing, and developer communities as parts of one professional practice. | Community-building can be a core output, rather than a side activity. |
+| [Anthony Fu](https://antfu.me/Anthony) | Separates tools created from projects contributed to or maintained. | Use exact project-relationship verbs instead of a vague portfolio list. |
+| [Maggie Appleton](https://maggieappleton.com/about) | Makes interdisciplinary interests legible without forcing them into one conventional occupation. | Interests can explain the continuity among unlike projects. |
+| [Jeremy Keith](https://adactio.com/about/) | Includes sustained writing, community projects, events, and technical practice in the same account. | Long-running stewardship and convening count as work. |
+| [Ahmad Shadeed](https://ishadeed.com/about/) | Describes design, coding, technical writing, and teaching through concrete outputs. | A design-oriented maker need not choose between craft and explanation. |
+| [Paco Coursey](https://paco.me/) and [Emil Kowalski](https://emilkowal.ski/) | Put current craft and distinctive interface work near the center of brief introductions. | Short bios may establish a sharply defined current practice before any history. |
+
+These are conventions to study, not titles or claims to borrow verbatim. A person who builds software need not claim to have spent their career as an engineer; a leader who returns to hands-on work need not diminish earlier responsibility.
+
+### Five editorial moves
+
+**1. Establish current activity before explaining the career.** Use present-tense verbs attached to real objects: *I build [tool]; I maintain [library]; I write about [specific question]; I organize [community or event].* A recent project or a durable area of practice can introduce the person more effectively than an exhaustive list of previous employers. This is a present-day snapshot, not a chronological autobiography.
+
+**2. Use interests to connect the work, not to decorate the writer.** An interest is useful when it explains the selection of projects or the kinds of problems the person repeatedly investigates. “I am interested in how people recover from errors in public systems” is more informative when followed by a tool, research effort, or relevant decision. Avoid replacing the work with declarations of passion, personality, or philosophy. The existing guide's rule against opening with abstract beliefs remains intact.
+
+**3. Name the relationship to every project.** *Created, co-created, designed, developed, shipped, maintains, contributes to, experiments with, formerly maintained,* and *led the team behind* make different claims. Use the one that fits. A prototype, an experimental branch, a maintained open-source package, an adopted service, and a company product need not be presented as equivalent accomplishments. Describe what is currently usable and what is still being tested without apologetic qualification.
+
+**4. Give communities and shared resources maker-level credit.** Creating or directing a conference, founding a recurring gathering, running a publication, maintaining shared documentation, and organizing a contributor network are things someone builds and operates. Name the thing, the person's responsibility, and what it enabled. Mere membership and organizational leadership should be distinguished. This extends the Kentucky guide's treatment of operational work and the technical-company guide's recognition of capabilities that enable others.
+
+**5. Bring earlier authority into the snapshot selectively.** A significant prior appointment, shipped product, founding role, or team outcome can explain the scale and experience behind current work. It does not need to trigger a march through every job. Preserve the full career record elsewhere and draw from it when the earlier achievement clarifies the present practice. Never rewrite a former director as a perpetual junior practitioner simply because the person now builds independent tools.
+
+### Language for work that has several forms
+
+| Relationship | Useful construction | What it actually claims |
+| --- | --- | --- |
+| Original creator | “I built…” / “I started…” | Initiated and produced a specific artifact or effort. |
+| Collaborative creator | “I co-created…” / “We built…” | Shared authorship of something identifiable. |
+| Product owner | “I developed and shipped…” / “I led the release of…” | Held responsibility for a functioning release and decisions around it. |
+| Maintainer | “I maintain…” | Continued stewardship of an existing project or resource. |
+| Contributor | “I contribute to…” | Participates in another project's work; does not imply founding or sole ownership. |
+| Experimenter | “I'm experimenting with…” | Investigation, prototype, or research still in progress; not necessarily a public launch. |
+| Community builder | “I founded…” / “I organize…” / “I run…” | Created or operates a continuing gathering, publication, or network. |
+| Organizational leader | “I led [team] responsible for…” | Managed the people and decisions behind an identifiable result. |
+| Teacher or writer | “I teach…” / “I publish…” | Produces instruction or written work; ideally name the subjects and outlets. |
+
+The verbs are evidence-bearing. They should remain specific even in a relaxed first-person voice. Open-source credibility does not require a large commit count or a corporate title, but readers should be able to discover what the project does and what the writer's contribution was.
+
+### An order of attention, not a compulsory outline
+
+A first-person maker biography often works when it addresses these matters in roughly this order: **current practice; one or two named things being built or maintained; the recurring interests that connect them; selectively chosen previous work showing range and responsibility; community, teaching, and writing that extend the practice.** The proportions depend on the reader and purpose. A short developer introduction may need only the first two; a substantial About page can hold all five.
+
+This order differs deliberately from Section 4's reverse-chronological staff biography. Both use the *same underlying record*. The first person chooses a present-tense vantage point; the third person makes the accumulated appointments and outcomes portable for someone else to repeat.
+
+### Two versions of one fictional practice
+
+The examples below are entirely invented. They demonstrate selection and narrative perspective, not an ideal professional identity.
+
+**Third-person professional register:**
+
+> Morgan Vale is an independent product designer and software builder who previously directed digital services at Harbor County. Vale led a team responsible for the county's appointment and records systems and helped launch a shared design library used across four departments. Vale also co-founded the Local Tools gathering and maintains an open-source form-testing utility.
+
+**First-person builder register:**
+
+> I build small tools for people who work with complicated forms and services. Right now I'm maintaining Fieldnote, an open-source form-testing utility, and experimenting with a way to make application requirements easier to inspect. I'm interested in what happens when a process breaks and someone has to work out how to continue. Earlier, I directed digital services at Harbor County, where our team launched a shared design library across four departments. I also co-founded Local Tools, a gathering for people building practical software in their communities.
+
+The second version foregrounds a current practice, uses an interest to make the project selection intelligible, and retains meaningful earlier authority without narrating every career step. Both identify tangible work and use appropriately different forms of credit.
+
+### Boundaries with the existing guide
+
+- **Do not use occupational labels as a substitute for the record.** “Design engineer,” “developer,” “designer who codes,” and “builder” can be accurate where chosen, but projects and responsibilities should give those labels substance.
+- **Do not treat personal projects as hobbies by default.** Independent tools, experiments, publishing, and community work may be central to the practice even when they are unpaid or early-stage.
+- **Do not inflate projects into launches or communities into movements.** State what exists, what is maintained, and who uses or participates in it when known.
+- **Do not make technical work the only legitimate accomplishment.** Product judgment, implementation, maintenance, standards, mentoring, publication, and convening may all produce durable outcomes.
+- **Do not erase the managerial record.** A current maker's biography can retain the scope of teams, budgets, platforms, or programs previously directed.
+- **Do not convert an About biography into a Show HN pitch.** A Show HN submission should explain a specific thing people can try; the biography introduces the person and their broader work. Both benefit from precise authorship and actual artifacts.
+
+**Addendum rule:** The developer register supplies *first-person, present-tense authorship and ongoing stewardship* to the existing Kentucky, technical-company, SaaS, and portable-biography conventions. It changes which part of an accumulated record receives attention first; it does not change the standard for claiming the work.
+
+---
+
+## 13. The executive/operator register: describe responsibility, authority, and delivery (22 October 2026)
+
+**This section is the practical translation tool for careers that were filed under design, IT, content, or communications but involved running programs, directing technology work, making decisions, and leading organizations.** The point is to describe the operating function a person exercised. Historical job titles remain useful context, but the record of responsibility supplies professional standing.
+
+The writing move is simple: **make the object of the sentence the team, program, product, operating function, decision, or portfolio that the person was responsible for.** Put the method and discipline in supporting positions.
+
+A career that crossed several professions can be introduced through a consistent level of responsibility without an elaborate story about why each career transition happened. The unit of accountability—not the oldest or newest occupational label—tells the reader what kind of operator this person has been.
+
+### 13.1. Convert disciplines into functions
+
+| Discipline-centered account | Executive/operator account | What a new reader understands |
+| --- | --- | --- |
+| Led a design team | Built and directed a multidisciplinary delivery organization | Management scope and organizational authority |
+| Introduced a new design practice | Established a new organizational function and its operating capabilities | A first, a new capability, and responsibility for making it work |
+| Worked on user experience | Led modernization of a service, application, or digital product | Program and product outcomes |
+| Facilitated difficult meetings | Resolved competing priorities and drove decisions into execution | Decision-making and operational intervention |
+| Aligned stakeholders | Secured agreement and commitments among teams responsible for delivery | Mobilization across boundaries |
+| Helped teams launch things | Directed initiatives from concept through implementation | Execution and delivery ownership |
+| Supported executive leadership | Carried out strategic assignments for senior executives | Mandate and executive judgment |
+| Worked in content strategy | Directed editorial operations and external communications | Communications leadership |
+| Helped redesign a website | Led digital modernization and repositioned an organization's public presence | Technical and communications scope |
+| Built a small technical prototype | Developed, shipped, and operated a working product | Technical authorship, release, and stewardship |
+| Mentored colleagues | Developed talent and established leadership capacity | Organizational succession and scaling |
+| Organized community events | Founded and operated programs, assembled partners, and brought initiatives into service | Founding and program management |
+
+These are changes in **what the sentence takes responsibility for**. “Worked on” usually introduces a method or activity. “Directed” plus a named program or organization establishes a remit. The verb earns its force through its object and consequence.
+
+### 13.2. The operating verb families
+
+| Responsibility | Verbs | Useful objects |
+| --- | --- | --- |
+| **Direction and decisions** | Determined, set, prioritized, selected, commissioned, approved, authorized, governed, reset | Strategy, priorities, standards, portfolio, roadmap, publication |
+| **Running an organization** | Directed, oversaw, managed, operated, staffed, owned, chaired, allocated | Team, unit, budget, function, delivery operation, portfolio |
+| **Founding and implementation** | Originated, founded, established, stood up, built, implemented, launched, deployed, shipped | Program, capability, practice, service, product, platform |
+| **Recovery and intervention** | Diagnosed, intervened, resolved, unblocked, stabilized, recovered, reorganized, redesigned | Failed process, stalled initiative, delivery problem, decision bottleneck |
+| **Coalition and executive work** | Advised, negotiated, secured, recruited, mobilized, coordinated, brokered | Executive decisions, commitments, resources, partners, leadership teams |
+| **Expansion and continuity** | Hired, developed, promoted, scaled, expanded, trained, delegated, transitioned, institutionalized | People, teams, adoption, practices, successor leadership |
+| **Technical and specialist judgment** | Architected, engineered, evaluated, modeled, assessed, investigated, maintained | Software, data systems, technology options, procurement, implementations |
+| **Editorial authority** | Directed, commissioned, wrote, edited, approved, published, repositioned | Communications operation, publishing program, public narrative, portfolio report |
+
+*Owned*, *directed*, *advised*, *established*, and *contributed* describe different roles in work that is often collective. These distinctions make the account clear without reducing it to an attribution exercise. The Kentucky convention generously credits a leader with the achievements of the unit they served or led; the technical convention names what the practitioner personally built, owned, or shipped.
+
+### 13.3. The transcription table: from how the work felt to what the work was
+
+These examples translate informal, lived descriptions into language recognized in executive, technology, and program-delivery environments. They are illustrative sentence constructions, **not a prescribed biography**.
+
+| What someone might say | Professional language |
+| --- | --- |
+| “I unfucked a lot of meetings.” | Resolved organizational bottlenecks, established clearer decision processes, and moved stalled work into execution. |
+| “I took the time to understand people and got them moving.” | Built the relationships and commitments needed to execute work across organizational boundaries. |
+| “I could get people to do things nobody else could.” | Mobilized cross-functional teams and secured commitments to deliver difficult initiatives. |
+| “They brought me into complicated situations.” | Took responsibility for high-priority strategic assignments requiring independent operational judgment. |
+| “I knew the rules and how to get around obstacles.” | Navigated operating constraints and developed workable paths to implementation. |
+| “I made the call and got things going.” | Set direction, made trade-offs, assigned responsibilities, and directed execution. |
+| “I came up with something, found good people, and let them run it.” | Originated a program, assembled its founding team, established its operating model, and transitioned ownership to new leadership. |
+| “I hired people and helped them find their footing.” | Recruited and developed the team, established new capabilities, and built internal leadership capacity. |
+| “I ran communications in addition to my other responsibilities.” | Held concurrent leadership responsibility for organizational communications, editorial strategy, and publishing operations. |
+| “I approved every post.” | Held final editorial authority across the organization's public publishing program. |
+| “I researched and counted everything the organization had ever delivered.” | Directed a historical portfolio review and classification effort for executive and external reporting. |
+| “I was chief of staff for a parent office with an arcane org chart.” | Held an executive operations assignment serving leadership across a multi-program technology portfolio. |
+| “Agency leaders called when they needed someone to fix things.” | Undertook senior advisory and strategic-delivery assignments for agency executives. |
+| “I made a tool because I wanted it to exist.” | Built and deployed an independent product addressing a recurring technical or operational problem. |
+| “I helped people learn to do ambitious work.” | Developed professional capability, cultivated emerging leaders, and established practices others could carry forward. |
+
+The useful sentence is **verb + responsibility + effect**: “Directed [what] across [which remit], producing [what change].”
+
+An executive introduction can name the responsibility first. The fuller Kentucky biography can carry the person's tenure, the unit's achievements, and their record across successive appointments.
+
+### 13.4. The career-level descriptor is separate from the employment title
+
+A job title records how an employer classified a position. A career-level descriptor says what sort of work someone has been entrusted to do across appointments.
+
+Technology and delivery leadership often occurs in jobs coded as **IT, communications, design, content, program management, and special initiatives**. The professional identity can reflect that collective responsibility directly. The historical titles remain available in the career record.
+
+| Useful professional descriptor | Responsibilities it can cover |
+| --- | --- |
+| **Technology and delivery executive** | Organizational leadership, technology strategy, program execution, implementation, delivery outcomes |
+| **Strategy and operations leader** | Executive priorities, decisions, operating models, cross-team execution |
+| **Program and portfolio leader** | Initiating, operating, recovering, and expanding programs across teams or organizations |
+| **Product and technology leader** | Deciding what to build, directing technical delivery, launching and running products |
+| **Communications and editorial executive** | Publication authority, messaging, public-facing systems, editorial operations |
+| **Founder and independent builder** | Creating products, events, programs, and operating structures from scratch |
+
+These descriptors are **ways to introduce a cumulative professional record**, not replacements for the actual titles used by organizations. A broad career introduction can lead with a function that has been exercised repeatedly and reserve the detailed promotion history for the long account.
+
+### 13.5. Concurrent and less-visible responsibilities deserve their own sentences
+
+An appointment may cover several operating functions: an organization led, a communications channel directed, a digital product modernized, and an executive initiative carried through delivery. All belong in the record even when one formal title sat above them.
+
+**Generic example:**
+
+> Directed a multidisciplinary delivery function and established a specialist capability. Concurrently oversaw editorial operations and the modernization of the organization's public-facing platform. Later served in an executive operations assignment spanning a broader technology portfolio.
+
+The example is deliberately about the functions and their progression in scope. The job history can carry the formal titles, exact dates, and reporting relationships elsewhere. The short introduction should make the level of responsibility understandable before anyone needs an organizational chart.
+
+### 13.6. Claim the scale of the responsibility, including collective results
+
+Kentucky biographies connect assistants and specialists to the achievements of the teams they served. Executive and board biographies similarly communicate the scale of functions, programs, people, and resources associated with a person's leadership.
+
+| Kind of responsibility | Meaningful measure of scale |
+| --- | --- |
+| Led a function | Staff and managers directed; teams supported; specialties founded; organization served |
+| Ran a delivery portfolio | Programs, products, clients, partner organizations, complexity, operational reach |
+| Directed communications | Editorial control; channels; publication volume; public audience; organizational coverage |
+| Led executive reporting | Portfolio size, time span, classifications produced, organizational decisions enabled |
+| Founded an initiative | Participants and collaborators mobilized; programs or products launched; work continued |
+| Built software | Technical scope, capabilities shipped, adoption, repeat use, maintenance obligations |
+| Advised senior leadership | Breadth of assignments, type of judgment, level of decision-maker, organizations involved |
+| Developed people | Hiring, promotion, professional development, new leaders, successor teams |
+
+Use **“under her direction,” “his team delivered,” “with his assistance,” “during her tenure,”** and **“was instrumental in”** where those constructions illuminate an authentic contribution to team accomplishments. This retains the generosity of the Kentucky register.
+
+### 13.7. Apply the same record at different lengths and for different audiences
+
+The portable-bio lesson from Faris Aziz becomes more powerful once the professional account is written at the right level.
+
+- **Short introduction:** Professional standing + one recognizable kind of responsibility + a consequential example or measure.
+- **Medium biography:** Current work, previous authority, and a small number of achievements from distinct phases of the career.
+- **Long biography:** Career stops, overlapping functions, products and programs directed, people developed, team successes, public standing, and earlier specialties.
+- **Assignment page:** Mandate, decisions taken, team or system led, implementation, and resulting capability.
+- **First-person About page:** What the person builds or directs now, with accumulated executive and technical history nearby.
+
+An introduction for a technology conference may give product and technical work more prominence. An introduction for a board, mayor, or institutional executive may name program direction and operating authority first. The underlying work stays consistent; the choice of what to foreground changes.
+
+### 13.8. Six steps to rewrite a raw account
+
+1. **Identify the unit of responsibility.** Team, product, program, portfolio, communications operation, decision, or organizational function.
+2. **Name the authority exercised.** Direct control, independent execution, formal management, founding responsibility, or executive advisory.
+3. **Choose an operating verb.** Directed, established, launched, resolved, scaled, advised, engineered, transitioned.
+4. **Name the change.** A product went live, a program became operational, a decision was reached, a process improved, or a team gained capability.
+5. **Attach meaningful scope.** People, programs, products, audiences, organizations, years, geography, adoption, or output.
+6. **Supply employer and title context when it helps.** The institution explains the setting; the responsibility explains the work.
+
+**Fictional worked example**
+
+Raw: “I kept getting called into weekly product meetings because nobody could make a decision, and I got it moving.”
+
+Operating register: “Brought in to resolve stalled product delivery, Morgan clarified decision rights across engineering and product leadership, reset the release plan, and directed the next launch.”
+
+Kentucky continuation: “During Morgan's tenure, the team introduced two new services and developed three engineers who later moved into leadership roles.”
+
+Startup continuation: “The release reached production, and the team expanded adoption across its customer base.”
+
+The continuation changes with the audience. The account of the person's responsibility does not.
+
+### 13.9. Rules to carry back into the rest of the guide
+
+**Lead with the function exercised.** The type of responsibility matters more than the specialized method.
+
+**Use authority-bearing verbs.** Led, built, directed, owned, established, implemented, resolved, launched, developed, and scaled each make a different kind of professional contribution legible.
+
+**Give concurrent responsibilities room.** The communications director, program leader, product builder, and executive operator can all be the same person at different moments or simultaneously.
+
+**Preserve the early record.** A person who directed products, technology, and communications before joining a prominent institution enters that institution with an already substantial record.
+
+**Use collective credit confidently.** The person's unit, team, organization, and program accomplishments form part of their professional history.
+
+**Keep the biography portable.** The short version conveys standing and memorable scope. The longer version contains the many assignments that demonstrate it.
+
+**Core rule:** The discipline explains *how* someone worked. The executive/operator register explains *what they were trusted to direct, decide, build, change, and deliver*.
+
+This section extends the Kentucky career-credit grammar, technical ownership language, startup product record, first-person builder voice, and Faris press-kit conventions. It adds the responsibility-first translation that was missing.
+
+### Further reading
+
+- [Jodi Leo — Government Service Delivery biography](https://governmentservicedelivery.com/speaker/jodi-leo/) — delivery-executive framing that carries forward earlier design experience.
+- [Michelle Bu — Staff Engineer stories](https://staffeng.com/stories/michelle-bu/) — broad-scope technical responsibility and cross-team executive work.
+- [Stripe — careers](https://stripe.com/jobs) — strategy, operations, communications, and program-management language.
+- [Faris Aziz — press kit](https://www.faziz-dev.com/press-kit) — portable descriptions of a career spanning technical work, leadership, speaking, and independent programs.
