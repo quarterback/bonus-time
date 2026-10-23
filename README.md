@@ -102,11 +102,11 @@ sites (Blog, .design, .dev), never to individual pages on them, and there are no
 Talks pages here. The pages that do live here are masthead's own, with no home elsewhere:
 the three course pages and `coaching.html`.
 
-**`coaching.html` is the Coaching page type:** coral title block, cherry record strip
-(`.co-stats`), split sections of text beside a photo (`.co-split`, `--flip` for the
-photo on the left), then the colophon. Rules are at the end of `assets/home.css`. Its
-copy is Ron's, gathered from his other pages; `docs/aar-coaching-page-2026-10-22.md`
-names the source of every sentence. Linked from the front page's Coaching module. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
+**`coaching.html` is the Story page type:** one narrative column on the plain ground
+(title, lead, prose with photos set into it, one short Honors passage), between the TopBar
+and the colophon, with no sections, figures or charts. Rules are at the end of
+`assets/home.css` (`.story`). The paragraphs are Ron's own wording from his other pages,
+placed for him to rewrite; `docs/aar-coaching-page-2026-10-22.md` names each source. Linked from the front page's Coaching module. Dropped pages 301 to `/` in `vercel.json`, so old links land on the front
 page instead of a 404; add any page you drop there.
 
 **Course pages.** `interaction-design.html` (UT 330, Fall 2026), `public-mechanics.html`

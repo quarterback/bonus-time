@@ -46,3 +46,15 @@ Rendered at 1440px and on an emulated iPhone 13: one `h1`, zero arrows, theme do
 **What changed:** the five bordered stat tiles are gone. The record is a hero figure (91–33–4), a one-line dek ("128 varsity matches, one mark each."), then a unit chart of 128 marks, one per match (filled = win, hollow = loss, dash = tie), with a key that names each count. The four honours follow as big numerals with small captions, no boxes. Marks are laid out on an explicit grid, 4 rows of 32 on wide screens and 8 of 16 below 900px, so every row is full; checked at eight widths from 320 to 1440. `listening.ronbronson.com` is a "Listening" chip in the front page rail's Links list, between Letterboxd and Bluesky.
 
 **Judgment:** loaded the data-visualization guidance first. Part-to-whole with a headline number gave the form: a hero figure plus a unit chart, the Pudding's own idiom. Shape carries win/loss/tie, so meaning never rests on colour; the marks use the block's on-deep ink on deep, the pair DDR-013 already audits for contrast. **One deviation from that guidance:** no per-mark hover. There is no per-match data, so a tooltip could only say "Win" or "Loss"; an `aria-label` sentence gives the totals to screen readers instead. "128" is 91 + 33 + 4, nothing new. The dek is a new line of copy, the only one on the page; it states the chart's encoding.
+
+---
+
+## Follow-up: a narrative page instead
+
+**Instruction (actual wording):** "Awful even worse / Give me 4 ideas I'll reject", then, after four rendered alternatives (a sentence, a box score, a bar with a leaderboard, a ledger): "I hate all of those get rid of it I don't want that at all … I'd rather just opt for more narrative driven single page no sections where I can just show a couple photos and tell a narrative story and maybe office a separate section that lets me narrate with some of the mess some of the honors and awards … accomplishments of my past"
+
+**What changed:** every numbers treatment is gone: the coral title block, the cherry band, the unit chart, the honours numerals and their CSS. `coaching.html` is now a Story page: title, lead, then one prose column with the two photos set into it, and an "Honors" passage that is Ron's own digression line, verbatim ("My career varsity record apparently is 91–33–4. 1 team state championship, 4 District/Regional titles, 5 Conference titles. 4 individual state champions. So far…"). Photos are uncaptioned, in the front page portrait's frame. In-text links are underlined, matching masthead's other links.
+
+**Judgment:** the page is laid out for Ron to narrate, so it carries only his existing words, in story order; the one line of new copy from the last round ("128 varsity matches, one mark each.") is gone with the chart.
+
+**Deviation:** two rounds of numbers treatments went to Ron before he said what he wanted. The brief was a home for his coaching, and the first build turned the record into a dashboard nobody had asked for; the alternatives stayed inside the same assumption.
