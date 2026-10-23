@@ -127,3 +127,29 @@
 .hx-colo { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(56px, 7vw, 96px); border-top: var(--frame) solid var(--k-ink); }
 .site--blocks .hx-colo .colophon, .site--blocks .hx-colo .colophon p { font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; }
 .site--blocks .hx-colo .colophon h2 { margin: 0 0 8px; font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--k-ink); }
+
+/* ── Page type: Story (coaching.html) ───────────────────────────────
+   One narrative column on the plain ground: title, lead, prose, photos set
+   into the text, one short honours passage. Type and photo frame come from
+   the front page (display title, Author lead, text body, framed photo). */
+.story { padding-top: clamp(56px, 7vw, 104px); padding-bottom: clamp(64px, 8vw, 120px); }
+.story > * { max-width: 680px; }
+.story__h { margin: 0 0 18px; font-family: var(--display); font-weight: 900; line-height: .92; letter-spacing: -.055em; font-size: clamp(56px, 8vw, 120px); color: var(--ink); }
+.story__lead { margin: 0 0 clamp(40px, 5vw, 56px); font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.25; letter-spacing: -.01em; color: var(--ink); }
+.story p { margin: 0; font-family: var(--text); font-size: clamp(19px, 1.5vw, 21px); line-height: 1.6; color: var(--ink); }
+.story p + p { margin-top: 1.1em; }
+.story a { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.story .story__photo { max-width: 860px; margin: clamp(40px, 5vw, 64px) 0; }
+.story__photo img { display: block; width: 100%; height: auto; border: var(--frame-heavy) solid var(--k-ink); box-shadow: 10px 10px 0 var(--k-ink); }
+.story__h2 { margin: clamp(48px, 6vw, 72px) 0 16px; font-family: var(--display); font-weight: 800; font-size: clamp(28px, 2.6vw, 36px); line-height: 1; letter-spacing: -.035em; color: var(--ink); }
+
+.site--blocks .block.story p a:not(.x):not(.y):not(.z) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--k-accent); }
+/* Writing on coaching: a plain list of posts, newest first. Title linked,
+   month and year after it in the quieter label face. */
+.story__posts { list-style: none; margin: 0; padding: 0; max-width: 680px; }
+.story__posts li { margin: 0; padding: 10px 0; font-family: var(--text); font-size: clamp(18px, 1.4vw, 20px); line-height: 1.4; color: var(--ink); }
+.site--blocks .block.story .story__posts a:not(.x):not(.y):not(.z) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--k-accent); }
+.story__date { white-space: nowrap; margin-left: 6px; font-family: var(--ui); font-weight: 500; font-size: 15px; color: var(--ink-soft); }
+.story__posts li { padding: 14px 0; }
+.story .story__excerpt { margin: 6px 0 0; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.5; color: var(--ink-soft); }
+
