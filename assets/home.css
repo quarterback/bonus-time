@@ -136,10 +136,6 @@
 .co-title__h { margin: 0 0 18px; font-family: var(--display); font-weight: 900; line-height: .92; letter-spacing: -.055em; font-size: clamp(56px, 8vw, 120px); color: var(--ink); }
 .co-title__lead { margin: 0; max-width: 26em; font-family: var(--serif); font-weight: 600; font-size: clamp(24px, 2.4vw, 34px); line-height: 1.2; letter-spacing: -.01em; color: var(--ink); }
 .co-record { padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(44px, 5vw, 72px); }
-.co-stats { margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; }
-.co-stats > div { padding: 18px 20px 20px; border: var(--frame-heavy) solid currentColor; display: flex; flex-direction: column-reverse; justify-content: flex-end; gap: 10px; }
-.co-stats dt { font-family: var(--deck); font-weight: 500; font-size: 15px; line-height: 1.3; }
-.co-stats dd { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(40px, 4.4vw, 64px); line-height: .95; letter-spacing: -.05em; }
 .co-split { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); gap: clamp(32px, 5vw, 72px); align-items: center; padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(48px, 6vw, 88px); }
 .co-split--flip .co-split__photo { order: -1; }
 .co-split .blurb p { margin: 0; font-family: var(--text); font-size: clamp(18px, 1.5vw, 21px); line-height: 1.55; }
@@ -149,8 +145,32 @@
 .co-split__photo img { display: block; width: 100%; height: auto; border: var(--frame-heavy) solid var(--k-ink); box-shadow: 10px 10px 0 var(--k-ink); }
 @media (max-width: 860px) { .co-split { grid-template-columns: 1fr; } .co-split--flip .co-split__photo { order: 0; } }
 
-/* The record is one number: keep it on one line, give its tile two columns
-   where there is room. */
-.co-stats dd { white-space: nowrap; }
-@media (min-width: 700px) { .co-stats > div:first-child { grid-column: span 2; } }
-@media (max-width: 699px) { .co-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } .co-stats > div:first-child { grid-column: 1 / -1; } }
+/* The record, by the numbers: a hero figure, then one mark per match (a unit
+   chart: filled = win, hollow = loss, dash = tie, so shape carries the
+   meaning, not colour), then the honours as big numerals with small
+   captions. No boxes. Marks and text use the block's own on-deep ink, the
+   pair DDR-013 audits. */
+.co-record { padding-top: clamp(48px, 6vw, 88px); padding-bottom: clamp(52px, 6vw, 96px); }
+.co-record__k { margin: 0 0 6px; font-family: var(--deck); font-weight: 500; font-size: 18px; line-height: 1.3; letter-spacing: 0; color: var(--ink); }
+.co-record__num { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(72px, 13vw, 184px); line-height: .9; letter-spacing: -.06em; white-space: nowrap; }
+.co-record__dek { margin: 14px 0 28px; font-family: var(--serif); font-weight: 600; font-size: clamp(20px, 2vw, 26px); line-height: 1.25; }
+.co-units { margin: 0; max-width: calc(32 * 22px); display: flex; flex-wrap: wrap; gap: 6px; line-height: 0; }
+.co-units i, .co-key i { display: inline-block; width: 16px; height: 16px; border-radius: 50%; box-sizing: border-box; }
+.co-w { background: var(--ink); }
+.co-l { border: 2px solid var(--ink); }
+.co-t { position: relative; }
+.co-t::after { content: ""; position: absolute; left: 1px; right: 1px; top: 7px; height: 2px; background: var(--ink); }
+.co-key { list-style: none; margin: 18px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-family: var(--deck); font-weight: 500; font-size: 17px; }
+.co-key li { display: inline-flex; align-items: center; gap: 10px; }
+.co-key b { font-weight: 800; }
+.co-honors { list-style: none; margin: clamp(48px, 6vw, 80px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 28px clamp(20px, 3vw, 48px); }
+.co-honors b { display: block; font-family: var(--display); font-weight: 900; font-size: clamp(64px, 7.5vw, 112px); line-height: .9; letter-spacing: -.05em; }
+.co-honors span { display: block; margin-top: 10px; max-width: 12em; font-family: var(--deck); font-weight: 500; font-size: 17px; line-height: 1.3; }
+@media (max-width: 760px) { .co-honors { grid-template-columns: repeat(2, minmax(0, 1fr)); } .co-units { gap: 5px; } .co-units i { width: 13px; height: 13px; } .co-t::after { top: 5.5px; } }
+
+/* 128 marks: 32 per row on wide screens, 16 on phones, so every row is full. */
+@media (max-width: 760px) { .co-units { max-width: calc(16 * 18px); } }
+@media (max-width: 360px) { .co-units { max-width: calc(16 * 16px); } .co-units i { width: 11px; height: 11px; } .co-t::after { top: 4.5px; } }
+/* Explicit columns, so rows are always full: 4 × 32 wide, 8 × 16 below 900px. */
+.co-units { display: grid; grid-template-columns: repeat(16, max-content); max-width: none; }
+@media (min-width: 901px) { .co-units { grid-template-columns: repeat(32, max-content); } }

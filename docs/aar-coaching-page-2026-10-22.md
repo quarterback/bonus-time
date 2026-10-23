@@ -36,3 +36,13 @@ Rendered at 1440px and on an emulated iPhone 13: one `h1`, zero arrows, theme do
 ## 6. Change
 **Ron should read:** the record numbers and the 2027 format details, as claims about himself and Oregon.
 **Keep doing:** source every sentence from Ron's existing words and say where it came from.
+
+---
+
+## Follow-up: the record by the numbers; a listening link
+
+**Instruction (actual wording):** "Remove those blocks that looks terrible surely there is a better way to fo a by the numbers style treatment like thepudding.cool" · "Also listening.ronbronson.com should be linked somewhere on masthead not prominent"
+
+**What changed:** the five bordered stat tiles are gone. The record is a hero figure (91–33–4), a one-line dek ("128 varsity matches, one mark each."), then a unit chart of 128 marks, one per match (filled = win, hollow = loss, dash = tie), with a key that names each count. The four honours follow as big numerals with small captions, no boxes. Marks are laid out on an explicit grid, 4 rows of 32 on wide screens and 8 of 16 below 900px, so every row is full; checked at eight widths from 320 to 1440. `listening.ronbronson.com` is a "Listening" chip in the front page rail's Links list, between Letterboxd and Bluesky.
+
+**Judgment:** loaded the data-visualization guidance first. Part-to-whole with a headline number gave the form: a hero figure plus a unit chart, the Pudding's own idiom. Shape carries win/loss/tie, so meaning never rests on colour; the marks use the block's on-deep ink on deep, the pair DDR-013 already audits for contrast. **One deviation from that guidance:** no per-mark hover. There is no per-match data, so a tooltip could only say "Win" or "Loss"; an `aria-label` sentence gives the totals to screen readers instead. "128" is 91 + 33 + 4, nothing new. The dek is a new line of copy, the only one on the page; it states the chart's encoding.
