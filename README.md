@@ -162,12 +162,22 @@ starts reading corporate again, the fix is usually more here, not less there.
 path: nothing on this page loads from a third party, so no icon font and no remote asset.
 Any further social marks go the same way.
 
+### Reading
+
+Comes live from Bookhive (`bookhive.buzz/profile/ronbronson.com`), not Literal, which
+lagged and had a thin catalogue. Bookhive stores the shelf as `buzz.bookhive.book`
+records in Ron's own ATProto repo, so the page resolves the PDS from the DID via
+`plc.directory`, pages through `com.atproto.repo.listRecords`, keeps
+`status: buzz.bookhive.defs#reading`, and shows the six most recently started. Covers
+are the record's own blob (`com.atproto.sync.getBlob`); each tile links to
+`bookhive.buzz/books/<hiveId>`.
+
 ### Watching
 
 Posters come from `data/letterboxd.json`, committed by the scheduled workflow — **not**
 fetched live. `letterboxd.com/<user>/rss/` sends no `access-control-allow-origin`, so a
 browser fetch is blocked; `Listening` and `Reading` can go direct only because last.fm and
-Literal do send it. The page reads the committed JSON same-origin instead, the same
+the ATProto PDS do send it. The page reads the committed JSON same-origin instead, the same
 arrangement `2026-site` uses for `data/stream.json`.
 
 **It is recently-watched, not favourites.** Letterboxd publishes no favourites feed —

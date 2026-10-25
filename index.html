@@ -234,14 +234,19 @@
       .catch(function () { /* leave the placeholder */ });
   })();
 
-  /* Currently reading — live from Literal's public GraphQL API, the same
-     two-step (profile lookup, then shelf) the .design reading page uses.
-     The module hides itself if the shelf is empty or the call fails, so a
+  /* Currently reading — live from Bookhive (bookhive.buzz), which keeps the
+     shelf as buzz.bookhive.book records in Ron's own ATProto repo. Resolve
+     the PDS from the DID, page through the records, keep the ones marked
+     reading, newest start first. The PDS and plc.directory both send
+     access-control-allow-origin: *, so the browser reads them directly.
+     The module hides itself if the shelf is empty or a call fails, so a
      dead feed never leaves an empty box on the page. */
   (function () {
-    var ENDPOINT = "https://api.literal.club/graphql/";
-    var HANDLE = "ron";
+    var DID = "did:plc:odgxwakrg5r2zjetnrkxuh5c"; // ronbronson.com
+    var COLLECTION = "buzz.bookhive.book";
+    var READING = "buzz.bookhive.defs#reading";
     var LIMIT = 6;
+    var MAX_PAGES = 10; // 100 records a page
     var list = document.getElementById("reading-list");
     if (!list) return;
     var mod = list.closest(".mod") || list.parentNode;
@@ -251,43 +256,48 @@
         return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
       });
     }
-    function gql(query, variables) {
-      return fetch(ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ query: query, variables: variables })
-      }).then(function (r) {
+    function json(url) {
+      return fetch(url).then(function (r) {
         if (!r.ok) throw new Error("HTTP " + r.status);
         return r.json();
-      }).then(function (j) {
-        if (j.errors) throw new Error("GraphQL error");
-        return j.data;
       });
     }
-    function tile(b) {
-      var cover = b.cover ? b.cover.replace(/^http:\/\//, "https://") : "";
-      var url = "https://literal.club/book/" + b.slug;
+    function resolvePds() {
+      return json("https://plc.directory/" + DID).then(function (doc) {
+        var svc = (doc.service || []).filter(function (s) { return s.id === "#atproto_pds"; })[0];
+        if (!svc) throw new Error("no PDS");
+        return svc.serviceEndpoint.replace(/\/$/, "");
+      });
+    }
+    function collect(pds, cursor, page, out) {
+      var url = pds + "/xrpc/com.atproto.repo.listRecords?repo=" + encodeURIComponent(DID) +
+                "&collection=" + COLLECTION + "&limit=100" + (cursor ? "&cursor=" + encodeURIComponent(cursor) : "");
+      return json(url).then(function (d) {
+        (d.records || []).forEach(function (r) { if (r.value && r.value.status === READING) out.push(r.value); });
+        if (d.cursor && page + 1 < MAX_PAGES) return collect(pds, d.cursor, page + 1, out);
+        return out;
+      });
+    }
+    function tile(pds, b) {
+      var cid = b.cover && b.cover.ref && b.cover.ref.$link;
+      var cover = cid ? pds + "/xrpc/com.atproto.sync.getBlob?did=" + encodeURIComponent(DID) + "&cid=" + encodeURIComponent(cid) : "";
+      var url = b.hiveId ? "https://bookhive.buzz/books/" + b.hiveId : "https://bookhive.buzz/profile/ronbronson.com";
       return '<li class="book">' +
         '<a class="book__cover" href="' + esc(url) + '" target="_blank" rel="noopener" aria-label="' + esc(b.title) + '">' +
           '<span class="book__cover-fallback" aria-hidden="true">' + esc((b.title || "?").slice(0, 1)) + '</span>' +
           (cover ? '<img src="' + esc(cover) + '" alt="Cover of ' + esc(b.title) + '" loading="lazy" onerror="this.remove()" />' : "") +
         '</a></li>';
     }
-    var Q = "query B($s: ReadingStatus!, $p: String!, $l: Int!) {" +
-            "  booksByReadingStateAndProfile(limit: $l, offset: 0, readingStatus: $s, profileId: $p) {" +
-            "    title slug cover" +
-            "  }" +
-            "}";
     function hide() { if (mod) mod.style.display = "none"; }
 
-    gql("query P($h: String!) { profileByHandle(handle: $h) { id } }", { h: HANDLE })
-      .then(function (d) {
-        var id = d && d.profileByHandle && d.profileByHandle.id;
-        if (!id) return hide();
-        return gql(Q, { s: "IS_READING", p: id, l: LIMIT }).then(function (r) {
-          var books = (r && r.booksByReadingStateAndProfile) || [];
+    resolvePds()
+      .then(function (pds) {
+        return collect(pds, null, 0, []).then(function (books) {
           if (!books.length) return hide();
-          list.innerHTML = books.map(tile).join("");
+          books.sort(function (a, b) {
+            return String(b.startedAt || b.createdAt || "").localeCompare(String(a.startedAt || a.createdAt || ""));
+          });
+          list.innerHTML = books.slice(0, LIMIT).map(function (b) { return tile(pds, b); }).join("");
         });
       })
       .catch(hide);
