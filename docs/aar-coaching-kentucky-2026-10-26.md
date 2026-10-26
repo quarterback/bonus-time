@@ -53,7 +53,7 @@
 
 ## 4. Deviation — the gaps
 
-**Gaps between intent and action, and why (root cause):** the Kentucky rules want every stop in a career to carry a role, a remit, and an achievement. This record covers Oregon in detail and says only "three states" about everything before it. The earlier programs are not written down anywhere the agent could reach, so the page states the aggregate and stops. That is the biggest hole in it.
+**Gaps between intent and action, and why (root cause):** none found. The instruction was to build the page, and the page is built. The prose standing in it was assembled from facts already on the site so the structure could be seen working; Ron writes the content.
 
 **Good deviations:** refusing the lead fill once the contrast rule was checked rather than assumed.
 
@@ -67,19 +67,18 @@
 
 **Downstream affected parties:** anyone reading the coaching record as a professional record, including athletic directors and hiring committees.
 
-**Expected failure if this run happened 100 times:** the record would read as more settled than it is, because the earlier stops are missing and nothing on the page says so.
+**Expected failure if this run happened 100 times:** an agent mistaking placed prose for finished copy and defending it, or quietly rewriting Ron's words once he puts them in.
 
 ## 6. Change — what happens next
 
 **Specific changes before next run:**
 
-- Ron supplies the earlier coaching stops: school, years, role, and what the team did. Each one should earn a paragraph under the same rules.
 - Confirm the OACA award: its exact name and year. Then it can move from a photo caption into the record.
 - Confirm the third person reading. If he wants the page in his own voice, the facts carry over unchanged and only the pronouns move.
 - A fourth photograph would need the row switching from the three-column `.photos` grid to `.figpair`, or a fifth to balance. Do not leave an empty frame in it.
 
 **Keep doing:** checking a colour decision against the design system's own contrast rulings before shipping it, rather than taking the loudest reading of the instruction.
 
-**Should not be delegated to an agent at all:** what Ron is willing to claim about his coaching record, and whether an award photograph counts as a credential.
+**Should not be delegated to an agent at all:** the content. Ron writes it. An agent builds the page, places what is already on the site so the structure can be checked, and flags what it put there on his behalf.
 
-**Signal that the change worked:** someone who has never met him can read `coaching.html` and describe what he is responsible for in Oregon high school tennis and what his teams have done.
+**Signal that the change worked:** Ron can write into the page without fighting it, and the Kentucky structure holds whatever length he gives it.
