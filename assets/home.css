@@ -186,3 +186,60 @@
 #elsewhere .out { display: flex; flex-wrap: wrap; gap: 6px 22px; }
 #elsewhere .out li { margin: 0; padding: 0; border: 0; }
 #elsewhere .out a { display: inline; }
+
+/* The way home, in the bar on every inner page. */
+.backlink, .site--blocks .topbar nav a.backlink { font-family: var(--deck); font-weight: 500; font-size: 16px; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+
+/* ══════════════════════════════════════════════════
+   TYPE FOR THE PORTED SECTIONS
+
+   The structure came from the August .design page, and so did its type:
+   12px uppercase mono labels, letterspaced, with a hairline mono for the
+   source note. This site's own ruling (DDR-010) is no uppercase labels and
+   the deck face for small parts, which is what .dev and .design carry now.
+   These rules bring the ported layer onto that system without touching the
+   structure.
+   ══════════════════════════════════════════════════ */
+
+/* The hero: the name alone, at the front-door size. */
+.hero-name { padding: clamp(44px, 6vw, 88px) 0 clamp(20px, 2.4vw, 32px); }
+.hero-name .name { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(52px, 8vw, 118px); line-height: .88; letter-spacing: -.055em; color: var(--ink); }
+
+/* The nav: its own band between the name and the bio. */
+.navband { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 32px; padding: 14px 0; border-top: var(--frame) solid var(--ink); border-bottom: var(--frame) solid var(--ink); font-family: var(--deck); font-weight: 500; font-size: 16px; }
+.navband__sites, .navband__pages { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; }
+.site--masthead .navband a, .site--masthead .navband .linkish { color: var(--ink); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; text-decoration-color: var(--lead); }
+.site--masthead .navband a:hover, .site--masthead .navband .linkish:hover { text-decoration-color: var(--ink); }
+.navband .sep { color: var(--ink-soft); }
+
+/* The bio: its own section, set the way .design and .dev set a lede. */
+.bioband { padding: clamp(36px, 5vw, 64px) 0; }
+.bioband__lede { margin: 0 0 1em; max-width: 30em; font-family: var(--deck); font-weight: 600; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.18; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
+.bioband__p { margin: 0; max-width: 56ch; font-family: var(--text); font-weight: 400; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+
+/* The strip, now carrying only what is playing. */
+.nowstrip--solo { border-bottom: var(--hair) solid var(--rule); }
+
+/* Section labels: the deck face, sentence case, no letterspacing. */
+.site--masthead .section > h2 { font-family: var(--deck); font-weight: 600; font-size: clamp(15px, 1.2vw, 17px); letter-spacing: 0; text-transform: none; color: var(--ink); line-height: 1.25; }
+.site--masthead .section { padding: clamp(22px, 2.8vw, 34px) 0; }
+.site--masthead .section li { font-family: var(--text); font-weight: 500; font-size: clamp(16px, 1.3vw, 19px); }
+/* The source note sits beside a link, so it reads at text size, not as a
+   mono footnote. */
+.site--masthead .src { font-family: var(--deck); font-weight: 500; font-size: clamp(14px, 1.05vw, 15px); letter-spacing: 0; color: var(--ink-soft); }
+.site--masthead .nowstrip__label { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; }
+.site--masthead .nowstrip { font-family: var(--deck); font-size: 16px; }
+
+/* Elsewhere: the icon row from the latest ronbronson.design, inline SVG
+   rather than the Font Awesome <i> the August page used. Same icons, one
+   fewer network dependency. */
+#elsewhere .hx-icons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.site--masthead #elsewhere a.hx-i { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: var(--frame) solid var(--ink); color: var(--ink); text-decoration: none; }
+.site--masthead #elsewhere a.hx-i:hover { background: var(--ink); color: var(--bg); }
+#elsewhere .hx-i svg { width: 20px; height: 20px; display: block; }
+
+/* Colophon: the type the latest .design carries. Mono body at 12px, the
+   heading mono, uppercase and letterspaced. */
+.site--masthead .colophon, .site--masthead .colophon p { font-family: var(--mono); font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; color: var(--ink-soft); }
+.site--masthead .colophon h2 { margin: 0 0 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.site--masthead .colophon { max-width: 78ch; padding-top: clamp(28px, 3.4vw, 44px); }

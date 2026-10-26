@@ -1020,3 +1020,15 @@ a.step, a.offer, .site--blocks .block a.step, .site--blocks .block a.offer {
 .mark img { max-height: 44px; width: auto; max-width: 100%; object-fit: contain; }
 .block .marks a.mark { text-decoration: none; }
 .site--blocks .block a.mark:hover { background: var(--k-ink); color: var(--k-bg); }
+
+/* ── Gallery ──────────────────────────────────────
+   A row of photographs that takes however many there are. auto-fit means
+   two, three, five or eight all lay out without touching the CSS, and a
+   short row never stretches one image across the page. Add an <img> and
+   stop. A <figure> with a <figcaption> works in the same grid. */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin: clamp(28px, 4vw, 44px) 0; }
+.gallery > * { margin: 0; min-width: 0; }
+.gallery img { display: block; width: 100%; height: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--bg-deeper); }
+.gallery figcaption { margin-top: 8px; font-family: var(--mono); font-size: 12px; line-height: 1.45; color: var(--ink-soft); }
+.gallery--tall img { aspect-ratio: 3 / 4; }
+@media (max-width: 520px) { .gallery { grid-template-columns: minmax(0, 1fr); } }

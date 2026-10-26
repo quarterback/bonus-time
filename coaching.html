@@ -18,7 +18,7 @@
 <body class="site--masthead scale--front site--blocks site--tiles">
 <div class="wrap wrap--blocks">
 
-<header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="index.html">Ron Bronson</a><nav aria-label="Main navigation"><a href="https://blog.ronbronson.com">Blog</a><a href="https://ronbronson.design">.design</a><a href="https://ronbronson.dev">.dev</a><button type="button" class="btn-icon" data-contact aria-label="Send a message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"></rect><path d="M3 6l9 7 9-7"></path></svg></button></nav></div></header>
+<header class="topbar block block--ink"><div class="topbar__in"><a class="name" href="index.html">Ron Bronson</a><nav aria-label="Main navigation"><a class="backlink" href="index.html">&larr; Back</a><a href="https://blog.ronbronson.com">Blog</a><a href="https://ronbronson.design">.design</a><a href="https://ronbronson.dev">.dev</a><button type="button" class="btn-icon" data-contact aria-label="Send a message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"></rect><path d="M3 6l9 7 9-7"></path></svg></button></nav></div></header>
 
 <!-- ══════════ PAGE TYPE: PROFILE ══════════
      The about page type (h1 + .bio prose column + a photo row), carrying a
@@ -51,13 +51,22 @@
 <p>His teams have won a state championship, four District and Regional titles, and five Conference titles. Four of his players have won individual state championships.</p>
 </div>
 
-<!-- Three photos, three claims: the championship, the award, the rankings
-     system. To add a fourth, this row is a 3-column grid; use .figpair for
-     two instead. Do not leave an empty frame in it. -->
-<div class="photos">
-  <img src="assets/tennis-title.jpg" width="1400" height="1050" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
-  <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque in front of an Oregon Athletic Coaches Association backdrop" />
-  <img src="assets/oregontennis.jpg" width="1400" height="1003" loading="lazy" alt="The oregontennis.org power rankings table" />
+<!-- Photographs. The grid takes however many there are: add another
+     <figure> and it reflows on its own. Wrap an image in <figure> when it
+     needs a caption, or leave it a bare <img> when it does not. -->
+<div class="gallery">
+  <figure>
+    <img src="assets/tennis-title.jpg" width="1400" height="1050" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
+    <figcaption>The team, with the plaque.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/oaca-award.jpg" width="1400" height="1050" loading="lazy" alt="Ron Bronson holding a coach of the year plaque in front of an Oregon Athletic Coaches Association backdrop" />
+    <figcaption>Oregon Athletic Coaches Association.</figcaption>
+  </figure>
+  <figure>
+    <img src="assets/oregontennis.jpg" width="1400" height="1003" loading="lazy" alt="The oregontennis.org power rankings table" />
+    <figcaption>oregontennis.org, mid-season.</figcaption>
+  </figure>
 </div>
 
 <figure class="pullquote">
