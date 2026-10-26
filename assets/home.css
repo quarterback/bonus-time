@@ -153,3 +153,10 @@
 .story__posts li { padding: 14px 0; }
 .story .story__excerpt { margin: 6px 0 0; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.5; color: var(--ink-soft); }
 
+
+/* The "open it up" link that closes a front-page section. site--tiles strips
+   decoration from every link inside a block, so this one has to ask for it
+   back. The rule is in the lead colour; the text stays ink, so the colour is
+   a signal and never the thing carrying the contrast. */
+.site--tiles .block a.go { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; text-decoration-color: var(--k-lead); font-family: var(--deck); font-size: 18px; }
+.site--tiles .block a.go:hover { background: none; color: var(--k-ink); text-decoration-color: var(--k-ink); }
