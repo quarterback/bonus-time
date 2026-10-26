@@ -45,52 +45,26 @@
 .hx { padding-bottom: clamp(32px, 4vw, 56px); }
 
 /* Rail and main */
-.hx-cols { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 0; padding-top: 0; padding-bottom: 0; }
-.hx-cols > * { min-width: 0; }
-.hx-rail { --bg: var(--k-bg-deeper); --ink: var(--k-ink); --ink-soft: var(--k-ink); --accent: var(--k-ink); background: var(--k-bg-deeper); color: var(--k-ink); padding: 36px clamp(20px, 2.6vw, 36px) 48px; display: grid; gap: 32px; align-content: start; }
-.hx-main { padding: 36px 0 48px clamp(28px, 4vw, 56px); display: grid; gap: 44px; align-content: start; }
 
 /* Listening */
-.hx-rail .np { font-family: var(--deck); font-size: 16px; }
-.hx-rail .np__label { font-family: var(--deck); font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); margin-bottom: 6px; }
-.hx-rail .np__track { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.03em; line-height: 1.1; }
-.hx-rail .np__artist { color: var(--k-ink); margin-top: 4px; }
-.site--blocks .block .hx-rail .np a:hover { background: none; color: var(--k-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 /* Shelves: Reading and Watching reuse the .books markup the scripts emit */
-.hx-rail .books { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.hx-rail .books .book__cover { border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); transition: transform .12s ease; }
-.hx-rail .books .book__cover:hover { transform: translateY(-3px); }
-.hx-rail .books .book__cover-fallback { font-family: var(--display); font-weight: 900; font-size: 36px; letter-spacing: -.05em; color: var(--k-ink); }
 
 /* Favorites */
-.hx-rail .favs { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 17px; }
-.hx-rail .favs dt { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); align-self: baseline; }
-.hx-rail .favs dd { margin: 0; padding: 0; border: 0; font-family: var(--deck); font-weight: 500; font-size: 17px; letter-spacing: 0; }
 
 /* Links */
-.hx-rail .out { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.hx-rail .out li { margin: 0; }
-.site--blocks .block .hx-rail .out a:not(.x):not(.y):not(.z) { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-decoration: none; }
-.site--blocks .block .hx-rail .out a:not(.x):not(.y):not(.z):hover { background: var(--k-ink); color: var(--k-bg); }
-.hx-rail .out__mark { width: 15px; height: 15px; fill: currentColor; }
 
 /* Tiles */
 .tg { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
 .site--blocks .block a.tile:not(.x):not(.y):not(.z), .tile { display: flex; flex-direction: column; justify-content: space-between; gap: 18px; min-height: 120px; padding: 18px 20px 20px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); text-decoration: none; transition: transform .12s ease; }
-.tile .lab { min-height: 1.3em; font-family: var(--deck); font-weight: 500; font-size: 15px; line-height: 1.3; color: var(--ink-soft); }
+.tile .lab { min-height: 1.3em; font-family: var(--deck); font-weight: 500; font-size: 15px; line-height: 1.3; color: var(--k-ink); }
 .tile b { font-family: var(--display); font-weight: 800; font-size: clamp(20px, 1.7vw, 24px); line-height: 1.15; letter-spacing: -.025em; }
 .site--blocks .block a.tile:not(.x):not(.y):not(.z):hover { transform: translateY(-3px); background: var(--k-lead); color: var(--k-on-lead); text-decoration: none; }
 .site--blocks .block a.tile:not(.x):not(.y):not(.z):hover .lab { color: var(--k-on-lead); }
 
 /* Players */
-.hx-vid { position: relative; aspect-ratio: 16 / 9; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-ink); }
-.hx-vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .hx-cap { margin: 10px 0 0; font-family: var(--deck); font-weight: 500; font-size: 16px; }
 .site--blocks .block .hx-cap a:not(.x):not(.y):not(.z) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--k-accent); }
-.hx-pods { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.hx-pod .hx-cap { margin: 0 0 10px; }
-.hx-pod iframe { display: block; width: 100%; height: 152px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg-deeper); }
 
 /* Top 8 */
 
@@ -102,17 +76,11 @@
 @media (max-width: 900px) {
   .hx__grid { grid-template-columns: 1fr; }
   .hx__photo { justify-self: start; max-width: 300px; }
-  .hx-cols { grid-template-columns: 1fr; }
-  .hx-rail { order: 2; margin: 0 calc(-1 * clamp(0px, 2vw, 24px)); }
-  .hx-main { order: 1; padding-left: 0; }
-  .hx-rail .books { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .hx-pods { grid-template-columns: 1fr; }
   .tile { min-height: 0; }
 }
 @media (max-width: 560px) {
-  .hx-rail .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-@media (prefers-reduced-motion: reduce) { .tile, .hx-rail .books .book__cover { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .tile, .books--wide .book__cover { transition: none; } }
 
 /* Labels use the deck face on this page. The TopBar nav is set in the display
    face at the rail-heading (H3) size, underlined and nothing else: no arrows,
@@ -153,3 +121,149 @@
 .story__posts li { padding: 14px 0; }
 .story .story__excerpt { margin: 6px 0 0; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.5; color: var(--ink-soft); }
 
+/* The "open it up" link that closes a front-page section. site--tiles strips
+   decoration from every link inside a block, so this one has to ask for it
+   back. The rule is in the lead colour; the text stays ink, so the colour is
+   a signal and never the thing carrying the contrast. */
+.site--tiles .block a.go { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; text-decoration-color: var(--k-lead); font-family: var(--deck); font-size: 18px; }
+.site--tiles .block a.go:hover { background: none; color: var(--k-ink); text-decoration-color: var(--k-ink); }
+
+/* The work column, with no rail beside it. */
+
+/* ── Sections that narrate ────────────────────────
+   The previous .design put a heading straight on top of a grid. This page
+   carries more kinds of work, so a section may set one short paragraph
+   between the two. One paragraph; if it needs two, it needs its own page. */
+.hx-note { margin: 0 0 clamp(22px, 2.6vw, 32px); max-width: 68ch; font-family: var(--text); font-weight: 400; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+
+/* Covers at the size .design gives them, not the rail's thumbnails. */
+.books--wide { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.books--wide .book__cover { border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); transition: transform .12s ease; }
+.books--wide .book__cover:hover { transform: translateY(-3px); }
+.books--wide .book__cover-fallback { font-family: var(--display); font-weight: 900; font-size: 44px; letter-spacing: -.05em; color: var(--k-ink); }
+@media (max-width: 760px) { .books--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Elsewhere: the links and the favorites, side by side on the ink footer. */
+.hx-else__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.hx-else .hx-h3 { margin: 0 0 14px; font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.03em; color: var(--ink); }
+.hx-else .out { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hx-else .out li { margin: 0; }
+.site--blocks .block .hx-else .out a:not(.x):not(.y):not(.z) { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: var(--frame) solid var(--ink); background: none; color: var(--ink); font-family: var(--deck); font-weight: 500; font-size: 15px; text-decoration: none; }
+.site--blocks .block .hx-else .out a:not(.x):not(.y):not(.z):hover { background: var(--ink); color: var(--k-ink); }
+.hx-else .out__mark { width: 15px; height: 15px; fill: currentColor; }
+.hx-else .favs { display: grid; grid-template-columns: auto 1fr; gap: 7px 20px; margin: 0; }
+.hx-else .favs dt { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--ink); align-self: baseline; }
+.hx-else .favs dd { margin: 0; padding: 0; border: 0; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -.02em; color: var(--ink); }
+@media (max-width: 700px) { .hx-else__grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Section padding. .hx-sec lived only in 2026-site's home.css; this page now
+   uses the same component, so it needs the same rule or every heading sits
+   on the edge of its block. */
+.hx-sec { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(40px, 5vw, 72px); }
+.site--tiles .wrap--blocks { padding-bottom: 0; }
+
+/* ── Sections that narrate ────────────────────────
+   The ported structure is a mono label beside a list. A section may now put
+   one short paragraph above its list; .section__body holds both so they
+   share the content column. One paragraph. If it needs two, it needs a page. */
+.section__body { display: grid; gap: clamp(12px, 1.4vw, 18px); }
+.section__note { margin: 0; max-width: 72ch; font-family: var(--text); font-weight: 400; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+
+/* Marks sit in the content column, as words on the ground. */
+.section .marks { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 18px; }
+.section .mark { min-height: 0; padding: 8px 0; justify-content: flex-start; text-align: left; }
+.section .mark span { font-size: clamp(15px, 1.2vw, 18px); }
+
+/* Covers in a section: six across, no frames. */
+.section .books { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.section .books .book__cover { background: var(--bg-deeper); }
+@media (max-width: 700px) { .section .books { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* The contact link in the strip is a button; it has to read as the links around it. */
+.linkish { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Elsewhere: one row, the way the ported page had it, not nine stacked rows. */
+#elsewhere .out { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+#elsewhere .out li { margin: 0; padding: 0; border: 0; }
+#elsewhere .out a { display: inline; }
+
+/* The way home, in the bar on every inner page. */
+.backlink, .site--blocks .topbar nav a.backlink { font-family: var(--deck); font-weight: 500; font-size: 16px; text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+
+/* ══════════════════════════════════════════════════
+   TYPE FOR THE PORTED SECTIONS
+
+   The structure came from the August .design page, and so did its type:
+   12px uppercase mono labels, letterspaced, with a hairline mono for the
+   source note. This site's own ruling (DDR-010) is no uppercase labels and
+   the deck face for small parts, which is what .dev and .design carry now.
+   These rules bring the ported layer onto that system without touching the
+   structure.
+   ══════════════════════════════════════════════════ */
+
+/* The hero: the name alone, at the front-door size. */
+.hero-name { padding: clamp(44px, 6vw, 88px) 0 clamp(20px, 2.4vw, 32px); }
+.hero-name .name { margin: 0; font-family: var(--display); font-weight: 900; font-size: clamp(52px, 8vw, 118px); line-height: .88; letter-spacing: -.055em; color: var(--ink); }
+
+/* The nav: its own band between the name and the bio. */
+.navband { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 10px 32px; padding: 14px 0; border-top: var(--frame) solid var(--ink); border-bottom: var(--frame) solid var(--ink); font-family: var(--deck); font-weight: 500; font-size: 16px; }
+.navband__sites, .navband__pages { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 20px; }
+.site--masthead .navband a, .site--masthead .navband .linkish { color: var(--ink); text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; text-decoration-color: var(--lead); }
+.site--masthead .navband a:hover, .site--masthead .navband .linkish:hover { text-decoration-color: var(--ink); }
+.navband .sep { color: var(--ink-soft); }
+
+/* The bio: its own section, set the way .design and .dev set a lede. */
+.bioband { padding: clamp(36px, 5vw, 64px) 0; }
+.bioband__lede { margin: 0 0 1em; max-width: 30em; font-family: var(--deck); font-weight: 600; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.18; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
+.bioband__p { margin: 0; max-width: 54ch; font-family: var(--text); font-weight: 400; font-size: clamp(20px, 1.75vw, 25px); line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+
+/* The strip, now carrying only what is playing. */
+
+
+/* Section labels: the deck face, sentence case, no letterspacing. */
+.site--masthead .section > h2 { font-family: var(--deck); font-weight: 600; font-size: clamp(15px, 1.2vw, 17px); letter-spacing: 0; text-transform: none; color: var(--ink); line-height: 1.25; }
+.site--masthead .section { padding: clamp(22px, 2.8vw, 34px) 0; }
+.site--masthead .section li { font-family: var(--text); font-weight: 500; font-size: clamp(16px, 1.3vw, 19px); }
+/* The source note sits beside a link, so it reads at text size, not as a
+   mono footnote. */
+.site--masthead .src { font-family: var(--deck); font-weight: 500; font-size: clamp(14px, 1.05vw, 15px); letter-spacing: 0; color: var(--ink-soft); }
+.site--masthead .nowstrip__label { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; }
+.site--masthead .nowstrip { font-family: var(--deck); font-size: 16px; }
+
+/* Elsewhere: the icon row from the latest ronbronson.design, inline SVG
+   rather than the Font Awesome <i> the August page used. Same icons, one
+   fewer network dependency. */
+#elsewhere .hx-icons { display: flex; flex-wrap: wrap; gap: 12px; margin: 0; }
+.site--masthead #elsewhere a.hx-i { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: var(--frame) solid var(--ink); color: var(--ink); text-decoration: none; }
+.site--masthead #elsewhere a.hx-i:hover { background: var(--ink); color: var(--bg); }
+#elsewhere .hx-i svg { width: 20px; height: 20px; display: block; }
+
+/* Colophon: the type the latest .design carries. Mono body at 12px, the
+   heading mono, uppercase and letterspaced. */
+.site--masthead .colophon, .site--masthead .colophon p { font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; color: var(--ink-soft); }
+.site--masthead .colophon h2 { margin: 0 0 8px; font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.site--masthead .colophon { max-width: 78ch; padding-top: clamp(28px, 3.4vw, 44px); }
+
+/* The webring sits under the colophon, as it does on .design. */
+.site--masthead .colophon good-internetting { display: block; margin-top: 24px; }
+
+/* ── Last played, as one bar ──────────────────────
+   Full width in the page's deep pair, the way the mockups carry it. The
+   bleed is the same trick the block layer uses: a spread shadow in the
+   bar's own colour, clipped to the viewport so it cannot widen the page. */
+.nowbar {
+  position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 28px; padding: 14px 0; margin: clamp(10px, 1.4vw, 18px) 0 0;
+  background: var(--deep); color: var(--on-deep);
+  box-shadow: 0 0 0 100vmax var(--deep); clip-path: inset(0 -100vmax);
+  font-family: var(--deck); font-weight: 500; font-size: 16px;
+}
+.site--masthead .nowbar a { color: var(--on-deep); text-decoration: none; }
+.site--masthead .nowbar .np a { text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+.nowbar .nowstrip__label { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--on-deep); margin-right: 8px; }
+.nowbar__links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.site--masthead .nowbar__links a { display: inline-flex; align-items: center; color: var(--on-deep); }
+.nowbar__links i { font-size: 19px; line-height: 1; }
+.site--masthead .nowbar__links a:hover { opacity: .7; }
+.nowbar__site { font-size: 15px; text-decoration: underline !important; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+@media (max-width: 620px) { .nowbar { justify-content: flex-start; } }
