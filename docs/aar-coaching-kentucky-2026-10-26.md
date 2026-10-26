@@ -82,3 +82,29 @@
 **Should not be delegated to an agent at all:** the content. Ron writes it. An agent builds the page, places what is already on the site so the structure can be checked, and flags what it put there on his behalf.
 
 **Signal that the change worked:** Ron can write into the page without fighting it, and the Kentucky structure holds whatever length he gives it.
+
+## 7. Second pass, same day: the front page gets shorter
+
+Ron's follow-ups, in his words:
+
+> the rail doesn't look good structured that way at the end of the page since it was originally a side rail for the top of the site, so it needs to be redesigned
+
+> wordmarks and logos with include University of Michigan, 0000th.ai, State Capacity AI, Vloora, 18F, TTS, City of Bloomington, GSA, FTC and PDX Digital Corps
+
+> get rid of the video of design as repair and now playng because it's kind of am ess on that page, i'd find some other way to put that content in that page. wha i told the agent is what i wanted a page that looked closer to what ronbronson.design looks liek right now, and then just use the narrative sections to explain the content rather than what is now where it's a lot of reading to do and too much t oexplain without much of the proof that lives on that site
+
+**What changed:**
+
+- **The rail became a band.** Reading, Watching, Favorites and Links ran down the side when they sat at the top beside a main column. Once the page opened with the chapters they were a tall narrow column stranded at the bottom with nothing beside it. Same four modules, now across the page as the last thing before the colophon.
+- **"A short record" became "Places I've helped."** The two-column table of appointments and executive details said what the sections above already say, at more length. It is now a wall of marks, the ten Ron named. Each cell is a word today and takes an `<img>` with no change to the grid; `.marks` in `core.css` caps the image height so a wordmark and a square logo sit on the same baseline.
+- **The four chapters became four sections.** Same claims, roughly a third of the reading, and the proof moved out of the paragraph and into tiles that point at the pages holding it. The page went from 810 words to 404.
+- **The Design as Repair embed and the two podcast iframes are gone.** The talk is a tile in "Running the practice", the two shows are tiles in "Build what's missing". Nothing was lost but the weight.
+
+**Two bugs this pass caught, both found by measuring rather than looking:**
+
+- `.tile .lab` read `--ink-soft`. A tile always paints itself `--k-bg`, but a deep or ink block re-points `--ink-soft` to its own light text, so every label on the "Who holds the pen" block was white on cream and invisible. It reads `--k-ink` now. The same latent bug was in `2026-site/assets/home.css` and is fixed there too.
+- `.marks` drew its rules by showing an ink background through the grid gap. `auto-fit` leaves the last row short, so the empty track rendered as a solid dark cell. Each mark carries its own border now.
+
+A contrast pass over all 32 labels and marks on the two sites returns nothing below 4.5:1.
+
+**Still Ron's call:** whether the appointments and advisory detail that the marks replaced should live somewhere else. It is in git history. The chapters carry 18F, TTS, FTC, GSA, Michigan and Portland Digital Corps already, which is why it read as duplication.
