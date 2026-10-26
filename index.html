@@ -33,6 +33,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 <link rel="icon" href="assets/favicon.ico" sizes="any" />
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css" />
 <link rel="stylesheet" href="assets/faces.css" />
 <link rel="stylesheet" href="assets/core.css" />
 <link rel="stylesheet" href="assets/home.css" />
@@ -57,15 +58,16 @@
   <!-- ══════════ NAV ══════════ Its own band, not a tail on the hero. -->
   <nav class="navband" aria-label="Main">
     <span class="navband__sites">
-      <a href="https://ronbronson.design">ronbronson.design</a>
-      <a href="https://ronbronson.dev">ronbronson.dev</a>
+      <a href="https://ronbronson.design">Design</a>
+      <span class="sep" aria-hidden="true">|</span>
+      <a href="https://ronbronson.dev">Projects</a>
     </span>
     <span class="navband__pages">
-        <a href="coaching.html">Coaching &rarr;</a>
+        <a href="coaching.html">Coaching</a>
         <span class="sep" aria-hidden="true">&middot;</span>
-        <a href="https://blog.ronbronson.com">Blog &rarr;</a>
+        <a href="https://blog.ronbronson.com">Blog</a>
         <span class="sep" aria-hidden="true">&middot;</span>
-        <button type="button" class="linkish" data-contact>Email &rarr;</button>
+        <button type="button" class="linkish" data-contact>Email</button>
     </span>
   </nav>
 
@@ -76,8 +78,19 @@
     <p class="bioband__p">I teach Urban Technology at the University of Michigan, build <a href="https://vloora.com">Vloora</a>, and run public programming through my studio, <a href="https://thinkingweapons.com">Thinking Weapons</a>. Offline I coach high school tennis and host a radio show.</p>
   </section>
 
-  <div class="nowstrip nowstrip--solo">
+  <!-- Last played. One bar, full width, in the page's deep pair.
+       Spotify and Apple Music are ready below: paste the profile URL into
+       the href and delete the comment markers. They are commented rather
+       than pointed at "#", because a dead icon is worse than no icon. -->
+  <div class="nowbar">
     <span class="np"><span class="nowstrip__label" id="np-label">Last played</span> <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener"><b id="np-track">&mdash;</b> <span id="np-artist">last.fm/statechampion</span></a></span>
+    <span class="nowbar__links">
+      <a href="https://www.last.fm/user/statechampion" target="_blank" rel="me noopener" aria-label="last.fm" title="last.fm"><i class="fa-brands fa-lastfm" aria-hidden="true"></i></a>
+      <!-- <a href="PASTE_SPOTIFY_PROFILE_URL" target="_blank" rel="me noopener" aria-label="Spotify" title="Spotify"><i class="fa-brands fa-spotify" aria-hidden="true"></i></a> -->
+      <!-- <a href="PASTE_APPLE_MUSIC_PROFILE_URL" target="_blank" rel="me noopener" aria-label="Apple Music" title="Apple Music"><i class="fa-brands fa-itunes-note" aria-hidden="true"></i></a> -->
+      <a href="https://record.club/ron" target="_blank" rel="me noopener" aria-label="Record.club" title="Record.club"><i class="fa-solid fa-record-vinyl" aria-hidden="true"></i></a>
+      <a class="nowbar__site" href="https://listening.ronbronson.com" target="_blank" rel="me noopener">listening.ronbronson.com</a>
+    </span>
   </div>
 
   <section class="section">

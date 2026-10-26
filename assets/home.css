@@ -215,10 +215,10 @@
 /* The bio: its own section, set the way .design and .dev set a lede. */
 .bioband { padding: clamp(36px, 5vw, 64px) 0; }
 .bioband__lede { margin: 0 0 1em; max-width: 30em; font-family: var(--deck); font-weight: 600; font-size: clamp(24px, 2.6vw, 38px); line-height: 1.18; letter-spacing: -.02em; color: var(--ink); text-wrap: pretty; }
-.bioband__p { margin: 0; max-width: 56ch; font-family: var(--text); font-weight: 400; font-size: clamp(17px, 1.4vw, 20px); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+.bioband__p { margin: 0; max-width: 54ch; font-family: var(--text); font-weight: 400; font-size: clamp(20px, 1.75vw, 25px); line-height: 1.5; color: var(--ink); text-wrap: pretty; }
 
 /* The strip, now carrying only what is playing. */
-.nowstrip--solo { border-bottom: var(--hair) solid var(--rule); }
+
 
 /* Section labels: the deck face, sentence case, no letterspacing. */
 .site--masthead .section > h2 { font-family: var(--deck); font-weight: 600; font-size: clamp(15px, 1.2vw, 17px); letter-spacing: 0; text-transform: none; color: var(--ink); line-height: 1.25; }
@@ -246,3 +246,24 @@
 
 /* The webring sits under the colophon, as it does on .design. */
 .site--masthead .colophon good-internetting { display: block; margin-top: 24px; }
+
+/* ── Last played, as one bar ──────────────────────
+   Full width in the page's deep pair, the way the mockups carry it. The
+   bleed is the same trick the block layer uses: a spread shadow in the
+   bar's own colour, clipped to the viewport so it cannot widen the page. */
+.nowbar {
+  position: relative; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between;
+  gap: 10px 28px; padding: 14px 0; margin: clamp(10px, 1.4vw, 18px) 0 0;
+  background: var(--deep); color: var(--on-deep);
+  box-shadow: 0 0 0 100vmax var(--deep); clip-path: inset(0 -100vmax);
+  font-family: var(--deck); font-weight: 500; font-size: 16px;
+}
+.site--masthead .nowbar a { color: var(--on-deep); text-decoration: none; }
+.site--masthead .nowbar .np a { text-decoration: underline; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+.nowbar .nowstrip__label { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--on-deep); margin-right: 8px; }
+.nowbar__links { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; }
+.site--masthead .nowbar__links a { display: inline-flex; align-items: center; color: var(--on-deep); }
+.nowbar__links i { font-size: 19px; line-height: 1; }
+.site--masthead .nowbar__links a:hover { opacity: .7; }
+.nowbar__site { font-size: 15px; text-decoration: underline !important; text-underline-offset: .18em; text-decoration-thickness: 2px; }
+@media (max-width: 620px) { .nowbar { justify-content: flex-start; } }
