@@ -240,6 +240,9 @@
 
 /* Colophon: the type the latest .design carries. Mono body at 12px, the
    heading mono, uppercase and letterspaced. */
-.site--masthead .colophon, .site--masthead .colophon p { font-family: var(--mono); font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; color: var(--ink-soft); }
-.site--masthead .colophon h2 { margin: 0 0 8px; font-family: var(--mono); font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
+.site--masthead .colophon, .site--masthead .colophon p { font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 12px; font-weight: 500; line-height: 1.65; letter-spacing: .01em; color: var(--ink-soft); }
+.site--masthead .colophon h2 { margin: 0 0 8px; font-family: "Azeret Mono", ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 11px; font-weight: 600; line-height: 1.65; letter-spacing: .14em; text-transform: uppercase; color: var(--ink); }
 .site--masthead .colophon { max-width: 78ch; padding-top: clamp(28px, 3.4vw, 44px); }
+
+/* The webring sits under the colophon, as it does on .design. */
+.site--masthead .colophon good-internetting { display: block; margin-top: 24px; }
