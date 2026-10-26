@@ -38,166 +38,192 @@
 <link rel="stylesheet" href="assets/home.css" />
 <script src="assets/palette-masthead.js"></script>
 </head>
-<body class="site--masthead scale--front site--blocks site--tiles">
-<div class="wrap wrap--blocks">
+<body class="site--masthead">
+<div class="wrap">
 
-<header class="topbar block block--ink"><div class="topbar__in"><h1 class="name">Ron Bronson</h1><nav aria-label="Main navigation"><a href="#places">Places</a><a href="https://blog.ronbronson.com">Blog</a><a href="https://ronbronson.design">.design</a><a href="https://ronbronson.dev">.dev</a><button type="button" class="btn-icon" data-contact aria-label="Send a message"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"></rect><path d="M3 6l9 7 9-7"></path></svg></button></nav></div></header>
+  <!-- ══════════ MASTHEAD ══════════
+       Ported from ronbronson.design as it stood at c273984 (Aug 2026), which
+       is the structure Ron wants here: a name, a deck, a lede, a strip, then
+       labelled sections of plain lists. No tiles, no cards, no grids of
+       boxes. The type is this site's own (PP Neue Montreal), and a section
+       may carry a line of narration that the old page did not have. -->
+  <header class="masthead">
+    <span class="site-links">
+      <a href="https://ronbronson.design">ronbronson.design &#8599;</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://ronbronson.dev">ronbronson.dev &#8599;</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://thinkingweapons.com">Studio &#8599;</a>
+    </span>
+    <div class="masthead__top">
+      <h1 class="name masthead__name">Ron Bronson</h1>
+    </div>
+    <p class="tagline" id="tagline">
+      <span>Finds messy systems.</span>
+      <span>Makes them legible.</span>
+      <span>Builds what&rsquo;s missing.</span>
+      <span>Keeps them moving.</span>
+    </p>
+  </header>
 
-<!-- ══════════ HERO ══════════ -->
-<section class="block block--bg hero hx" aria-label="Introduction"><div class="hx__grid">
-<div>
-  <!-- INTRODUCTION. Keep the lead in sync with <meta name="description">, the
-       OG/Twitter descriptions, and assets/og.html (third person there, first
-       person here). Four copies plus the baked PNG. -->
-  <p class="hx__title">I&rsquo;m a systems designer, writer, and professor.</p>
-  <p class="hx__lead">I work on the decision layer: the systems that determine how
-    institutions operate, coordinate, and stay accountable as AI becomes part of how
-    the public gets served.</p>
-  <div class="hx__cta"><button type="button" class="btn btn--lead" data-contact><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14"></rect><path d="M3 6l9 7 9-7"></path></svg>Send Message</button><a class="btn btn--ghost" href="https://blog.ronbronson.com">My blog</a></div>
-</div>
-<div><img class="hx__photo" src="assets/profile.jpg" alt="Ron Bronson" width="720" height="900"></div>
-</div></section>
+  <p class="intro-lede">I&rsquo;m a systems designer, writer, and professor. I work on the decision layer: the systems that determine how institutions operate, coordinate, and stay accountable as AI becomes part of how the public gets served. I teach Urban Technology at the University of Michigan, build <a href="https://vloora.com">Vloora</a>, and run public programming through my studio, <a href="https://thinkingweapons.com">Thinking Weapons</a>. Offline I coach high school tennis and host a radio show.</p>
 
-<div class="block block--deep hx-strip"><p class="np"><span class="np__label" id="np-label">Last played</span> <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener"><b class="np__track" id="np-track"></b> <span class="np__artist" id="np-artist">last.fm/statechampion</span></a></p></div>
+  <div class="nowstrip">
+    <span class="np"><span class="nowstrip__label" id="np-label">Last played</span> <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener"><b id="np-track">&mdash;</b> <span id="np-artist">last.fm/statechampion</span></a></span>
+    <span class="pages">
+      <a href="coaching.html">Coaching &rarr;</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="events.html">Host &amp; events &rarr;</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <a href="https://blog.ronbronson.com">Blog &rarr;</a>
+      <span class="sep" aria-hidden="true">&middot;</span>
+      <button type="button" class="linkish" data-contact>Email &rarr;</button>
+    </span>
+  </div>
 
-<!-- ══════════ RAIL AND MAIN ══════════ -->
+  <section class="section">
+    <h2>Practice</h2>
+    <div class="section__body">
+      <p class="section__note">Eight years at 18F, close to four of them as Head of Design, running the largest in-house design practice in the federal government. I set its headcount, approved its hiring, and built the career ladders it ran on. What I build now starts from one question: when software makes a call on someone&rsquo;s behalf, who decided, and where is the record?</p>
+      <ul>
+        <li><a href="https://ronbronson.design">Forward deployed design</a> <span class="src">&mdash; what I can be hired to do</span></li>
+        <li><a href="https://ronbronson.dev">ronbronson.dev</a> <span class="src">&mdash; everything I ship</span></li>
+        <li><a href="https://vloora.com">Vloora</a> <span class="src">&mdash; agent experience</span></li>
+        <li><a href="https://www.npmjs.com/package/closedtab">closedtab</a> <span class="src">&mdash; npm, reviews the work agents do</span></li>
+        <li><a href="https://www.npmjs.com/package/prosekeep">prosekeep</a> <span class="src">&mdash; npm, editorial standards for agent writing</span></li>
+      </ul>
+    </div>
+  </section>
 
-<!-- ══════════ THE NARRATIVE ══════════
-     Four chapters, each a stance carried by the work rather than
-     stated about it. The facts here were the Practice blurb in the
-     rail-and-main section; they moved up so the page leads with
-     responsibility and what changed, and the rail keeps the person.
-     Colour alternates deeper / deep / bg (DDR-012). -->
-<!-- ══════════ THE NARRATIVE ══════════
-     Four sections, each one claim and the proof beside it. These were four
-     chapters of running prose; the claims are the same and the reading is a
-     third of what it was. The proof lives on the pages the tiles point at,
-     not in the paragraph. -->
-<section class="block block--deeper nar-sec" aria-labelledby="c1">
-<h2 class="nar-h" id="c1">How services actually work</h2>
-<p class="nar-note">I start from how a service behaves for the person on the receiving end. I call that public mechanics, and I teach it at Michigan.</p>
-<div class="tg">
-<a class="tile" href="public-mechanics.html"><span class="lab">UT 402 / URP 610 &middot; Fall 2026</span><b>Public Mechanics: How Services Work</b></a>
-<a class="tile" href="interaction-design.html"><span class="lab">UT 330 &middot; Fall 2026</span><b>Interaction Design and Urban Experiences</b></a>
-<a class="tile" href="service-design.html"><span class="lab">UT 360 &middot; Winter 2026</span><b>Service Design and Urban Needs</b></a>
-</div>
-</section>
+  <section class="section">
+    <h2>Selected talks</h2>
+<ul>
+      <li><a href="https://www.ixda.no/talks/design-as-repair" target="_blank" rel="noopener">Design as Repair</a> <span class="src">— IxDA Oslo, Sep. 2025</span></li>
+      <li><a href="https://digital.gov/resources/deceptive-design-how-to-identify-and-combat-consequence-design" target="_blank" rel="noopener">Deceptive Design / Consequence Design</a> <span class="src">— digital.gov, Oct. 2020</span></li>
+      <li><a href="https://rosenfeldmedia.com/civic-design-2022/design-consequences-everyday-life-ron-bronson-readings-and-other-resources/" target="_blank" rel="noopener">Design Consequences in Everyday Life</a> <span class="src">— Rosenfeld Civic Design, 2022</span></li>
+      <li style="margin-top:6px;"><a href="talks.html" style="font-weight:700; color:var(--accent); border-bottom:var(--frame) solid var(--accent); padding-bottom:1px;">All talks &rarr;</a> <span class="src">— the full speaking history</span></li>
+    </ul>
+  </section>
 
-<section class="block block--bg nar-sec" aria-labelledby="c2">
-<h2 class="nar-h" id="c2">Running the practice</h2>
-<p class="nar-note">Eight years at 18F, close to four of them as Head of Design, running the largest in-house design practice in the federal government. I set its headcount, approved its hiring, and built the career ladders it ran on.</p>
-<div class="tg">
-<a class="tile" href="https://ronbronson.design"><span class="lab">The practice</span><b>What I can be hired to do</b></a>
-<a class="tile" href="https://www.ixda.no/talks/design-as-repair"><span class="lab">Talk &middot; IxDA Oslo, September 2025</span><b>Design as Repair</b></a>
-<a class="tile" href="https://podcasts.apple.com/br/podcast/repairing-service-design-for-the-age-of-ai-ron-bronson-ep-236/id1104665758?i=1000726081505"><span class="lab">Interview &middot; Service Design Show, 2025</span><b>Repairing Service Design for the Age of AI</b></a>
-</div>
-</section>
+  <section class="section">
+    <h2>Selected interviews</h2>
+<ul>
+      <li><a href="https://www.softlabor.biz/the-soft-labor-questionnaire-ron-bronson/" target="_blank" rel="noopener">The Soft Labor Questionnaire</a> <span class="src">— Soft Labor No. 26, Nov. 2025</span></li>
+      <li><a href="https://podcasts.apple.com/br/podcast/repairing-service-design-for-the-age-of-ai-ron-bronson-ep-236/id1104665758?i=1000726081505" target="_blank" rel="noopener">Repairing Service Design for the Age of AI</a> <span class="src">— Service Design Show, Sep. 2025</span></li>
+      <li><a href="https://codeforamerica.org/news/leading-the-field-ron-bronson/" target="_blank" rel="noopener">Q&amp;A with Ron Bronson</a> <span class="src">— Code for America, 2025</span></li>
+      <li><a href="https://www.dididothat.design/episode/what-huh-me-huh-what-with-ron-bronson" target="_blank" rel="noopener">Interview with Ron Bronson</a> <span class="src">— Did I Do That? Design podcast, Ep. 72, Oct. 2025</span></li>
+      <li><a href="https://open.spotify.com/episode/2lC2xrhf4PIasyzJW4faP7" target="_blank" rel="noopener">Ron Bronson on Service Design</a> <span class="src">— Surfacing, Jul. 2021</span></li>
+      <li><a href="https://pixelpioneers.co/blog/building-better-user-centered-products-an-interview-with-ron-bronson" target="_blank" rel="noopener">Building Better User-Centered Products</a> <span class="src">— Pixel Pioneers, Nov. 2020</span></li>
+      <li><a href="https://www.youtube.com/watch?v=U0lsmfUmrLI" target="_blank" rel="noopener">First major-league Pes&auml;pallo game broadcast in English: Sotkamo v Imatra</a> <span class="src">— 25 Jul 2024</span></li>
+    </ul>
+  </section>
 
-<section class="block block--deep nar-sec" aria-labelledby="c3">
-<h2 class="nar-h" id="c3">Who holds the pen</h2>
-<p class="nar-note">When software makes a call on someone&rsquo;s behalf, somebody should be able to say who decided and go find the record. That question runs through what I build now.</p>
-<div class="tg">
-<a class="tile" href="https://vloora.com"><span class="lab">Agent experience</span><b>Vloora</b></a>
-<a class="tile" href="https://www.npmjs.com/package/closedtab"><span class="lab">npm &middot; open source</span><b>closedtab</b></a>
-<a class="tile" href="https://ronbronson.dev"><span class="lab">Everything I ship</span><b>ronbronson.dev</b></a>
-<a class="tile" href="https://thinkingweapons.com"><span class="lab">Studio</span><b>Thinking Weapons</b></a>
-</div>
-</section>
+  <section class="section">
+    <h2>Selected writing</h2>
+<ul>
+      <li><a href="https://blog.ronbronson.com/better-technology-for-cruelty-or-administrative-burden-as-a-service" target="_blank" rel="noopener">Better Technology for Cruelty (Or Administrative Burden As a Service)</a> <span class="src">— May 2026</span></li>
+      <li><a href="https://blog.ronbronson.com/what-forward-deployed-design-actually-looks-like?ref=rogerwong.me" target="_blank" rel="noopener">What Forward Deployed Design Actually Looks Like</a> <span class="src">— May 2026</span></li>
+      <li><a href="https://piccalil.li/blog/some-advice-on-managing-your-design-career-upwards/" target="_blank" rel="noopener">Some advice on managing your design career upwards</a> <span class="src">— Piccalil.li, Jan. 2026</span></li>
+      <li><a href="https://blog.ronbronson.com/the-bureaucratic-banality-of-andor" target="_blank" rel="noopener">The Bureaucratic Banality of Andor</a> <span class="src">— 2025</span></li>
+      <li><a href="https://blog.ronbronson.com/service-design-for-ai-the-disintermediation-problem" target="_blank" rel="noopener">Service Design for AI: The Disintermediation Problem</a> <span class="src">— Feb. 2025</span></li>
+    </ul>
+  </section>
 
-<section class="block block--bg nar-sec" aria-labelledby="c4">
-<h2 class="nar-h" id="c4">Build what&rsquo;s missing</h2>
-<p class="nar-note">I build the institutions I want to exist. Portland Digital Corps put a hundred volunteers on six nonprofit rebuilds in 2025. Before that, two design weeks and an unconference.</p>
-<div class="tg">
-<a class="tile" href="events.html"><span class="lab">Since 2014</span><b>What I host and organize</b></a>
-<a class="tile" href="coaching.html"><span class="lab">Tenth season &middot; 91&ndash;33&ndash;4</span><b>The coaching record</b></a>
-<a class="tile" href="https://futureperfectbook.club"><span class="lab">Podcast &middot; co-host</span><b>Future Perfect Book Club</b></a>
-<a class="tile" href="https://www.mixcloud.com/908rb/"><span class="lab">2nd &amp; 4th Wednesdays</span><b>The Sound Bulletin on KFFP-FM</b></a>
-</div>
-</section>
+  <section class="section">
+    <h2>Teaching</h2>
+    <div class="section__body">
+      <p class="section__note">Urban Technology at Michigan&rsquo;s Taubman College, since 2024. The throughline is public mechanics: how a service behaves for the person on the receiving end.</p>
+<ul>
+        <li>UT 402 Public Mechanics <span class="src">— <a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-1-fall-2026/" target="_blank" rel="noopener">F26</a>, <a href="https://taubmancollege.umich.edu/course/ut402-public-mechanics-how-services-work-section-5-winter-2026/" target="_blank" rel="noopener">W26</a></span></li>
+        <li>UT 330 Interaction Design <span class="src">— <a href="https://taubmancollege.umich.edu/course/ut330-interaction-design-and-urban-experiences-section-1-fall-2026/" target="_blank" rel="noopener">F26</a></span></li>
+        <li>UT 360 Service Design and Urban Needs <span class="src">— <a href="https://taubmancollege.umich.edu/course/ut360-advanced-studio-service-design-and-urban-needs-section-2-winter-2026/" target="_blank" rel="noopener">W&rsquo;26</a>, <a href="https://taubmancollege.umich.edu/news/2024/04/25/taubman-college-students-create-innovative-concepts-to-welcome-new-residents-in-collaboration-with-the-state-of-michigans-population-growth-effort/" target="_blank" rel="noopener">W&rsquo;24</a></span></li>
+        <li>ART 230 Business of Visual Art <span class="src">— Community College of Aurora, Sp/Su/Fa &rsquo;09</span></li>
+      </ul>
+    </div>
+  </section>
 
-<!-- ══════════ THE RECORD ══════════
-     The reference asks for a timeline an outside reader can follow,
-     with standing appointments kept apart from temporary executive
-     details. Keep those two lists separate: a detail is not a job,
-     and collapsing them overstates both. -->
-<!-- ══════════ PLACES ══════════
-     The two-column table of appointments and executive details that was
-     here said the same things the chapters above already say, at length.
-     This is the same record as marks. Each cell is a word now and takes
-     an <img> later without the grid moving; see .marks in core.css.
-     The old table is in git history if it is wanted back. -->
-<section class="block block--deeper nar-sec" id="places" aria-labelledby="h-places">
-<h2 class="nar-h" id="h-places">Places I&rsquo;ve helped</h2>
-<div class="marks">
-  <div class="mark"><span>University of Michigan</span></div>
-  <div class="mark"><span>0000th.ai</span></div>
-  <div class="mark"><span>State Capacity AI</span></div>
-  <div class="mark"><span>Vloora</span></div>
-  <div class="mark"><span>18F</span></div>
-  <div class="mark"><span>TTS</span></div>
-  <div class="mark"><span>City of Bloomington</span></div>
-  <div class="mark"><span>GSA</span></div>
-  <div class="mark"><span>FTC</span></div>
-  <div class="mark"><span>PDX Digital Corps</span></div>
-</div>
-</section>
+  <section class="section">
+    <h2>Host &amp; events</h2>
+    <div class="section__body">
+      <p class="section__note">I build the institutions I want to exist. Portland Digital Corps put a hundred volunteers on six nonprofit rebuilds in 2025; before that, two design weeks and an unconference.</p>
+<ul>
+        <li><a href="https://futureperfectbook.club" target="_blank" rel="noopener">Future Perfect Book Club</a> <span class="src">— Podcast, 2025</span></li>
+        <li><a href="https://www.mixcloud.com/908rb/" target="_blank" rel="noopener">The Sound Bulletin on KFFP-FM</a> <span class="src">— 2nd &amp; 4th Wednesdays, 1600&ndash;1800 PST</span></li>
+        <li>Organizer, <a href="https://taubmancollege.umich.edu/news/2026/04/15/bronson-leads-civic-tech-panels-at-u-m-service-design-weekend/" target="_blank" rel="noopener">Years Ahead 26</a> <span class="src">— 2026</span></li>
+        <li>Founding Director, <a href="https://digitalcorpspdx.org" target="_blank" rel="noopener">Portland Digital Corps</a> <span class="src">— 2025</span></li>
+        <li>Organizer, <a href="https://designforthepublic.com" target="_blank" rel="noopener">Design For The Public 24</a> <span class="src">— October 16&ndash;17, 2024</span></li>
+        <li>Founder, <a href="https://www.aigapdx.org/portland-design-month" target="_blank" rel="noopener">Portland Design Month</a> <span class="src">— 2024</span></li>
+        <li>Founder, Indianapolis Design Week <span class="src">— 2016</span></li>
+        <li>Co-Founder, <a href="https://www.instagram.com/ggrgt" target="_blank" rel="noopener">Aggregate</a> <span class="src">— 2014</span></li>
+      </ul>
+    </div>
+  </section>
 
-<!-- The work sections, full width. These used to sit in the right-hand
-     column of a two-column section; there is no left column any more. -->
+  <section class="section">
+    <h2>Coaching</h2>
+    <div class="section__body">
+      <p class="section__note">A tenth season of high school tennis, 91&ndash;33&ndash;4 across three states, and the ranking system Oregon&rsquo;s new team championship is seeded from.</p>
+      <ul>
+        <li><a href="coaching.html">The coaching record</a> <span class="src">&mdash; the whole thing, on its own page</span></li>
+        <li><a href="https://oregontennis.org">oregontennis.org</a> <span class="src">&mdash; the rankings, four years of data</span></li>
+      </ul>
+    </div>
+  </section>
 
+  <section class="section" id="places">
+    <h2>Places I&rsquo;ve helped</h2>
+    <div class="marks">
+      <div class="mark"><span>University of Michigan</span></div>
+      <div class="mark"><span>GPO.DELIVERY</span></div>
+      <div class="mark"><span>0000th.ai</span></div>
+      <div class="mark"><span>State Capacity AI</span></div>
+      <div class="mark"><span>Vloora</span></div>
+      <div class="mark"><span>18F</span></div>
+      <div class="mark"><span>TTS</span></div>
+      <div class="mark"><span>City of Bloomington</span></div>
+      <div class="mark"><span>GSA</span></div>
+      <div class="mark"><span>FTC</span></div>
+      <div class="mark"><span>PDX Digital Corps</span></div>
+    </div>
+  </section>
 
-<!-- The shelf: what the side rail became once the page stopped opening
-     with it. Same four modules, across the page rather than down it. -->
-<section class="block block--deeper hx-shelf" aria-label="Reading, watching and elsewhere">
-  <!-- Topics only: no sentence underneath and no links. Ron's list;
-       rewrite freely, nothing else depends on it. -->
+  <section class="section" id="reading-mod">
+    <h2>Reading</h2>
+    <ul class="books" id="reading-list"></ul>
+  </section>
 
-  <div id="reading-mod"><h2 class="hx-h3">Reading</h2><ul class="books" id="reading-list"></ul></div>
-  <div id="watch-mod"><h2 class="hx-h3">Watching</h2><ul class="books" id="watch-list"></ul></div>
-  <div><h2 class="hx-h3">Favorites</h2><dl class="favs">
-            <dt>Artist</dt><dd>Nam June Paik</dd>
-            <dt>Album</dt><dd>Songs In The Key of Life</dd>
-            <dt>Scent</dt><dd>BDK Gris Charnel</dd>
-            <dt>Tea</dt><dd>Ruby 21</dd>
-            <dt>Cocktail</dt><dd>Mezcal Negroni</dd>
-            <dt>Game</dt><dd>Balatro</dd>
-          </dl></div>
-  <div><h2 class="hx-h3">Links</h2><ul class="out">
-            <li>
-              <a href="https://www.are.na/ron-bronson-zgjvvrzhlq8/channels" target="_blank" rel="noopener">Are.na</a>
-            </li>
-            <li>
-              <a href="https://www.pi.fyi/u/ron" target="_blank" rel="noopener">PI.FYI</a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/portlandneon" target="_blank" rel="noopener">Portland Neon</a>
-            </li>
-            <li>
-              <a href="https://letterboxd.com/ronbronson/" target="_blank" rel="noopener">Letterboxd</a>
-            </li>
-            <li>
-              <a href="https://listening.ronbronson.com" target="_blank" rel="noopener">Listening</a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="noopener">
-                <!-- Official mark, inlined. Nothing on this page loads from a
-                     third party, so no icon font and no remote SVG. -->
-                <svg class="out__mark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.202 2.857C7.954 4.922 10.913 9.11 12 11.358c1.087-2.247 4.046-6.436 6.798-8.501C20.783 1.366 24 .213 24 3.883c0 .732-.42 6.156-.667 7.037-.856 3.061-3.978 3.842-6.755 3.37 4.854.826 6.089 3.562 3.422 6.299-5.065 5.196-7.28-1.304-7.847-2.97-.104-.305-.152-.448-.153-.327 0-.121-.05.022-.153.327-.568 1.666-2.782 8.166-7.847 2.97-2.667-2.737-1.432-5.473 3.422-6.3-2.777.473-5.899-.308-6.755-3.369C.42 10.04 0 4.615 0 3.883c0-3.67 3.217-2.517 5.202-1.026"/></svg>Bluesky</a>
-            </li>
-          </ul></div>
-</section>
+  <section class="section" id="watch-mod">
+    <h2>Watching</h2>
+    <ul class="books" id="watch-list"></ul>
+  </section>
 
-<!-- ══════════ TOP 8 ══════════ -->
+  <section class="section" id="elsewhere">
+    <h2>Elsewhere</h2>
+    <ul class="out">
+      <li><a href="https://bsky.app/profile/ronbronson.com" target="_blank" rel="me noopener">Bluesky</a></li>
+      <li><a href="https://github.com/quarterback" target="_blank" rel="me noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/ronbronson/" target="_blank" rel="me noopener">LinkedIn</a></li>
+      <li><a href="https://www.are.na/ron-bronson-zgjvvrzhlq8/channels" target="_blank" rel="noopener">Are.na</a></li>
+      <li><a href="https://www.pi.fyi/u/ron" target="_blank" rel="noopener">PI.FYI</a></li>
+      <li><a href="https://www.instagram.com/portlandneon" target="_blank" rel="noopener">Portland Neon</a></li>
+      <li><a href="https://letterboxd.com/ronbronson/" target="_blank" rel="noopener">Letterboxd</a></li>
+      <li><a href="https://listening.ronbronson.com" target="_blank" rel="noopener">Listening</a></li>
+      <li><a href="https://www.mixcloud.com/908rb/" target="_blank" rel="noopener">Mixcloud</a></li>
+    </ul>
+  </section>
 
-<footer class="block block--bg hx-colo">
   <section class="colophon" aria-label="Colophon, with Digressions">
     <h2>Colophon, with Digressions</h2>
     <p class="colophon__digression"><span class="digression__label">Digression</span> <span id="digression">Inexplicably, a Green Bay Packers shareholder.</span></p>
-    <p>Last updated 22 October 2026.</p>
+    <p>Last updated 26 October 2026.</p>
     <p>Built hastily with HTML, CSS, JS, GitHub.</p>
     <p>Fonts: PP Neue Montreal (display and text), Author (subtitle), PP Pangram Sans (labels), and Azeret Mono (colophon).</p>
   </section>
-</footer>
+
+</div>
+
+</div>
+
 <script>
   /* Rotating digression, the same list and the same trick as the .design
      colophon. Add lines freely; one shows at random per load and never
@@ -229,7 +255,6 @@
   })();
 </script>
 
-</div>
 
 <script>
   /* The address is assembled at click time and never written into the DOM. */
@@ -284,7 +309,7 @@
     var MAX_PAGES = 10; // 100 records a page
     var list = document.getElementById("reading-list");
     if (!list) return;
-    var mod = list.closest(".mod") || list.parentNode;
+    var mod = list.closest("section") || list.parentNode;
 
     function esc(x) {
       return String(x == null ? "" : x).replace(/[&<>"]/g, function (c) {
@@ -346,7 +371,7 @@
   (function () {
     var list = document.getElementById("watch-list");
     if (!list) return;
-    var mod = list.closest(".mod") || list.parentNode;
+    var mod = list.closest("section") || list.parentNode;
     function hide() { if (mod) mod.style.display = "none"; }
 
     function esc(x) {

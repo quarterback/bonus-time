@@ -45,35 +45,14 @@
 .hx { padding-bottom: clamp(32px, 4vw, 56px); }
 
 /* Rail and main */
-.hx-cols { display: grid; grid-template-columns: 320px minmax(0, 1fr); gap: 0; padding-top: 0; padding-bottom: 0; }
-.hx-cols > * { min-width: 0; }
-.hx-rail { --bg: var(--k-bg-deeper); --ink: var(--k-ink); --ink-soft: var(--k-ink); --accent: var(--k-ink); background: var(--k-bg-deeper); color: var(--k-ink); padding: 36px clamp(20px, 2.6vw, 36px) 48px; display: grid; gap: 32px; align-content: start; }
-.hx-main { padding: 36px 0 48px clamp(28px, 4vw, 56px); display: grid; gap: 44px; align-content: start; }
 
 /* Listening */
-.hx-rail ., .hx-shelf .np { font-family: var(--deck); font-size: 16px; }
-.hx-rail ., .hx-shelf .np__label { font-family: var(--deck); font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); margin-bottom: 6px; }
-.hx-rail ., .hx-shelf .np__track { font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.03em; line-height: 1.1; }
-.hx-rail ., .hx-shelf .np__artist { color: var(--k-ink); margin-top: 4px; }
-.site--blocks .block .hx-rail ., .hx-shelf .np a:hover { background: none; color: var(--k-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 
 /* Shelves: Reading and Watching reuse the .books markup the scripts emit */
-.hx-rail ., .hx-shelf .books { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
-.hx-rail ., .hx-shelf .books .book__cover { border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); transition: transform .12s ease; }
-.hx-rail ., .hx-shelf .books .book__cover:hover { transform: translateY(-3px); }
-.hx-rail ., .hx-shelf .books .book__cover-fallback { font-family: var(--display); font-weight: 900; font-size: 36px; letter-spacing: -.05em; color: var(--k-ink); }
 
 /* Favorites */
-.hx-rail ., .hx-shelf .favs { display: grid; grid-template-columns: auto 1fr; gap: 6px 18px; font-size: 17px; }
-.hx-rail ., .hx-shelf .favs dt { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--k-ink); align-self: baseline; }
-.hx-rail ., .hx-shelf .favs dd { margin: 0; padding: 0; border: 0; font-family: var(--deck); font-weight: 500; font-size: 17px; letter-spacing: 0; }
 
 /* Links */
-.hx-rail ., .hx-shelf .out { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
-.hx-rail ., .hx-shelf .out li { margin: 0; }
-.site--blocks .block .hx-rail ., .hx-shelf .out a:not(.x):not(.y):not(.z) { display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); color: var(--k-ink); font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-decoration: none; }
-.site--blocks .block .hx-rail ., .hx-shelf .out a:not(.x):not(.y):not(.z):hover { background: var(--k-ink); color: var(--k-bg); }
-.hx-rail ., .hx-shelf .out__mark { width: 15px; height: 15px; fill: currentColor; }
 
 /* Tiles */
 .tg { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
@@ -84,13 +63,8 @@
 .site--blocks .block a.tile:not(.x):not(.y):not(.z):hover .lab { color: var(--k-on-lead); }
 
 /* Players */
-.hx-vid { position: relative; aspect-ratio: 16 / 9; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-ink); }
-.hx-vid iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 .hx-cap { margin: 10px 0 0; font-family: var(--deck); font-weight: 500; font-size: 16px; }
 .site--blocks .block .hx-cap a:not(.x):not(.y):not(.z) { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; text-decoration-color: var(--k-accent); }
-.hx-pods { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.hx-pod .hx-cap { margin: 0 0 10px; }
-.hx-pod iframe { display: block; width: 100%; height: 152px; border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg-deeper); }
 
 /* Top 8 */
 
@@ -102,17 +76,11 @@
 @media (max-width: 900px) {
   .hx__grid { grid-template-columns: 1fr; }
   .hx__photo { justify-self: start; max-width: 300px; }
-  .hx-cols { grid-template-columns: 1fr; }
-  .hx-rail { order: 2; margin: 0 calc(-1 * clamp(0px, 2vw, 24px)); }
-  .hx-main { order: 1; padding-left: 0; }
-  .hx-rail ., .hx-shelf .books { grid-template-columns: repeat(6, minmax(0, 1fr)); }
-  .hx-pods { grid-template-columns: 1fr; }
   .tile { min-height: 0; }
 }
 @media (max-width: 560px) {
-  .hx-rail ., .hx-shelf .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
-@media (prefers-reduced-motion: reduce) { .tile, .hx-rail ., .hx-shelf .books .book__cover { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .tile, .books--wide .book__cover { transition: none; } }
 
 /* Labels use the deck face on this page. The TopBar nav is set in the display
    face at the rail-heading (H3) size, underlined and nothing else: no arrows,
@@ -153,7 +121,6 @@
 .story__posts li { padding: 14px 0; }
 .story .story__excerpt { margin: 6px 0 0; font-size: clamp(17px, 1.3vw, 19px); line-height: 1.5; color: var(--ink-soft); }
 
-
 /* The "open it up" link that closes a front-page section. site--tiles strips
    decoration from every link inside a block, so this one has to ask for it
    back. The rule is in the lead colour; the text stays ink, so the colour is
@@ -161,20 +128,61 @@
 .site--tiles .block a.go { text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; text-decoration-color: var(--k-lead); font-family: var(--deck); font-size: 18px; }
 .site--tiles .block a.go:hover { background: none; color: var(--k-ink); text-decoration-color: var(--k-ink); }
 
-
-/* ── The shelf band ───────────────────────────────
-   Reading, Watching, Favorites and Links were a side rail, which worked
-   when they sat at the top beside the main column. The page now opens
-   with the chapters and the record, so the rail ended up a tall narrow
-   column stranded at the bottom with nothing beside it. Same four
-   modules, laid across the page instead of down the side, as the last
-   thing before the colophon. */
-.hx-shelf { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.6vw, 44px); align-items: start; padding-top: clamp(40px, 5vw, 64px); padding-bottom: clamp(40px, 5vw, 64px); }
-.hx-shelf > div { min-width: 0; }
-.hx-shelf .books { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
-.hx-shelf .out { flex-direction: column; align-items: start; gap: 8px; }
-
-@media (max-width: 1000px) { .hx-shelf { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 560px) { .hx-shelf { grid-template-columns: minmax(0, 1fr); } }
 /* The work column, with no rail beside it. */
-.hx-main--full { padding: 0; gap: clamp(36px, 4vw, 56px); }
+
+/* ── Sections that narrate ────────────────────────
+   The previous .design put a heading straight on top of a grid. This page
+   carries more kinds of work, so a section may set one short paragraph
+   between the two. One paragraph; if it needs two, it needs its own page. */
+.hx-note { margin: 0 0 clamp(22px, 2.6vw, 32px); max-width: 68ch; font-family: var(--text); font-weight: 400; font-size: clamp(17px, 1.35vw, 20px); line-height: 1.5; color: var(--ink); text-wrap: pretty; }
+
+/* Covers at the size .design gives them, not the rail's thumbnails. */
+.books--wide { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 14px; }
+.books--wide .book__cover { border: var(--frame-heavy) solid var(--k-ink); background: var(--k-bg); transition: transform .12s ease; }
+.books--wide .book__cover:hover { transform: translateY(-3px); }
+.books--wide .book__cover-fallback { font-family: var(--display); font-weight: 900; font-size: 44px; letter-spacing: -.05em; color: var(--k-ink); }
+@media (max-width: 760px) { .books--wide { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* Elsewhere: the links and the favorites, side by side on the ink footer. */
+.hx-else__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); align-items: start; }
+.hx-else .hx-h3 { margin: 0 0 14px; font-family: var(--display); font-weight: 800; font-size: 22px; letter-spacing: -.03em; color: var(--ink); }
+.hx-else .out { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.hx-else .out li { margin: 0; }
+.site--blocks .block .hx-else .out a:not(.x):not(.y):not(.z) { display: inline-flex; align-items: center; gap: 8px; padding: 9px 14px; border: var(--frame) solid var(--ink); background: none; color: var(--ink); font-family: var(--deck); font-weight: 500; font-size: 15px; text-decoration: none; }
+.site--blocks .block .hx-else .out a:not(.x):not(.y):not(.z):hover { background: var(--ink); color: var(--k-ink); }
+.hx-else .out__mark { width: 15px; height: 15px; fill: currentColor; }
+.hx-else .favs { display: grid; grid-template-columns: auto 1fr; gap: 7px 20px; margin: 0; }
+.hx-else .favs dt { font-family: var(--deck); font-weight: 500; font-size: 15px; letter-spacing: 0; text-transform: none; color: var(--ink); align-self: baseline; }
+.hx-else .favs dd { margin: 0; padding: 0; border: 0; font-family: var(--display); font-weight: 800; font-size: 18px; letter-spacing: -.02em; color: var(--ink); }
+@media (max-width: 700px) { .hx-else__grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Section padding. .hx-sec lived only in 2026-site's home.css; this page now
+   uses the same component, so it needs the same rule or every heading sits
+   on the edge of its block. */
+.hx-sec { padding-top: clamp(40px, 5vw, 72px); padding-bottom: clamp(40px, 5vw, 72px); }
+.site--tiles .wrap--blocks { padding-bottom: 0; }
+
+/* ── Sections that narrate ────────────────────────
+   The ported structure is a mono label beside a list. A section may now put
+   one short paragraph above its list; .section__body holds both so they
+   share the content column. One paragraph. If it needs two, it needs a page. */
+.section__body { display: grid; gap: clamp(12px, 1.4vw, 18px); }
+.section__note { margin: 0; max-width: 72ch; font-family: var(--text); font-weight: 400; font-size: clamp(15px, 1.15vw, 17px); line-height: 1.55; color: var(--ink); text-wrap: pretty; }
+
+/* Marks sit in the content column, as words on the ground. */
+.section .marks { grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 4px 18px; }
+.section .mark { min-height: 0; padding: 8px 0; justify-content: flex-start; text-align: left; }
+.section .mark span { font-size: clamp(15px, 1.2vw, 18px); }
+
+/* Covers in a section: six across, no frames. */
+.section .books { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; }
+.section .books .book__cover { background: var(--bg-deeper); }
+@media (max-width: 700px) { .section .books { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* The contact link in the strip is a button; it has to read as the links around it. */
+.linkish { background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Elsewhere: one row, the way the ported page had it, not nine stacked rows. */
+#elsewhere .out { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+#elsewhere .out li { margin: 0; padding: 0; border: 0; }
+#elsewhere .out a { display: inline; }
