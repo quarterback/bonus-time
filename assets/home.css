@@ -267,3 +267,4 @@
 .site--masthead .nowbar__links a:hover { opacity: .7; }
 .nowbar__site { font-size: 15px; text-decoration: underline !important; text-underline-offset: .18em; text-decoration-thickness: 2px; }
 @media (max-width: 620px) { .nowbar { justify-content: flex-start; } }
+.bioband__p + .bioband__p { margin-top: .85em; }

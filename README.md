@@ -2,87 +2,35 @@
 
 Source for **ronbronson.com** — the front door for the four sites.
 
-**This page is Ron's statement of what his work is, in his words, plus the personal
-rail.** The main column carries his copy: a two-paragraph introduction and a Practice
-paragraph that establishes the bonafides (Michigan, 18F, where the work has been
-presented). Then `Elsewhere`, the four onward links.
+**27 October 2026: the front door leads with authority.** Ron's instruction: the page has
+to say what he does and who he has been, the way an SV, FAANG or YC alum writes a personal
+intro page, and every earlier structure for this page is retired. The intro and section
+copy below were drafted by an agent from facts Ron has stated, at his explicit request, and
+are his to rewrite. The general rule still holds: edit his words only when he supplies new
+ones or asks.
 
-Copy rule from Ron: no negation, no contrastive frames, no repetition. Anything in that
-register gets rejected.
+Copy rule from Ron: no negation, no contrastive frames, no repetition.
 
-This replaced the earlier two-sentence front door, and before that **2026 So Far**. The
-two-sentence version was rejected for being generic; the point of the page now is the
-argument, not the routing. Two rules survive from the old version:
+Page order, top to bottom:
 
-- **All copy is Ron's.** Nothing in the main column was drafted on his behalf. Edit the
-  words only when he supplies new ones.
-- **No Selected work / portfolio index.** `.dev` and `.design` carry the work. The
-  Practice paragraph is as far as credentials go on this page.
+1. **Name and nav.** Product Leadership (ronbronson.design), Web Dev (ronbronson.dev),
+   Coaching, Blog, Email.
+2. **Intro** (`.bioband`). One line on what he does (his own LinkedIn line), one paragraph
+   of authority (18F, TTS Consulting, earlier city and state work), one paragraph on now
+   (Michigan, GPO, client work, software). Keep the first sentence in sync with the meta
+   description, the OG and Twitter descriptions, and `assets/og.html`, then regenerate
+   `assets/og.png`.
+3. **Now.** Current roles, one line each, pointing to the other sites.
+4. **Previously.** Roles with scope: title, organization, the number that shows the scale.
+   Numbers come from Ron; do not round or upgrade them.
+5. **Talks and writing.** A short pick, plus All talks on ronbronson.design. Ron chooses
+   what stays; keep it short.
+6. **Outside work.** Coaching, the radio show, the podcast.
+7. **Last played, Reading, Watching, Elsewhere.** The personality layer, at the bottom.
+8. **Colophon, with Digressions.**
 
-Page order, top to bottom (`assets/home.css` carries the layout; PR #26):
-
-1. **TopBar** — `.topbar`, the name as `h1`, the three other sites, a mail button.
-2. **Hero** — `.hx`: the introduction as `.hx__title` + `.hx__lead` beside the portrait,
-   with the Send Message and My blog buttons. Keep the lead in sync with
-   `<meta name="description">`, the OG/Twitter descriptions, and `assets/og.html`.
-3. **Strip** — `.hx-strip`, Last played from last.fm.
-4. **Rail** — `.hx-rail`: `Let's Talk About`, Reading, Watching, Favorites, Links.
-5. **Main** — `.hx-main`: `Practice` (the one place titles and employers appear),
-   Teaching, Design as Repair, Now Playing. (Elsewhere was removed at Ron's request;
-   the TopBar carries the onward links.)
-6. **Colophon, with Digressions** — `.hx-colo`, the same colophon as `.design` and
-   `.dev`: small, Azeret Mono (self-hosted, `assets/fonts/azeret-mono-variable.woff2`;
-   masthead's own `--mono` slot is Pangram Sans, which is not a monospace), with one
-   digression picked at random per load. The `DIGRESSIONS` list is copied from
-   `2026-site/index.html`; keep the two in step.
-
-Ron's Top 8 is gone (a previous idea) and so is the name + Send a message footer bar.
-The theme dock is pinned bottom-right (`palette-dock--fixed`, added in
-`assets/palette-masthead.js`), as on `.design`.
-
-An earlier draft of this list named a `Current lines of inquiry` module (`.inq`) and
-`A critical practice of service design`. Neither has ever existed in `index.html` and
-there is no `.inq` style; they are noted here only so nobody goes looking for them.
-
-Only `My Sites` changed, and only its words: the same four links now carry Ron's
-`Elsewhere` labels.
-
-**The rail stays.** Contact, `Let's Talk About`, Listening, Reading, Watching, Favorites
-and `Links` (formerly `Elsewhere`; renamed because the main column now owns that word).
-It is the counterweight to the main column's register and the only place any of the
-sites says what Ron is into rather than what he argues.
-
-### The front door's actual test
-
-**Does this exist anywhere else?** `.dev` catalogues what Ron has built; `.design` covers
-how he works. If a module repeats either of them it is taking up room the front door
-doesn't have. By that test the rail is the strongest part of the page — Favorites,
-Listening, Reading, Watching, the Top 8 and the players exist nowhere else — and the
-`Design as Repair` embed is the weakest, since `.design` already carries that talk.
-
-**Lower the temperature.** `.dev` argues for the significance of every entry, which is
-right for a catalogue of invented sports and simulation engines that nothing about the
-names explains. It is wrong here. The front door states things; it doesn't make a case.
-Anything that starts reaching for significance belongs on `.dev`.
-
-**`Let's Talk About` is the module that passes that test outright.** Topics Ron is interested
-in, at the top of Rail B. It's the only place on any of the sites that says what he's
-interested in rather than what he's built — `Favorites` gestures at it but only as data.
-
-Topics only: no sentence underneath and no links. A topic that needs explaining belongs on
-the blog, and a link turns the module into a portfolio row. **The list changes with Ron's
-mood** — that's the point of it, and why it's the cheapest module on the page to edit.
-Rewrite it freely; nothing else depends on it.
-
-### The introduction is not a résumé
-
-Keep employers, titles, tenure, accomplishments, advisory roles, and individual projects
-out of the opening. Those details already have better homes on the other sites. Broad
-descriptors are useful orientation; a career history or case for expertise is not.
-
-Cut and not to be reinstated: an "About Me" essay, a "Currently" card grid, board service
-(a résumé grid of orgs and date ranges), community radio, and the four prose sections
-(Currently / Experience / Working With Me / Recently) — that whole register read as a CV.
+Retired with this change: the Selected talks, Selected interviews, Selected writing, Teaching
+and Host & events lists. Their content lives on ronbronson.design and in this repo's history.
 
 ## Structure
 
