@@ -1,5 +1,17 @@
 # bonus-time
 
+> **October 28, 2026: front page and Coaching moved to the tabloid design in the
+> Gallery wall colours.** `index.html` and `coaching.html` now load only
+> `assets/tabloid.css` (self-hosted Archivo and Source Serif 4 in
+> `assets/fonts/gallery/`) and no longer run the palette engine. Page order:
+> blue name bar and nav, last played strip, colliding headline with the
+> introduction under it, Ron's front page column (shows as bars until he writes
+> it; see the comment in `index.html`), lead photo, Watch and Listen, Talks and
+> interviews, Teaching / Host and events / Coaching, Selected writing, Reading
+> and Watching shelves, Elsewhere, colophon. The notes below describe the
+> previous layout and are kept for history. Design source: Paper file
+> "Tender bridge", board "Masthead · Tabloid, gallery wall colors".
+
 Source for **ronbronson.com** — the front door for the four sites.
 
 **This page is Ron's statement of what his work is, in his words, plus the personal
