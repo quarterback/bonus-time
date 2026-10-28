@@ -244,3 +244,6 @@ body.pg-red .page__h { color: var(--blue); }
 @media (max-width: 760px) { .stories .story .ph { height: auto; aspect-ratio: 3 / 2; } }
 /* Coaching header links to its page, so it carries an underline */
 .story h3 a { text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 8px; }
+/* Keep the envelope flush right with the stacked nav links */
+.bar nav .nav-mail { justify-self: end; margin-top: 2px; }
+@media (max-width: 760px) { .bar nav .nav-mail { justify-self: auto; margin-top: 0; } }
