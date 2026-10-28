@@ -296,3 +296,11 @@ body.pg-red .page__h { color: var(--blue); }
 .graf__body p { break-inside: auto; }
 .graf__body p:first-child::first-letter { font-size: 104px; margin: 8px 14px 0 0; }
 @media (max-width: 760px) { .graf__body { font-size: 20px; } .graf__body p:first-child::first-letter { font-size: 76px; } }
+
+/* Now listening: listening site plus streaming service icons */
+.np__links { margin-left: auto; display: inline-flex; align-items: center; gap: 14px; }
+.np__links .np__more { margin-left: 0; }
+.np__ic { display: inline-flex; width: 20px; height: 20px; color: inherit; }
+.np__ic svg { width: 100%; height: 100%; }
+.np__ic:hover { opacity: .7; }
+@media (max-width: 760px) { .np__links { margin-left: 0; } }
