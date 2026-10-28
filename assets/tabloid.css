@@ -193,3 +193,12 @@ a:hover { color: var(--blue); }
   .books { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .talk { grid-template-columns: 1fr; gap: 4px; }
 }
+
+/* Envelope contact button in the nav */
+.bar nav .nav-mail { display: inline-flex; align-items: center; padding: 0; background: none; border: 0; cursor: pointer; color: #fff; }
+.bar nav .nav-mail svg { display: block; width: 22px; height: 22px; }
+.bar nav .nav-mail:hover { color: var(--blue-tint); }
+
+/* Coaching uses the red colorway from the Paper secondary-page mockup */
+body.pg-red { --blue: #e10600; --blue-tint: #ffb8b3; }
+body.pg-red .page__h { color: var(--blue); }
