@@ -243,3 +243,5 @@ body.pg-red .page__h { color: var(--blue); }
 /* Same photo height in all three stories so the headers line up */
 .stories .story .ph { aspect-ratio: auto; height: clamp(220px, 24vw, 340px); }
 @media (max-width: 760px) { .stories .story .ph { height: auto; aspect-ratio: 3 / 2; } }
+/* Coaching header links to its page, so it carries an underline */
+.story h3 a { text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 8px; }
