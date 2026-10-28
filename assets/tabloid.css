@@ -13,8 +13,8 @@ html { overflow-x: clip; }
 :root {
   --paper: #ffffff;
   --ink: #0b0b14;
-  --blue: #1e4fff;
-  --blue-tint: #c9d3ff;
+  --blue: #e10600;
+  --blue-tint: #ffb8b3;
   --muted: #55556a;
   --hair: #d6d6de;
   --gut: clamp(16px, 2.8vw, 40px);
@@ -202,3 +202,31 @@ a:hover { color: var(--blue); }
 /* Coaching uses the red colorway from the Paper secondary-page mockup */
 body.pg-red { --blue: #e10600; --blue-tint: #ffb8b3; }
 body.pg-red .page__h { color: var(--blue); }
+
+/* Now listening, under the lead photo */
+.lead { padding-bottom: 0; }
+.np { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 18px; margin: 18px var(--gut) 0; padding: 14px 18px; background: var(--ink); color: #fff; font-family: var(--cond); font-stretch: 87%; font-variation-settings: "wdth" 87; font-size: 17px; }
+.np a { color: #fff; text-decoration: none; }
+.np a:hover { color: var(--blue-tint); }
+.np__eq { display: inline-flex; align-items: flex-end; gap: 3px; height: 20px; }
+.np__eq i { display: block; width: 5px; background: var(--blue); animation: np-eq 1.1s ease-in-out infinite alternate; }
+.np__eq i:nth-child(1) { height: 60%; } .np__eq i:nth-child(2) { height: 100%; animation-delay: -.4s; } .np__eq i:nth-child(3) { height: 40%; animation-delay: -.8s; }
+@keyframes np-eq { from { transform: scaleY(.35); } to { transform: scaleY(1); } }
+.np__eq i { transform-origin: bottom; }
+@media (prefers-reduced-motion: reduce) { .np__eq i { animation: none; } }
+.np__label { font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; font-size: 22px; line-height: 1; text-transform: uppercase; color: var(--blue); }
+.np__track b { font-weight: 800; }
+.np__track span { opacity: .8; }
+.np__more { margin-left: auto; font-size: 14px; text-decoration: underline !important; text-underline-offset: 3px; }
+
+/* Front page text, Ron writes it */
+.graf { padding: 46px var(--gut) 56px; }
+.graf__body { columns: 2; column-gap: 48px; max-width: 1200px; font-size: 21px; line-height: 1.6; }
+.graf__body p { margin: 0 0 18px; break-inside: avoid-column; }
+.graf__body p:first-child::first-letter { float: left; margin: 6px 10px 0 0; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; font-size: 76px; line-height: .8; color: var(--blue); }
+
+@media (max-width: 760px) {
+  .np { margin-top: 14px; }
+  .np__more { margin-left: 0; }
+  .graf__body { columns: 1; font-size: 19px; }
+}

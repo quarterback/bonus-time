@@ -52,11 +52,6 @@
     </nav>
   </header>
   <div class="rule8"></div>
-  <div class="strip">
-    <span>Last updated 28 October 2026</span>
-    <span class="np"><span id="np-label">Last played</span> <a id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener"><b id="np-track">&mdash;</b> <span id="np-artist">last.fm/statechampion</span></a> &middot; <a href="https://listening.ronbronson.com" target="_blank" rel="me noopener">listening.ronbronson.com</a></span>
-  </div>
-
   <!-- ══════════ HERO ══════════
        Colliding headline, then the second sentence of the introduction
        offset under it. Ron's words, as he last set them in Paper. -->
@@ -65,32 +60,28 @@
     <div class="ch__deck"><p>Ron Bronson is an assistant professor of practice in Urban Technology at the University of Michigan and founder of <a href="https://vloora.com">Vloora</a>, where his work on AI agents extends a wider interest in who makes decisions, who bears their consequences, and how systems can be changed.</p></div>
   </section>
 
-  <!-- ══════════ FRONT PAGE COLUMN ══════════
-       Ron's own piece: what he is doing now, a point of view, a philosophy.
-       Ron writes it. Until he does, the .draft class shows bars where the
-       words go. To publish: write the headline in .col__h, the paragraphs
-       (and an optional <blockquote> pull quote) in .col__body, set the date
-       in .col__date, and remove "draft" from the section's class. -->
-  <section class="col draft" aria-labelledby="col-h">
-    <div class="col__in">
-      <h2 class="col__h" id="col-h">Headline</h2>
-      <div class="draft__bars" aria-hidden="true"><i></i><i></i></div>
-      <div class="col__by"><span>By Ron Bronson</span><span class="col__date">October 2026</span></div>
-      <div class="col__body">
-        <p>Paragraph.</p>
-      </div>
-      <div class="draft__text" aria-hidden="true">
-        <div><i></i><i></i><i></i><i style="width:80%"></i><i></i><i style="width:55%"></i></div>
-        <div><i></i><i></i><i style="width:90%"></i><i></i><i style="width:40%"></i></div>
-        <div><i></i><i style="width:92%"></i><i></i><i></i><i style="width:60%"></i></div>
-      </div>
-    </div>
-  </section>
-
   <figure class="lead">
     <img src="assets/design-month.jpg" alt="Ron speaking at a lectern beside a projected slide during Portland Design Month" />
-    <figcaption class="cap">Portland Design Month, 2024.</figcaption>
   </figure>
+
+  <!-- ══════════ NOW LISTENING ══════════
+       Live from last.fm. The track and artist fill in on load. -->
+  <aside class="np" aria-label="Now listening">
+    <span class="np__eq" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="np__label">Now listening</span>
+    <a class="np__track" id="np-link" href="https://www.last.fm/user/statechampion" target="_blank" rel="noopener"><b id="np-track">&mdash;</b> <span id="np-artist">last.fm/statechampion</span></a>
+    <a class="np__more" href="https://listening.ronbronson.com" target="_blank" rel="me noopener">listening.ronbronson.com</a>
+  </aside>
+
+  <!-- ══════════ FRONT PAGE TEXT ══════════
+       Room for Ron to write about what he is doing now, a point of view, or
+       the context for the work. Replace the paragraph below with as many
+       <p> paragraphs as you like; they flow into two columns on desktop. -->
+  <section class="graf" aria-label="About this work">
+    <div class="graf__body">
+      <p>Ron Bronson studies how technology changes markets, organizations, and public power, drawing on economic sociology, critical urbanism, and more than two decades of experience building and directing digital systems.</p>
+    </div>
+  </section>
 
   <!-- ══════════ WATCH / LISTEN ══════════ -->
   <section class="sec">
@@ -265,7 +256,7 @@
         var label = document.getElementById("np-label");
         if (track && name) track.textContent = name;
         if (art && artist) art.textContent = artist;
-        if (label) label.textContent = now ? "Now playing" : "Last played";
+        
       })
       .catch(function () { /* leave the placeholder */ });
   })();
