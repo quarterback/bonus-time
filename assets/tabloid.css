@@ -247,3 +247,17 @@ body.pg-red .page__h { color: var(--blue); }
 /* Keep the envelope flush right with the stacked nav links */
 .bar nav .nav-mail { justify-self: end; margin-top: 2px; }
 @media (max-width: 760px) { .bar nav .nav-mail { justify-self: auto; margin-top: 0; } }
+
+/* No hard dividers. Sections separate through space and type scale. */
+.rule8 { display: none; }
+.sec__in, .stories, .gallery, .talks-list { border-top: 0; padding-top: 0; }
+.sec { padding-top: 72px; }
+.stories { margin-top: 72px; }
+.gallery { margin-top: 64px; }
+.pullquote { border-top: 0; border-bottom: 0; padding: 0; margin-top: 72px; }
+.talk, .brief-col li, .alist li, .events li { border-top: 0; border-bottom: 0; }
+.talk { padding: 12px 0; }
+.brief-col li { margin-bottom: 6px; }
+.events li { padding: 4px 0; }
+.else { border-top: 0; border-bottom: 0; padding: 0; margin-top: 40px; }
+.page .sec { padding-top: 64px; }
