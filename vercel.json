@@ -6,6 +6,8 @@
     { "source": "/talks", "destination": "/", "permanent": true },
     { "source": "/talks.html", "destination": "/", "permanent": true },
     { "source": "/myspace", "destination": "/", "permanent": true },
-    { "source": "/myspace.html", "destination": "/", "permanent": true }
+    { "source": "/myspace.html", "destination": "/", "permanent": true },
+    { "source": "/faculty", "destination": "https://ronbronson.dev/about.html", "permanent": true },
+    { "source": "/faculty.html", "destination": "https://ronbronson.dev/about.html", "permanent": true }
   ]
 }
