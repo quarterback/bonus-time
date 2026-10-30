@@ -23,3 +23,8 @@
 ## 4. Change
 
 The workflow does nothing until this repo has the `BLUESKY_HANDLE` variable and the `BLUESKY_APP_PASSWORD` secret, the same ones set on 2026-site.
+
+## Follow-up: nav label and interviews
+
+- Every link to ronbronson.design now says "Design" (nav on the front page, About, Coaching and Events, plus the doors band). It used to say "Product Leadership".
+- About has an Interviews list: the Soft Labor Questionnaire (Nov 2025) and Humans of Public Service (May 2022).
