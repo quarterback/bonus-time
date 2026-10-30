@@ -10,7 +10,8 @@
   },
   "documents": {
     "include": [
-      "about.html"
+      "about.html",
+      "coaching.html"
     ],
     "exclude": [],
     "overrides": {}

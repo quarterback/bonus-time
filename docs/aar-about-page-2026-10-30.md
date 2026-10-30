@@ -13,12 +13,12 @@
 - New `about.html`, on the same profile template as `coaching.html`. The lede and bio are the ronbronson.design About page, word for word, in third person. The photos are `gsa-18f.jpg`, `michigan.jpg` and `design-month.jpg`, with the alt text this repo already uses for them.
 - About is in the nav on the front page and on Coaching.
 - `vercel.json`: `/about` now serves `about.html`. `/about.html` no longer redirects to the front page.
-- standard.site: added the same `scripts/sync-standard.mjs`, workflow and `STANDARD-SITE.md` as 2026-site. The publication is `https://masthead.ronbronson.com`, described with the front page's meta description, and `about.html` is its one document. `standard-mapping.json` carries the About record .design published (`3mpff3klyjq2u`), so the first sync moves that record to this publication rather than creating a duplicate.
+- standard.site: added the same `scripts/sync-standard.mjs`, workflow and `STANDARD-SITE.md` as 2026-site. The publication is `https://masthead.ronbronson.com`, described with the front page's meta description, and `about.html` and `coaching.html` are its documents. `standard-mapping.json` carries the About record .design published (`3mpff3klyjq2u`), so the first sync moves that record to this publication rather than creating a duplicate.
 
 ## 3. Judgment
 
 - This breaks the README rule that nothing on this site is drafted on Ron's behalf only to the extent that the About copy came from .design. That copy was already published and is Ron's.
-- Coaching is not a standard.site document. It wasn't asked for.
+- Coaching was added as a second standard.site document at Ron's request.
 
 ## 4. Change
 
