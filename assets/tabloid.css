@@ -344,3 +344,18 @@ body.pg-red .page__h { color: var(--blue); }
 .colophon h2 { margin: 0 0 6px; font-size: 12px; font-weight: 600; line-height: 1.4; letter-spacing: .12em; text-transform: uppercase; }
 .colophon p, .colophon .colophon__digression { font-size: 13px; font-weight: 400; line-height: 1.55; }
 .colophon .colophon__digression { margin-bottom: 4px; }
+
+/* ──────────────────────────────────────────────────────────
+   Front page, 30 October 2026: the introduction under the photo, the
+   About text in the drop-cap section, What I do and Community as
+   full-width prose, Now listening at the bottom.
+   ────────────────────────────────────────────────────────── */
+.deck-under { padding: 40px var(--gut) 0; }
+.deck-under p { margin: 0; max-width: 1040px; font-family: var(--serif); font-weight: 600; font-size: clamp(26px, 2.6vw, 38px); line-height: 1.25; letter-spacing: -.01em; }
+.graf--plain { padding-top: 72px; }
+.graf__h { margin: 0 0 22px; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; font-size: 64px; line-height: .86; text-transform: uppercase; }
+.graf__h a { color: inherit; text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 8px; }
+.graf__h a:hover { color: var(--blue); }
+.graf--plain .graf__body p:first-child::first-letter { float: none; margin: 0; font: inherit; color: inherit; }
+.radio-ad + .np, .np + .colophon { margin-top: 40px; }
+@media (max-width: 760px) { .deck-under { padding-top: 28px; } .graf__h { font-size: 48px; } }

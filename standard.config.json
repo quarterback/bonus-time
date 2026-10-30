@@ -1,0 +1,19 @@
+{
+  "publication": {
+    "url": "https://masthead.ronbronson.com",
+    "name": "Ron Bronson",
+    "description": "Ron Bronson studies how technology changes markets and public power. He is a professor of practice at the University of Michigan and founder of Vloora, and his work draws on economic sociology, critical urbanism and software.",
+    "icon": "assets/favicon-512.png",
+    "preferences": {
+      "showInDiscover": true
+    }
+  },
+  "documents": {
+    "include": [
+      "about.html",
+      "coaching.html"
+    ],
+    "exclude": [],
+    "overrides": {}
+  }
+}
