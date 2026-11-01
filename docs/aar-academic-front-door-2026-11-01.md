@@ -36,3 +36,12 @@ The source is the canvas board "ronbronson.com, academic front door with persona
 ## 4. Consequence
 
 Rendered at 1440px and 390px in headless Chromium: no horizontal scroll and no script errors.
+
+## Correction: positions, not a résumé
+
+> I do NOT want that page to be a resume at all … amalgamating the stories into a corpus of narrative claim without tying it to a specific job bullet
+
+The board's Positions copy read as job bullets and figures (three administrations, 34-plus agencies, 21 to 40 designers, 95 percent retention, 5,581 hours). That was carried over without question, and it shouldn't have been.
+
+- Each position keeps its claim and its links. The body is now a short story of where Ron has acted on the claim (talks, events, delivery, teaching), drawn from his posts (Some Loose Notes on Service Delivery in Government, Dark Patterns Won, Better Technology for Cruelty). The bodies are marked STAND-IN.
+- The introduction drops the "two decades … 18F" line and keeps the fields and the link to About.
