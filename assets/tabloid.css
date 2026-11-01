@@ -359,3 +359,68 @@ body.pg-red .page__h { color: var(--blue); }
 .graf--plain .graf__body p:first-child::first-letter { float: none; margin: 0; font: inherit; color: inherit; }
 .radio-ad + .np, .np + .colophon { margin-top: 40px; }
 @media (max-width: 760px) { .deck-under { padding-top: 28px; } .graf__h { font-size: 48px; } }
+
+/* ──────────────────────────────────────────────────────────
+   Academic front door (1 November 2026), from the canvas board
+   "ronbronson.com, academic front door with personality": nav in two
+   columns, the introduction with fields beside it, Positions, Teaching,
+   Writing and Research blocks, Community on ink with a photo, Coaching
+   with its photo, the radio show in the Now listening bar.
+   ────────────────────────────────────────────────────────── */
+.bar nav.bar__nav--two { grid-template-columns: auto auto; gap: 2px 22px; }
+.mi { display: grid; grid-template-columns: 7fr 5fr; gap: 32px 72px; padding: 56px var(--gut) 0; }
+.mi__lead { margin: 0; font-size: clamp(24px, 2.1vw, 30px); line-height: 1.38; }
+.mi__side p { margin: 0 0 18px; font-size: 19px; }
+.mi__side .mi__f { font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 20px; line-height: 1.3; color: var(--blue); }
+.mi a, .pos a, .tk a, .blk a, .coach p a { text-decoration-color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+.pos { padding: 96px var(--gut) 0; }
+.pos__h, .blk__h, .coach__h { margin: 0; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; line-height: .86; }
+.pos__h { margin-bottom: 40px; font-size: 64px; color: var(--blue); }
+.pos__l { list-style: none; margin: 0; padding: 0; }
+.pos__l li { display: grid; grid-template-columns: 6fr 6fr; gap: 24px 72px; padding: 0 0 64px; align-items: start; }
+.pos__l h3 { margin: 0; font-family: var(--cond); font-weight: 800; font-stretch: 72%; font-variation-settings: "wdth" 72; font-size: clamp(38px, 4.2vw, 60px); line-height: .94; letter-spacing: -.01em; }
+.pos__l li:nth-child(odd) h3 { color: var(--blue); }
+.pos__l p { margin: 0 0 14px; font-size: 20px; line-height: 1.55; }
+.pos__l .pos__seen { font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 17px; }
+
+.tk { padding-top: 22px; }
+.tk p { margin: 0; max-width: 52em; font-size: 19px; }
+.tk .tk__go { margin-top: 12px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 18px; }
+.tk .linkish { padding: 0; border: 0; background: none; font: inherit; color: inherit; text-decoration: underline; text-decoration-color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 4px; cursor: pointer; }
+
+.blk { display: grid; grid-template-columns: 4fr 8fr; gap: 32px 72px; padding: 96px var(--gut) 0; }
+.blk__h { font-size: 64px; }
+.blk__ph { width: 100%; height: auto; aspect-ratio: 21 / 9; object-fit: cover; margin-bottom: 20px; }
+.blk__fields { margin: 0; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 28px; line-height: 1.2; }
+.kl { list-style: none; margin: 0; padding: 0; }
+.kl li { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 20px; padding: 12px 0; }
+.kl__k { padding-top: 4px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 17px; color: var(--blue); }
+.kl h3 { margin: 0; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 25px; line-height: 1.15; }
+.kl p { margin: 4px 0 0; font-size: 17px; color: #55556a; }
+
+.comm { display: grid; grid-template-columns: 6fr 6fr; gap: 40px 72px; align-items: start; margin-top: 104px; padding: 88px var(--gut) 96px; background: var(--ink); color: #fff; }
+.comm img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.comm a { color: #fff; }
+.comm__h { margin: 0 0 20px; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; font-size: 64px; line-height: .86; }
+.comm__h a { text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 8px; }
+.comm p { margin: 0 0 18px; font-size: 20px; }
+.comm .comm__rooms { margin-top: 22px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 600; font-size: 18px; line-height: 1.6; color: var(--blue-tint); }
+.comm .comm__more { font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: 18px; }
+
+.coach { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 72px; align-items: center; padding: 96px var(--gut) 0; }
+.coach img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
+.coach__h { margin-bottom: 14px; font-size: 64px; }
+.coach__h a { color: inherit; text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 8px; }
+.coach p { margin: 0; font-size: 22px; }
+
+.np .np__radio { display: inline-flex; align-items: baseline; gap: 8px; margin-left: 12px; padding-left: 18px; border-left: 2px solid rgba(255, 255, 255, .25); }
+.np__rl { font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; text-transform: uppercase; color: var(--blue-tint); font-size: 18px; }
+.np__radio span:last-child { opacity: .8; }
+
+@media (max-width: 860px) {
+  .mi, .pos__l li, .blk, .comm, .coach { grid-template-columns: 1fr; }
+  .pos__h, .blk__h, .comm__h, .coach__h { font-size: 48px; }
+  .kl li { grid-template-columns: 1fr; gap: 4px; }
+  .np .np__radio { margin-left: 0; padding-left: 0; border-left: 0; }
+}
