@@ -26,3 +26,11 @@
 ## 4. Consequence
 
 Docs only. No page, stylesheet or redirect changed.
+
+## Follow up, same day: Global Office of Public Delivery title
+
+**Intent:** Ron is now a nonresident senior fellow at the Global Office of Public Delivery, which has been reframed as an institute with classes, delivery programs and research fellowships.
+
+**Action:** `index.html` Positions line changed from "advisor to" to "nonresident senior fellow at". `events.html` Boards and commissions entry changed from Advisory / Advisor to Fellowship / Nonresident Senior Fellow.
+
+**Judgment:** Title correction only. No other copy touched. The entry stays under Boards and commissions; whether a fellowship belongs in its own section is Ron's call.
