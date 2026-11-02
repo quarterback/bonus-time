@@ -18,3 +18,8 @@
 ## 3. Judgment
 
 - **For Ron to settle:** the Coaching description says Ron "enters his tenth season", while the front page says "In my 12th year as a high school tennis coach". Both are Ron's copy, so neither was changed.
+
+## Follow-up: a current share card
+
+- `assets/og.png` used the older navy design and wording. It's redrawn from `assets/og.html`, keeping its regeneration notes, in the red tabloid style of the current front page: the RON BRONSON name bar, "Studies how technology changes markets, institutions, and public life." with the last line in red, the Michigan and Vloora line, and the portrait.
+- Every page declares the image size again (the metadata pass had dropped it) and has alt text that describes the new card.
