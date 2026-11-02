@@ -424,3 +424,9 @@ body.pg-red .page__h { color: var(--blue); }
   .kl li { grid-template-columns: 1fr; gap: 4px; }
   .np .np__radio { margin-left: 0; padding-left: 0; border-left: 0; }
 }
+
+/* Invitations: how to engage with the work (2 November 2026) */
+.inv { padding: 56px var(--gut) 0; max-width: 1100px; }
+.inv p { margin: 0 0 14px; font-size: clamp(20px, 1.6vw, 23px); line-height: 1.5; }
+.inv .inv__go { margin-top: 18px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 800; font-size: 22px; }
+.inv .linkish { color: var(--blue); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
