@@ -430,3 +430,27 @@ body.pg-red .page__h { color: var(--blue); }
 .inv p { margin: 0 0 14px; font-size: clamp(20px, 1.6vw, 23px); line-height: 1.5; }
 .inv .inv__go { margin-top: 18px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 800; font-size: 22px; }
 .inv .linkish { color: var(--blue); text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; }
+
+/* ──────────────────────────────────────────────────────────
+   Field practitioner of public life (5 November 2026), from the canvas
+   board of that name: the photo full width under the bar, the
+   introduction in one column with the research interests under it,
+   Research as four claims without a heading, and the two other sites
+   as solid red and pink doors.
+   ────────────────────────────────────────────────────────── */
+.lead--bleed { padding: 0; }
+.lead--bleed img { display: block; height: clamp(320px, 43vw, 620px); aspect-ratio: auto; object-position: 50% 38%; }
+.fi { padding: 72px var(--gut) 0; }
+.fi__lead { margin: 0 0 .6em; max-width: 1180px; font-size: clamp(28px, 3.2vw, 46px); line-height: 1.22; }
+.fi__fields { margin: 32px 0 0; max-width: 1180px; font-family: var(--cond); font-stretch: 80%; font-variation-settings: "wdth" 80; font-weight: 700; font-size: clamp(21px, 1.95vw, 28px); line-height: 1.35; color: var(--blue); }
+.fdoors { display: grid; grid-template-columns: 1fr 1fr; }
+.fdoors a { display: block; padding: 56px var(--gut); font-family: var(--cond); font-weight: 800; font-stretch: 72%; font-variation-settings: "wdth" 72; font-size: clamp(44px, 4.5vw, 64px); line-height: .98; text-decoration: underline; text-decoration-thickness: 6px; text-underline-offset: 10px; text-decoration-skip-ink: none; }
+.fdoors a:first-child { background: var(--blue); color: #fff; }
+.fdoors a:last-child { background: #ffd9d6; color: var(--ink); }
+.fdoors a:hover { text-decoration-thickness: 10px; }
+.comm + .fdoors { margin-top: 0; }
+@media (max-width: 860px) {
+  .fi { padding-top: 40px; }
+  .fdoors { grid-template-columns: 1fr; }
+  .fdoors a { padding: 40px var(--gut); text-decoration-thickness: 4px; text-underline-offset: 7px; }
+}
