@@ -58,3 +58,11 @@ The source is the canvas board "ronbronson.com, field practitioner of public lif
 - Get URLs for the three unpublished pieces, or have Ron confirm they stay out.
 - Decide on a new social card.
 - Decide whether About needs a link somewhere on the page now that it has left the nav.
+
+## Follow-up: claims stay as made (5 November 2026)
+
+> bookzine doesn't need to be linked at all. stop worrying about claims, if they're made they stay
+
+- **Research sources:** The rails of trust, Platform extraction and urban life, and Destruction as a Service are back under their claims as the board has them. They appear as plain titles because no URLs were given. The Disintermediation Problem link is removed.
+- **The Hidden Cost of Everything:** unlinked, in Writing and under its claim. Writing now labels it "Book", as on the board.
+- **Standing instruction for later runs:** claims Ron has made on a board stay as written. Don't drop them or hold them back for verification.
