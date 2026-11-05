@@ -56,7 +56,6 @@ The source is the canvas board "ronbronson.com, field practitioner of public lif
 ## 6. Next run
 
 - Get URLs for the three unpublished pieces, or have Ron confirm they stay out.
-- Decide on a new social card.
 - Decide whether About needs a link somewhere on the page now that it has left the nav.
 
 ## Follow-up: claims stay as made (5 November 2026)
@@ -66,3 +65,11 @@ The source is the canvas board "ronbronson.com, field practitioner of public lif
 - **Research sources:** The rails of trust, Platform extraction and urban life, and Destruction as a Service are back under their claims as the board has them. They appear as plain titles because no URLs were given. The Disintermediation Problem link is removed.
 - **The Hidden Cost of Everything:** unlinked, in Writing and under its claim. Writing now labels it "Book", as on the board.
 - **Standing instruction for later runs:** claims Ron has made on a board stay as written. Don't drop them or hold them back for verification.
+
+## Follow-up: the social card (5 November 2026)
+
+> THERE HEADLINE IS GONE BECAUSE I REMOVED IT
+
+- **Card redrawn:** `assets/og.html` and `assets/og.png` match the new page. The card has the red name bar, the first sentence of the introduction and the Design Month photo, with no headline.
+- **Image description:** the `og:image:alt` text in `index.html` now describes the new card.
+- **Size:** still 1200×630.
