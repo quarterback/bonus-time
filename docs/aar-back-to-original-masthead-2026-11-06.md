@@ -32,3 +32,9 @@ The board is "ronbronson.com, back to the original masthead" (`MastOriginal.dc.h
 - Rendered at 1440px and 390px in headless Chromium, with no horizontal scroll and no page errors.
 - prosekeep found 0 mechanical findings.
 - Not merged. The pull request is open for Ron to review.
+
+## Addendum: no repeated content across the sites
+
+**Intent.** Ron: "just make sure none of the content is repeat content".
+
+**Action.** I compared the three home pages for repeated sentences, links, blog posts, photos and named items. Masthead and .design both linked "On Being Anything Other Than a Designer", and .design uses it as a pull quote, so masthead's Writing list now has "Public Delivery Is Statecraft" in its place. The link was checked and returns 200. Years Ahead, Design For The Public and the earlier roles stay here and were removed from the other sites.
