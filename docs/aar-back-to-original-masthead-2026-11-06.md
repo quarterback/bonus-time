@@ -38,3 +38,15 @@ The board is "ronbronson.com, back to the original masthead" (`MastOriginal.dc.h
 **Intent.** Ron: "just make sure none of the content is repeat content".
 
 **Action.** I compared the three home pages for repeated sentences, links, blog posts, photos and named items. Masthead and .design both linked "On Being Anything Other Than a Designer", and .design uses it as a pull quote, so masthead's Writing list now has "Public Delivery Is Statecraft" in its place. The link was checked and returns 200. Years Ahead, Design For The Public and the earlier roles stay here and were removed from the other sites.
+
+## Addendum: media placed by site (6 November 2026)
+
+**Intent.** Ron: "Design as repair from ixda oslo can go on masthead along with did i do that..." The same message put other media on .design and .dev.
+
+**Action.** A Watch and Listen block now sits after Coaching, built on the site's existing `.wl`, `.vid--embed` and `.ep` classes.
+- Watch: Design as Repair at IxDA Oslo (Vimeo).
+- Listen: Did I Do That? (Acast). This embed was on .design's Product design page and is removed there.
+
+The Acast player gets its full 175px height.
+
+**Not added.** Ron's message opened "Masthead can have should be on design". I read the first part as Revision Path, but no embeddable Revision Path player could be found, so it was left out. Ron should confirm what he meant.
