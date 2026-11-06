@@ -38,3 +38,21 @@ The board is "ronbronson.com, back to the original masthead" (`MastOriginal.dc.h
 **Intent.** Ron: "just make sure none of the content is repeat content".
 
 **Action.** I compared the three home pages for repeated sentences, links, blog posts, photos and named items. Masthead and .design both linked "On Being Anything Other Than a Designer", and .design uses it as a pull quote, so masthead's Writing list now has "Public Delivery Is Statecraft" in its place. The link was checked and returns 200. Years Ahead, Design For The Public and the earlier roles stay here and were removed from the other sites.
+
+## Addendum: media placed by site (6 November 2026)
+
+**Intent.** Ron: "Design as repair from ixda oslo can go on masthead along with did i do that..." The same message put other media on .design and .dev.
+
+**Action.** A Watch and Listen block now sits after Coaching, built on the site's existing `.wl`, `.vid--embed` and `.ep` classes.
+- Watch: Design as Repair at IxDA Oslo (Vimeo).
+- Listen: Did I Do That? (Acast). This embed was on .design's Product design page and is removed there.
+
+The Acast player gets its full 175px height.
+
+**Not added.** Ron's message opened "Masthead can have should be on design". I read the first part as Revision Path, but no embeddable Revision Path player could be found, so it was left out. Ron should confirm what he meant.
+
+**Further change.** Ron: "If you can't embed just link it with its own content type on the page… Revision path can stay on masthead if you can't find one of the other embeds." No embeddable Revision Path player exists, so under Listen it is now a link labelled "Podcast": "Revision Path, episode 409", with Maurice Cherry, July 2021. The new `.pod-link` style for this is added to `tabloid.css`.
+
+**Further change.** Ron: "The 2nd revision path not first one." The link now goes to episode 53 (17 November 2014, revisionpath.com/ron-bronson-2014/), not episode 409. Its page embeds a YouTube video that is no longer available, so it stays a labelled link.
+
+**Correction.** Ron meant his second appearance: "yes that's what i said the 2nd time". The link is back on episode 409 (July 2021). I had misread "2nd" as the second item in a search list.
