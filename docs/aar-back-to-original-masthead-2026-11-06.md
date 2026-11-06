@@ -52,3 +52,5 @@ The Acast player gets its full 175px height.
 **Not added.** Ron's message opened "Masthead can have should be on design". I read the first part as Revision Path, but no embeddable Revision Path player could be found, so it was left out. Ron should confirm what he meant.
 
 **Further change.** Ron: "If you can't embed just link it with its own content type on the page… Revision path can stay on masthead if you can't find one of the other embeds." No embeddable Revision Path player exists, so under Listen it is now a link labelled "Podcast": "Revision Path, episode 409", with Maurice Cherry, July 2021. The new `.pod-link` style for this is added to `tabloid.css`.
+
+**Further change.** Ron: "The 2nd revision path not first one." The link now goes to episode 53 (17 November 2014, revisionpath.com/ron-bronson-2014/), not episode 409. Its page embeds a YouTube video that is no longer available, so it stays a labelled link.
