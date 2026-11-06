@@ -454,3 +454,12 @@ body.pg-red .page__h { color: var(--blue); }
   .fdoors { grid-template-columns: 1fr; }
   .fdoors a { padding: 40px var(--gut); text-decoration-thickness: 4px; text-underline-offset: 7px; }
 }
+
+/* Front page shelves, 6 November 2026: Reading, Watching and Writing in
+   three columns; Writing is a plain list of titles. */
+.shelves { grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+#writing-mod h2 { margin-top: 0; }
+.bul { list-style: none; margin: 0; padding: 0; }
+.bul li { margin: 0 0 .7em; font-size: 1.05rem; line-height: 1.3; }
+.bul__more { margin: .4em 0 0; font-size: .95rem; }
+@media (max-width: 860px) { .shelves { grid-template-columns: 1fr !important; } }
