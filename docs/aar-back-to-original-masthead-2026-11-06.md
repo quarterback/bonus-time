@@ -56,3 +56,22 @@ The Acast player gets its full 175px height.
 **Further change.** Ron: "The 2nd revision path not first one." The link now goes to episode 53 (17 November 2014, revisionpath.com/ron-bronson-2014/), not episode 409. Its page embeds a YouTube video that is no longer available, so it stays a labelled link.
 
 **Correction.** Ron meant his second appearance: "yes that's what i said the 2nd time". The link is back on episode 409 (July 2021). I had misread "2nd" as the second item in a search list.
+
+## Addendum: profession named in the first paragraph (7 November 2026)
+
+**Intent.** Ron pasted guidance to establish the profession in the first paragraph, spell out human-computer interaction for search, name the multi-agent work, make the 18F line specific, and connect the teaching to the same identity. All new copy goes through the humanizer pass and prosekeep.
+
+**Action.**
+- **First paragraph.** It now names him as a designer with the Michigan appointment, then the practice: human-computer interaction (HCI), UX, service design, information architecture and content design. Next comes the software and multi-agent work, then his research interests in cities, economic sociology and civic life.
+- **18F line.** "…was a senior executive at the pioneering federal digital services agency 18F, where he led design and communications". The wording comes from Ron's narrative document, as cited in the pasted guidance.
+- **Teaching.** A new sentence sits above the photo: "At Michigan, he teaches interaction design, service design, and Public Mechanics, examining how services work and how design can change them."
+- **Meta, OG and Twitter descriptions** name him as a designer, spell out human-computer interaction, and mention Vloora.
+- **`EDITORIAL.md`.** The "Identity across the three sites" rule is copied from .dev.
+
+**Humanizer pass.** The new sentences open with "Ron", "His", "He" and "His", so no two consecutive sentences start the same way. prosekeep found 0 findings. Rendered at 1440px and 390px with no horizontal scroll.
+
+
+**Voice change (7 November 2026).** Ron: ".design should be third person. Dev first person and first person for masthead too."
+The introduction, Community, Teaching and Coaching lines are now first person: "I'm a designer…", "My practice spans…", "I've convened…", "At Michigan, I teach…" and "In my 12th year…". Meta descriptions stay third person. "frequently board member" is corrected to "frequent board member". The voice rule is recorded in EDITORIAL.md.
+
+**AP and unslop pass.** I ran unslop with `--deterministic --dry-run`, offline. It found 0 AI-isms; the straight-apostrophe rewrite was not applied because of house style. AP fixes applied: "last-mile infrastructure" is hyphenated as a compound modifier, and "civil servant & veteran" becomes "civil servant and veteran". The serial comma and day-first dates stay, per EDITORIAL.md.
