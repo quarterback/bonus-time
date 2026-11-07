@@ -69,3 +69,7 @@ The Acast player gets its full 175px height.
 - **`EDITORIAL.md`.** The "Identity across the three sites" rule is copied from .dev.
 
 **Humanizer pass.** The new sentences open with "Ron", "His", "He" and "His", so no two consecutive sentences start the same way. prosekeep found 0 findings. Rendered at 1440px and 390px with no horizontal scroll.
+
+
+**Voice change (7 November 2026).** Ron: ".design should be third person. Dev first person and first person for masthead too."
+The introduction, Community, Teaching and Coaching lines are now first person: "I'm a designer…", "My practice spans…", "I've convened…", "At Michigan, I teach…" and "In my 12th year…". Meta descriptions stay third person. "frequently board member" is corrected to "frequent board member". The voice rule is recorded in EDITORIAL.md.
