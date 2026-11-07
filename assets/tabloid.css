@@ -471,3 +471,6 @@ body.pg-red .page__h { color: var(--blue); }
 .pod-link { margin: 14px 0 0; font-size: 18px; line-height: 1.4; }
 .pod-link__k { display: inline-block; margin-right: 8px; padding: 2px 8px; background: var(--blue); color: #fff; font-family: var(--cond); font-stretch: 87%; font-variation-settings: "wdth" 87; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .04em; vertical-align: 2px; }
 .pod-link__m { display: block; margin-top: 2px; font-size: 15px; color: var(--muted); }
+
+/* One line introducing the courses */
+.blk__intro { margin: 0 0 18px; max-width: 40em; font-size: 20px; line-height: 1.5; }

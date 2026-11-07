@@ -42,6 +42,18 @@ This document belongs to Ron Bronson. His latest explicit instruction takes prec
 
 CI checks changed files only, so these surface when someone next touches those pages.
 
+## Identity across the three sites
+
+Set by Ron, 7 November 2026. Every edit to any of the three sites keeps this:
+
+- Ron is a designer, a technology executive, and a hands-on AI practitioner, all in the present tense.
+- Name multi-agent orchestration, context engineering, and agent tooling explicitly, alongside UX, service design, information architecture, and content design. Masthead also spells out human-computer interaction (HCI).
+- Describe what he directs, builds, and tests. Keep Michigan, 18F, and Vloora prominent.
+- Support technical claims with specific workflows and artifacts, and keep the broader range of his work visible.
+- The test: a visitor to any one site can tell what kind of designer he is, see that he still practices, and see how his responsibility and thinking have grown.
+- New copy goes through the humanizer pass and prosekeep before it ships.
+- No placeholders on any page. If the content doesn't exist, delete the reference.
+
 ## Writing mechanics
 
 Conventions taken from Ron's existing corpus, not imposed on it.
