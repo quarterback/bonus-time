@@ -474,3 +474,12 @@ body.pg-red .page__h { color: var(--blue); }
 
 /* One line introducing the courses */
 .blk__intro { margin: 0 0 18px; max-width: 40em; font-size: 20px; line-height: 1.5; }
+
+/* Coaching photos placed between bio paragraphs */
+.bio__photo { column-span: all; margin: 36px 0 44px; max-width: 900px; }
+.bio__photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+@media (max-width: 760px) { .bio__photo { margin: 28px 0 32px; } }
+/* Coaching bio: no oversized intro, one even text size throughout */
+.bio--coach { font-size: 22px; line-height: 1.55; }
+.bio__photo--lead { margin: 32px 0 0; }
+.bio__photo--honors { margin: 48px 0 0; }
