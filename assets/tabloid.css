@@ -483,3 +483,12 @@ body.pg-red .page__h { color: var(--blue); }
 .bio--coach { font-size: 22px; line-height: 1.55; }
 .bio__photo--lead { margin: 32px 0 0; }
 .bio__photo--honors { margin: 48px 0 0; }
+/* Coaching photos as tilted prints: white border, soft shadow, slight turn */
+.bio__photo { max-width: 760px; background: #fff; padding: 14px; box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 14px 34px rgba(0,0,0,.16); transform: rotate(-1.2deg); }
+.bio__photo--lead { margin: 36px 0 12px 10px; }
+.bio__photo--honors { margin: 56px 0 16px 10px; transform: rotate(1.2deg); }
+@media (max-width: 760px) {
+  .bio__photo { padding: 8px; transform: rotate(-.6deg); }
+  .bio__photo--lead, .bio__photo--honors { margin-left: 4px; margin-right: 4px; }
+  .bio__photo--honors { transform: rotate(.6deg); }
+}
