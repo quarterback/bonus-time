@@ -479,8 +479,6 @@ body.pg-red .page__h { color: var(--blue); }
 .bio__photo { column-span: all; margin: 36px 0 44px; max-width: 900px; }
 .bio__photo img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
 @media (max-width: 760px) { .bio__photo { margin: 28px 0 32px; } }
-/* Coaching bio: no oversized intro, one even text size throughout */
-.bio--coach { font-size: 22px; line-height: 1.55; }
 .bio__photo--lead { margin: 32px 0 0; }
 .bio__photo--honors { margin: 48px 0 0; }
 /* Coaching photos as tilted prints: white border, soft shadow, slight turn */
@@ -492,8 +490,25 @@ body.pg-red .page__h { color: var(--blue); }
   .bio__photo--lead, .bio__photo--honors { margin-left: 4px; margin-right: 4px; }
   .bio__photo--honors { transform: rotate(.6deg); }
 }
-/* Coaching photos inside the bio columns, same tilted-print look, alternating turn */
-.bio__inline { margin: 14px 6px 30px; background: #fff; padding: 10px; break-inside: avoid; box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 12px 28px rgba(0,0,0,.15); transform: rotate(-1deg); }
-.bio__inline:nth-of-type(even) { transform: rotate(1deg); }
-.bio__inline img { display: block; width: 100%; height: auto; }
-@media (max-width: 760px) { .bio__inline { padding: 8px; margin: 22px 4px 28px; transform: rotate(-.6deg); } .bio__inline:nth-of-type(even) { transform: rotate(.6deg); } }
+/* Coaching scrollytelling: pinned photo, bio steps scroll past */
+.scrolly { position: relative; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(32px, 5vw, 80px); margin-top: 40px; }
+.scrolly__media { position: sticky; top: 8vh; height: 84vh; align-self: start; }
+.scrolly__img { position: absolute; inset: 0; margin: auto; max-width: calc(100% - 28px); max-height: calc(100% - 28px); width: auto; height: auto; background: #fff; padding: 14px; box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 16px 40px rgba(0,0,0,.18); opacity: 0; transform: rotate(-1.2deg) scale(.97); transition: opacity .5s ease, transform .6s ease; }
+.scrolly__img:nth-child(even) { transform: rotate(1.2deg) scale(.97); }
+.scrolly__img.is-active { opacity: 1; transform: rotate(-1.2deg); }
+.scrolly__img:nth-child(even).is-active { transform: rotate(1.2deg); }
+.scrolly__steps { padding: 30vh 0 40vh; }
+.scrolly__step { min-height: 70vh; display: flex; align-items: center; }
+.scrolly__step p { margin: 0; font-size: clamp(22px, 1.75vw, 27px); line-height: 1.5; color: var(--muted); transition: color .3s ease; }
+.scrolly__step.is-active p { color: var(--ink); }
+.scrolly__step + .scrolly__step { margin-top: -10vh; }
+@media (max-width: 760px) {
+  .scrolly { display: block; margin-top: 24px; }
+  .scrolly__media { top: 8px; height: 50vh; z-index: 0; }
+  .scrolly__img { max-width: calc(100% - 12px); max-height: calc(100% - 12px); padding: 8px; }
+  .scrolly__steps { position: relative; z-index: 1; padding: 4vh 0 30vh; }
+  .scrolly__step { min-height: 75vh; align-items: flex-start; }
+  .scrolly__step + .scrolly__step { margin-top: 0; }
+  .scrolly__step p { font-size: 19px; color: var(--ink); background: var(--paper); padding: 16px 18px; box-shadow: 0 6px 24px rgba(0,0,0,.14); }
+}
+@media (prefers-reduced-motion: reduce) { .scrolly__img { transition: none; } }

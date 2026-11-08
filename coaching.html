@@ -57,43 +57,32 @@
 
 <h1 class="page__h" id="page-title">Coaching</h1>
 
-<!-- Team photo leads the page; the award photo sits above Coaching honors.
-     .bio__inline photos sit inside the bio columns next to the paragraph they go with. -->
-<figure class="bio__photo bio__photo--lead"><img src="assets/tennis-title.jpg" width="1400" height="1050" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" /></figure>
-<div class="bio bio--ed bio--coach">
-
-<p>Ron Bronson enters his eighth year as head girls tennis coach at Catlin Gabel School in 2027. In 2026, the Eagles won their third district title and fourth conference title of his tenure en route to a 14-3-1 season record and a second-place finish at the state tournament. Seven players qualified for state, tying a program record set by his 2022 squad.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-2026-state.jpg" width="1050" height="1400" alt="Six Catlin Gabel players holding the 2026 OSAA 4A/3A/2A/1A girls tennis second-place trophy" /></figure>
-
-<p>In 2022, Bronson led the Eagles to their sixth OSAA state title in program history, capping a run of 22 consecutive dual-match victories across the 2021 and 2022 seasons. His teams also established a program-record 36-match unbeaten streak in conference play before suffering their first league defeat in 2024. Across six competitive seasons, the Eagles have lost just three conference matches and tied twice.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-2026-district.jpg" width="1400" height="1050" alt="Ron Bronson with seven Catlin Gabel players holding the 2026 Special District 1 district and league championship plaques" /></figure>
-
-<p>Catlin Gabel has finished in the top five at every OSAA state championship held since 2022. In 2023, the program produced its first state doubles champions since 1996 and has since won three of the last four 4A/3A/2A/1A girls state doubles titles. Bronson has also coached two state singles finalists (2022, 2026).</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-2023-doubles.jpg" width="1050" height="1400" alt="Ron Bronson holding the 2023 OSAA third-place trophy between two Catlin Gabel doubles players with oversized tennis balls" /></figure>
-
-<p>At Catlin Gabel, Bronson oversees a no-cut program where more than 20 athletes receive varsity competition opportunities each season. His approach emphasizes player development, independent decision-making, and giving athletes of different ability levels meaningful opportunities to compete.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-2026-roster.jpg" width="1400" height="1050" alt="Ten Catlin Gabel players lined up at the net on an outdoor court with the 2026 Special District 1 plaques" /></figure>
-
-<p>Prior to Catlin Gabel, Bronson coached high school and collegiate programs in four states. Across his high school coaching career, his teams have compiled a 91-33-4 record and won nine district, regional and conference titles. His players have earned 15 All-State selections and four individual state championships in Oregon and Wyoming.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-2026-plaques.jpg" width="1400" height="1056" alt="Ron Bronson holding the 2026 Special District 1 girls tennis district and league championship plaques" /></figure>
-
-<p>Bronson spearheaded a nearly seven-year effort to establish Oregon&rsquo;s first dual-team state tennis championships, building a statewide coalition of coaches and developing the proposal approved by OSAA in 2026. Beginning in 2027, the tournament will expand postseason competition to 56 boys&rsquo; and girls&rsquo; teams statewide.</p>
-
-<p>In 2019, he founded <a href="https://oregontennis.org">OregonTennis.org</a>, the country&rsquo;s only independent statewide high school tennis ranking system. He developed the platform&rsquo;s original statistical models, historical archives, and tools for evaluating high school teams across Oregon.</p>
-
-<p>Bronson played collegiate tennis at Monmouth College after serving in the U.S. Air Force and was a four-year letterwinner at Plainfield (NJ) High School under the tutelage of Eastern Tennis Hall of Famer <a href="https://blog.ronbronson.com/naming-the-courts">Donald J. Van Blake</a>.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-practice.jpg" width="1400" height="1050" alt="Ron Bronson laughing with a racket in hand beside a ball cart at an indoor practice" /></figure>
-
-<p>Following Van Blake&rsquo;s death, Bronson returned to high school coaching in 2019, intending to spend one season honoring his former coach. What began as a one-year commitment ultimately led him to Catlin Gabel, where he has continued coaching ever since.</p>
-
-<figure class="bio__inline"><img loading="lazy" src="assets/tennis-team-gifts.jpg" width="899" height="899" alt="Ron Bronson with five Catlin Gabel players holding gift boxes on an indoor court" /></figure>
-</div>
+<!-- Scrollytelling: the photo stays pinned while the bio steps scroll past.
+     Each .scrolly__step names the photo it shows with data-i; the script at
+     the bottom swaps the active photo as each step crosses mid-screen. -->
+<section class="scrolly" aria-label="Coaching bio">
+  <div class="scrolly__media">
+    <img class="scrolly__img is-active" data-i="0" src="assets/tennis-2026-district.jpg" width="1400" height="1050" alt="Ron Bronson with seven Catlin Gabel players holding the 2026 Special District 1 district and league championship plaques" />
+    <img class="scrolly__img" data-i="1" loading="lazy" src="assets/tennis-title.jpg" width="1400" height="1050" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
+    <img class="scrolly__img" data-i="2" loading="lazy" src="assets/tennis-2023-doubles.jpg" width="1050" height="1400" alt="Ron Bronson holding the 2023 OSAA third-place trophy between two Catlin Gabel doubles players with oversized tennis balls" />
+    <img class="scrolly__img" data-i="3" loading="lazy" src="assets/tennis-2026-roster.jpg" width="1400" height="1050" alt="Ten Catlin Gabel players lined up at the net on an outdoor court with the 2026 Special District 1 plaques" />
+    <img class="scrolly__img" data-i="4" loading="lazy" src="assets/tennis-2026-plaques.jpg" width="1400" height="1056" alt="Ron Bronson holding the 2026 Special District 1 girls tennis district and league championship plaques" />
+    <img class="scrolly__img" data-i="5" loading="lazy" src="assets/tennis-2026-state.jpg" width="1050" height="1400" alt="Six Catlin Gabel players holding the 2026 OSAA 4A/3A/2A/1A girls tennis second-place trophy" />
+    <img class="scrolly__img" data-i="6" loading="lazy" src="assets/tennis-practice.jpg" width="1400" height="1050" alt="Ron Bronson laughing with a racket in hand beside a ball cart at an indoor practice" />
+    <img class="scrolly__img" data-i="7" loading="lazy" src="assets/tennis-team-gifts.jpg" width="899" height="899" alt="Ron Bronson with five Catlin Gabel players holding gift boxes on an indoor court" />
+  </div>
+  <div class="scrolly__steps">
+  <div class="scrolly__step" data-i="0"><p>Ron Bronson enters his eighth year as head girls tennis coach at Catlin Gabel School in 2027. In 2026, the Eagles won their third district title and fourth conference title of his tenure en route to a 14-3-1 season record and a second-place finish at the state tournament. Seven players qualified for state, tying a program record set by his 2022 squad.</p></div>
+  <div class="scrolly__step" data-i="1"><p>In 2022, Bronson led the Eagles to their sixth OSAA state title in program history, capping a run of 22 consecutive dual-match victories across the 2021 and 2022 seasons. His teams also established a program-record 36-match unbeaten streak in conference play before suffering their first league defeat in 2024. Across six competitive seasons, the Eagles have lost just three conference matches and tied twice.</p></div>
+  <div class="scrolly__step" data-i="2"><p>Catlin Gabel has finished in the top five at every OSAA state championship held since 2022. In 2023, the program produced its first state doubles champions since 1996 and has since won three of the last four 4A/3A/2A/1A girls state doubles titles. Bronson has also coached two state singles finalists (2022, 2026).</p></div>
+  <div class="scrolly__step" data-i="3"><p>At Catlin Gabel, Bronson oversees a no-cut program where more than 20 athletes receive varsity competition opportunities each season. His approach emphasizes player development, independent decision-making, and giving athletes of different ability levels meaningful opportunities to compete.</p></div>
+  <div class="scrolly__step" data-i="4"><p>Prior to Catlin Gabel, Bronson coached high school and collegiate programs in four states. Across his high school coaching career, his teams have compiled a 91-33-4 record and won nine district, regional and conference titles. His players have earned 15 All-State selections and four individual state championships in Oregon and Wyoming.</p></div>
+  <div class="scrolly__step" data-i="5"><p>Bronson spearheaded a nearly seven-year effort to establish Oregon&rsquo;s first dual-team state tennis championships, building a statewide coalition of coaches and developing the proposal approved by OSAA in 2026. Beginning in 2027, the tournament will expand postseason competition to 56 boys&rsquo; and girls&rsquo; teams statewide.</p></div>
+  <div class="scrolly__step" data-i="5"><p>In 2019, he founded <a href="https://oregontennis.org">OregonTennis.org</a>, the country&rsquo;s only independent statewide high school tennis ranking system. He developed the platform&rsquo;s original statistical models, historical archives, and tools for evaluating high school teams across Oregon.</p></div>
+  <div class="scrolly__step" data-i="6"><p>Bronson played collegiate tennis at Monmouth College after serving in the U.S. Air Force and was a four-year letterwinner at Plainfield (NJ) High School under the tutelage of Eastern Tennis Hall of Famer <a href="https://blog.ronbronson.com/naming-the-courts">Donald J. Van Blake</a>.</p></div>
+  <div class="scrolly__step" data-i="7"><p>Following Van Blake&rsquo;s death, Bronson returned to high school coaching in 2019, intending to spend one season honoring his former coach. What began as a one-year commitment ultimately led him to Catlin Gabel, where he has continued coaching ever since.</p></div>
+  </div>
+</section>
 
 <figure class="bio__photo bio__photo--honors"><img loading="lazy" src="assets/oaca-award.jpg" width="1400" height="1050" alt="Ron Bronson holding a coach of the year plaque in front of an Oregon Athletic Coaches Association backdrop" /></figure>
 
@@ -290,6 +279,23 @@
       })
       .catch(hide);
   })();
+</script>
+<script>
+(function () {
+  var imgs = document.querySelectorAll('.scrolly__img');
+  var steps = document.querySelectorAll('.scrolly__step');
+  if (!('IntersectionObserver' in window) || !imgs.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      steps.forEach(function (s) { s.classList.toggle('is-active', s === e.target); });
+      var i = e.target.getAttribute('data-i');
+      imgs.forEach(function (im) { im.classList.toggle('is-active', im.getAttribute('data-i') === i); });
+    });
+  }, { rootMargin: window.innerWidth <= 760 ? '-70% 0px -30% 0px' : '-50% 0px -50% 0px' });
+  steps.forEach(function (s) { io.observe(s); });
+  steps[0].classList.add('is-active');
+})();
 </script>
 </body>
 </html>
