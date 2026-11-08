@@ -482,3 +482,4 @@ body.pg-red .page__h { color: var(--blue); }
 /* Coaching bio: no oversized intro, one even text size throughout */
 .bio--coach { font-size: 22px; line-height: 1.55; }
 .bio__photo--lead { margin: 32px 0 0; }
+.bio__photo--honors { margin: 48px 0 0; }
