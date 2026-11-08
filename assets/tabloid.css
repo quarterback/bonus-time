@@ -492,3 +492,8 @@ body.pg-red .page__h { color: var(--blue); }
   .bio__photo--lead, .bio__photo--honors { margin-left: 4px; margin-right: 4px; }
   .bio__photo--honors { transform: rotate(.6deg); }
 }
+/* Coaching photos inside the bio columns, same tilted-print look, alternating turn */
+.bio__inline { margin: 14px 6px 30px; background: #fff; padding: 10px; break-inside: avoid; box-shadow: 0 2px 4px rgba(0,0,0,.08), 0 12px 28px rgba(0,0,0,.15); transform: rotate(-1deg); }
+.bio__inline:nth-of-type(even) { transform: rotate(1deg); }
+.bio__inline img { display: block; width: 100%; height: auto; }
+@media (max-width: 760px) { .bio__inline { padding: 8px; margin: 22px 4px 28px; transform: rotate(-.6deg); } .bio__inline:nth-of-type(even) { transform: rotate(.6deg); } }
