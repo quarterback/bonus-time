@@ -58,6 +58,7 @@
 <h1 class="page__h" id="page-title">Coaching</h1>
 
 <!-- Scrollytelling: the photo stays pinned while the bio steps scroll past.
+     A .scrolly__stack holds two overlapping prints for one step.
      Each .scrolly__step names the photo it shows with data-i; the script at
      the bottom swaps the active photo as each step crosses mid-screen. -->
 <section class="scrolly" aria-label="Coaching bio">
@@ -66,10 +67,17 @@
     <img class="scrolly__img" data-i="1" loading="lazy" src="assets/tennis-title.jpg" width="1400" height="1050" alt="Ron Bronson with his high school girls tennis team holding a championship plaque" />
     <img class="scrolly__img" data-i="2" loading="lazy" src="assets/tennis-2023-doubles.jpg" width="1050" height="1400" alt="Ron Bronson holding the 2023 OSAA third-place trophy between two Catlin Gabel doubles players with oversized tennis balls" />
     <img class="scrolly__img" data-i="3" loading="lazy" src="assets/tennis-2026-roster.jpg" width="1400" height="1050" alt="Ten Catlin Gabel players lined up at the net on an outdoor court with the 2026 Special District 1 plaques" />
-    <img class="scrolly__img" data-i="4" loading="lazy" src="assets/tennis-2026-plaques.jpg" width="1400" height="1056" alt="Ron Bronson holding the 2026 Special District 1 girls tennis district and league championship plaques" />
+    <div class="scrolly__img scrolly__stack scrolly__stack--3" data-i="4">
+      <img loading="lazy" src="assets/tennis-wyoming-fence.jpg" width="1400" height="939" alt="Ron Bronson, arms folded, talking with two players through the fence during a match" />
+      <img loading="lazy" src="assets/tennis-wyoming-huddle.jpg" width="787" height="1400" alt="Ron Bronson in a team huddle with players in red shirts, fists raised" />
+      <img loading="lazy" src="assets/tennis-red-jacket.jpg" width="1050" height="1400" alt="Ron Bronson in a red jacket talking with two players beside a court fence" />
+    </div>
     <img class="scrolly__img" data-i="5" loading="lazy" src="assets/tennis-2026-state.jpg" width="1050" height="1400" alt="Six Catlin Gabel players holding the 2026 OSAA 4A/3A/2A/1A girls tennis second-place trophy" />
-    <img class="scrolly__img" data-i="6" loading="lazy" src="assets/tennis-practice.jpg" width="1400" height="1050" alt="Ron Bronson laughing with a racket in hand beside a ball cart at an indoor practice" />
-    <img class="scrolly__img" data-i="7" loading="lazy" src="assets/tennis-team-gifts.jpg" width="899" height="899" alt="Ron Bronson with five Catlin Gabel players holding gift boxes on an indoor court" />
+    <div class="scrolly__img scrolly__stack" data-i="6">
+      <img loading="lazy" src="assets/tennis-van-blake.jpg" width="640" height="852" alt="Ron Bronson standing with his former coach, Donald J. Van Blake" />
+      <img loading="lazy" src="assets/tennis-2002-juniors.jpg" width="500" height="375" alt="Ron Bronson talking with a group of junior players holding rackets in summer 2002" />
+    </div>
+    <img class="scrolly__img" data-i="7" loading="lazy" src="assets/tennis-oregon-city.jpg" width="1400" height="680" alt="Ron Bronson standing behind a boys tennis team in white polos posing at the net" />
   </div>
   <div class="scrolly__steps">
   <div class="scrolly__step" data-i="0"><p>Ron Bronson enters his eighth year as head girls tennis coach at Catlin Gabel School in 2027. In 2026, the Eagles won their third district title and fourth conference title of his tenure en route to a 14-3-1 season record and a second-place finish at the state tournament. Seven players qualified for state, tying a program record set by his 2022 squad.</p></div>
