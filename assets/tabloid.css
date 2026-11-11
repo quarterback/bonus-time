@@ -520,4 +520,15 @@ body.pg-red .page__h { color: var(--blue); }
 .scrolly__stack--3 img:nth-child(2) { top: 0; bottom: auto; right: 2%; left: auto; max-width: 38%; max-height: 60%; transform: rotate(2.4deg); z-index: 1; }
 .scrolly__stack--3 img:nth-child(3) { top: 40%; bottom: auto; left: 22%; max-width: 40%; max-height: 56%; transform: rotate(-1.4deg); z-index: 2; }
 @media (max-width: 760px) { .scrolly__stack img { padding: 6px; } }
+/* Pull-quote interludes in the coaching story: unattributed, the photo dims behind them */
+.scrolly__step--quote { min-height: 60vh; }
+.scrolly__step--quote blockquote { margin: 0; }
+.scrolly__step--quote p, .scrolly__step--quote.is-active p { margin: 0; font-family: var(--cond); font-weight: 900; font-stretch: 62%; font-variation-settings: "wdth" 62; font-size: clamp(40px, 4.2vw, 64px); line-height: .98; text-transform: uppercase; color: var(--blue); background: none; box-shadow: none; padding: 0; }
+.scrolly__media { transition: opacity .5s ease; }
+.scrolly.is-quote .scrolly__media { opacity: .18; }
+@media (max-width: 760px) {
+  .scrolly__step--quote { min-height: 70vh; }
+  .scrolly__step--quote p, .scrolly__step--quote.is-active p { font-size: 40px; background: var(--paper); padding: 8px 0; }
+  .scrolly.is-quote .scrolly__media { opacity: 1; }
+}
 @media (prefers-reduced-motion: reduce) { .scrolly__img { transition: none; } }
